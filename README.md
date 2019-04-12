@@ -24,6 +24,8 @@
 ### 程序
 [程序配置](https://github.com/1768204470/Dota2Monopoly/tree/master/%E7%A8%8B%E5%BA%8F)
 
+### 杂项
+包含常用的3d模型和学习文档
 
 ## 鸣谢
 
