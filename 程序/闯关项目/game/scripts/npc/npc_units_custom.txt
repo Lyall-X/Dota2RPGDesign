@@ -1,0 +1,516 @@
+// Units File
+"DOTAUnits"
+{
+	"Version"	"1"
+	
+	"Anm1"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "1.7"                       // 攻击间隔
+        "BountyGoldMin"             "20"                     // 最小金钱奖励
+        "BountyGoldMax"             "30"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "20"         // 基础魔抗                                                          
+        "AttackDamageMin"           "10"                       // 最小伤害
+        "AttackDamageMax"           "15"                       // 最大伤害
+        "StatusHealth"				"200"
+        "BountyXP"                  "200"                     // 经验奖励
+	}
+	"Anm1Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/heroes/broodmother/spiderling.vmdl"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+		"ModelScale"                "1.5"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "500"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "0.7"                       // 攻击间隔
+        "BountyGoldMin"             "200"                     // 最小金钱奖励
+        "BountyGoldMax"             "250"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "50"         // 基础魔抗                                                          
+        "AttackDamageMin"           "100"                       // 最小伤害
+        "AttackDamageMax"           "150"                       // 最大伤害
+        "StatusHealth"				"200"
+        "BountyXP"                  "300"                     // 经验奖励
+    }
+    	"Anm2"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "1.7"                       // 攻击间隔
+        "BountyGoldMin"             "20"                     // 最小金钱奖励
+        "BountyGoldMax"             "40"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "15"         // 基础魔抗                                                          
+        "AttackDamageMin"           "15"                       // 最小伤害
+        "AttackDamageMax"           "20"                       // 最大伤害
+        "StatusHealth"				"300"
+        "BountyXP"                  "400"                     // 经验奖励
+	}
+	"Anm2Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/heroes/clinkz/clinkz_archer.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "150"                       // 攻击间隔
+        "BountyGoldMin"             "250"                     // 最小金钱奖励
+        "BountyGoldMax"             "300"                     // 最大金钱奖励
+        "ArmorPhysical"             "15"         // 基础护甲
+        "MagicalResistance"         "50"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "250"                       // 最大伤害
+        "StatusHealth"				"250"
+        "BountyXP"                  "350"                     // 经验奖励
+    }
+    	"Anm3"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "1.7"                       // 攻击间隔
+        "BountyGoldMin"             "25"                     // 最小金钱奖励
+        "BountyGoldMax"             "45"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "30"         // 基础魔抗                                                          
+        "AttackDamageMin"           "40"                       // 最小伤害
+        "AttackDamageMax"           "60"                       // 最大伤害
+        "StatusHealth"				"400"
+        "BountyXP"                  "300"                     // 经验奖励
+	}
+	"Anm3Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/heroes/dark_willow/models/heroes/antimage/antimage.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "500"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm4"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "0.3"                       // 攻击间隔
+        "BountyGoldMin"             "10"                     // 最小金钱奖励
+        "BountyGoldMax"             "20"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "1"         // 基础魔抗                                                          
+        "AttackDamageMin"           "78"                       // 最小伤害
+        "AttackDamageMax"           "80"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm4Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/heroes/earthshaker/earthshaker.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm5"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm5Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/heroes/lone_druid/spirit_bear.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm6"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "0.3"                       // 攻击间隔
+        "BountyGoldMin"             "10"                     // 最小金钱奖励
+        "BountyGoldMax"             "20"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "1"         // 基础魔抗                                                          
+        "AttackDamageMin"           "78"                       // 最小伤害
+        "AttackDamageMax"           "80"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm6Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/heroes/puck/puck.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm7"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+
+        "AttackRate"                "0.3"                       // 攻击间隔
+        "BountyGoldMin"             "10"                     // 最小金钱奖励
+        "BountyGoldMax"             "20"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "1"         // 基础魔抗                                                          
+        "AttackDamageMin"           "78"                       // 最小伤害
+        "AttackDamageMax"           "80"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm7Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/heroes/undying/undying.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm8"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+
+        "AttackRate"                "0.3"                       // 攻击间隔
+        "BountyGoldMin"             "10"                     // 最小金钱奖励
+        "BountyGoldMax"             "20"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "1"         // 基础魔抗                                                          
+        "AttackDamageMin"           "78"                       // 最小伤害
+        "AttackDamageMax"           "80"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm8Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/heroes/wraith_king/wraith_frost.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm9"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+
+        "AttackRate"                "0.3"                       // 攻击间隔
+        "BountyGoldMin"             "10"                     // 最小金钱奖励
+        "BountyGoldMax"             "20"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "1"         // 基础魔抗                                                          
+        "AttackDamageMin"           "78"                       // 最小伤害
+        "AttackDamageMax"           "80"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm9Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/courier/baby_winter_wyvern/baby_winter_wyvern.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm10"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+
+        "AttackRate"                "0.3"                       // 攻击间隔
+        "BountyGoldMin"             "10"                     // 最小金钱奖励
+        "BountyGoldMax"             "20"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "1"         // 基础魔抗                                                          
+        "AttackDamageMin"           "78"                       // 最小伤害
+        "AttackDamageMax"           "80"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm10Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_bad_ranged_diretide/creep_bad_ranged_diretide.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm11"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+
+        "AttackRate"                "0.3"                       // 攻击间隔
+        "BountyGoldMin"             "10"                     // 最小金钱奖励
+        "BountyGoldMax"             "20"                     // 最大金钱奖励
+        "ArmorPhysical"             "10"         // 基础护甲
+        "MagicalResistance"         "1"         // 基础魔抗                                                          
+        "AttackDamageMin"           "78"                       // 最小伤害
+        "AttackDamageMax"           "80"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm11Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_dire_hulk/creep_dire_ancient_hulk.vmdl"
+		"ModelScale"                "1.5"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "300"                       // 攻击间隔
+        "BountyGoldMin"             "400"                     // 最小金钱奖励
+        "BountyGoldMax"             "400"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "40"         // 基础魔抗                                                          
+        "AttackDamageMin"           "150"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+    }
+    	"Anm12"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+
+        "AttackRate"                "0.1"                       // 攻击间隔
+        "BountyGoldMin"             "1"                     // 最小金钱奖励
+        "BountyGoldMax"             "2"                     // 最大金钱奖励
+        "ArmorPhysical"             "12"         // 基础护甲
+        "MagicalResistance"         "12"         // 基础魔抗                                                          
+        "AttackDamageMin"           "1"                       // 最小伤害
+        "AttackDamageMax"           "10"                       // 最大伤害
+        "StatusHealth"				"100"
+        "BountyXP"                  "10"                     // 经验奖励
+	}
+	"Anm12Boss"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/roshan/roshan.vmdl"
+		"ModelScale"                "2"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "0.1"                       // 攻击间隔
+        "BountyGoldMin"             "1"                     // 最小金钱奖励
+        "BountyGoldMax"             "2"                     // 最大金钱奖励
+        "ArmorPhysical"             "20"         // 基础护甲
+        "MagicalResistance"         "20"         // 基础魔抗                                                          
+        "AttackDamageMin"           "1"                       // 最小伤害
+        "AttackDamageMax"           "300"                       // 最大伤害
+        "StatusHealth"				"2000"
+        "BountyXP"                  "1000"                     // 经验奖励
+    }
+}

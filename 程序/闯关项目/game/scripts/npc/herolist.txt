@@ -1,0 +1,21 @@
+"CustomHeroList"
+{
+  "npc_dota_hero_juggernaut"     "-1"
+  "npc_dota_hero_sven"     "-1"
+  "npc_dota_hero_troll_warlord"     "-1"
+  "npc_dota_hero_lina"     "-1"
+  "npc_dota_hero_windranger"     "-1"
+
+  "npc_dota_hero_axe"     "-1"
+  "npc_dota_hero_huskar"     "-1"
+  "npc_dota_hero_mars"     "-1"
+  "npc_dota_hero_slardar"     "-1"
+  "npc_dota_hero_ursa"     "-1"
+  "npc_dota_hero_razor"     "-1"
+  "npc_dota_hero_weaver"     "-1"
+  "npc_dota_hero_lion"     "-1"
+  "npc_dota_hero_dark_seer"     "-1"
+  "npc_dota_hero_ogre_magi"     "-1"
+  "npc_dota_hero_visage"     "-1"
+  "npc_dota_hero_queen_of_pain"     "-1"
+}

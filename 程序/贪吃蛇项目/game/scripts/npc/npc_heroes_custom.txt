@@ -1,0 +1,11 @@
+"DOTAHeroes"
+{
+
+	"little_strong"
+	{
+		"override_hero"				"npc_dota_hero_nyx_assassin"
+        "Models"                    "models/heroes/nerubian_assassin/nerubian_assassin.vmdl"
+        "MovementTurnRate"          "1"                       // 转身速度
+        "StatusHealth"				"1"
+	}
+}
