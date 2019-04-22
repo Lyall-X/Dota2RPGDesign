@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMaximumGoldBounty()${1:--[[
+     CDOTA_BaseNPC:GetMaximumGoldBounty  Get the maximum gold bounty for this unit. 
+    -- @return int
+    function CDOTA_BaseNPC:GetMaximumGoldBounty(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetMaximumGoldBounty</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

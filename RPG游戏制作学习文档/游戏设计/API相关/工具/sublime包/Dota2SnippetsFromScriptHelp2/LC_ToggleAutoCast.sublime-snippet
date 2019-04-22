@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ToggleAutoCast()${1:--[[
+     CDOTABaseAbility:ToggleAutoCast   
+    -- @return void
+    function CDOTABaseAbility:ToggleAutoCast(  ) end
+    ]]}]]></content>
+    <tabTrigger>toggleAutoCast</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

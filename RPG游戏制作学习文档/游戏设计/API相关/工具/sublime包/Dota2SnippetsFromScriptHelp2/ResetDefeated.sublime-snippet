@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ResetDefeated()${1:--[[
+     CDOTAGamerules:ResetDefeated  Restart after killing the ancient, etc. 
+    -- @return void
+    function CDOTAGamerules:ResetDefeated(  ) end
+    ]]}]]></content>
+    <tabTrigger>ResetDefeated</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

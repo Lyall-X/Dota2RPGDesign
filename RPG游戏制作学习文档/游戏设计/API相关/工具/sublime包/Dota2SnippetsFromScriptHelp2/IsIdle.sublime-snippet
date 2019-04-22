@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsIdle()${1:--[[
+     CDOTA_BaseNPC:IsIdle  Is this creature currently idle? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsIdle(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsIdle</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

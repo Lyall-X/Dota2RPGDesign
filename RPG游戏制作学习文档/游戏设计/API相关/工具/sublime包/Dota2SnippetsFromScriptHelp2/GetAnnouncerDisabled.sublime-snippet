@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAnnouncerDisabled()${1:--[[
+     CDOTABaseGameMode:GetAnnouncerDisabled  Are in-game announcers disabled? 
+    -- @return bool
+    function CDOTABaseGameMode:GetAnnouncerDisabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAnnouncerDisabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

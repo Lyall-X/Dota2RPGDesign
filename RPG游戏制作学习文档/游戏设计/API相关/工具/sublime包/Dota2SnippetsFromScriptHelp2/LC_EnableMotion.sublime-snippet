@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[EnableMotion()${1:--[[
+     CPhysicsProp:EnableMotion  Enable motion for the prop 
+    -- @return void
+    function CPhysicsProp:EnableMotion(  ) end
+    ]]}]]></content>
+    <tabTrigger>enableMotion</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

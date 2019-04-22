@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsSummoned()${1:--[[
+     CDOTA_BaseNPC:IsSummoned  Is this unit summoned? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsSummoned(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsSummoned</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Daiyfoo翻译 -->
+
+<class nameEN="CDOTA_Item" nameCN="DOTA物品"
+	descriptionEN="No Description Set"
+	descriptionCN="目前未有描述" extends="CDOTABaseAbility">
+	<functions>
+		<function name="GetContainer" signature="handle GetContainer()">
+			<DescriptionEN>Get the container for this item.
+			</DescriptionEN>
+			<DescriptionCN>获得物品所有者</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:物品所有者</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCost" signature="int GetCost()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:购买物品所需金钱</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCurrentCharges" signature="int GetCurrentCharges()">
+			<DescriptionEN>Get the number of charges this item currently has.
+			</DescriptionEN>
+			<DescriptionCN>获得物品的目前充能</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:物品的目前充能</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetInitialCharges" signature="int GetInitialCharges()">
+			<DescriptionEN>Get the number of charges this item currently has.
+			</DescriptionEN>
+			<DescriptionCN>获得物品的初始充能</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:物品的初始充能</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetPurchaser" signature="handle GetPurchaser()">
+			<DescriptionEN>Get the purchaser for this item.
+			</DescriptionEN>
+			<DescriptionCN>获得物品的购买者</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:物品的购买者</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetPurchaseTime" signature="float GetPurchaseTime()">
+			<DescriptionEN>Get the purchase time of this item
+			</DescriptionEN>
+			<DescriptionCN>获得物品的购买时间</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:物品的购买时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetShareability" signature="int GetShareability()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:物品的共享等级</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsPermanent" signature="bool IsPermanent()">
+			<DescriptionEN>Is this a permanent item?
+			</DescriptionEN>
+			<DescriptionCN>判断物品是否非消耗品</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:物品是否非消耗品</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="LaunchLoot" signature="void LaunchLoot(bool a, float b, float c, Vector d)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:能否发射战利品? b:发射起点的x轴坐标? c:发射起点的y轴坐标? d:发射的矢量
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetCurrentCharges" signature="void SetCurrentCharges(int a)">
+			<DescriptionEN>Set the number of charges on this item
+			</DescriptionEN>
+			<DescriptionCN>设置物品的充能数</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置的物品充能数
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetPurchaser" signature="void SetPurchaser(handle a)">
+			<DescriptionEN>Set the purchaser of record for this item.
+			</DescriptionEN>
+			<DescriptionCN>设置物品的购买者</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置的物品购买者
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetPurchaseTime" signature="void SetPurchaseTime(float a)">
+			<DescriptionEN>Set the purchase time of this item
+			</DescriptionEN>
+			<DescriptionCN>设置物品的购买时间</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置的物品购买时间
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetStacksWithOtherOwners" signature="void SetStacksWithOtherOwners(bool a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置能否在别的玩家物品栏中叠加同一物品
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="StacksWithOtherOwners" signature="bool StacksWithOtherOwners()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:能否在别的玩家物品栏中叠加同一物品</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="Think" signature="void Think()">
+			<DescriptionEN>Think this item
+			</DescriptionEN>
+			<DescriptionCN>判断此物品</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	
+	</functions>
+
+</class>

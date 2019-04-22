@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetStr(${1:string_1})${2:--[[
+     Convars:GetStr  GetStr(name) : returns the convar as a string. May return null if no such convar. 
+    -- @return table
+    -- @param string_1 string
+    function Convars:GetStr( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetStr</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsReincarnating()${1:--[[
+     CDOTA_BaseNPC_Hero:IsReincarnating   
+    -- @return bool
+    function CDOTA_BaseNPC_Hero:IsReincarnating(  ) end
+    ]]}]]></content>
+    <tabTrigger>isReincarnating</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

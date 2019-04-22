@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetDuration()${1:--[[
+     CDOTABaseAbility:GetDuration   
+    -- @return float
+    function CDOTABaseAbility:GetDuration(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetDuration</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

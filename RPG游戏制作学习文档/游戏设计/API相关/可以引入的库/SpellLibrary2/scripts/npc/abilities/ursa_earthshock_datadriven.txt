@@ -1,0 +1,119 @@
+"ursa_earthshock_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"ursa_earthshock"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"6.0 6.0 6.0 6.0"
+	"AbilityDuration"				"4.0 4.0 4.0 4.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"90 140 190 240"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"75 75 75 75"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"shock_radius"				"385"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movement_slow"				"-25 -35 -45 -55"
+		}
+		// Extra variables
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"debuff_duration"			"4.0"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+		"particle"						"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"Hero_Ursa.Earthshock"
+		}
+	
+		"FireEffect"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+			"EffectAttachType"			"start_at_origin"
+			"EffectRadius"				"%shock_radius"
+		}
+	
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"	"CASTER"
+				"Radius"	"%shock_radius"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			}
+			
+			"Action"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Damage"	"%AbilityDamage"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+				}
+				
+				"ApplyModifier"
+				{
+					"Target"		"TARGET"
+					"ModifierName"	"modifier_earthshock_debuff_datadriven"
+				}
+			}
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_earthshock_debuff_datadriven"
+		{
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+		
+			"Duration"			"%debuff_duration"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_slow"
+			}
+		}
+	}
+}

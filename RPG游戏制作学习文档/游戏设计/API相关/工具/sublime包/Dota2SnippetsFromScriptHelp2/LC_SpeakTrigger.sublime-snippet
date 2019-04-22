@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[SpeakTrigger()${1:--[[
+     CDOTABaseAbility:SpeakTrigger   
+    -- @return bool
+    function CDOTABaseAbility:SpeakTrigger(  ) end
+    ]]}]]></content>
+    <tabTrigger>speakTrigger</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

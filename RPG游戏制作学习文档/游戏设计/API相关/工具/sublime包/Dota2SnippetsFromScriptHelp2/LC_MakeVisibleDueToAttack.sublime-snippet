@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[MakeVisibleDueToAttack(${1:int_1})${2:--[[
+     CDOTA_BaseNPC:MakeVisibleDueToAttack   
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_BaseNPC:MakeVisibleDueToAttack( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>makeVisibleDueToAttack</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

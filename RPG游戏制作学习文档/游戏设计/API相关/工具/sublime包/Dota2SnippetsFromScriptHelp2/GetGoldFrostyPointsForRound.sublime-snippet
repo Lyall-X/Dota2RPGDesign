@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[GetGoldFrostyPointsForRound(${1:int_1},${2:int_2},${3:int_3})${4:--[[
+     GetGoldFrostyPointsForRound   
+    -- @return int
+    -- @param int_1 int
+    -- @param int_2 int
+    -- @param int_3 int
+    function GetGoldFrostyPointsForRound( int_1, int_2, int_3 ) end
+    ]]}]]></content>
+    <tabTrigger>GetGoldFrostyPointsForRound</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

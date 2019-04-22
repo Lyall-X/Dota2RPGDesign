@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetDebugName()${1:--[[
+     CEntityInstance:GetDebugName  Get the entity name w/help if not defined (i.e. classname/etc) 
+    -- @return string
+    function CEntityInstance:GetDebugName(  ) end
+    ]]}]]></content>
+    <tabTrigger>getDebugName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDotaQuest" nameCN="Dota任务"
+	descriptionEN=""
+	descriptionCN="" extends="CBaseEntity">
+	<functions>
+		<function name="AddSubquest"
+		signature="void AddSubquest(handle a)">
+		  <DescriptionEN>Add a subquest to this quest</DescriptionEN>
+		  <DescriptionCN>为该任务添加子任务</DescriptionCN>
+		  <HowToCall>
+			<Parameter>handle a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="CompleteQuest" signature="void CompleteQuest()">
+		  <DescriptionEN>Mark this quest complete</DescriptionEN>
+		  <DescriptionCN>标记该任务完成</DescriptionCN>
+		  <HowToCall>
+			<Parameter></Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="GetSubquest" signature="handle GetSubquest(int a)">
+		  <DescriptionEN>Finds a subquest from this quest by
+		  index</DescriptionEN>
+		  <DescriptionCN>用索引号找到该任务的子任务</DescriptionCN>
+		  <HowToCall>
+			<Parameter>int a</Parameter>
+			<Return>handle</Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="GetSubquestByName"
+		signature="handle GetSubquestByName(string a)">
+		  <DescriptionEN>Finds a subquest from this quest by
+		  name</DescriptionEN>
+		  <DescriptionCN>用任务名称找到该任务的子任务</DescriptionCN>
+		  <HowToCall>
+			<Parameter>string a</Parameter>
+			<Return>handle</Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="RemoveSubquest"
+		signature="void RemoveSubquest(handle a)">
+		  <DescriptionEN>Remove a subquest from this quest</DescriptionEN>
+		  <DescriptionCN>从该任务移除一个子任务</DescriptionCN>
+		  <HowToCall>
+			<Parameter>handle a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetTextReplaceString"
+		signature="void SetTextReplaceString(string a)">
+		  <DescriptionEN>Set the text replace string for this
+		  quest</DescriptionEN>
+		  <DescriptionCN>设置该任务的文本取代字符串</DescriptionCN>
+		  <HowToCall>
+			<Parameter>string a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetTextReplaceValue"
+		signature="void SetTextReplaceValue(int a, int b)">
+		  <DescriptionEN>Set a quest value</DescriptionEN>
+		  <DescriptionCN>设置任务数值</DescriptionCN>
+		  <HowToCall>
+			<Parameter>int a, int b</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

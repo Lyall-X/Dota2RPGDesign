@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[UTIL_MessageTextAll_WithContext(${1:string_1},${2:int_2},${3:int_3},${4:int_4},${5:int_5},${6:handle_6})${7:--[[
+     UTIL_MessageTextAll_WithContext  Sends colored text to all clients. (Valid context keys: player_id, value, team_id) 
+    -- @return void
+    -- @param string_1 string
+    -- @param int_2 int
+    -- @param int_3 int
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param handle_6 handle
+    function UTIL_MessageTextAll_WithContext( string_1, int_2, int_3, int_4, int_5, handle_6 ) end
+    ]]}]]></content>
+    <tabTrigger>uTIL_MessageTextAll_WithContext</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

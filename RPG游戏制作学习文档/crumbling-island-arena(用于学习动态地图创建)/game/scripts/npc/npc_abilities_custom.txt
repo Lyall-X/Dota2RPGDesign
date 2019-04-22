@@ -1,0 +1,752 @@
+#base "abilities\zuus\zeus_q.txt"
+#base "abilities\zuus\zeus_w.txt"
+#base "abilities\zuus\zeus_e.txt"
+#base "abilities\zuus\zeus_r.txt"
+#base "abilities\zuus\zeus_a.txt"
+#base "abilities\storm_spirit\storm_spirit_q.txt"
+#base "abilities\storm_spirit\storm_spirit_w.txt"
+#base "abilities\storm_spirit\storm_spirit_e.txt"
+#base "abilities\storm_spirit\storm_spirit_r.txt"
+#base "abilities\storm_spirit\storm_spirit_a.txt"
+#base "abilities\phantom_assassin\pa_q.txt"
+#base "abilities\phantom_assassin\pa_w.txt"
+#base "abilities\phantom_assassin\pa_e.txt"
+#base "abilities\phantom_assassin\pa_r.txt"
+#base "abilities\phantom_assassin\pa_a.txt"
+#base "abilities\crystal_maiden\cm_q.txt"
+#base "abilities\crystal_maiden\cm_w.txt"
+#base "abilities\crystal_maiden\cm_e.txt"
+#base "abilities\crystal_maiden\cm_e_sub.txt"
+#base "abilities\crystal_maiden\cm_r.txt"
+#base "abilities\crystal_maiden\cm_a.txt"
+#base "abilities\sven\sven_q.txt"
+#base "abilities\sven\sven_w.txt"
+#base "abilities\sven\sven_e.txt"
+#base "abilities\sven\sven_r.txt"
+#base "abilities\sven\sven_a.txt"
+#base "abilities\sniper\sniper_q.txt"
+#base "abilities\sniper\sniper_w.txt"
+#base "abilities\sniper\sniper_e.txt"
+#base "abilities\sniper\sniper_r.txt"
+#base "abilities\sniper\sniper_a.txt"
+#base "abilities\sand_king\sk_q.txt"
+#base "abilities\sand_king\sk_w.txt"
+#base "abilities\sand_king\sk_e.txt"
+#base "abilities\sand_king\sk_r.txt"
+#base "abilities\sand_king\sk_a.txt"
+#base "abilities\legion_commander\lc_q.txt"
+#base "abilities\legion_commander\lc_w.txt"
+#base "abilities\legion_commander\lc_e.txt"
+#base "abilities\legion_commander\lc_r.txt"
+#base "abilities\legion_commander\lc_a.txt"
+#base "abilities\lycan\lycan_q.txt"
+#base "abilities\lycan\lycan_w.txt"
+#base "abilities\lycan\lycan_e.txt"
+#base "abilities\lycan\lycan_r.txt"
+#base "abilities\lycan\lycan_a.txt"
+#base "abilities\templar_assassin\ta_q.txt"
+#base "abilities\templar_assassin\ta_w.txt"
+#base "abilities\templar_assassin\ta_e.txt"
+#base "abilities\templar_assassin\ta_r.txt"
+#base "abilities\templar_assassin\ta_a.txt"
+#base "abilities\tiny\tiny_q.txt"
+#base "abilities\tiny\tiny_w.txt"
+#base "abilities\tiny\tiny_e.txt"
+#base "abilities\tiny\tiny_r.txt"
+#base "abilities\tiny\tiny_a.txt"
+#base "abilities\vengefulspirit\venge_q.txt"
+#base "abilities\vengefulspirit\venge_w.txt"
+#base "abilities\vengefulspirit\venge_e.txt"
+#base "abilities\vengefulspirit\venge_r.txt"
+#base "abilities\vengefulspirit\venge_a.txt"
+#base "abilities\drow_ranger\drow_q.txt"
+#base "abilities\drow_ranger\drow_w.txt"
+#base "abilities\drow_ranger\drow_e.txt"
+#base "abilities\drow_ranger\drow_r.txt"
+#base "abilities\drow_ranger\drow_a.txt"
+#base "abilities\skeleton_king\wk_q.txt"
+#base "abilities\skeleton_king\wk_w.txt"
+#base "abilities\skeleton_king\wk_e.txt"
+#base "abilities\skeleton_king\wk_r.txt"
+#base "abilities\skeleton_king\wk_a.txt"
+#base "abilities\earthshaker\shaker_q.txt"
+#base "abilities\earthshaker\shaker_w.txt"
+#base "abilities\earthshaker\shaker_e.txt"
+#base "abilities\earthshaker\shaker_r.txt"
+#base "abilities\earthshaker\shaker_a.txt"
+#base "abilities\ember_spirit\ember_q.txt"
+#base "abilities\ember_spirit\ember_w.txt"
+#base "abilities\ember_spirit\ember_e.txt"
+#base "abilities\ember_spirit\ember_r.txt"
+#base "abilities\ember_spirit\ember_a.txt"
+#base "abilities\juggernaut\jugger_q.txt"
+#base "abilities\juggernaut\jugger_w.txt"
+#base "abilities\juggernaut\jugger_e.txt"
+#base "abilities\juggernaut\jugger_e_sub.txt"
+#base "abilities\juggernaut\jugger_r.txt"
+#base "abilities\juggernaut\jugger_a.txt"
+#base "abilities\pudge\pudge_q.txt"
+#base "abilities\pudge\pudge_w.txt"
+#base "abilities\pudge\pudge_e.txt"
+#base "abilities\pudge\pudge_r.txt"
+#base "abilities\pudge\pudge_a.txt"
+#base "abilities\ursa\ursa_q.txt"
+#base "abilities\ursa\ursa_w.txt"
+#base "abilities\ursa\ursa_e.txt"
+#base "abilities\ursa\ursa_r.txt"
+#base "abilities\ursa\ursa_a.txt"
+#base "abilities\brewmaster\brew_q.txt"
+#base "abilities\brewmaster\brew_w.txt"
+#base "abilities\brewmaster\brew_e.txt"
+#base "abilities\brewmaster\brew_r.txt"
+#base "abilities\brewmaster\brew_a.txt"
+#base "abilities\invoker\invoker_q.txt"
+#base "abilities\invoker\invoker_w.txt"
+#base "abilities\invoker\invoker_e.txt"
+#base "abilities\invoker\invoker_r.txt"
+#base "abilities\invoker\invoker_a.txt"
+#base "abilities\tinker\tinker_q.txt"
+#base "abilities\tinker\tinker_w.txt"
+#base "abilities\tinker\tinker_e.txt"
+#base "abilities\tinker\tinker_r.txt"
+#base "abilities\tinker\tinker_w_sub.txt"
+#base "abilities\tinker\tinker_e_sub.txt"
+#base "abilities\tinker\tinker_a.txt"
+#base "abilities\slark\slark_q.txt"
+#base "abilities\slark\slark_w.txt"
+#base "abilities\slark\slark_e.txt"
+#base "abilities\slark\slark_r.txt"
+#base "abilities\slark\slark_a.txt"
+#base "abilities\queenofpain\qop_q.txt"
+#base "abilities\queenofpain\qop_w.txt"
+#base "abilities\queenofpain\qop_e.txt"
+#base "abilities\queenofpain\qop_r.txt"
+#base "abilities\queenofpain\qop_a.txt"
+#base "abilities\tusk\tusk_q.txt"
+#base "abilities\tusk\tusk_w.txt"
+#base "abilities\tusk\tusk_e.txt"
+#base "abilities\tusk\tusk_r.txt"
+#base "abilities\tusk\tusk_a.txt"
+#base "abilities\undying\undying_q.txt"
+#base "abilities\undying\undying_w.txt"
+#base "abilities\undying\undying_e.txt"
+#base "abilities\undying\undying_r.txt"
+#base "abilities\undying\undying_w_sub.txt"
+#base "abilities\undying\undying_a.txt"
+#base "abilities\gyrocopter\gyro_q.txt"
+#base "abilities\gyrocopter\gyro_w.txt"
+#base "abilities\gyrocopter\gyro_w_sub.txt"
+#base "abilities\gyrocopter\gyro_e.txt"
+#base "abilities\gyrocopter\gyro_r.txt"
+#base "abilities\gyrocopter\gyro_a.txt"
+#base "abilities\windrunner\wr_q.txt"
+#base "abilities\windrunner\wr_w.txt"
+#base "abilities\windrunner\wr_e.txt"
+#base "abilities\windrunner\wr_r.txt"
+#base "abilities\windrunner\wr_a.txt"
+#base "abilities\antimage\am_q.txt"
+#base "abilities\antimage\am_w.txt"
+#base "abilities\antimage\am_e.txt"
+#base "abilities\antimage\am_r.txt"
+#base "abilities\antimage\am_a.txt"
+#base "abilities\earth_spirit\earth_spirit_q.txt"
+#base "abilities\earth_spirit\earth_spirit_w.txt"
+#base "abilities\earth_spirit\earth_spirit_w_sub.txt"
+#base "abilities\earth_spirit\earth_spirit_e.txt"
+#base "abilities\earth_spirit\earth_spirit_r.txt"
+#base "abilities\earth_spirit\earth_spirit_a.txt"
+#base "abilities\nevermore\nevermore_q.txt"
+#base "abilities\nevermore\nevermore_w.txt"
+#base "abilities\nevermore\nevermore_e.txt"
+#base "abilities\nevermore\nevermore_r.txt"
+#base "abilities\nevermore\nevermore_a.txt"
+#base "abilities\faceless_void\void_a.txt"
+#base "abilities\faceless_void\void_q.txt"
+#base "abilities\faceless_void\void_w.txt"
+#base "abilities\faceless_void\void_e.txt"
+#base "abilities\faceless_void\void_e_sub.txt"
+#base "abilities\faceless_void\void_r.txt"
+
+"DOTAAbilities" {
+	"dummy_unit_ability" {
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" "ability_datadriven"
+		"AbilityTextureName" "rubick_empty1"
+		"MaxLevel" "1"
+
+		"Modifiers" {
+			"dummy_unit" {
+				"Passive" "1"
+				"IsHidden" "1"
+
+				"States" {
+					"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_MOVE_TO" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_TEAM_SELECT" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"placeholder_slot_d" {
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"BaseClass" "ability_datadriven"
+		"AbilityTextureName" "rubick_empty1"
+	}
+
+	"placeholder_slot_f" {
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"BaseClass" "ability_datadriven"
+		"AbilityTextureName" "rubick_empty1"
+	}
+
+	"taunt_static" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/taunt_static"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "rubick_empty1"
+		"AbilityCooldown" "8.0"
+	}
+
+	"taunt_moving" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/taunt_moving"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "rubick_empty1"
+		"AbilityCooldown" "8.0"
+	}
+
+	"emote" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/emote"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "rubick_empty1"
+		"AbilityCooldown" "8.0"
+	}
+
+	"ability_blink" {
+        "BaseClass" "ability_lua"
+        "ScriptFile" "abilities/ability_blink"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName" "elder_titan/elder_titan_ti7_immortal/elder_titan_echo_stomp_spirit_alt"
+        "AbilityCooldown" "35.0"
+
+        "TargetingIndicator" {
+            "DisplayRange" "1"
+        }
+
+        "HoverIndicator" {
+            "Type" "TARGETING_INDICATOR_RANGE"
+            "Radius" "(function(){ if (HasModifier(unit, 'modifier_falling')) return 500; return 250; })()"
+        }
+    }
+
+	"phoenix_q" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/phoenix/phoenix_q"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_IGNORE_TURN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" "phoenix_icarus_dive"
+		"AbilityCooldown" "5.5"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_LINE"
+			"MaxLength" "900"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "900"
+		}
+
+		"precache" {
+			"particle" "particles/units/heroes/hero_phoenix/phoenix_icarus_dive.vpcf"
+		}
+	}
+
+	"phoenix_w" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/phoenix/phoenix_w"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "phoenix_launch_fire_spirit"
+		"AbilityCooldown" "0.5"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_AOE"
+			"Radius" "200"
+			"DisplayRange" "1"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1200"
+		}
+
+		"precache" {
+			"particle" "particles/units/heroes/hero_phoenix/phoenix_fire_spirits_bird_fire.vpcf"
+		}
+	}
+
+	"phoenix_e" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/phoenix/phoenix_e"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" "phoenix_fire_spirits"
+		"AbilityCooldown" "5"
+
+		"precache" {
+			"particle" "particles/units/heroes/hero_phoenix/phoenix_supernova_scepter.vpcf"
+		}
+	}
+
+	"phoenix_r" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/phoenix/phoenix_r"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "phoenix_sun_ray"
+		"AbilityCooldown" "20"
+		"AbilityCastRange" "800"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_AOE"
+			"Radius" "350"
+			"DisplayRange" "1"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "800"
+		}
+
+		"precache" {
+			"particle" "particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
+		}
+	}
+
+	"pugna_q" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/pugna/pugna_q"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "storm_spirit_overload"
+		"AbilityCooldown" "2.5"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_LINE"
+			"MaxLength" "1200"
+			"MinLength" "1200"
+		}
+
+		"precache" {
+			"particle" "particles/pugna_q/pugna_q.vpcf"
+		}
+	}
+
+	"pugna_w" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/pugna/pugna_w"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "techies_stasis_trap"
+		"AbilityCooldown" "6.0"
+		"AbilityCastRange" "300"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_AOE"
+			"Radius" "96"
+			"DisplayRange" "1"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "300"
+		}
+
+		"precache" {
+			"particle" "particles/pugna_w/pugna_w_explode.vpcf"
+		}
+	}
+
+	"pugna_e" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/pugna/pugna_e"
+		"AbilityTextureName" "lycan_howl"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCooldown" "3"
+
+		"precache" {
+			"particle" "particles/pugna_e/status_effect_pugna_e.vpcf"
+		}
+	}
+
+	"pugna_r" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/pugna/pugna_r"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" "tiny_grow"
+		"AbilityCooldown" "12.0"
+
+		"precache" {
+			"particle" "particles/units/heroes/hero_oracle/oracle_false_promise.vpcf"
+		}
+	}
+
+	"ogre_q" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ogre/ogre_q"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "ogre_magi/antipodeanabilityicons/ogre_magi_fireblast"
+		"AbilityCooldown" "1.2"
+		"AbilityCastPoint" "0.4"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_AOE"
+			"Radius" "300"
+			"DisplayRange" "1"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1500"
+		}
+
+		"precache" {
+			"particle" "particles/ogre/msg_ogre_spell.vpcf"
+			"model" "models/items/hex/sheep_hex/sheep_hex.vmdl"
+		}
+	}
+
+	"ogre_w" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ogre/ogre_w"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" "ogre_magi/antipodeanabilityicons/ogre_magi_ignite"
+		"AbilityCooldown" "1.2"
+		"AbilityCastPoint" "0.4"
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "300"
+		}
+	}
+
+	"ogre_e" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ogre/ogre_e"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" "batrider_flamebreak"
+		"AbilityCooldown" "3.0"
+	}
+
+	"ogre_r" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ogre/ogre_r"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" "ogre_magi_multicast"
+		"AbilityCooldown" "12.0"
+
+		"precache" {
+			"particle" "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast.vpcf"
+		}
+	}
+
+	"ld_q" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ld/ld_q"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "lone_druid_rabid"
+		"AbilityCooldown" "2.0"
+		"AbilityCastPoint" "0.15"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_LINE"
+			"MinLength" "950"
+			"MaxLength" "950"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "950"
+		}
+	}
+
+	"ld_w" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ld/ld_w"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "lone_druid_spirit_bear_entangle"
+		"AbilityCooldown" "8.0"
+		"AbilityCastPoint" "0.15"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_THICK_LINE"
+			"MaxLength" "1100"
+			"MinLength" "1100"
+			"Width" "128"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1100"
+		}
+	}
+
+	"ld_e" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ld/ld_e"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "lone_druid_spirit_bear"
+		"AbilityCooldown" "8.0"
+		"AbilityCastPoint" "0.15"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_THICK_LINE"
+			"MaxLength" "1700"
+			"MinLength" "1700"
+			"Width" "128"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1700"
+		}
+	}
+
+	"ld_q_sub" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ld/ld_q_sub"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "lone_druid_spirit_bear_demolish"
+		"AbilityCooldown" "2.2"
+		"AbilityCastPoint" "0.15"
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "300"
+		}
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_HALF_CIRCLE"
+			"Radius" "300"
+		}
+	}
+
+	"ld_w_sub" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ld/ld_w_sub"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" "lone_druid_savage_roar"
+		"AbilityCooldown" "7.0"
+		"AbilityCastPoint" "0.15"
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "350"
+		}
+	}
+
+	"ld_e_sub" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ld/ld_e_sub"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" "lone_druid_true_form"
+		"AbilityCooldown" "7.0"
+	}
+
+	"ld_r" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ld/ld_r"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" "lone_druid_synergy"
+		"AbilityCooldown" "2.0"
+	}
+
+	"dusa_q" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/dusa/dusa_q"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "medusa_split_shot"
+		"AbilityCooldown" "3.2"
+		"AbilityCastPoint" "0.15"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_AOE"
+			"Radius" "200"
+			"DisplayRange" "1"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1600"
+		}
+	}
+
+	"dusa_w" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/dusa/dusa_w"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "medusa_mystic_snake"
+		"AbilityCooldown" "5.0"
+		"AbilityCastPoint" "0.15"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_DUSA_SNAKE"
+			"MinLength" "2000"
+			"MaxLength" "2000"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1500"
+		}
+	}
+
+	"dusa_e" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/dusa/dusa_e"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" "medusa_mana_shield"
+		"AbilityCooldown" "0.1"
+		"AbilityManaCost" "1"
+	}
+
+	"dusa_r" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/dusa/dusa_r"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" "medusa_stone_gaze"
+		"AbilityCooldown" "14.0"
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_HALF_CIRCLE"
+			"Radius" "600"
+		}
+	}
+
+	"pl_q" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/pl/pl_q"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "phantom_lancer_spirit_lance"
+		"AbilityCooldown" "0.65"
+		"AbilityCastPoint" "0.1"
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "350"
+		}
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_HALF_CIRCLE"
+			"Radius" "350"
+		}
+	}
+
+	"pl_w" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/pl/pl_w"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName" "phantom_lancer_phantom_edge"
+		"AbilityCooldown" "5.0"
+	}
+
+	"pl_e" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/pl/pl_e"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "phantom_lancer_phantom_edge"
+		"AbilityCooldown" "4.5"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_LINE"
+			"MinLength" "600"
+			"MaxLength" "1200"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1200"
+		}
+	}
+
+	"pl_r" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/pl/pl_r"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "phantom_lancer_phantom_edge"
+		"AbilityCooldown" "10.0"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_LINE"
+			"MinLength" "1200"
+			"MaxLength" "1200"
+		}
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1200"
+		}
+	}
+
+	"omni_q" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/omni/omni_q"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" "omniknight_purification"
+		"AbilityCooldown" "5.0"
+		"AbilityCastPoint" "0.15"
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "300"
+		}
+	}
+
+	"omni_w" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/omni/omni_w"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName" "omniknight_degen_aura"
+		"AbilityCooldown" "4.0"
+		"AbilityCastPoint" "0.15"
+
+		"TargetingIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "220"
+			"Offset" "200"
+		}
+	}
+
+	"omni_e" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/omni/omni_e"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" "omniknight_repel"
+		"AbilityCooldown" "6.0"
+		"AbilityCastPoint" "0.15"
+	}
+
+	"omni_r" {
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/omni/omni_r"
+		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName" "omniknight_guardian_angel"
+		"AbilityCooldown" "16.0"
+		"AbilityCastPoint" "0.15"
+
+		"HoverIndicator" {
+			"Type" "TARGETING_INDICATOR_RANGE"
+			"Radius" "1200"
+		}
+	}
+}

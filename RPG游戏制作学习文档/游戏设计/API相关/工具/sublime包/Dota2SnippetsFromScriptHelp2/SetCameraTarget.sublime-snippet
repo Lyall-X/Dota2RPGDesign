@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetCameraTarget(${1:int_1},${2:handle_2})${3:--[[
+     CDOTA_PlayerResource:SetCameraTarget  (playerID, entity) - force the given player's camera to follow the given entity 
+    -- @return void
+    -- @param int_1 int
+    -- @param handle_2 handle
+    function CDOTA_PlayerResource:SetCameraTarget( int_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetCameraTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

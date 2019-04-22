@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetControllableByPlayer(${1:int_1},${2:bool_2})${3:--[[
+     CDOTA_BaseNPC:SetControllableByPlayer  Set this unit controllable by the player with the passed ID. 
+    -- @return void
+    -- @param int_1 int
+    -- @param bool_2 bool
+    function CDOTA_BaseNPC:SetControllableByPlayer( int_1, bool_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setControllableByPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

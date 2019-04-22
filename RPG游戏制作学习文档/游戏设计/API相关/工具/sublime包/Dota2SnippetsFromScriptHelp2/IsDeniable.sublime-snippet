@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsDeniable()${1:--[[
+     CDOTA_BaseNPC:IsDeniable   
+    -- @return bool
+    function CDOTA_BaseNPC:IsDeniable(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsDeniable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

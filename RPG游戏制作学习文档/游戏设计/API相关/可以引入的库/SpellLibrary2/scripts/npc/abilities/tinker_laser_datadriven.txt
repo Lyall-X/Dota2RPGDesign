@@ -1,0 +1,147 @@
+"tinker_laser_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"tinker_laser"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.53 0.53 0.53 0.53"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"14.0 14.0 14.0 14.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 160 240 320"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"95 120 145 170"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.3"	// Primarily about the damageo
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration_hero"			"3.0 3.0 3.0 3.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration_creep"		"6.0 6.0 6.0 6.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"miss_rate"				"100 100 100 100"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range_scepter"	"1100"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+		"particle"					"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"Target"				"CASTER"
+			"EffectName"			"Hero_Tinker.LaserAnim"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"				"CASTER"
+			"EffectName"			"Hero_Tinker.Laser"
+		}
+	
+		"TrackingProjectile"
+		{
+			"Target"				"TARGET"
+			"EffectName"			"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+			"MoveSpeed"				"1100"
+			"Dodgeable"				"1"
+			"ProvidesVision"		"0"
+			"SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_ATTACK_2"
+		}
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"FireSound"
+		{
+			"Target"				"CASTER"
+			"EffectName"			"Hero_Tinker.LaserImpact"
+		}
+	
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Damage"		"%AbilityDamage"
+			"Type"			"DAMAGE_TYPE_PURE"
+		}
+	
+		"ApplyModifier"
+		{
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Types"		"DOTA_UNIT_TARGET_BASIC"
+			}
+			"ModifierName"	"modifier_laser_debuff_datadriven"
+			"Duration"		"%duration_creep"
+		}
+		
+		"ApplyModifier"
+		{
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Types"		"DOTA_UNIT_TARGET_HERO"
+			}
+			"ModifierName"	"modifier_laser_debuff_datadriven"
+			"Duration"		"%duration_hero"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_laser_debuff_datadriven"
+		{
+			"IsDebuff"		"1"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"%miss_rate"
+			}
+		}
+	}
+}

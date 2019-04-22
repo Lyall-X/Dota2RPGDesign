@@ -1,0 +1,148 @@
+// NOTE: Three particles making the ground dome did not show up for me, so I manually put them into the spell. If you try without those three and show up fine for you, it is safe to delete them.
+"skywrath_mage_mystic_flare_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"skywrath_mage_mystic_flare"
+	"AOERadius"						"170"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1200"
+	"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60.0 40.0 20.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"350 575 800"
+		
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"170"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"2.4"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"600 1000 1400"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage_interval"		"0.1"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"scepter_cooldown"		"20 10 0"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+		"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_c.vpcf"		// Attach for core
+		"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_f.vpcf"		// Attach for core
+		"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_j.vpcf"		// Attach for core
+		"particle"				"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient.vpcf"			// Main particle
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"			"CASTER"
+			"EffectName"		"Hero_SkywrathMage.MysticFlare.Cast"
+		}
+	
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_skywrath_mage/mystic_flare.lua"
+			"Function"			"mystic_flare_start"
+			"Target"			"POINT"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_mystic_flare_dummy_vfx_datadriven"
+		{
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"Target"				"CASTER"
+					"EffectName"			"Hero_SkywrathMage.MysticFlare"
+				}
+			
+				// For some reasons, these three particles do not show up for me so I have to manually put them in
+				"AttachEffect"
+				{
+					"Target"				"TARGET"
+					"EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_c.vpcf"	
+					"EffectAttachType"		"follow_origin"
+					"EffectRadius"			"%radius"
+				}
+				
+				"AttachEffect"
+				{
+					"Target"				"TARGET"
+					"EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_f.vpcf"
+					"EffectAttachType"		"follow_origin"
+					"EffectRadius"			"%radius"
+				}
+			
+				"AttachEffect"
+				{
+					"Target"				"TARGET"
+					"EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_j.vpcf"	
+					"EffectAttachType"		"follow_origin"
+					"EffectRadius"			"%radius"
+				}
+			
+				// Main Effect
+				"AttachEffect"
+				{
+					"Target"				"TARGET"
+					"EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient.vpcf"	
+					"EffectAttachType"		"follow_origin"
+					"EffectRadius"			"%radius"
+					"ControlPoints"
+					{
+						"01"				"0 %duration 0"
+					}
+				}
+			}
+		
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

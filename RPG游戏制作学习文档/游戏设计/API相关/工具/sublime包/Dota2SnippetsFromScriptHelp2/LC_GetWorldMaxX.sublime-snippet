@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetWorldMaxX()${1:--[[
+     GetWorldMaxX  Gets the world's maximum X position. 
+    -- @return float
+    function GetWorldMaxX(  ) end
+    ]]}]]></content>
+    <tabTrigger>getWorldMaxX</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

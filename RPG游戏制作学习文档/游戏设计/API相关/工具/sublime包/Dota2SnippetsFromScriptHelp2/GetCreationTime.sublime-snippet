@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCreationTime()${1:--[[
+     CDOTA_Item_Physical:GetCreationTime  Returns the game time when this item was created in the world 
+    -- @return float
+    function CDOTA_Item_Physical:GetCreationTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCreationTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

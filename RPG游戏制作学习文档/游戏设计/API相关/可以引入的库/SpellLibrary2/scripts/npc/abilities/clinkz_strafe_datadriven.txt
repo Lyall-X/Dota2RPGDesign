@@ -1,0 +1,80 @@
+// Rewrite of Clinkz Strafe
+// Author: Noya
+// Date: April 5, 2015
+"clinkz_strafe_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"clinkz_strafe"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"45.0 40.0 35.0 30.0"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90 90 90 90"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"4.0 6.0 8.0 10.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_speed_bonus_pct"	"130"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_clinkz/clinkz_strafe_fire.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_clinkz/clinkz_strafe_fire.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Clinkz.Strafe"
+			"Target" 		"CASTER"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_strafe"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_strafe"
+		{
+			"EffectName"		"particles/units/heroes/hero_clinkz/clinkz_strafe.vpcf"
+			"EffectAttachType"	"follow_origin"
+	
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus_pct"
+			}
+		}
+	}
+}

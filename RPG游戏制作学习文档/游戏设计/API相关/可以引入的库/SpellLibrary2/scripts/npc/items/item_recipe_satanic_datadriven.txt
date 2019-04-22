@@ -1,0 +1,27 @@
+// Rewrite of Recipe: Satanic
+// Author: Rook
+// Date: February 3, 2015
+
+"item_recipe_satanic_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1155"  //Valve's version of this item uses the ID "155".
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"AbilityTextureName"			"item_recipe"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"1100"	
+	"ItemShopTags"					""
+	
+	// Recipe
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_satanic_datadriven"
+	"ItemRequirements"
+	{
+		"01"						"item_reaver_datadriven;item_helm_of_the_dominator_datadriven"
+	}
+}

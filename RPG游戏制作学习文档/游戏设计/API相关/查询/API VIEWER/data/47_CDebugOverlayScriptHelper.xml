@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDebugOverlayScriptHelper" nameCN="蒙版DEBUG脚本辅助"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="Axis"
+		signature="void Axis(Vector a, Quaternion b, float c, bool d, float e)">
+		  <DescriptionEN>Draws an axis. Specify origin + orientation in
+		  world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个轴线。在世界空间中指定出发点和方向</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Quaternion b, float c, bool d, float
+		    e</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Box"
+		signature="void Box(Vector a, Vector b, int c, int d, int e, int f, bool g, float h)">
+		  <DescriptionEN>Draws a world-space axis-aligned box. Specify
+		  bounds in world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个世界空间轴向盒。在世界空间中指定边界</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, int c, int d, int e, int f, bool
+		    g, float h</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="BoxAngles"
+		signature="void BoxAngles(Vector a, Vector b, Vector c, Quaternion d, int e, int f, int g, int h, bool i, float j)">
+		  <DescriptionEN>Draws an oriented box at the origin. Specify
+		  bounds in local space.</DescriptionEN>
+		  <DescriptionCN>在出发点绘制一个定向盒。在世界空间中指定边界</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, Vector c, Quaternion d, int e,
+		    int f, int g, int h, bool i, float j</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Capsule"
+		signature="void Capsule(Vector a, Quaternion b, float c, float d, int e, int f, int g, int h, bool i, float j)">
+		  <DescriptionEN>Draws a capsule. Specify base in world
+		  space.</DescriptionEN>
+		  <DescriptionCN>绘制一个胶囊体。在世界空间中指定基部</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Quaternion b, float c, float d, int e, int
+		    f, int g, int h, bool i, float j</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Circle"
+		signature="void Circle(Vector a, Quaternion b, float c, int d, int e, int f, int g, bool h, float i)">
+		  <DescriptionEN>Draws a circle. Specify center in world
+		  space.</DescriptionEN>
+		  <DescriptionCN>绘制一个圆。在世界空间中指定中心</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Quaternion b, float c, int d, int e, int
+		    f, int g, bool h, float i</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="CircleScreenOriented"
+		signature="void CircleScreenOriented(Vector a, float b, int c, int d, int e, int f, bool g, float h)">
+		  <DescriptionEN>Draws a circle oriented to the screen. Specify
+		  center in world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个指向屏幕的圆。在世界空间中指定中心</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, float b, int c, int d, int e, int f, bool
+		    g, float h</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Cone"
+		signature="void Cone(Vector a, Vector b, float c, float d, int e, int f, int g, int h, bool i, float j)">
+		  <DescriptionEN>Draws a wireframe cone. Specify endpoint and
+		  direction in world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个线框锥形。在世界空间中指定结束点和方向</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, float c, float d, int e, int f,
+		    int g, int h, bool i, float j</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Cross"
+		signature="void Cross(Vector a, float b, int c, int d, int e, int f, bool g, float h)">
+		  <DescriptionEN>Draws a screen-aligned cross. Specify origin in
+		  world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个对齐屏幕的十字。在世界空间中指定出发点</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, float b, int c, int d, int e, int f, bool
+		    g, float h</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Cross3D"
+		signature="void Cross3D(Vector a, float b, int c, int d, int e, int f, bool g, float h)">
+		  <DescriptionEN>Draws a world-aligned cross. Specify origin in
+		  world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个对齐世界的十字。在世界空间中指定出发点</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, float b, int c, int d, int e, int f, bool
+		    g, float h</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Cross3DOriented"
+		signature="void Cross3DOriented(Vector a, Quaternion b, float c, int d, int e, int f, int g, bool h, float i)">
+		  <DescriptionEN>Draws an oriented cross. Specify origin in world
+		  space.</DescriptionEN>
+		  <DescriptionCN>绘制一个指向的十字。在世界空间中指定出发点</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Quaternion b, float c, int d, int e, int
+		    f, int g, bool h, float i</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="DrawTickMarkedLine"
+		signature="void DrawTickMarkedLine(Vector a, Vector b, float c, int d, int e, int f, int g, int h, bool i, float j)">
+		  <DescriptionEN>Draws a dashed line. Specify endpoint's in world
+		  space.</DescriptionEN>
+		  <DescriptionCN>绘制一个短划线。在世界空间中指定结束点</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, float c, int d, int e, int f,
+		    int g, int h, bool i, float j</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="EntityAttachments"
+		signature="void EntityAttachments(ehandle a, float b)">
+		  <DescriptionEN>Draws the attachments of the
+		  entity</DescriptionEN>
+		  <DescriptionCN>绘制实体附件</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>ehandle a, float b</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="EntityAxis"
+		signature="void EntityAxis(ehandle a, float b, bool c, float d)">
+		  <DescriptionEN>Draws the axis of the entity
+		  origin</DescriptionEN>
+		  <DescriptionCN>绘制实体源坐标轴</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>ehandle a, float b, bool c, float d</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="EntityBounds"
+		signature="void EntityBounds(ehandle a, int b, int c, int d, int e, bool f, float g)">
+		  <DescriptionEN>Draws bounds of an entity</DescriptionEN>
+		  <DescriptionCN>绘制实体边界</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>ehandle a, int b, int c, int d, int e, bool f, float
+		    g</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="EntitySkeleton"
+		signature="void EntitySkeleton(ehandle a, float b)">
+		  <DescriptionEN>Draws the skeleton of the entity</DescriptionEN>
+		  <DescriptionCN>绘制实体骨架</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>ehandle a, float b</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="EntityText"
+		signature="void EntityText(ehandle a, int b, string c, int d, int e, int f, int g, float h)">
+		  <DescriptionEN>Draws text on an entity</DescriptionEN>
+		  <DescriptionCN>在实体上绘制文本</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>ehandle a, int b, string c, int d, int e, int f, int
+		    g, float h</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="FilledRect2D"
+		signature="void FilledRect2D(Vector2D a, Vector2D b, int c, int d, int e, int f, float g)">
+		  <DescriptionEN>Draws a screen-space filled 2D rectangle.
+		  Coordinates are in pixels.</DescriptionEN>
+		  <DescriptionCN>绘制一个2D矩形填充的屏幕空间。按照像素对齐</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector2D a, Vector2D b, int c, int d, int e, int f,
+		    float g</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="HorzArrow"
+		signature="void HorzArrow(Vector a, Vector b, float c, int d, int e, int f, int g, bool h, float i)">
+		  <DescriptionEN>Draws a horizontal arrow. Specify endpoint's in
+		  world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个水平箭头。在世界空间中指定结束点</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, float c, int d, int e, int f,
+		    int g, bool h, float i</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Line"
+		signature="void Line(Vector a, Vector b, int c, int d, int e, int f, bool g, float h)">
+		  <DescriptionEN>Draws a line between two point's</DescriptionEN>
+		  <DescriptionCN>绘制一个两点间连线</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, int c, int d, int e, int f, bool
+		    g, float h</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Line2D"
+		signature="void Line2D(Vector2D a, Vector2D b, int c, int d, int e, int f, float g)">
+		  <DescriptionEN>Draws a line between two point's in
+		  screenspace</DescriptionEN>
+		  <DescriptionCN>绘制一个屏幕空间中亮点间连线</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector2D a, Vector2D b, int c, int d, int e, int f,
+		    float g</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="PopDebugOverlayScope"
+		signature="void PopDebugOverlayScope()">
+		  <DescriptionEN>Pops the identifier used to group overlays.
+		  Overlays marked with this identifier can be deleted in a big
+		  batch.</DescriptionEN>
+		  <DescriptionCN>弹出蒙版分组用的标记，被标记的蒙版可被成批删除</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="PushAndClearDebugOverlayScope"
+		signature="void PushAndClearDebugOverlayScope(utlstringtoken a)">
+		  <DescriptionEN>Pushes an identifier used to group overlays.
+		  Deletes all existing overlays using this overlay
+		  id.</DescriptionEN>
+		  <DescriptionCN>推入一个蒙版分组用的标记。删除所有使用该蒙版ID的蒙版</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="PushDebugOverlayScope"
+		signature="void PushDebugOverlayScope(utlstringtoken a)">
+		  <DescriptionEN>Pushes an identifier used to group overlays.
+		  Overlays marked with this identifier can be deleted in a big
+		  batch.</DescriptionEN>
+		  <DescriptionCN>推入一个蒙版分组用的标记。被标记的蒙版可被成批删除</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="RemoveAllInScope"
+		signature="void RemoveAllInScope(utlstringtoken a)">
+		  <DescriptionEN>Removes all overlays marked with a specific
+		  identifier, regardless of their lifetime.</DescriptionEN>
+		  <DescriptionCN>移除指定标记的全部蒙版，无视其生命周期</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SolidCone"
+		signature="void SolidCone(Vector a, Vector b, float c, float d, int e, int f, int g, int h, bool i, float j)">
+		  <DescriptionEN>Draws a solid cone. Specify endpoint and direction
+		  in world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个固体锥。在世界空间中指定出发点和方向</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, float c, float d, int e, int f,
+		    int g, int h, bool i, float j</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Sphere"
+		signature="void Sphere(Vector a, float b, int c, int d, int e, int f, bool g, float h)">
+		  <DescriptionEN>Draws a wireframe sphere. Specify center in world
+		  space.</DescriptionEN>
+		  <DescriptionCN>绘制一个线框球体。在世界空间中指定中心</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, float b, int c, int d, int e, int f, bool
+		    g, float h</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SweptBox"
+		signature="void SweptBox(Vector a, Vector b, Vector c, Vector d, Quaternion e, int f, int g, int h, int i, float j)">
+		  <DescriptionEN>Draws a swept box. Specify endpoint's in world
+		  space and the bounds in local space.</DescriptionEN>
+		  <DescriptionCN>绘制一个扫描盒。在世界空间中指定结束点并在本地空间中指定边界</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, Vector c, Vector d, Quaternion
+		    e, int f, int g, int h, int i, float j</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Text"
+		signature="void Text(Vector a, int b, string c, float d, int e, int f, int g, int h, float i)">
+		  <DescriptionEN>Draws 2D text. Specify origin in world
+		  space.</DescriptionEN>
+		  <DescriptionCN>绘制2D文本。在世界空间中指定出发点</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, int b, string c, float d, int e, int f,
+		    int g, int h, float i</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Texture"
+		signature="void Texture(string a, Vector2D b, Vector2D c, int d, int e, int f, int g, Vector2D h, Vector2D i, float j)">
+		  <DescriptionEN>Draws a screen-space texture. Coordinates are in
+		  pixels.</DescriptionEN>
+		  <DescriptionCN>绘制一个屏幕空间纹理。按照像素对齐</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a, Vector2D b, Vector2D c, int d, int e, int
+		    f, int g, Vector2D h, Vector2D i, float j</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Triangle"
+		signature="void Triangle(Vector a, Vector b, Vector c, int d, int e, int f, int g, bool h, float i)">
+		  <DescriptionEN>Draws a filled triangle. Specify vertices in world
+		  space.</DescriptionEN>
+		  <DescriptionCN>绘制一个填充三角形。在世界空间中指定顶部</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, Vector c, int d, int e, int f,
+		    int g, bool h, float i</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="UnitTestCycleOverlayRenderType"
+		signature="void UnitTestCycleOverlayRenderType()">
+		  <DescriptionEN>Toggles the overlay render type, for unit
+		  tests</DescriptionEN>
+		  <DescriptionCN>转换蒙版混合类型, 用于单位测试</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="VectorText3D"
+		signature="void VectorText3D(Vector a, Quaternion b, string c, int d, int e, int f, int g, bool h, float i)">
+		  <DescriptionEN>Draws 3D text. Specify origin + orientation in
+		  world space.</DescriptionEN>
+		  <DescriptionCN>绘制3D文本。在世界空间中指定出发点和方向</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Quaternion b, string c, int d, int e, int
+		    f, int g, bool h, float i</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="VertArrow"
+		signature="void VertArrow(Vector a, Vector b, float c, int d, int e, int f, int g, bool h, float i)">
+		  <DescriptionEN>Draws a vertical arrow. Specify endpoint's in
+		  world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个垂直箭头。在世界空间中指定结束点</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b, float c, int d, int e, int f,
+		    int g, bool h, float i</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="YawArrow"
+		signature="void YawArrow(Vector a, float b, float c, float d, int e, int f, int g, int h, bool i, float j)">
+		  <DescriptionEN>Draws a arrow associated with a specific yaw.
+		  Specify endpoint's in world space.</DescriptionEN>
+		  <DescriptionCN>绘制一个指定偏航角的箭头。在世界空间中指定结束点</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, float b, float c, float d, int e, int f,
+		    int g, int h, bool i, float j</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCommandClient()${1:--[[
+     Convars:GetCommandClient  GetCommandClient() : returns the player who issued this console command. 
+    -- @return handle
+    function Convars:GetCommandClient(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCommandClient</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

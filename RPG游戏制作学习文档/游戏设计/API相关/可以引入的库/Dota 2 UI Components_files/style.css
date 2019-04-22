@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'raleway'; /*a name to be used later*/
+    src: url('fonts/Raleway Thin.ttf'); /*URL to font*/
+}
+
+body {
+	font-family: 'arial', sans-serif;
+	background-color: #F5F5F5;
+}
+
+#logo {
+	float: left;
+	width:90px;
+	margin-right:10px;
+}
+
+h1 {
+	font-family: 'raleway', sans-serif;
+	font-size: 80px;
+	margin-bottom:10px;
+}
+
+h2{
+	font-family: 'raleway', sans-serif;
+	font-size:48px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+h3{
+	font-family: 'raleway', sans-serif;
+	font-size:28px;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left: 10px;
+}
+
+.implink {
+	color:#D90F0F;
+	font-size: 16pt;
+	font-weight:bold;
+}
+
+.command {
+	background-color: #E3E3E3;
+	padding:3px 6px 3px 6px;
+	display:inline-block;
+}
+
+.code {
+	background-color: #E3E3E3;
+	display:block;
+	padding: 15px;
+}
+
+.code .comment {
+	color: #1F8C06;
+}

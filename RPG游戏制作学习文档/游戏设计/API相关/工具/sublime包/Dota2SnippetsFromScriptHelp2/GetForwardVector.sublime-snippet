@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetForwardVector()${1:--[[
+     CBaseEntity:GetForwardVector  Get the forward vector of the entity. 
+    -- @return Vector
+    function CBaseEntity:GetForwardVector(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetForwardVector</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

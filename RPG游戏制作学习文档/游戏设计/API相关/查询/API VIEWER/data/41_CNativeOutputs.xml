@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CNativeOutputs" nameCN="原生输出"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="AddOutput"
+		signature="void AddOutput(string a, string b)">
+		  <DescriptionEN>Add an output</DescriptionEN>
+		  <DescriptionCN>增加一个输出</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a, string b</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Init" signature="void Init(int a)">
+		  <DescriptionEN>Initialize with number of outputs</DescriptionEN>
+		  <DescriptionCN>初始化输出</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

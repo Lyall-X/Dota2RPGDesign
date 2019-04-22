@@ -1,0 +1,115 @@
+// Rewrite of the Chen Hand of God ability
+// Author: Pizzalol
+// Date: 06.04.2014.
+"chen_hand_of_god_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"chen_hand_of_god"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+		"particle"			"particles/units/heroes/hero_chen/chen_hand_of_god.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"160.0 140.0 120.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200 300 400"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_amount"			"200 300 400"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cooldown_scepter"		"30"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ancient_creeps_scepter"		"1 2 3"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Radius" 	"GLOBAL"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO"
+			}
+		
+			"Action"    
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Chen.HandOfGodHealHero"
+					"Target" 		"TARGET"
+				}
+
+				"FireEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_chen/chen_hand_of_god.vpcf"
+					"EffectAttachType"  "attach_hitloc"
+					"Target"            "TARGET"
+				}
+
+				"Heal"
+				{
+					"Target"        "TARGET"
+					"HealAmount"	"%heal_amount"
+				}
+			}
+		}
+
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Radius" 	"GLOBAL"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" 	"DOTA_UNIT_TARGET_ALL"
+				"Flags"     "DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+			}
+		
+			"Action"    
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_chen/hand_of_god.lua"
+					"Function"		"HandOfGod"
+					"sound"			"Hero_Chen.HandOfGodHealCreep"
+					"hand_particle"	"particles/units/heroes/hero_chen/chen_hand_of_god.vpcf"
+				}
+			}
+		}
+	}
+}
+

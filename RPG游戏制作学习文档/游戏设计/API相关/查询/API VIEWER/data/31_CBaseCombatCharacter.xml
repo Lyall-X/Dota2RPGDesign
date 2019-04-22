@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CBaseCombatCharacter" nameCN="基础战斗角色"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="GetEquippedWeapons"
+		signature="table GetEquippedWeapons()">
+		  <DescriptionEN>GetEquippedWeapons(): Returns an array of all the
+		  equipped weapons</DescriptionEN>
+		  <DescriptionCN>GetEquippedWeapons(): 获取一个装备武器的数组</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>table</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetWeaponCount" signature="int GetWeaponCount()">
+		  <DescriptionEN>GetWeaponCount(): Gets the number of weapons
+		  currently equipped</DescriptionEN>
+		  <DescriptionCN>GetWeaponCount(): 获取当前装备的武器数量</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

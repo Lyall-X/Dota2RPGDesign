@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetDOTACommandClient()${1:--[[
+     Convars:GetDOTACommandClient  GetDOTACommandClient() : returns the DOTA player who issued this console command. 
+    -- @return handle
+    function Convars:GetDOTACommandClient(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetDOTACommandClient</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

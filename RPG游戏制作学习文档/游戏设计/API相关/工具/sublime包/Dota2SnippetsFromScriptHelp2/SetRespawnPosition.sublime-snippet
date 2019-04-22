@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetRespawnPosition(${1:Vector_1})${2:--[[
+     CDOTA_BaseNPC_Hero:SetRespawnPosition   
+    -- @return void
+    -- @param Vector_1 Vector
+    function CDOTA_BaseNPC_Hero:SetRespawnPosition( Vector_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetRespawnPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

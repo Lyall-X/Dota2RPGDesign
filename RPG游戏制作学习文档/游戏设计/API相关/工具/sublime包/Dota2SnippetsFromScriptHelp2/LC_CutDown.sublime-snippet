@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[CutDown(${1:int_1})${2:--[[
+     CDOTA_MapTree:CutDown  Cuts down this tree. Parameters: int nTeamNumberKnownTo (-1 = invalid team) 
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_MapTree:CutDown( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>cutDown</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

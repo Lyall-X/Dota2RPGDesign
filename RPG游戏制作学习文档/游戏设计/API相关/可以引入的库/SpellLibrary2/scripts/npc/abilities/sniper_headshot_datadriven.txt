@@ -1,0 +1,107 @@
+"sniper_headshot_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"sniper_headshot"
+	
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"15 40 65 90"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"					"particles/generic_gameplay/generic_stunned.vpcf"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"slow_duration"					"0.5"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"proc_chance"					"40"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movespeed_slow"			"-100"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attackspeed_slow"			"-100"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"Modifiers"
+	{
+		"modifier_headshot_passive_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"0"
+			"IsPurgable"		"0"
+			
+			"OnAttackLanded"
+			{
+				"Random"
+				{
+					"Chance"		"%proc_chance"
+					"PseudoRandom"	"DOTA_PSEUDO_RANDOM_SNIPER_HEADSHOT"
+					
+					"OnSuccess"
+					{
+						"ApplyModifier"
+						{
+							"Target"
+							{
+								"Center"		"TARGET"
+								"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+								"Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+							}
+							"ModifierName"		"modifier_headshot_debuff_datadriven"
+						}
+						
+						"Damage"
+						{
+							"Target"
+							{
+								"Center"		"TARGET"
+								"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+							}
+							"Damage"			"%AbilityDamage"
+							"Type"				"DAMAGE_TYPE_PHYSICAL"
+						}
+					}
+				}
+			}
+		}
+	
+		"modifier_headshot_debuff_datadriven"
+		{
+			"IsHidden"			"0"
+		
+			"Duration"			"%slow_duration"
+			
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_slow"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attackspeed_slow"
+			}
+		}
+	}
+}

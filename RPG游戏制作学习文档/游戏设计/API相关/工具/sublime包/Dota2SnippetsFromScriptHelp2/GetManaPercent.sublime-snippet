@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetManaPercent()${1:--[[
+     CDOTA_BaseNPC:GetManaPercent  Get the percent of mana remaining. 
+    -- @return int
+    function CDOTA_BaseNPC:GetManaPercent(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetManaPercent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

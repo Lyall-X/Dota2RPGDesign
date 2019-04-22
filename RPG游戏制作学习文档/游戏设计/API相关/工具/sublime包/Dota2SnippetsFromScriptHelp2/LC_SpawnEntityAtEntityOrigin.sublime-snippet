@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SpawnEntityAtEntityOrigin(${1:handle_1})${2:--[[
+     CEnvEntityMaker:SpawnEntityAtEntityOrigin  Create an entity at the location of a specified entity instance 
+    -- @return void
+    -- @param handle_1 handle
+    function CEnvEntityMaker:SpawnEntityAtEntityOrigin( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>spawnEntityAtEntityOrigin</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

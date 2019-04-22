@@ -1,0 +1,220 @@
+// Rewrite of the Faceless Void Chronosphere ability
+// Author: Pizzalol
+// Date: 10.01.2015.
+// Changed: 18.01.2015.
+// Reason: Fixed Chronosphere modifier and particle
+"faceless_void_chronosphere_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"faceless_void_chronosphere"
+	"AOERadius"						"%radius"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+		"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.35 0.35 0.35"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"130.0 110.0 90.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"150 175 200"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportBonus"		"50"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"425"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"4.0 4.5 5.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration_scepter"		"4.0 5.0 6.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cooldown_scepter"		"60.0 60.0 60.0"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"vision_radius"			"475"
+		}
+		// Extra
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"aura_interval"			"0.1"
+		}
+		// If you want the Chronosphere to ignore Faceless Void then keep it at 1 otherwise set it to 0
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ignore_void"			"1"
+		}
+
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_FacelessVoid.Chronosphere"
+			"Target"			"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"		"scripts/vscripts/heroes/hero_faceless_void/chronosphere.lua"
+			"Function"			"Chronosphere"
+			"Target"			"POINT"
+			"dummy_aura"		"modifier_chronosphere_aura_datadriven"
+		}
+	}
+
+	"Modifiers"
+	{
+		// Cosmetic
+		"modifier_chronosphere_tooltip_datadriven"
+		{
+			"IsDebuff"		"1"
+			"IsPurgable"	"0"
+		}
+
+		"modifier_chronosphere_aura_datadriven"
+		{
+			"Duration"	"%duration"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+					"EffectAttachType"	"attach_origin"
+					"Target"		"TARGET"
+
+					"ControlPoints"
+					{
+						"01"	"%radius %radius 0"
+					}
+				}
+			}
+			
+			"ThinkInterval"		"%aura_interval"
+
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Types"		"DOTA_UNIT_TARGET_ALL"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Radius"	"%radius"
+					}
+
+					"Action"
+					{
+						"RunScript"
+						{
+							"ScriptFile"		"scripts/vscripts/heroes/hero_faceless_void/chronosphere.lua"
+							"Function"			"ChronosphereAura"
+							"Target"			"TARGET"
+							"aura_modifier"		"modifier_chronosphere_datadriven"
+							"caster_modifier"	"modifier_chronosphere_caster_datadriven"
+						}
+					}
+				}
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
+				"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_chronosphere_datadriven"
+		{
+			"IsHidden"	"1"
+			"Duration"	"%aura_interval"
+
+			"OnCreated"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_chronosphere_tooltip_datadriven"
+					"Target"		"TARGET"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_chronosphere_tooltip_datadriven"
+					"Target"		"TARGET"
+				}
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_chronosphere_caster_datadriven"
+		{
+			"IsHidden"	"1"
+			"Duration"	"%aura_interval * 2"
+
+			"EffectName"	"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"1000"
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_FLYING"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[RemoveAllInScope(${1:utlstringtoken_1})${2:--[[
+     CDebugOverlayScriptHelper:RemoveAllInScope  Removes all overlays marked with a specific identifier, regardless of their lifetime. 
+    -- @return void
+    -- @param utlstringtoken_1 utlstringtoken
+    function CDebugOverlayScriptHelper:RemoveAllInScope( utlstringtoken_1 ) end
+    ]]}]]></content>
+    <tabTrigger>removeAllInScope</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

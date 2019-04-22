@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[InitLogFile(${1:string_1},${2:string_2})${3:--[[
+     InitLogFile  If the given file doesn't exist, creates it with the given contents; does nothing if it exists 
+    -- @return void
+    -- @param string_1 string
+    -- @param string_2 string
+    function InitLogFile( string_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>initLogFile</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

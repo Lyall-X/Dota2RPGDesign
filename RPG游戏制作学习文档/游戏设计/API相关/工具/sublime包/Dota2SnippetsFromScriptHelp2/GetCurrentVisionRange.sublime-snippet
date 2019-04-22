@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCurrentVisionRange()${1:--[[
+     CDOTA_BaseNPC:GetCurrentVisionRange  Gets the current vision range. 
+    -- @return int
+    function CDOTA_BaseNPC:GetCurrentVisionRange(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCurrentVisionRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[StopSound(${1:string_1})${2:--[[
+     CBaseEntity:StopSound  Stops a named sound playing from this entity. 
+    -- @return void
+    -- @param string_1 string
+    function CBaseEntity:StopSound( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>stopSound</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

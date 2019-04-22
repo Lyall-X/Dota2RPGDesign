@@ -1,0 +1,237 @@
+// Rewrite of the Shadow Shaman Mass Serpent Ward ability
+// Author: Noya
+// Date: April 20, 2015.
+// Notes: Positioning is randomish, it should be done through Lua to properly place the 8 wards in a square and 2 at the sides
+"shadow_shaman_mass_serpent_ward_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"shadow_shaman_mass_serpent_ward"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"120"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200 350 600"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"ward_count"		"10"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"full_splash_radius"	"50 75 85"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mid_splash_radius"		"75 100 110"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"min_splash_radius"		"150 200 220"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_min"			"40 55 70"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_max"			"45 60 75"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"45.0 45.0 45.0"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_min_scepter"	"85 105 125"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_max_scepter"	"90 110 130"
+		}
+
+		// Extra
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ward_1_count"			"10 0 0"
+		}
+		"11"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ward_2_count"			"0 10 0"
+		}
+		"12"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ward_3_count"			"0 0 10"
+		}
+		"13"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"splash_full"			"100"
+		}
+		"14"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"splash_medium"			"40"
+		}
+		"15"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"splash_small"			"20"
+		}
+
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_shadowshaman/shadow_shaman_ward_base_attack.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_ShadowShaman.SerpentWard"
+			"Target"			"CASTER"
+		}
+
+		"SpawnUnit"
+		{
+			"UnitName"			"npc_dota_shadow_shaman_ward_1"
+			"Target"			"POINT"
+			"UnitCount"			"%ward_1_count"
+			"Duration"			"%duration"
+			"SpawnRadius"		"?10 100"
+			"GrantsGold"		"1"
+			"GrantsXP"			"1"
+
+			"OnSpawn"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_phased"
+					"Target"		"TARGET"
+					"Duration"		"0.03"
+				}
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_serpent_ward"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}	
+
+		"SpawnUnit"
+		{
+			"UnitName"			"npc_dota_shadow_shaman_ward_2"
+			"Target"			"POINT"
+			"UnitCount"			"%ward_2_count"
+			"Duration"			"%duration"
+			"SpawnRadius"		"?10 100"
+			"GrantsGold"		"1"
+			"GrantsXP"			"1"
+
+			"OnSpawn"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_phased"
+					"Target"		"TARGET"
+					"Duration"		"0.03"
+				}
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_serpent_ward"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}	
+
+		"SpawnUnit"
+		{
+			"UnitName"			"npc_dota_shadow_shaman_ward_3"
+			"Target"			"POINT"
+			"UnitCount"			"%ward_3_count"
+			"Duration"			"%duration"
+			"SpawnRadius"		"?10 100"
+			"GrantsGold"		"1"
+			"GrantsXP"			"1"
+
+			"OnSpawn"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_phased"
+					"Target"		"TARGET"
+					"Duration"		"0.03"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_serpent_ward"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		// modifier_shadow_shaman_serpent_ward is the Built-In, to give green damage to the wards
+		"modifier_serpent_ward"
+		{
+			"IsHidden"			"1"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_shadow_shaman/mass_serpent_ward.lua"
+					"Function"		"SetWardDamage"
+				}
+			}
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_shadow_shaman/mass_serpent_ward.lua"
+					"Function"		"DealSplashDamage"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+﻿	//=================================================================================================================
+	//脚印系统，一个被动技能
+	//=================================================================================================================
+		"Footprint"
+	{
+		"BaseClass"	"ability_datadriven"
+		"AbilityBehavior"	"DOTA_ABILITY_BEHAVIOR_PASSIVE"//
+		"AbilityTextureName"	"spirit_breaker_empowering_haste"
+		"MaxLevel"	"1"
+
+		"OnUpgrade"
+		{
+			"ApplyModifier"//
+			{
+				"Target"	"CASTER"
+				"ModifierName" "Footprint_M"
+			}
+		}
+
+		"Modifiers"
+		{
+			"Footprint_M"//BUff
+			{
+				"OnUnitMoved"//移动的时候
+				{
+					"AttachEffect"//特效
+					{
+						"EffectName" "particles/units/heroes/hero_spirit_breaker/spirit_breaker_footprints.vpcf"//特效
+						"EffectAttachType"	"follow_origin"
+						"Target"		"CASTER"
+					}
+				}
+			}
+		}
+	}

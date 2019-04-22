@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[SetContextThink(${1:string_1},${2:handle_2},${3:float_3})${4:--[[
+     CBaseEntity:SetContextThink  Set a think function on this entity. 
+    -- @return void
+    -- @param string_1 string
+    -- @param handle_2 handle
+    -- @param float_3 float
+    function CBaseEntity:SetContextThink( string_1, handle_2, float_3 ) end
+    ]]}]]></content>
+    <tabTrigger>setContextThink</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

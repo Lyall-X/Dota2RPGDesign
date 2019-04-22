@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[FireEntityIOInputNameOnly(${1:ehandle_1},${2:string_2})${3:--[[
+     FireEntityIOInputNameOnly  Fire Entity's Action Input w/no data 
+    -- @return void
+    -- @param ehandle_1 ehandle
+    -- @param string_2 string
+    function FireEntityIOInputNameOnly( ehandle_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>fireEntityIOInputNameOnly</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetPlaybackRateOverride()${1:--[[
+     CDOTABaseAbility:GetPlaybackRateOverride   
+    -- @return float
+    function CDOTABaseAbility:GetPlaybackRateOverride(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetPlaybackRateOverride</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

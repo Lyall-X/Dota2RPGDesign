@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[PlayerInstanceFromIndex(${1:int_1})${2:--[[
+     PlayerInstanceFromIndex  Get a script instance of a player by index. 
+    -- @return handle
+    -- @param int_1 int
+    function PlayerInstanceFromIndex( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>playerInstanceFromIndex</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

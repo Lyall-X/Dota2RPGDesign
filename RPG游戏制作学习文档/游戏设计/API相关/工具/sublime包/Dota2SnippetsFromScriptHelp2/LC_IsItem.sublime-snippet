@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsItem()${1:--[[
+     CDOTABaseAbility:IsItem   
+    -- @return bool
+    function CDOTABaseAbility:IsItem(  ) end
+    ]]}]]></content>
+    <tabTrigger>isItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

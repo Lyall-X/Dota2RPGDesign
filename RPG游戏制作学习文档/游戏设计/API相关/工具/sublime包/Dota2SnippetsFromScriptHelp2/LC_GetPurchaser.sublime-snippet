@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetPurchaser()${1:--[[
+     CDOTA_Item:GetPurchaser  Get the purchaser for this item. 
+    -- @return handle
+    function CDOTA_Item:GetPurchaser(  ) end
+    ]]}]]></content>
+    <tabTrigger>getPurchaser</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

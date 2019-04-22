@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[CastAbilityNoTarget(${1:handle_1},${2:int_2})${3:--[[
+     CDOTA_BaseNPC:CastAbilityNoTarget  Cast an ability with no target. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param int_2 int
+    function CDOTA_BaseNPC:CastAbilityNoTarget( handle_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>castAbilityNoTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

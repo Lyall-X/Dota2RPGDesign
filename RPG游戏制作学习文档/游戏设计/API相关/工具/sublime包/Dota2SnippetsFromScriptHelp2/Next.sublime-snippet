@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[Next(${1:handle_1})${2:--[[
+     CEntities:Next  Continue an iteration over the list of entities, providing reference to a previously found entity 
+    -- @return handle
+    -- @param handle_1 handle
+    function CEntities:Next( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>Next</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

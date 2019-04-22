@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetOriginalModel(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:SetOriginalModel  Sets the original model of this entity, which it will tend to fall back to anytime its state changes. 
+    -- @return void
+    -- @param string_1 string
+    function CDOTA_BaseNPC:SetOriginalModel( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetOriginalModel</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

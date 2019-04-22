@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[FindByNameNearest(${1:string_1},${2:Vector_2},${3:float_3})${4:--[[
+     CEntities:FindByNameNearest  Find entities by name nearest to a point. 
+    -- @return handle
+    -- @param string_1 string
+    -- @param Vector_2 Vector
+    -- @param float_3 float
+    function CEntities:FindByNameNearest( string_1, Vector_2, float_3 ) end
+    ]]}]]></content>
+    <tabTrigger>FindByNameNearest</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

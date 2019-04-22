@@ -1,0 +1,160 @@
+// Rewrite of the Venomancer Venomous Gale ability
+// Author: Pizzalol
+// Date: 30.09.2015.
+"venomancer_venomous_gale_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"venomancer_venomous_gale"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+		"particle"			"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+		"particle"			"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"22.0 22.0 22.0 22.0"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"15.0 15.0 15.0 15.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"strike_damage"			"25 50 75 100"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tick_damage"			"0 30 60 90"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"tick_interval"			"3.0 3.0 3.0 3.0"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movement_slow"			"-50 -50 -50 -50"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"125 125 125 125"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"1200 1200 1200 1200"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"distance"					"800 800 800 800"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Venomancer.VenomousGale"
+			"Target"		"CASTER"
+		}
+
+		"LinearProjectile"
+		{
+			"Target"      "POINT"
+		    "EffectName"  "particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+		    "MoveSpeed"   "%speed"
+		    "StartRadius"   "%radius"
+		    "StartPosition" "attach_origin"
+		    "EndRadius"     "%radius"
+		    "FixedDistance" "%distance"
+		    "TargetTeams"   "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		    "TargetTypes"   "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		    "TargetFlags"   "DOTA_UNIT_TARGET_FLAG_NONE"
+		    "HasFrontalCone"    "0"
+		    "ProvidesVision" "0"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"0"
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Venomancer.VenomousGaleImpact"
+			"Target"		"TARGET"
+		}
+
+		"Damage"
+		{
+			"Target"	"TARGET"
+			"Type"		"DAMAGE_TYPE_MAGICAL"
+			"Damage"	"%strike_damage"
+		}		
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_venomancer/venomous_gale.lua"
+			"Function"		"VenomousGaleImpact"
+			"modifier"		"modifier_venomous_gale_debuff_datadriven"
+		}	
+	}
+
+	"Modifiers"
+	{
+		"modifier_venomous_gale_debuff_datadriven"
+		{
+			"IsDebuff"	"1"			
+
+			"EffectName"	"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"ThinkInterval"		"%tick_interval"
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%tick_damage"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1"
+			}
+		}
+	}
+}
+

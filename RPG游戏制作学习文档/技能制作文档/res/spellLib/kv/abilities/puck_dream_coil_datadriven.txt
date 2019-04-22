@@ -1,0 +1,243 @@
+"puck_dream_coil_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"puck_dream_coil"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0.1 0.1 0.1"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"85.0 85.0 85.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100 150 200"
+			
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.5"	// Does two modifiers 
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"coil_duration"				"6.0 6.0 6.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"coil_init_damage_tooltip"				"100 150 200"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"coil_break_radius"			"600 600 600"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun_duration"				"0.5 0.5 0.5"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"coil_stun_duration"		"1.5 2.25 3.0"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"coil_break_damage"			"100 150 200"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"coil_radius"				"375 375 375"
+		}			
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"coil_duration_scepter"		"8"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"coil_break_damage_scepter"	"200 250 300"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"coil_stun_duration_scepter"		"1.5 3 4.5"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_puck.vsndevts"
+		"particle"					"particles/units/heroes/hero_puck/puck_dreamcoil.vpcf"
+		"particle"					"particles/units/heroes/hero_puck/puck_dreamcoil_emit.vpcf"
+		"particle"					"particles/units/heroes/hero_puck/puck_dreamcoil_tether.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"CreateThinker"
+		{
+			"ModifierName"	"modifier_dream_coil_thinker_datadriven"
+			"Target" 		"POINT"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_dream_coil_thinker_datadriven"
+		{
+			"Duration"	"%coil_duration"
+			
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Puck.Dream_Coil"
+					"Target"		"TARGET"
+				}
+				
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_puck/puck_dreamcoil.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"			"TARGET"
+				}
+				
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_puck/dream_coil.lua"
+					"Function"		"Thinker_StoreCaster"
+					"Target"		"TARGET"
+				}
+				
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Radius"	"%coil_radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO"
+					}
+					
+					"Action"
+					{
+						"Damage"
+						{
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Damage"	"%coil_init_damage_tooltip"
+							"Target"	"TARGET"
+						}
+						
+						"Stun"
+						{
+							"Duration"	"%stun_duration"
+							"Target"	"TARGET"
+						}
+						
+						"RunScript"
+						{
+							"ScriptFile"	"heroes/hero_puck/dream_coil.lua"
+							"Function"		"Thinker_ApplyModifierToEnemy"
+							"Target"		"TARGET"
+							
+							"modifier_name"	"modifier_dream_coil_tether_datadriven"
+						}
+					}
+				}
+			}
+		}
+		
+		"modifier_dream_coil_tether_datadriven"
+		{
+			"Duration"	"%coil_duration"
+			"IsDebuff"	"1"
+			
+			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_puck/puck_dreamcoil_tether.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"CASTER"
+					
+					"ControlPointEntities"
+					{
+						"CASTER"	"follow_origin"
+						"TARGET"	"attach_hitloc"
+					}
+				}
+			}
+			
+			"ThinkInterval"		"0.03"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_puck/dream_coil.lua"
+					"Function"		"CheckCoilBreak"
+					"Target"		"TARGET"
+					
+					"coil_break_radius"		"%coil_break_radius"
+					"coil_break_modifier"	"modifier_dream_coil_break_datadriven"
+					"coil_tether_modifier"	"modifier_dream_coil_tether_datadriven"
+				}
+			}
+		}
+		
+		"modifier_dream_coil_break_datadriven"
+		{
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Puck.Dream_Coil_Snap"
+					"Target"		"TARGET"
+				}
+				
+				"Damage"
+				{
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%coil_break_damage"
+					"Target"	"TARGET"
+				}
+				
+				"Stun"
+				{
+					"Duration"	"%coil_stun_duration"
+					"Target"	"TARGET"
+				}
+				
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_dream_coil_break_datadriven"
+					"Target"		"TARGET"
+				}
+			}
+		}
+	}
+}
+
+

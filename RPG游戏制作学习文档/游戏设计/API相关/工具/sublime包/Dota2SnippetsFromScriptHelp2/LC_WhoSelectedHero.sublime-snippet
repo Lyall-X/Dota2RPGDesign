@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[WhoSelectedHero(${1:string_1})${2:--[[
+     CDOTA_PlayerResource:WhoSelectedHero   
+    -- @return int
+    -- @param string_1 string
+    function CDOTA_PlayerResource:WhoSelectedHero( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>whoSelectedHero</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

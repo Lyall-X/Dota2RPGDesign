@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ForceSpawn()${1:--[[
+     CPointTemplate:ForceSpawn  ForceSpawn() : Spawns all of the entities the point_template is pointing at. 
+    -- @return void
+    function CPointTemplate:ForceSpawn(  ) end
+    ]]}]]></content>
+    <tabTrigger>ForceSpawn</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

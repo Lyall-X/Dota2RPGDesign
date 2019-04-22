@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetPostGameTime(${1:float_1})${2:--[[
+     CDOTAGamerules:SetPostGameTime  Sets the amount of time players have between the game ending and the server disconnecting them. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTAGamerules:SetPostGameTime( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetPostGameTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

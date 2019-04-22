@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetProjectileSpeed()${1:--[[
+     CDOTA_BaseNPC:GetProjectileSpeed   
+    -- @return int
+    function CDOTA_BaseNPC:GetProjectileSpeed(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetProjectileSpeed</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

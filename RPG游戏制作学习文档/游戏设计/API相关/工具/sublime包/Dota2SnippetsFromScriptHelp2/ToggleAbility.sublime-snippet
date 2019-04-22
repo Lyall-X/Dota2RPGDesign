@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ToggleAbility()${1:--[[
+     CDOTABaseAbility:ToggleAbility   
+    -- @return void
+    function CDOTABaseAbility:ToggleAbility(  ) end
+    ]]}]]></content>
+    <tabTrigger>ToggleAbility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

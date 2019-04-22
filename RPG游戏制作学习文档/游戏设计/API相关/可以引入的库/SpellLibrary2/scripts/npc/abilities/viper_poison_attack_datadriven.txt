@@ -1,0 +1,140 @@
+// Rewrite of the Viper Poison Attack ability
+// Author: Pizzalol
+// Date: 18.12.2014.
+"viper_poison_attack_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"viper_poison_attack"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
+		"particle"		"particles/units/heroes/hero_viper/viper_poison_attack.vpcf"
+		"particle"		"particles/units/heroes/hero_viper/viper_poison_debuff.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"0 0 0 0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"20 20 20 20"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"duration"						"2.0 2.0 2.0 2.0"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"10 16 22 28"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_movement_speed"			"-10 -20 -30 -40"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_attack_speed"			"-10 -20 -30 -40"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_viper_poison_attack_orb_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"Orb"
+			{
+				"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+				"ProjectileName"	"particles/units/heroes/hero_viper/viper_poison_attack.vpcf"
+				"CastAttack"		"1"
+			}
+
+			"OnOrbFire"
+			{
+				"SpendMana"
+				{
+					"Mana"	"%AbilityManaCost"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_Viper.poisonAttack.Cast"
+					"Target"		"CASTER"
+				}
+			}
+
+			"OnOrbImpact"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_viper_poison_attack_debuff_datadriven"
+					"Target"		"TARGET"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_Viper.PoisonAttack.Target"
+					"Target"		"TARGET"
+				}
+			}
+		}
+
+		"modifier_viper_poison_attack_debuff_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%duration"
+
+			"EffectName"	"particles/units/heroes/hero_viper/viper_poison_debuff.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"ThinkInterval"	"1.0"
+
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%damage"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_movement_speed"
+			}
+		}
+	}
+}
+

@@ -1,0 +1,161 @@
+// Rewrite of Alchemist Unstable Concoction
+// Author: Noya
+// Date: October 13, 2015
+// Version: 6.83
+// Type: Datadriven
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_alchemist/unstable_concoction.lua
+//
+// KV files:
+// scripts/npc/abilities/alchemist/unstable_concoction_throw_datadriven.txt
+"unstable_concoction_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"alchemist_unstable_concoction"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16.0"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"120"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"brew_time"					"5.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"brew_explosion"			"5.5"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"min_stun"					"0.25"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"max_stun"					"1.75 2.5 3.25 4.0"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"min_damage"				"0"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"max_damage"				"150 220 290 360"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"175"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		"particle"	"particles/units/heroes/hero_alchemist/alchemist_unstable_concoction_timer.vpcf"
+
+		// This particle isn't used because it would need a separate rule to attach to the hands or weapons for each hero
+		// CP1 and CP2 are left and right hands respectively
+		"particle"  "particles/units/heroes/hero_alchemist/alchemist_unstableconc_bottles.vpcf" 
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_alchemist/unstable_concoction.lua"
+			"Function"				"StartBrewing"
+			"sub_ability_name"		"unstable_concoction_throw_datadriven"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_unstable_concoction_brewing"
+			"Target"		"CASTER"
+		}
+	}
+
+	"OnUpgrade"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_alchemist/unstable_concoction.lua"
+			"Function"		"LevelUpAbility"
+			"ability_name"	"unstable_concoction_throw_datadriven"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_unstable_concoction_brewing"
+		{
+			"IsHidden"			"1"
+			"Duration"			"%brew_explosion"
+			"ThinkInterval"		"0.5"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_alchemist/unstable_concoction.lua"
+					"Function"		"UpdateTimerParticle"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_alchemist/unstable_concoction.lua"
+					"Function"				"CheckSelfStun"
+					"sub_ability_name"		"unstable_concoction_throw_datadriven"
+					"Target"
+			        {
+			        	"Center"  		"CASTER"
+			        	"Radius" 		"%radius"
+			        	"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			        	"Types" 		"DOTA_UNIT_TARGET_HERO"
+			        }
+				}
+			}
+		}
+
+		"modifier_unstable_concoction_stun"
+		{
+			"IsDebuff"	"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			"OverrideAnimation"	"ACT_DOTA_DISABLED"
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+		}
+	}
+}
+

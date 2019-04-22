@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAcquisitionRange()${1:--[[
+     CDOTA_BaseNPC:GetAcquisitionRange  Gets the range at which this unit will auto-acquire. 
+    -- @return float
+    function CDOTA_BaseNPC:GetAcquisitionRange(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAcquisitionRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

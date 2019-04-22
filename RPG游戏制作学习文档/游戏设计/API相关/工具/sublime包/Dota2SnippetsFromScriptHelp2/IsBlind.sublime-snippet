@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsBlind()${1:--[[
+     CDOTA_BaseNPC:IsBlind   
+    -- @return bool
+    function CDOTA_BaseNPC:IsBlind(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsBlind</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

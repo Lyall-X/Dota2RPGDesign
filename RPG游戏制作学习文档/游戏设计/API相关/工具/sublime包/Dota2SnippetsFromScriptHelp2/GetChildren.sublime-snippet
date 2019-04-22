@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetChildren()${1:--[[
+     CBaseEntity:GetChildren  Get the entities parented to this entity. 
+    -- @return handle
+    function CBaseEntity:GetChildren(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetChildren</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,351 @@
+//这个文档定义的是自定义的DOTA技能。
+//其中的字段含义我已经在后面进行了注释
+
+"DOTAAbilities"
+{
+	"Version"		"1"
+	
+	"ability_sample_ability"       //技能的名字
+	{
+		"ID"							"1852"
+        //技能的ID，重要！ 如果说你没有定义ID，游戏会直接报错，甚至没有报错直接退出。
+        //如果你所定义的某个ID和另一个ID相同，那么，在你将这个技能添加给某一个英雄的时候，实际添加的
+        //可能是同一ID的另一个技能。
+        //建议ID从1850开始，依次排列
+
+        //以下为技能的字段，除了AbilityBehavior，BaseClass以外的其他字段，都不是必须的，可以根据技能的实际情况选择性地写
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        //技能的类型。这里的这个技能是一个无目标，持续施法的技能，不同的属性之间用"|"分割。
+        //这些字段包括：
+        //DOTA_ABILITY_BEHAVIOR_AOE ,AOE技能
+        //DOTA_ABILITY_BEHAVIOR_ATTACK，攻击附加属性技能，例如克林克兹的火箭
+        //DOTA_ABILITY_BEHAVIOR_AURA，光环技能
+        //DOTA_ABILITY_BEHAVIOR_AUTOCAST ，自动释放技能，指定这个技能可以切换为自动释放状态，例如哈斯卡的火矛
+        //DOTA_ABILITY_BEHAVIOR_CHANNELLED ，持续施法技能，例如光法的冲击波，TK的再装填
+        //DOTA_ABILITY_BEHAVIOR_DIRECTIONAL ，方向性技能，例如米拉娜的月之神箭
+        //DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET ，不惊醒目标，例如SB的暗影冲刺
+        //DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT ，不影响移动，目前拥有这个属性的只有信使的速度爆发
+        //DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK ，不继续之前攻击
+        //DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT ，不继续之前移动,例如斧王的吼
+        //DOTA_ABILITY_BEHAVIOR_HIDDEN ，隐藏，拥有此属性的技能不会在技能面板上显示，例如沉默的智力偷取
+        //DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING ，无视后摇，例如米拉娜的跳
+        //DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL ，无视前摇，例如编织者的缩地，屠夫的腐烂等
+        //DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE ， 
+        //无视随机队列，不是很理解，DOTA2拥有此属性的技能有四个，Bane的结束噩梦，海民的释放雪球，水人的力量敏捷转换
+        //DOTA_ABILITY_BEHAVIOR_IGNORE_TURN ， 无视面向，DOTA2目前没有拥有这个属性的技能，
+        //DOTA_ABILITY_BEHAVIOR_IMMEDIATE ，立即生效，DOTA2很多需要快速反应的技能都拥有这个属性，比如TA的折光
+        //DOTA_ABILITY_BEHAVIOR_ITEM ， 这个技能必须绑定一个物品使用。DOTA2目前没有这类技能
+        //DOTA_ABILITY_BEHAVIOR_NO_TARGET ，无目标技能，点击立即释放
+        //DOTA_ABILITY_BEHAVIOR_NOASSIST ，不辅助，该字段在DOTA2未见使用
+        //DOTA_ABILITY_BEHAVIOR_NONE ， 无任何属性，用于空技能，无任何实际效果
+        //DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN ， 偷取后正常，应该是用于拉比克的特殊字段，拥有这个属性的技能有
+        //火枪的暗杀，先知的传送，米波的忽悠和影魔的大招
+        //DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE ， 不能学习的技能，一般是其他技能的附属技能
+        //如果你想让某个技能玩家不能用技能点来学习，就给那个技能加上这个属性
+        //DOTA_ABILITY_BEHAVIOR_PASSIVE ， 被动技能
+        //DOTA_ABILITY_BEHAVIOR_POINT ，点目标技能
+        //DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES ，被定身（拥有modifier_rooted）后无法使用这个技能，例如女王敌法的Blink
+        //DOTA_ABILITY_BEHAVIOR_RUNE_TARGET ，以神符为目标，小小的投掷
+        //DOTA_ABILITY_BEHAVIOR_TOGGLE ，使用一次后激活，再使用一次后取消的技能，例如巫医的恢复术，IO的过载
+        //DOTA_ABILITY_BEHAVIOR_UNIT_TARGET ，单位目标技能
+        //DOTA_ABILITY_BEHAVIOR_UNRESTRICTED ，无限制，拥有这个属性的技能只有小狗的钻
+		"BaseClass"						"ability_datadriven"
+        //技能的基类，一般在自定义技能里面都是使用这个 ability_datadriven ，数据技能
+		"AbilityTextureName"			"sample_ability"
+        //技能的图标，可以是官方的root/resource/flash3/images/spellicons里面的图标文件，也可以是自定义的resource/flash3/images/spellicons里面的.png文件名
+		    //所有的字段属性，都可以每一级不相同，每一级的数字之间以空格隔开即可，例如
+        //"AbilityCastRange"    "1000 1100 1200 1300"
+        //那么技能的施法距离就是1级的时候1000，四级的时候1300
+    "MaxLevel"  "1"
+        //定义技能的最大可升级等级
+
+		"AbilityCastRange"				"1000"
+        //技能的施法距离
+		"AbilityCastPoint"				"0.0"
+        //技能的施法前摇，单位为秒
+		"AbilityCooldown"				"10.0"
+        //技能的冷却时间
+		"AbilityChannelTime"			"2.0 1.8 1.6 1.5"
+        //技能的施法时间
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+        //技能如果涉及伤害，那么必须指定伤害类型，包括：
+        //DAMAGE_TYPE_COMPOSITE 混合伤害，例如兽王的斧子
+        //DAMAGE_TYPE_HP_REMOVAL 生命移除，例如血魔的大招
+        //DAMAGE_TYPE_MAGICAL 魔法伤害
+        //DAMAGE_TYPE_PHYSICAL 物理伤害
+        //DAMAGE_TYPE_PURE 纯粹/真实伤害
+		"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
+        //技能的施法动作，这个施法动作的名字，可以通过HLMV.exe查看模型的动作，也可以使用通用的动作。
+		"AbilityDamage"					"400 600 800 1000"
+        //技能的伤害值
+    	"AbilityManaCost"       "300"
+        //技能所需魔法量
+		
+        //以下是技能需要预载入的文件，包括声音文件和粒子特效文件。
+        //如果不进行载入，那么在技能里面定义的粒子特效和声音都无法正常显示。
+		"precache"
+		{
+          //particlefile指代粒子特效文件，可以是官方的，也可以是自定义的
+      "particlefile"				"particles/test_particle.pcf"
+			"particlefile"				"particles/econ/generic/generic_aoe_explosion_sphere_1.pcf"
+          //soundfile指代声音定义文件，可以是官方的，也可以是自定义的
+			"soundfile"				"scripts/game_sounds_heroes/game_sounds_gyrocopter.txt"
+		}
+
+
+          //以下字段是定义了技能的基本触发字段，触发必须以触发类型为开头，例如OnSpellStart，当技能开始时，按照技能
+          //->动作 ->技能 -> 动作的顺序排列，详细的范例可以参考迎霜节的文件，
+          // 迎霜节的npc文件夹/npc_abilities_custom.txt
+		"OnSpellStart"  
+		{
+			"ApplyModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_channel_start"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Gyrocopter.CallDown.Fire"
+				"Target"			"CASTER"
+			}
+		}
+    		//上面这段的意思是：当技能开始的时候，添加一个modifier给caster也就是施法者
+        //modifier的名字是modifier_channel_start，
+        //在添加modifier的同时，播放一个声音，声音的名字叫Hero_Gyrocopter.CallDown.Fire，声音的播放者也是caster
+
+		    //下面这个范例比较长，我分开来写
+
+    "OnChannelSucceeded"
+		      //当持续施法成功
+    {
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_channel_start"
+			}
+          //在caster身上移除名为modifier_channel_start的modifier
+			"AttachEffect"
+			{
+				"EffectName"			"generic_aoe_explosion_sphere_1"
+				"EffectAttachType"		"follow_origin"
+				"EffectRadius"			"%radius"
+				"EffectDurationScale"	"1"
+				"EffectLifeDurationScale" "1"
+				"EffectColorA"			"255 0 0"
+				"EffectColorB"			"255 0 0"
+				"Target"			"CASTER"
+			}
+    			//在caster身上附加一个粒子特效，特效名字为generic_aoe_explosion_sphere_1（这是在pcf文件里面定义的）
+          //粒子特效的跟随方式是跟随头顶，特效的范围是下方"AbilitySpecial"中radius字段所指定的范围，
+          //再之后的  "EffectDurationScale" "1"
+          //          "EffectLifeDurationScale" "1"
+          //          "EffectColorA"      "255 0 0"
+          //          "EffectColorB"      "255 0 0"
+          //都是在[pcf]文件里面所定义的东西，其他重要的东西还包括粒子特效的控制点，ContrilPoints{}等等
+			"Damage"
+			{
+				"Damage"				"%damage"
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Radius"			"%radius"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			}
+          //附加伤害，伤害值为下方"AbilitySpecial"部分所定义的damage字段，目标是以施法者为中心
+          //范围radius，敌方的英雄和基础单位
+			
+			"Knockback"
+			{
+				"Center" 	"CASTER"
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"%radius"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				}
+				"Duration"	"%duration"
+				"Distance"	"%distance"
+				"Height"	"%height"
+			}
+          //击飞目标，击飞的中心点是CASTER，击飞的目标是以施法者为中心，范围radius范围内的敌方单位
+          //击飞持续时间是duration，击飞距离是distance，击飞高度是Height，当然，你也可以定义一个
+          //击飞距离是0，击飞高度很高的，让目标成为一个原地上上下下………………
+			
+			"FireSound"
+			{
+				"EffectName"		"Hero_Gyrocopter.CallDown.Damage"
+				"Target"			"CASTER"
+			}
+          //播放音效，和上面的一样，只是音效内容改为了Hero_Gyrocopter.CallDown.Damage
+		
+    } //OnChannelSucceeded这个触发的所有动作定义完毕
+		
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_channel_start"
+			}
+		}
+        //当施法结束
+		
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_channel_start"
+			}
+		}
+        //当施法被中断
+
+        //其他的触发和方法还有很多，
+        //很多方法都是配对使用的
+        //比如说 "SpawnUnit"，创建单位和 "OnUnitSpawn"，就可以在单位创建之后执行一些动作
+        //具体的实例还是请参考迎霜节的技能文件，里面有很多范例
+        //在这里要特别提到的是这个文件(也包括物品文件里面)调用lua的内容
+        //例如：
+        //"OnSpellStart"
+        //{
+        //  "RunScript"
+        //  {
+        //    "ScriptFile"    "scripts/vscripts/dota2x.lua"
+        //    "FunctionName"  "OnAbilityStart"
+        //    "Target"        "POINT"
+        //  }
+        //}
+        //就可以在技能开始施法的时候运行dota2x.lua里面的
+        //function OnAbilityStart(keys)
+        //  PrintTable(keys)
+        //end
+        //所有这个函数的参数都会以一个table的形式传递给keys，比如keys.caster_entindex，keys.target_points等等
+        //具体的应用可以用PrintTable(keys)打印出来传递的值，再在程序中进行处理
+        //要特别注意的是，根据Target字段的不同，传递的keys也会不同。Target可以是TARGET,CASTER,POINT,ATTACKER等等
+        //需要具体问题具体分析
+        //此外，在RunScript里面所定义的所有字段，都会以字符串的形式传递进LUA，
+        //例如我们在 "Target"        "POINT"下方再加一个"ABILITY_Special"  "ABC",那么我们在lua程序里面通过
+        //写local specialvalue = keys.ABILITY_Special，就可以给specialvalue赋予一个ABC的字符串数值。
+		    
+
+        //以下定义的是技能的Modifiers，这里写的是上文触发中所提到的内容，当然，如果你是一个被动技能
+        //单纯给目标添加buff/debuff的
+        //那么你也可以不用触发，直接开始写Modifiers
+        //例如
+        //"Modifiers"
+        //{
+        //  "modifier_passive_modifier"
+        //  {
+        //    "Passive" "1"
+        //  }
+        //}
+        //如果是被动的modifier，那么就必须指定"Passive"字段
+        //当然，你也可以定义一个"IsHidden" "1"，来隐藏这个modifier，让他不显示在玩家的面板上
+        //Modifiers的格式，除了Modifier的名字，比如这里的modifier_channel_start，其他的同样遵循
+        //触发->动作的原则
+		"Modifiers"
+		{
+			"modifier_channel_start"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"IsHidden" "1"
+						"EffectName"		"channel_field_2"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						
+						"EffectRadius"			"%radius"
+						"EffectColorA"			"255 0 0"
+						"EffectColorB"			"255 0 0"
+					
+						"ControlPoints"
+						{
+							"00"		"50 100 5"
+						}
+					}
+				}
+			}
+		}
+		
+        //技能的特殊值，在上文用%字段名所引用的数值，都必须在此处进行定义，否则会出错
+        //当然，如果上文没有使用的数值，这里同样可以定义，此外，在lua里面可以通过
+        //GetSpecialValueFor("字段名")的方式来获取当前等级的AbilitySpecial数值。
+        //也可以通过在多语言文本resource/addon_english.txt,resource/addon_schinese.txt里面
+        //通过定义"DOTA_Tooltip_ability_sample_ability_字段名"的方式让这些数值显示在玩家的面板上。
+        //格式为：
+        //"值编号"
+        //{ 
+        //  "var_type" "数值类型" 
+        //  "字段名"   "数值"
+        //}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.5"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 600 800 1000"
+			}
+			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"550 550 600 650"
+			}
+			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"400 500 600 700"
+			}
+			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"height"				"100 200 300 400"
+			}
+		}
+	}
+      //这里还有一个比较重要的技能，就是我们在WE里面经常使用到的一个技能，蝗虫
+      //就是通过定义五个属性
+      //MODIFIER_STATE_UNSELECTABLE 不可选择
+      //MODIFIER_STATE_INVULNERABLE 无敌
+      //MODIFIER_STATE_NOT_ON_MINIMAP 不在小地图上显示
+      //MODIFIER_STATE_NO_HEALTH_BAR 无血条
+      //MODIFIER_STATE_NO_UNIT_COLLISION 无碰撞体积
+      //拥有这个技能的单位，就可以作为一个马甲完成各种工作……
+  "ability_dummy_unit"
+  {
+    "AbilityBehavior" 		"//DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "rubick_empty1"
+    "MaxLevel"                      "1"
+    
+    "Modifiers"
+		{
+			"dummy_unit"
+      {
+        "Passive"                        "1"
+        "IsHidden"                        "1"    
+        "States"
+        {
+          "MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+          "MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+		}
+  }
+  

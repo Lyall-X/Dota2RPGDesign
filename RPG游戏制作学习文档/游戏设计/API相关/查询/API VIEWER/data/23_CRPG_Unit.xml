@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDOTA_BaseNPC_Building" nameCN="RPG单位"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="ActionState" signature="handle ActionState()">
+			<DescriptionEN>return the ActionState object for this unit.</DescriptionEN>
+			<DescriptionCN>返回该单位的ActionState物体</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>handle</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="ClearMovementTarget" signature="void ClearMovementTarget()">
+			<DescriptionEN>Clear any movement target entity/position.</DescriptionEN>
+			<DescriptionCN>清除移动目标实体或点</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS>相关动作SetMovementTargetEntity/SetMovementTargetPosition</PS>
+			</HowToCall>
+		</function>
+		<function name="FindSensedEnemies()" signature="table FindSensedEnemies()">
+			<DescriptionEN>returns list of all enemy units within this unit's sight cone or sensing sphere</DescriptionEN>
+			<DescriptionCN>返回该单位视野锥或感应球体内所有敌方单位列表</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>table</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetMaxSpeed" signature="float GetMaxSpeed()">
+			<DescriptionEN>returns unit's max speed</DescriptionEN>
+			<DescriptionCN>返回最大移动速度</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetMaxStamina" signature="float GetMaxStamina()">
+			<DescriptionEN>returns maximum stamina amount.</DescriptionEN>
+			<DescriptionCN>返回最大耐力值</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetMovementTargetEntity" signature="handle GetMovementTargetEntity()">
+			<DescriptionEN>Returns the movement target entity, if set.</DescriptionEN>
+			<DescriptionCN>返回移动目标实体，如果已经设置移动目标实体</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>handle</Return>
+				<PS>相关动作SetMovementTargetEntity</PS>
+			</HowToCall>
+		</function>
+		<function name="GetSensingSphereRange" signature="float GetSensingSphereRange()">
+			<DescriptionEN>returns range of unit's 360 degree sensing sphere</DescriptionEN>
+			<DescriptionCN>返回单位的360度感应球体范围</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetSightConeAngle" signature="float GetSightConeAngle()">
+			<DescriptionEN>returns angle in which the unit can see things up to sight range</DescriptionEN>
+			<DescriptionCN>返回单位视野锥的夹角</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetSightConeRange" signature="float GetSightConeRange()">
+			<DescriptionEN>returns range of unit's sight cone</DescriptionEN>
+			<DescriptionCN>返回单位视野锥的范围</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetStamina" signature="float GetStamina()">
+			<DescriptionEN>returns current stamina amount.</DescriptionEN>
+			<DescriptionCN>返回当前耐力值</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetTurnRate" signature="float GetTurnRate()">
+			<DescriptionEN>returns unit's turn rate in degrees per second</DescriptionEN>
+			<DescriptionCN>返回单位转身速度，单位为度每秒</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetUnitName" signature="string GetUnitName()">
+			<DescriptionEN>get the unit name for this unit.</DescriptionEN>
+			<DescriptionCN>返回单位名字</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>string</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GrantItem" signature="void GrantItem(string a, bool b)">
+			<DescriptionEN>( sItemName ) - grant an item to the unit by name.</DescriptionEN>
+			<DescriptionCN>授予单位物品</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：物品名称，b：不明</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IsBlocking" signature="bool IsBlocking()">
+			<DescriptionEN>Is this unit blocking?</DescriptionEN>
+			<DescriptionCN>单位是否正在格挡（不确定）</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IsFacing" signature="bool IsFacing(Vector a, float b)">
+			<DescriptionEN>( vecTargetPosition, flAngleTolerance ) - returns true if the unit is within flAngleTolerance degrees of the target position</DescriptionEN>
+			<DescriptionCN>参数为（Vector目标点，float允许角度差）如果单位朝向目标角度低于角度差则返还true</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：目标点，b：允许角度差</Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetBlocking" signature="void SetBlocking(bool a)">
+			<DescriptionEN>( bShouldBlock ) - Set the blocking state of this unit.</DescriptionEN>
+			<DescriptionCN>设置单位格挡状态（不确定）</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：布尔值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetMaxSpeed(" signature="void SetMaxSpeed(float a)">
+			<DescriptionEN>( flMaxSpeed ) - sets unit's max speed</DescriptionEN>
+			<DescriptionCN>设置单位最大速度</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：浮点数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetMovementTargetEntity" signature="void SetMovementTargetEntity(handle a, float b)">
+			<DescriptionEN>( hTargetEntity, flTargetRange ) - Try to move this unit to the given range from the target entity.</DescriptionEN>
+			<DescriptionCN>参数为（目标实体，跟随范围）单位向目标实体移动直到抵达指定范围内</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：实体句柄，b：范围</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetMovementTargetPosition" signature="void SetMovementTargetPosition(Vector a, float b)">
+			<DescriptionEN>( vecTargetPosition, flTargetRange ) - Try to move this unit to the given range from the target point.</DescriptionEN>
+			<DescriptionCN>参数为（目标点，跟随范围）单位向目标点移动直到抵达指定范围内</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：目标点，b：范围</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetSensingSphereRange" signature="void SetSensingSphereRange(float a)">
+			<DescriptionEN>( flSightRange ) - set range of unit's 360 degree sensing sphere</DescriptionEN>
+			<DescriptionCN>设置单位的360度感应球体范围</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：范围数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetSightConeAngle" signature="void SetSightConeAngle(float a)">
+			<DescriptionEN>( flAngleDegrees ) - sets angle in which the unit can see things up to sight range</DescriptionEN>
+			<DescriptionCN>设置单位的视野锥夹角</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：角度数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetSightConeRange" signature="void SetSightConeRange(float a)">
+			<DescriptionEN>( fRange ) - set range of unit's sight cone</DescriptionEN>
+			<DescriptionCN>设置单位的视野锥范围</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：范围数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetTurnRate" signature="void SetTurnRate(float a)">
+			<DescriptionEN>( flTurnRate ) - sets unit's turn rate in degrees per second</DescriptionEN>
+			<DescriptionCN>设置单位转向速率（度每秒）</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：转向速度</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>	
+	</functions>
+</class>

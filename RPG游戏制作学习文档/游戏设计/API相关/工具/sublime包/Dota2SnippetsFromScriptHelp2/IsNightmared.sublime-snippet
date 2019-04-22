@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsNightmared()${1:--[[
+     CDOTA_BaseNPC:IsNightmared   
+    -- @return bool
+    function CDOTA_BaseNPC:IsNightmared(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsNightmared</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[AddImpulseAtPosition(${1:Vector_1},${2:Vector_2})${3:--[[
+     CBodyComponent:AddImpulseAtPosition  Apply an impulse at a worldspace position to the physics 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Vector_2 Vector
+    function CBodyComponent:AddImpulseAtPosition( Vector_1, Vector_2 ) end
+    ]]}]]></content>
+    <tabTrigger>addImpulseAtPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

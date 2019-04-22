@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[MakeIllusion()${1:--[[
+     CDOTA_BaseNPC:MakeIllusion   
+    -- @return void
+    function CDOTA_BaseNPC:MakeIllusion(  ) end
+    ]]}]]></content>
+    <tabTrigger>makeIllusion</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCustomBuybackCooldownEnabled()${1:--[[
+     CDOTABaseGameMode:GetCustomBuybackCooldownEnabled  Turns on capability to define custom buyback cooldowns. 
+    -- @return bool
+    function CDOTABaseGameMode:GetCustomBuybackCooldownEnabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCustomBuybackCooldownEnabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

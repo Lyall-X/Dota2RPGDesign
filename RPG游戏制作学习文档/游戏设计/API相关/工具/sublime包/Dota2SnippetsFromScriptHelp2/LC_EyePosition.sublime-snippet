@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[EyePosition()${1:--[[
+     CBaseEntity:EyePosition  Get vector to eye position - absolute coords. 
+    -- @return Vector
+    function CBaseEntity:EyePosition(  ) end
+    ]]}]]></content>
+    <tabTrigger>eyePosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

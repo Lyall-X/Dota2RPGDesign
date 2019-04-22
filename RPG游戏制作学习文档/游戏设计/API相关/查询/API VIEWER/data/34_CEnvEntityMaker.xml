@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CEnvEntityMaker" nameCN="环境实体生成器"
+	descriptionEN=""
+	descriptionCN="" extends="CBaseEntity">
+	<functions>
+		<function name="SpawnEntity" signature="void SpawnEntity()">
+		  <DescriptionEN>Create an entity at the location of the
+		  maker</DescriptionEN>
+		  <DescriptionCN>在生成器的位置创建一个实体</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SpawnEntityAtEntityOrigin"
+		signature="void SpawnEntityAtEntityOrigin(handle a)">
+		  <DescriptionEN>Create an entity at the location of a specified
+		  entity instance</DescriptionEN>
+		  <DescriptionCN>在指定实体的位置立刻创建一个实体</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>handle a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SpawnEntityAtLocation"
+		signature="void SpawnEntityAtLocation(Vector a, Vector b)">
+		  <DescriptionEN>Create an entity at a specified location and
+		  orientaton, orientation is Euler angle in degrees (pitch, yaw,
+		  roll)</DescriptionEN>
+		  <DescriptionCN>在指定位置和方向创建一个实体，方向是角度制欧拉角(pitch, yaw,
+		  roll)</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SpawnEntityAtNamedEntityOrigin"
+		signature="void SpawnEntityAtNamedEntityOrigin(string a)">
+		  <DescriptionEN>Create an entity at the location of a named
+		  entity</DescriptionEN>
+		  <DescriptionCN>在指定名字实体的位置创建一个实体</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

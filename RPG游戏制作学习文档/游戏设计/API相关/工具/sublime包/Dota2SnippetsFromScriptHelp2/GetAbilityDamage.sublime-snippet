@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAbilityDamage()${1:--[[
+     CDOTABaseAbility:GetAbilityDamage   
+    -- @return int
+    function CDOTABaseAbility:GetAbilityDamage(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAbilityDamage</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

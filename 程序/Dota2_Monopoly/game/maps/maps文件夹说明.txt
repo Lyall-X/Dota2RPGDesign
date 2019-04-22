@@ -1,0 +1,3 @@
+maps文件夹下方存放两种文件，.bsp文件和.gnv文件，其中，.bsp文件为地形文件，.gnv文件为nav mesh文件，用来定义地图上各位置的可同性性，关于如何制作Maps文件夹下方的.bsp文件及.gnv文件，请参考地形制作大神cs_italy所撰写的一个帖子：
+【涨姿势时间】DOTA2地图制作教程
+http://tieba.baidu.com/p/2923239828

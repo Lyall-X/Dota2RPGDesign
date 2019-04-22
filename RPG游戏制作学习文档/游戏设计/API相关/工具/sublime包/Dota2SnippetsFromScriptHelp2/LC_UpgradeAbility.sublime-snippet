@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[UpgradeAbility(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC_Hero:UpgradeAbility  This upgrades the passed ability if it exists and the hero has enough ability points. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC_Hero:UpgradeAbility( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>upgradeAbility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[UTIL_RemoveImmediate(${1:handle_1})${2:--[[
+     UTIL_RemoveImmediate  Immediately removes the specified entity 
+    -- @return void
+    -- @param handle_1 handle
+    function UTIL_RemoveImmediate( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>UTIL_RemoveImmediate</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

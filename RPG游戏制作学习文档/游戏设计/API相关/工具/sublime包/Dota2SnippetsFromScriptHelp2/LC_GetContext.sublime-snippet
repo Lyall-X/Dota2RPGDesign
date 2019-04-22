@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetContext(${1:string_1})${2:--[[
+     CBaseEntity:GetContext  GetContext( name ): looks up a context and returns it if available. May return string, float, or null (if the context isn't found). 
+    -- @return table
+    -- @param string_1 string
+    function CBaseEntity:GetContext( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getContext</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

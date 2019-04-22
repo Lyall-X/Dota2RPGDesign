@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetSelectedHeroEntity(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetSelectedHeroEntity   
+    -- @return handle
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetSelectedHeroEntity( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getSelectedHeroEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

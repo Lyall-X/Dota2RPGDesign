@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[entindex()${1:--[[
+     CEntityInstance:entindex   
+    -- @return int
+    function CEntityInstance:entindex(  ) end
+    ]]}]]></content>
+    <tabTrigger>entindex</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

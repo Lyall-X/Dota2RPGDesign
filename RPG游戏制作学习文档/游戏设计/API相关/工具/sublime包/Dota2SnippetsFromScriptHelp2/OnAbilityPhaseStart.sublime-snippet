@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnAbilityPhaseStart()${1:--[[
+     CDOTABaseAbility:OnAbilityPhaseStart   
+    -- @return bool
+    function CDOTABaseAbility:OnAbilityPhaseStart(  ) end
+    ]]}]]></content>
+    <tabTrigger>OnAbilityPhaseStart</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

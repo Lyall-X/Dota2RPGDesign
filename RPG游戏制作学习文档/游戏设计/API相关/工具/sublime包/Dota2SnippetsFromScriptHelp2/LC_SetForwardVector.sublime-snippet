@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetForwardVector(${1:Vector_1})${2:--[[
+     CBaseEntity:SetForwardVector  Set the orientation of the entity to have this forward vector. 
+    -- @return void
+    -- @param Vector_1 Vector
+    function CBaseEntity:SetForwardVector( Vector_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setForwardVector</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[FindByClassnameNearest(${1:string_1},${2:Vector_2},${3:float_3})${4:--[[
+     CEntities:FindByClassnameNearest  Find entities by class name nearest to a point. 
+    -- @return handle
+    -- @param string_1 string
+    -- @param Vector_2 Vector
+    -- @param float_3 float
+    function CEntities:FindByClassnameNearest( string_1, Vector_2, float_3 ) end
+    ]]}]]></content>
+    <tabTrigger>FindByClassnameNearest</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

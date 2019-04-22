@@ -1,0 +1,71 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/ability_bar.css" />
+        <include src="file://{resources}/styles/custom_game/hero_selection_style.css" />
+        <include src="file://{resources}/styles/custom_game/util.css" />
+        <include src="file://{resources}/styles/custom_game/quests.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/odiff.js" />
+        <include src="file://{resources}/scripts/custom_game/structure.js" />
+        <include src="file://{resources}/scripts/custom_game/underscore-min.js" />
+        <include src="file://{resources}/scripts/custom_game/util.js" />
+        <include src="file://{resources}/scripts/custom_game/pass.js" />
+        <include src="file://{resources}/scripts/custom_game/moment.min.js" />
+        <include src="file://{resources}/scripts/custom_game/hero_selection_script.js" />
+    </scripts>
+    <Panel class="MainPanel" hittest="false">
+        <Button id="HeroSelectionBackground">
+            <DOTAScenePanel id="HeroSelectionBackgroundScene" map="maps/backgrounds/dashboard_test.vmap" camera="shot_cameraC" onactivate="DropInputFocus()" always-cache-composition-layer="true"/>
+            <Panel id="HeroSelectionTopGradient" hittest="false"/>
+
+            <DOTAScenePanel id="HeroSelectedRays" class="Hidden" hittest="false" map="scenes/loadout_preview_rays" camera="camera_1"/>
+            <Panel id="LeftSideHeroes" hittest="false" hittestchildren="false">
+                <Label id="HeroName" class="YellowLabel"></Label>
+            </Panel>
+
+            <Panel id="HeroAbilities">
+                <Panel id="AbilityRowR" class="AbilityRow"><Image><Label/></Image><Label html="true"/></Panel>
+                <Panel id="AbilityRowE" class="AbilityRow"><Image><Label/></Image><Label html="true"/></Panel>
+                <Panel id="AbilityRowW" class="AbilityRow"><Image><Label/></Image><Label html="true"/></Panel>
+                <Panel id="AbilityRowQ" class="AbilityRow"><Image><Label/></Image><Label html="true"/></Panel>
+                <Panel id="AbilityRowA" class="AbilityRow"><Image><Panel/></Image><Label html="true"/></Panel>
+                <Panel id="AchievementRow" class="AbilityRow"><Image/><Label id="RankAwardText" text="#RankAward"/></Panel>
+            </Panel>
+
+            <Panel id="HeroCosmetics"/>
+
+            <Panel id="RightSide" hittest="false" hittestchildren="false">
+                <Label id="PlayersLabel" text="#PlayerHeader" class="YellowLabel"/>
+                <Panel id="PlayersContent"/>
+                <Label id="GameGoal" class="BlueLabel"/>
+                <Label id="GameGoalText" text="#PointsToWin" class="BlueLabel"/>
+            </Panel>
+
+            <Panel id="HeroList" hittest="false">
+                <Label class="BlueLabel" text="#HeroListHeader" hittest="false"></Label>
+                <Panel id="DifficultyList" hittest="false">
+                    <Panel id="EasyHeroes" class="HeroButtons" hittest="false"/>
+                    <Panel id="HardHeroes" class="HeroButtons" hittest="false" disallowedstyleflags="hover,descendantfocus"/>
+                </Panel>
+                <Button id="ShowAllHeroesButton" onactivate="ShowAllHeroes()"><Label text="#ShowAllHeroes"></Label></Button>
+                <Label id="TimerText" hittest="false"></Label>
+            </Panel>
+
+            <Panel id="PassContent" class="PassContent" hittest="false" hittestchildren="false">
+                <Panel id="QuestList"/>
+                <Panel id="LevelBar">
+                    <Panel id="LevelBadge">
+                        <Label id="LevelText"/>
+                    </Panel>
+                    <ProgressBar id="LevelProgress" max="1000">
+                        <Label id="LevelProgressText" text="#ServerConnection"/>
+                    </ProgressBar>
+                </Panel>
+            </Panel>
+            <DOTAStoreItem id="PassNotOwned" itemdef="17172"/>
+
+            <Panel id="HeroSelectionChat"/>
+        </Button>
+    </Panel>
+</root>

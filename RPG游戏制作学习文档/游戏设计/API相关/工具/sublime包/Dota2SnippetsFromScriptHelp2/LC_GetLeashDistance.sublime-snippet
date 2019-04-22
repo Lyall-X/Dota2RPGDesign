@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetLeashDistance()${1:--[[
+     CRPG_Unit:GetLeashDistance  () - returns max distance unit will run from spawn point before retreating 
+    -- @return float
+    function CRPG_Unit:GetLeashDistance(  ) end
+    ]]}]]></content>
+    <tabTrigger>getLeashDistance</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

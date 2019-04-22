@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[CanEntityBeSeenByMyTeam(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:CanEntityBeSeenByMyTeam  Check FoW to see if an entity is visible. 
+    -- @return bool
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:CanEntityBeSeenByMyTeam( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>canEntityBeSeenByMyTeam</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

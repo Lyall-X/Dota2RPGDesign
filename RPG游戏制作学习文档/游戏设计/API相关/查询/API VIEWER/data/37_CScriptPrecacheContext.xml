@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CScriptPrecacheContext" nameCN="脚本预读内容"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="AddResource"
+		signature="void AddResource(string a)">
+		  <DescriptionEN>Precaches a specific resource</DescriptionEN>
+		  <DescriptionCN>预缓存指定资源</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="GetValue"
+		signature="table GetValue(string a)">
+		  <DescriptionEN>Reads a spawn key</DescriptionEN>
+		  <DescriptionCN>读取一个键值（spawn key）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

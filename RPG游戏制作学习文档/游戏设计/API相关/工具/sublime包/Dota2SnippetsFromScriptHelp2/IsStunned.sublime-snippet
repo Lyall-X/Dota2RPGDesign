@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsStunned()${1:--[[
+     CDOTA_BaseNPC:IsStunned   
+    -- @return bool
+    function CDOTA_BaseNPC:IsStunned(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsStunned</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

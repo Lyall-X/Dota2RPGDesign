@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsSharedWithTeammates()${1:--[[
+     CDOTABaseAbility:IsSharedWithTeammates   
+    -- @return bool
+    function CDOTABaseAbility:IsSharedWithTeammates(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsSharedWithTeammates</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

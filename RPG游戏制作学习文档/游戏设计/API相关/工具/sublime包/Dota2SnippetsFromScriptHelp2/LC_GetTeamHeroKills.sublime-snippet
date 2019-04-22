@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetTeamHeroKills(${1:int_1})${2:--[[
+     GetTeamHeroKills  ( int teamID ) 
+    -- @return int
+    -- @param int_1 int
+    function GetTeamHeroKills( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getTeamHeroKills</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

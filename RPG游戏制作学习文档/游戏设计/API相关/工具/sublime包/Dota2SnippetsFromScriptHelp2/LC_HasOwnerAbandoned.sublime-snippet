@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[HasOwnerAbandoned()${1:--[[
+     CDOTA_BaseNPC_Hero:HasOwnerAbandoned   
+    -- @return bool
+    function CDOTA_BaseNPC_Hero:HasOwnerAbandoned(  ) end
+    ]]}]]></content>
+    <tabTrigger>hasOwnerAbandoned</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

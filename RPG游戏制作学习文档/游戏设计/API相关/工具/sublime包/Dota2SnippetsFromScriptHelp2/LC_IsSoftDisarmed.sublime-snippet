@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsSoftDisarmed()${1:--[[
+     CDOTA_BaseNPC:IsSoftDisarmed   
+    -- @return bool
+    function CDOTA_BaseNPC:IsSoftDisarmed(  ) end
+    ]]}]]></content>
+    <tabTrigger>isSoftDisarmed</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

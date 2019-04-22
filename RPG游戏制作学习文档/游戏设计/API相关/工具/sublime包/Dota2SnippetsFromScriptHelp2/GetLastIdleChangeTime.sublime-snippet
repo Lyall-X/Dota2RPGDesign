@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetLastIdleChangeTime()${1:--[[
+     CDOTA_BaseNPC:GetLastIdleChangeTime  Get the last game time that this unit switched to/from idle state. 
+    -- @return float
+    function CDOTA_BaseNPC:GetLastIdleChangeTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetLastIdleChangeTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

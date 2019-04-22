@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetCustomBuybackCost(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:SetCustomBuybackCost  Set the buyback cost for this player. 
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:SetCustomBuybackCost( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetCustomBuybackCost</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

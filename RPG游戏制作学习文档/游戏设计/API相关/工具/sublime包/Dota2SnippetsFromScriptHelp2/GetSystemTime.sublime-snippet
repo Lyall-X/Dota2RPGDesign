@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSystemTime()${1:--[[
+     GetSystemTime  Get the current real world time 
+    -- @return string
+    function GetSystemTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetSystemTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

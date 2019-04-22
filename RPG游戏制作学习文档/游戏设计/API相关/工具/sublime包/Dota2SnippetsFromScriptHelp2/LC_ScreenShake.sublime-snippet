@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[ScreenShake(${1:Vector_1},${2:float_2},${3:float_3},${4:float_4},${5:float_5},${6:int_6},${7:bool_7})${8:--[[
+     ScreenShake  Start a screenshake with the following parameters. vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    -- @param float_3 float
+    -- @param float_4 float
+    -- @param float_5 float
+    -- @param int_6 int
+    -- @param bool_7 bool
+    function ScreenShake( Vector_1, float_2, float_3, float_4, float_5, int_6, bool_7 ) end
+    ]]}]]></content>
+    <tabTrigger>screenShake</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

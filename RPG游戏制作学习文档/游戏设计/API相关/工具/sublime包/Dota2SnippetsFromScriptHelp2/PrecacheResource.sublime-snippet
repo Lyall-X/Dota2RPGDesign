@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[PrecacheResource(${1:string_1},${2:string_2},${3:handle_3})${4:--[[
+     PrecacheResource  Manually precache a single resource 
+    -- @return void
+    -- @param string_1 string
+    -- @param string_2 string
+    -- @param handle_3 handle
+    function PrecacheResource( string_1, string_2, handle_3 ) end
+    ]]}]]></content>
+    <tabTrigger>PrecacheResource</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

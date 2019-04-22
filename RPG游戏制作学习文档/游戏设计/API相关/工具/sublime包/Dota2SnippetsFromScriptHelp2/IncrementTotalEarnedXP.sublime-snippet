@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[IncrementTotalEarnedXP(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:IncrementTotalEarnedXP   
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:IncrementTotalEarnedXP( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>IncrementTotalEarnedXP</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

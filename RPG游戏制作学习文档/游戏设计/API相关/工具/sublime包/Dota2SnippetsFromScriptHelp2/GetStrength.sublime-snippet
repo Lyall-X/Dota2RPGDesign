@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetStrength()${1:--[[
+     CDOTA_BaseNPC_Hero:GetStrength   
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetStrength(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetStrength</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[HasTag(${1:string_1})${2:--[[
+     CMarkupVolumeTagged:HasTag  Does this volume have the given tag. 
+    -- @return bool
+    -- @param string_1 string
+    function CMarkupVolumeTagged:HasTag( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>HasTag</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

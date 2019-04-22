@@ -1,0 +1,139 @@
+// Rewrite of the Drow Ranger Trueshot aura
+// Author: kritth, Pizzalol
+// Date: January 27, 2016
+// Version: 6.86
+// Type: Datadriven
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_drow_ranger/trueshot.lua
+"trueshot_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityTextureName"			"drow_ranger_trueshot"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0 0 0 0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"100"
+	"AbilityDuration"				"5.0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"trueshot_ranged_damage"	"20 26 32 38"
+		}
+		
+		// extra variable
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"global_radius"				"9000"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target"				"CASTER"
+			"ModifierName"			"modifier_trueshot_aura_creep_datadriven"
+			"Duration"				"%AbilityDuration"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_trueshot_aura_datadriven"
+		{
+			"Passive"				"1"
+			"IsPurgable"			"0"
+			"IsHidden"				"1"
+			
+			"Aura"					"modifier_trueshot_effect_datadriven"
+			"Aura_Radius"			"%global_radius"
+			"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+			"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_RANGED_ONLY"
+		}
+		
+		"modifier_trueshot_aura_creep_datadriven"
+		{
+			"IsPurgable"			"0"
+			"IsHidden"				"0"
+			
+			"Aura"					"modifier_trueshot_effect_datadriven"
+			"Aura_Radius"			"%global_radius"
+			"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"			"DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_RANGED_ONLY"
+		}
+		
+		"modifier_trueshot_effect_datadriven"
+		{
+			"IsPurgable"			"0"
+			"IsHidden"				"0"
+			
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_drow_ranger/trueshot.lua"
+					"Function"		"trueshot_initialize"
+					"trueshot_modifier"	"modifier_trueshot_effect_datadriven"
+					"trueshot_damage_modifier"	"modifier_trueshot_damage_datadriven"
+				}
+			}
+
+			"ThinkInterval"  "0.25"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_drow_ranger/trueshot.lua"
+					"Function"		"trueshot_initialize"
+					"trueshot_modifier"	"modifier_trueshot_effect_datadriven"
+					"trueshot_damage_modifier"	"modifier_trueshot_damage_datadriven"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_trueshot_damage_datadriven"
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Flags"     "DOTA_UNIT_TARGET_FLAG_DEAD | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
+					}
+				}
+			}
+		}
+	
+		"modifier_trueshot_damage_datadriven"
+		{
+			"IsPurgable"			"0"
+			"IsHidden"				"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"1"
+			}
+		}
+	}
+}

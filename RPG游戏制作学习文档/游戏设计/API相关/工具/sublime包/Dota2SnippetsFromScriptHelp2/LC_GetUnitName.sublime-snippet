@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetUnitName()${1:--[[
+     CRPG_Unit:GetUnitName  () - get the unit name for this unit. 
+    -- @return string
+    function CRPG_Unit:GetUnitName(  ) end
+    ]]}]]></content>
+    <tabTrigger>getUnitName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

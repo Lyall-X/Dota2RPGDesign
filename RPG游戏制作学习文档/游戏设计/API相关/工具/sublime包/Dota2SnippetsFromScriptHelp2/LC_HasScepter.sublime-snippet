@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[HasScepter()${1:--[[
+     CDOTA_BaseNPC:HasScepter   
+    -- @return bool
+    function CDOTA_BaseNPC:HasScepter(  ) end
+    ]]}]]></content>
+    <tabTrigger>hasScepter</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

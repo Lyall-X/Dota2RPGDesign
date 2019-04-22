@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsPassive()${1:--[[
+     CDOTABaseAbility:IsPassive   
+    -- @return bool
+    function CDOTABaseAbility:IsPassive(  ) end
+    ]]}]]></content>
+    <tabTrigger>isPassive</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

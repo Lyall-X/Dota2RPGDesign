@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetSubquest(${1:int_1})${2:--[[
+     CDotaQuest:GetSubquest  Finds a subquest from this quest by index 
+    -- @return handle
+    -- @param int_1 int
+    function CDotaQuest:GetSubquest( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetSubquest</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

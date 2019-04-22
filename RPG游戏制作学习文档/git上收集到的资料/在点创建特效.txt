@@ -1,0 +1,123 @@
+holdout_example官方范例里
+Ability: Mirana Moonfall
+
+在点创建特效
+
+
+
+	//=================================================================================================================
+	// Ability: Mirana Moonfall
+	//=================================================================================================================
+	"mirana_moonfall"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"greevil_magic_missile"
+		"ItemBaseLevel"					"0"
+		"precache"
+		{
+			"particle_folder" "particles/econ/generic/generic_aoe_explosion_sphere_1"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5 0.5 0.5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100 100 100"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 150 175"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+
+		"OnSpellStart"
+		{
+			"DelayedAction"
+			{
+				"Delay"			"%hit_delay"
+				"Action"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"POINT"
+							"Radius"	"%radius"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+						}
+
+						"Action"
+						{
+							"Damage"
+							{
+								"Type" "DAMAGE_TYPE_MAGICAL"
+								"Damage" "%damage"
+								"Target" "TARGET"
+							}
+
+							"Stun"
+							{
+								"Duration"		"%stun_duration"
+								"Target" "TARGET"
+							}
+						}
+					}
+
+					"FireEffect"
+					{
+						"TargetPoint" "POINT"
+						"EffectName" "particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1_a.vpcf"
+						"EffectAttachType" "world_origin"
+						"EffectRadius" "%radius"
+						"EffectDurationScale" "1"
+						"EffectLifeDurationScale" "1"
+						"EffectColorA" "25 50 200"
+						"EffectColorB" "25 50 200"
+					}
+				}
+			}
+
+			"FireEffect"
+			{
+				"EffectName" "particles/units/heroes/hero_mirana/mirana_starfall_attack.vpcf"
+				"EffectAttachType" "world_origin"
+				"TargetPoint"		"POINT"
+			}
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"2.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"600"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"300 400 500"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"hit_delay"					"0.5"
+			}
+		}
+	}

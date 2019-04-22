@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[PayGoldCost()${1:--[[
+     CDOTABaseAbility:PayGoldCost   
+    -- @return void
+    function CDOTABaseAbility:PayGoldCost(  ) end
+    ]]}]]></content>
+    <tabTrigger>PayGoldCost</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

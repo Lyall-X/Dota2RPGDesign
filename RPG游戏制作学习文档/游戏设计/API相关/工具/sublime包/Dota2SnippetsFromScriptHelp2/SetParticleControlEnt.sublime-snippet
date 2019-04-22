@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[SetParticleControlEnt(${1:int_1},${2:int_2},${3:handle_3},${4:int_4},${5:string_5},${6:Vector_6},${7:bool_7})${8:--[[
+     CScriptParticleManager:SetParticleControlEnt   
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    -- @param handle_3 handle
+    -- @param int_4 int
+    -- @param string_5 string
+    -- @param Vector_6 Vector
+    -- @param bool_7 bool
+    function CScriptParticleManager:SetParticleControlEnt( int_1, int_2, handle_3, int_4, string_5, Vector_6, bool_7 ) end
+    ]]}]]></content>
+    <tabTrigger>SetParticleControlEnt</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

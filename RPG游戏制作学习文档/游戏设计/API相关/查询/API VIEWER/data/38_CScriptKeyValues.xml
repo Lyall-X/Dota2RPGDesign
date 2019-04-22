@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CScriptKeyValues" nameCN="脚本键值"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="GetValue"
+		signature="table GetValue(string a)">
+		  <DescriptionEN>Reads a spawn key</DescriptionEN>
+		  <DescriptionCN>读取一个键值（spawn key）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

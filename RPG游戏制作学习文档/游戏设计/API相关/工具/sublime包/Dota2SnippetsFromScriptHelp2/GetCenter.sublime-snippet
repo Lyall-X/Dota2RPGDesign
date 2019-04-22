@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCenter()${1:--[[
+     CBaseEntity:GetCenter  Get vector to center of object - absolute coords 
+    -- @return Vector
+    function CBaseEntity:GetCenter(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCenter</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

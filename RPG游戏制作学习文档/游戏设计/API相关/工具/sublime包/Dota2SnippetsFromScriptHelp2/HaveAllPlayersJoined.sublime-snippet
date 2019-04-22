@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[HaveAllPlayersJoined()${1:--[[
+     CDOTA_PlayerResource:HaveAllPlayersJoined   
+    -- @return bool
+    function CDOTA_PlayerResource:HaveAllPlayersJoined(  ) end
+    ]]}]]></content>
+    <tabTrigger>HaveAllPlayersJoined</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GetModifierStackCount(${1:string_1},${2:handle_2})${3:--[[
+     CDOTA_BaseNPC:GetModifierStackCount  Gets the stack count of a given modifier. 
+    -- @return int
+    -- @param string_1 string
+    -- @param handle_2 handle
+    function CDOTA_BaseNPC:GetModifierStackCount( string_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>GetModifierStackCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

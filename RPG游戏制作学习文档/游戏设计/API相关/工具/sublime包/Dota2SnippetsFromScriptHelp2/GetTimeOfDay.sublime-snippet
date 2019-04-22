@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetTimeOfDay()${1:--[[
+     CDOTAGamerules:GetTimeOfDay  Get the time of day 
+    -- @return float
+    function CDOTAGamerules:GetTimeOfDay(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetTimeOfDay</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

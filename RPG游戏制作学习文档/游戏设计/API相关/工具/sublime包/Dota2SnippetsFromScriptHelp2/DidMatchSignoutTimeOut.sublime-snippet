@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[DidMatchSignoutTimeOut()${1:--[[
+     CDOTAGamerules:DidMatchSignoutTimeOut  true when we have waited some time after end of the game and not received signout 
+    -- @return bool
+    function CDOTAGamerules:DidMatchSignoutTimeOut(  ) end
+    ]]}]]></content>
+    <tabTrigger>DidMatchSignoutTimeOut</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

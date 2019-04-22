@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[PerformTaunt()${1:--[[
+     CDOTA_BaseNPC_Hero:PerformTaunt   
+    -- @return void
+    function CDOTA_BaseNPC_Hero:PerformTaunt(  ) end
+    ]]}]]></content>
+    <tabTrigger>performTaunt</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

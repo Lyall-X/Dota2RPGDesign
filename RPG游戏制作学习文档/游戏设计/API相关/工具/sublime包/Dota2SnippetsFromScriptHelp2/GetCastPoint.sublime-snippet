@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetCastPoint(${1:bool_1})${2:--[[
+     CDOTA_BaseNPC:GetCastPoint   
+    -- @return float
+    -- @param bool_1 bool
+    function CDOTA_BaseNPC:GetCastPoint( bool_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetCastPoint</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

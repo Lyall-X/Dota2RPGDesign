@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetDeaths(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetDeaths   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetDeaths( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getDeaths</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

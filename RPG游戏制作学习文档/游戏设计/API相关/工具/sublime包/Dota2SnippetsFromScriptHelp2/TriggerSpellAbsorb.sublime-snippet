@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[TriggerSpellAbsorb(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:TriggerSpellAbsorb   
+    -- @return bool
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:TriggerSpellAbsorb( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>TriggerSpellAbsorb</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

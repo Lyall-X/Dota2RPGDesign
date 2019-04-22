@@ -1,0 +1,121 @@
+// Rewrite of Abaddon Curse of Avernus
+// Author: Noya
+// Date: October 13, 2015
+// Version: 6.85
+// Type: Datadriven
+"frostmourne_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"		"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"	"abaddon_frostmourne"
+	
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"debuff_duration"				"2.5"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"buff_duration"					"4.5"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow_pct"						"-5 -10 -15 -20"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"attack_slow_tooltip"			"-5 -10 -15 -20"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"move_speed_pct"				"15"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"attack_speed"					"10 20 30 40"
+		}
+	}
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_abaddon/abaddon_frost_slow.vpcf"
+		"particle"  "particles/units/heroes/hero_abaddon/abaddon_frost_buff.vpcf"
+	}
+
+	"Modifiers"
+	{
+		"modifier_frostmourne"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					}
+					"ModifierName"		"modifier_frostmourne_debuff"
+					"Duration"			"%debuff_duration"
+				}
+				"ApplyModifier"
+				{
+					"Target"			"CASTER"
+					"ModifierName"		"modifier_frostmourne_buff"
+					"Duration"			"%buff_duration"
+				}
+			}
+		}
+
+		"modifier_frostmourne_debuff"
+		{
+			"IsDebuff"	"1"
+			"EffectName"	"particles/units/heroes/hero_abaddon/abaddon_frost_slow.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_pct"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_slow_tooltip"
+			}
+			
+			"OnAttacked"
+			{
+				"ApplyModifier"
+				{
+					"Target"			"ATTACKER"
+					"ModifierName"		"modifier_frostmourne_buff"
+					"Duration"			"%buff_duration"
+				}
+			}
+		}
+
+		"modifier_frostmourne_buff"
+		{
+			"IsBuff"		"1"
+			"EffectName"	"particles/units/heroes/hero_abaddon/abaddon_frost_buff.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%move_speed_pct"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
+			}
+		}
+	}
+}
+

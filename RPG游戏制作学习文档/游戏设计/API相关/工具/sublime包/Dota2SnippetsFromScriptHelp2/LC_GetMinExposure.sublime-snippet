@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMinExposure()${1:--[[
+     CToneMapControllerComponent:GetMinExposure  Gets min exposure for this tonemap controller 
+    -- @return float
+    function CToneMapControllerComponent:GetMinExposure(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMinExposure</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

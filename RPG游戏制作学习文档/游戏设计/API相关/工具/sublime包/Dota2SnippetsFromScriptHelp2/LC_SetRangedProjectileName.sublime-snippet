@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetRangedProjectileName(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:SetRangedProjectileName   
+    -- @return void
+    -- @param string_1 string
+    function CDOTA_BaseNPC:SetRangedProjectileName( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setRangedProjectileName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

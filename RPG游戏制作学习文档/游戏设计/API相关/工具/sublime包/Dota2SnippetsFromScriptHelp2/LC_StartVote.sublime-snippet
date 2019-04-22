@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[StartVote(${1:handle_1})${2:--[[
+     CDOTAVoteSystem:StartVote  Starts a vote, based upon a table of parameters 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTAVoteSystem:StartVote( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>startVote</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

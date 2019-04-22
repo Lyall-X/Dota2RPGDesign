@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetPurchaser(${1:handle_1})${2:--[[
+     CDOTA_Item:SetPurchaser  Set the purchaser of record for this item. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_Item:SetPurchaser( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setPurchaser</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[UTIL_MessageText(${1:int_1},${2:string_2},${3:int_3},${4:int_4},${5:int_5},${6:int_6})${7:--[[
+     UTIL_MessageText  Sends colored text to one client. 
+    -- @return void
+    -- @param int_1 int
+    -- @param string_2 string
+    -- @param int_3 int
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    function UTIL_MessageText( int_1, string_2, int_3, int_4, int_5, int_6 ) end
+    ]]}]]></content>
+    <tabTrigger>UTIL_MessageText</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

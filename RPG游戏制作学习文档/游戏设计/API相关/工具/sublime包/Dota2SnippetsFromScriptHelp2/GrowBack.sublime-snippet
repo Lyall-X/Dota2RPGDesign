@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GrowBack()${1:--[[
+     CDOTA_MapTree:GrowBack  Grows back the tree if it was cut down. 
+    -- @return void
+    function CDOTA_MapTree:GrowBack(  ) end
+    ]]}]]></content>
+    <tabTrigger>GrowBack</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="GridNav" nameCN="网格"
+	descriptionEN="A class that can communicate with the gridnav, useful for seeing if stuff should be able to move"
+	descriptionCN="与网格信息通信的类，用于检测充填物是否可以通行" extends="">
+	<functions>
+		<function name="GridPosToWorldCenterX"
+		signature="float GridPosToWorldCenterX(int a)">
+		  <DescriptionEN>Get the X position of the center of a given X
+		  index</DescriptionEN>
+		  <DescriptionCN>获取指定X索引号的世界中心X位置（网格到世界）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GridPosToWorldCenterY"
+		signature="float GridPosToWorldCenterY(int a)">
+		  <DescriptionEN>Get the Y position of the center of a given Y
+		  index</DescriptionEN>
+		  <DescriptionCN>获取指定Y索引号的世界中心Y位置（网格到世界）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="IsBlocked" signature="bool IsBlocked(Vector a)">
+		  <DescriptionEN>Checks whether the given position is
+		  blocked</DescriptionEN>
+		  <DescriptionCN>检查给定位置是否被阻挡</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a</Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="IsNearbyTree"
+		signature="bool IsNearbyTree(Vector position, float radius, bool c)">
+		
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector position, float radius, bool c</Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="IsTraversable"
+		signature="bool IsTraversable(Vector a)">
+		  <DescriptionEN>Checks whether the given position is
+		  traversable</DescriptionEN>
+		  <DescriptionCN>检查给予维持是否可通过</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a</Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="RegrowAllTrees" signature="void RegrowAllTrees()">
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="WorldToGridPosX"
+		signature="int WorldToGridPosX(float a)">
+		  <DescriptionEN>Get the X index of a given world X
+		  position</DescriptionEN>
+		  <DescriptionCN>获取指定世界X位置的X索引（世界到网格）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="WorldToGridPosY"
+		signature="int WorldToGridPosY(float a)">
+		  <DescriptionEN>Get the Y index of a given world Y
+		  position</DescriptionEN>
+		  <DescriptionCN>获取指定世界Y位置的Y索引（世界到网格）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

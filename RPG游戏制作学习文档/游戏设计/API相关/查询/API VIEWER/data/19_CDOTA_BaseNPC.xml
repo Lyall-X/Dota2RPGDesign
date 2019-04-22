@@ -1,0 +1,2424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Hao翻译 -->
+
+<class nameEN="CDOTA_BaseNPC" nameCN="NPC基础类别"
+descriptionEN="No Description Set" descriptionCN="无描述" extends="">
+  <functions>
+    <function name="AddAbility" signature="void AddAbility(string a)">
+      <DescriptionEN>Add an ability to this unit by
+      name.</DescriptionEN>
+      <DescriptionCN>以技能名称为该单位新增技能。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:技能名称</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="AddItem" signature="void AddItem(handle a)">
+      <DescriptionEN>Add an item to this unit's
+      inventory.</DescriptionEN>
+      <DescriptionCN>增加物品到该单位的库存 。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle:物品</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="AddNewModifier" signature="void AddNewModifier(handle caster, handle optionalSourceAbility, string modifierName, handle modifierData)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>为该单位增加修改器。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle caster:施法者, handle
+        optionalSourceAbility:可选_来自的技能, string modifierName:修改器名称,
+        handle modifierData:修改器</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="AddNoDraw" signature="void AddNoDraw()">
+      <DescriptionEN>Adds the no draw flag.</DescriptionEN>
+      <DescriptionCN>Adds the no draw flag.</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="AlertNearbyUnits" signature="void AlertNearbyUnits(handle a, handle b)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a, handle b</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="AngerNearbyUnits" signature="void AngerNearbyUnits()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="AttackNoEarlierThan" signature="void AttackNoEarlierThan(float a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="AttackReady" signature="bool AttackReady()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="BoundingRadius2D" signature="float BoundingRadius2D()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="CastAbilityImmediately" signature="void CastAbilityImmediately(handle ability, int playerIndex)">
+
+      <DescriptionEN>Cast an ability immediately.</DescriptionEN>
+      <DescriptionCN>技能立即施法。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle ability:技能实体, int
+        playerIndex:玩家ID</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="CastAbilityNoTarget" signature="void CastAbilityNoTarget(handle ability, int playerIndex)">
+
+      <DescriptionEN>Cast an ability with no target. ( hAbility,
+      iPlayerIndex )</DescriptionEN>
+      <DescriptionCN>无目标的施放技能 ( hAbility, iPlayerIndex )
+      。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle ability:技能实体, int
+        playerIndex:玩家ID</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="CastAbilityOnPosition" signature="void CastAbilityOnPosition(Vector a, handle b, int c)">
+
+      <DescriptionEN>Cast an ability on a position.</DescriptionEN>
+      <DescriptionCN>对一地点施放技能。</DescriptionCN>
+      <HowToCall>
+        <Parameter>Vector a:位置, handle b:技能, int c</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="CastAbilityOnTarget" signature="void CastAbilityOnTarget(handle target, handle ability, int playerIndex)">
+
+      <DescriptionEN>Cast an ability on a target
+      entity.</DescriptionEN>
+      <DescriptionCN>对一实体施放技能。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle target:目标, handle ability:技能, int
+        playerIndex:玩家ID</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="CastAbilityToggle" signature="void CastAbilityToggle(handle a, int b)">
+      <DescriptionEN>Toggle an ability. ( hAbility, iPlayerIndex
+      )</DescriptionEN>
+      <DescriptionCN>切换技能 ( hAbility, iPlayerIndex )
+      。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:技能, int b:玩家ID</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="DisassembleItem" signature="void DisassembleItem(handle a)">
+      <DescriptionEN>Disassemble the passed item in this unit's
+      inventory.</DescriptionEN>
+      <DescriptionCN>拆解该单位库存中过时的物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:物品</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="DropItemAtPosition" signature="void DropItemAtPosition(Vector a, handle b)">
+      <DescriptionEN>Drop an item at a given point.</DescriptionEN>
+      <DescriptionCN>在指定地点掉落物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>Vector a:地点, handle b:物品</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="DropItemAtPositionImmediate" signature="void DropItemAtPositionImmediate(handle a, Vector b)">
+
+      <DescriptionEN>Immediately drop a carried item at a given
+      position.</DescriptionEN>
+      <DescriptionCN>立即在指定地点掉落物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:物品, Vector b:地点</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="EjectItemFromStash" signature="void EjectItemFromStash(handle a)">
+      <DescriptionEN>Drops the selected item out of this unit's
+      stash.</DescriptionEN>
+      <DescriptionCN>自库存栏丢落指定的物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:物品</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="FindAbilityByName" signature="handle FindAbilityByName(string a)">
+      <DescriptionEN>Retrieve an ability by name from the
+      unit.</DescriptionEN>
+      <DescriptionCN>以名称寻找技能。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:技能名称</Parameter>
+        <Return>handle:技能</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="ForceKill" signature="void ForceKill(bool a)">
+      <DescriptionEN>Kill this unit immediately.</DescriptionEN>
+      <DescriptionCN>强制击杀该单位。</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAbilityByIndex" signature="handle GetAbilityByIndex(int a)">
+      <DescriptionEN>Retrieve an ability by index from the
+      unit.</DescriptionEN>
+      <DescriptionCN>以下标值检索该单位的技能。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:技能ID</Parameter>
+        <Return>handle:技能</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAbilityCount" signature="int GetAbilityCount()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取拥有的技能数量。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:技能数量</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAcquisitionRange" signature="float GetAcquisitionRange()">
+      <DescriptionEN>Gets the range at which this unit will
+      auto-acquire.</DescriptionEN>
+      <DescriptionCN>获取单位的自动收集距离。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:自动收集距离</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAdditionalBattleMusicWeight" signature="float GetAdditionalBattleMusicWeight()">
+      <DescriptionEN>Combat involving this creature will have this
+      weight added to the music calcuations</DescriptionEN>
+      <DescriptionCN>获取当与该单位战斗时将会计算的战斗音乐权重。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAttackAnimationPoint" signature="float GetAttackAnimationPoint()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAttackDamage" signature="int GetAttackDamage()">
+      <DescriptionEN>Returns a random integer between the minimum
+      and maximum base damage of the unit.</DescriptionEN>
+      <DescriptionCN>获取该单位伤害最大值与最小值之间的随机整数。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:伤害最大值与最小值之间的随机整数</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAttackRange" signature="float GetAttackRange()">
+      <DescriptionEN>Gets this unit's attack range after all
+      modifiers.</DescriptionEN>
+      <DescriptionCN>获取单位当前的攻击距离。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:攻击距离</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAttackRangeBuffer" signature="float GetAttackRangeBuffer()">
+      <DescriptionEN>Gets the attack range buffer.</DescriptionEN>
+      <DescriptionCN>获取状态增加的攻击距离。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:状态增加的攻击距离</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAttackSpeed" signature="float GetAttackSpeed()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取该单位的攻速。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:攻速</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAttacksPerSecond" signature="float GetAttacksPerSecond()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取APS值(每秒能够打几下)。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:APS值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAttackTarget" signature="handle GetAttackTarget()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>返回该单位的攻击目标。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>handle:攻击目标</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetAverageTrueAttackDamage" signature="int GetAverageTrueAttackDamage()">
+      <DescriptionEN>Returns the average value of the minimum and
+      maximum damage values.</DescriptionEN>
+      <DescriptionCN>获取该单位最大伤害值与最小伤害值的平均数。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:最大伤害值与最小伤害值的平均数</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseAttackRange" signature="int GetBaseAttackRange()">
+      <DescriptionEN>Gets this unit's attack range before
+      modifiers.</DescriptionEN>
+      <DescriptionCN>获取单位的基础攻击距离(修改器不列入计算)。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:基础攻击距离(修改器不列入计算)</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseAttackTime" signature="float GetBaseAttackTime()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseDamageMax" signature="int GetBaseDamageMax()">
+      <DescriptionEN>Gets the minimum base damage.</DescriptionEN>
+      <DescriptionCN>获取最大伤害值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:最大伤害值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseDamageMin" signature="int GetBaseDamageMin()">
+      <DescriptionEN>Gets the minimum base damage.</DescriptionEN>
+      <DescriptionCN>获取最小伤害值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:最小伤害值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseDayTimeVisionRange" signature="int GetBaseDayTimeVisionRange()">
+      <DescriptionEN>Returns the vision range before
+      modifiers.</DescriptionEN>
+      <DescriptionCN>获取单位的基础日间视野距离(修改器不列入计算)。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:基础日间视野距离(修改器不列入计算)</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseHealthRegen" signature="float GetBaseHealthRegen()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取单位的基础血量恢复值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:基础血量恢复值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseMagicalResistanceValue" signature="float GetBaseMagicalResistanceValue()">
+      <DescriptionEN>Returns base magical armor
+      value.</DescriptionEN>
+      <DescriptionCN>获取单位的基础魔法抗性值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:基础魔法抗性值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseMaxHealth" signature="float GetBaseMaxHealth()">
+      <DescriptionEN>Gets the base max health
+      value.</DescriptionEN>
+      <DescriptionCN>获取基础血量值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:基础血量值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseMoveSpeed" signature="float GetBaseMoveSpeed()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取基础跑速。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:基础跑速</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetBaseNightTimeVisionRange" signature="int GetBaseNightTimeVisionRange()">
+      <DescriptionEN>Returns the vision range before
+      modifiers.</DescriptionEN>
+      <DescriptionCN>获取单位基础的夜间视野距离(修改器不列入计算)。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:基础的夜间视野距离(修改器不列入计算)。</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetCastPoint" signature="float GetCastPoint(bool a)">
+      <DescriptionEN>Parameter: bAttack</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a</Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetCollisionPadding" signature="float GetCollisionPadding()">
+      <DescriptionEN>Returns the size of the collision padding
+      around the hull.</DescriptionEN>
+      <DescriptionCN>返回该单位的碰撞体积。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:碰撞体积</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetConstantBasedManaRegen" signature="float GetConstantBasedManaRegen()">
+      <DescriptionEN>This Mana regen is derived from constant
+      bonuses like Basilius.</DescriptionEN>
+      <DescriptionCN>获取基础的魔力恢复值常数。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:基础的魔力恢复值常数</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetCreationTime" signature="float GetCreationTime()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetCurrentActiveAbility" signature="handle GetCurrentActiveAbility()">
+      <DescriptionEN>Get the ability this unit is currently
+      casting.</DescriptionEN>
+      <DescriptionCN>获取该单位正在使用中的法术。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>handle:使用中的法术</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetCurrentVisionRange" signature="int GetCurrentVisionRange()">
+      <DescriptionEN>Gets the current vision range.</DescriptionEN>
+      <DescriptionCN>获取当前的视野距离。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:当前的视野距离</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetCursorCastTarget" signature="handle GetCursorCastTarget()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取鼠标指定的施法目标。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>handle:鼠标指定的施法目标</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetCursorPosition" signature="Vector GetCursorPosition()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取鼠标位置。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>Vector:鼠标位置</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetCursorTargetingNothing" signature="bool GetCursorTargetingNothing()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetDayTimeVisionRange" signature="int GetDayTimeVisionRange()">
+      <DescriptionEN>Returns the vision range after
+      modifiers.</DescriptionEN>
+      <DescriptionCN>获取该单位的日间视野(将修改器并入计算)。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:日间视野(将修改器并入计算)</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetDeathXP" signature="int GetDeathXP()">
+      <DescriptionEN>Get the XP bounty on this unit</DescriptionEN>
+      <DescriptionCN>获取该单位的击杀经验值奖赏。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:击杀经验值奖赏</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetForceAttackTarget" signature="handle GetForceAttackTarget()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>handle</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetGoldBounty" signature="int GetGoldBounty()">
+      <DescriptionEN>Get the gold bounty on this
+      unit</DescriptionEN>
+      <DescriptionCN>获取该单位的击杀金钱奖赏。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:击杀金钱奖赏</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetHasteFactor" signature="float GetHasteFactor()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetHealth" signature="int GetHealth()">
+      <DescriptionEN>Get the health of this unit.</DescriptionEN>
+      <DescriptionCN>获取该单位的血量。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:血量</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetHealthDeficit" signature="int GetHealthDeficit()">
+      <DescriptionEN>Returns integer amount of health missing from
+      max.</DescriptionEN>
+      <DescriptionCN>返回损失的血量 (最大血量 - 当前血量)。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:损失的血量</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetHealthPercent" signature="int GetHealthPercent()">
+      <DescriptionEN>Get the current health percent of the
+      unit.</DescriptionEN>
+      <DescriptionCN>获取该单位当前的血量百分比。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:血量百分比</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetHealthRegen" signature="float GetHealthRegen()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取该单位当前的血量恢复值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:血量恢复值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetHullRadius" signature="float GetHullRadius()">
+      <DescriptionEN>Get the collision hull radius of this
+      NPC</DescriptionEN>
+      <DescriptionCN>获取该单位的碰撞体积半径。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:碰撞体积半径</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetIdealSpeed" signature="float GetIdealSpeed()">
+      <DescriptionEN>Returns speed after all
+      modifiers.</DescriptionEN>
+      <DescriptionCN>获取该单位的跑速(将修改器并入计算)。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:跑速</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetIncreasedAttackSpeed" signature="float GetIncreasedAttackSpeed()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetInitialGoalEntity" signature="handle GetInitialGoalEntity()">
+      <DescriptionEN>Returns the initial waypoint goal for this
+      NPC</DescriptionEN>
+      <DescriptionCN>返回该单位初始的路径点。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>handle:初始的路径点</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetItemInSlot" signature="handle GetItemInSlot(int a)">
+      <DescriptionEN>Returns nth item in inventory slot (index is
+      zero based)</DescriptionEN>
+      <DescriptionCN>以下标值获取物品栏中的物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a</Parameter>
+        <Return>handle:物品栏中的物品</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetLastIdleChangeTime" signature="float GetLastIdleChangeTime()">
+      <DescriptionEN>Get the last game time that this unit switched
+      to/from idle state.</DescriptionEN>
+      <DescriptionCN>获取该单位最后 进入/离开 闲置状态的时间。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:最后 进入/离开 闲置状态的时间</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetLevel" signature="int GetLevel()">
+      <DescriptionEN>Returns the level of this
+      unit.</DescriptionEN>
+      <DescriptionCN>返回该单位当前的等级。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:当前的等级</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetMagicalArmorValue" signature="float GetMagicalArmorValue()">
+      <DescriptionEN>Returns current magical armor
+      value.</DescriptionEN>
+      <DescriptionCN>返回该单位当前的魔法抗性值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:当前的魔法抗性值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetMainControllingPlayer" signature="int GetMainControllingPlayer()">
+      <DescriptionEN>Returns the player ID of the controlling
+      player.</DescriptionEN>
+      <DescriptionCN>返回控制该单位的玩家ID。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:玩家ID</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetMana" signature="float GetMana()">
+      <DescriptionEN>Get the mana on this unit.</DescriptionEN>
+      <DescriptionCN>获取该单位的魔力值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:魔力值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetManaPercent" signature="int GetManaPercent()">
+      <DescriptionEN>Get the percent of mana
+      remaining.</DescriptionEN>
+      <DescriptionCN>获取该单位的剩余魔力值百分比。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:剩余魔力值百分比</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetManaRegen" signature="float GetManaRegen()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取该单位的魔力恢复值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:魔力恢复值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetMaxHealth" signature="int GetMaxHealth()">
+      <DescriptionEN>Get the maximum health of this
+      unit.</DescriptionEN>
+      <DescriptionCN>获取该单位的最大血量。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:最大血量</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetMaxMana" signature="float GetMaxMana()">
+      <DescriptionEN>Get the maximum mana of this
+      unit.</DescriptionEN>
+      <DescriptionCN>获取该单位的最大魔力。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:最大魔力</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetModelRadius" signature="float GetModelRadius()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取模型大小半径。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:模型大小半径</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetModifierCount" signature="int GetModifierCount()">
+      <DescriptionEN>How many modifiers does this unit
+      have?</DescriptionEN>
+      <DescriptionCN>返回该单位所拥有的修改器数量。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:修改器数量</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetModifierNameByIndex" signature="string GetModifierNameByIndex(int a)">
+      <DescriptionEN>Get a modifier name by index.</DescriptionEN>
+      <DescriptionCN>以下标值索引修改器，并返回修改器名称字符串。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:修改器ID</Parameter>
+        <Return>string:修改器名称</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetMoveSpeedModifier" signature="float GetMoveSpeedModifier(float a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:</Parameter>
+        <Return>float:跑速</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetMustReachEachGoalEntity" signature="bool GetMustReachEachGoalEntity()">
+      <DescriptionEN>Get whether this NPC is required to reach each
+      goal entity, rather than being allowed to 'unkink' their
+      path</DescriptionEN>
+      <DescriptionCN>该单位是否被要求走访每个路径点?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否被要求走访每个路径点?</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetNightTimeVisionRange" signature="int GetNightTimeVisionRange()">
+      <DescriptionEN>Returns the vision range after
+      modifiers.</DescriptionEN>
+      <DescriptionCN>返回夜间视野距离(将修改器并入计算)。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:夜间视野距离(将修改器并入计算)</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetOpposingTeamNumber" signature="int GetOpposingTeamNumber()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetPaddedCollisionRadius" signature="float GetPaddedCollisionRadius()">
+      <DescriptionEN>Get the collision hull radius (including
+      padding) of this NPC</DescriptionEN>
+      <DescriptionCN>获取单位碰撞体积半径。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:单位碰撞体积半径</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetPercentageBasedManaRegen" signature="float GetPercentageBasedManaRegen()">
+      <DescriptionEN>This Mana regen is derived from?% bonuses
+      (from items like Void Stone).</DescriptionEN>
+      <DescriptionCN>获取基础魔力恢复值百分比。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:基础魔力恢复值百分比</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetPhysicalArmorBaseValue" signature="float GetPhysicalArmorBaseValue()">
+      <DescriptionEN>Returns base physical armor
+      value.</DescriptionEN>
+      <DescriptionCN>返回基础护甲值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:基础护甲值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetPhysicalArmorValue" signature="float GetPhysicalArmorValue()">
+      <DescriptionEN>Returns current physical armor
+      value.</DescriptionEN>
+      <DescriptionCN>返回当前的护甲值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:当前的护甲值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetPlayerOwner" signature="handle GetPlayerOwner()">
+      <DescriptionEN>Returns the player that owns this
+      unit</DescriptionEN>
+      <DescriptionCN>获取拥有此单位的玩家实体。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>handle:玩家</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetPlayerOwnerID" signature="int GetPlayerOwnerID()">
+      <DescriptionEN>Get the owner player ID for this
+      unit.</DescriptionEN>
+      <DescriptionCN>获取拥有此单位的玩家ID。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:玩家ID</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetProjectileSpeed" signature="int GetProjectileSpeed()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetRangeToUnit" signature="float GetRangeToUnit(handle a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a</Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetSecondsPerAttack" signature="float GetSecondsPerAttack()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:SecondsPerAttack</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetStatsBasedManaRegen" signature="float GetStatsBasedManaRegen()">
+      <DescriptionEN>Returns mana regen rate per
+      intelligence.</DescriptionEN>
+      <DescriptionCN>获取因智慧而增加的魔法恢复值。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float:因智慧而增加的魔法恢复值</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetTeamNumber" signature="int GetTeamNumber()">
+      <DescriptionEN>Get the team number of this
+      unit.</DescriptionEN>
+      <DescriptionCN>获取该单位所属的队伍ID。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:队伍ID</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetTotalPurchasedUpgradeGoldCost" signature="int GetTotalPurchasedUpgradeGoldCost()">
+      <DescriptionEN>Get how much gold has been spent on ability
+      upgrades.</DescriptionEN>
+      <DescriptionCN>获取用在升级的金钱。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>int:金钱</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetUnitLabel" signature="string GetUnitLabel()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>string</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GetUnitName" signature="string GetUnitName()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>获取单位名称。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>string:单位名称</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="GiveMana" signature="void GiveMana(float a)">
+      <DescriptionEN>Give mana to this unit, this can be used for
+      mana gained by abilities or item usage.</DescriptionEN>
+      <DescriptionCN>给予此单位指定的魔法值。(Giff me mana!)</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:给予此单位指定的魔法值</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasAbility" signature="bool HasAbility(string a)">
+      <DescriptionEN>See whether this unit has an ability by
+      name.</DescriptionEN>
+      <DescriptionCN>以技能名称搜寻该单位是否拥有此技能。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:技能名称</Parameter>
+        <Return>bool:是否拥有此技能</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasAttackCapability" signature="bool HasAttackCapability()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasFlyingVision" signature="bool HasFlyingVision()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasFlyMovementCapability" signature="bool HasFlyMovementCapability()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasGroundMovementCapability" signature="bool HasGroundMovementCapability()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasInventory" signature="bool HasInventory()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasItemInInventory" signature="bool HasItemInInventory(string a)">
+      <DescriptionEN>See whether this unit has an item by
+      name.</DescriptionEN>
+      <DescriptionCN>以物品名称搜寻该单位是否拥有此物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:物品名称</Parameter>
+        <Return>bool:是否拥有此物品</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasModifier" signature="bool HasModifier(string a)">
+      <DescriptionEN>Sees if this unit has a given
+      modifier</DescriptionEN>
+      <DescriptionCN>以修改器名称搜寻该单位是否拥有此修改器。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:修改器名称</Parameter>
+        <Return>bool:是否拥有此修改器</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasMovementCapability" signature="bool HasMovementCapability()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="HasScepter" signature="bool HasScepter()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="Heal" signature="void Heal(float a, handle b)">
+      <DescriptionEN>Heal this unit.</DescriptionEN>
+      <DescriptionCN>治疗该单位。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:治疗血量, handle b:单位</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="Hold" signature="void Hold()">
+      <DescriptionEN>Hold position.</DescriptionEN>
+      <DescriptionCN>命令单位在原地待命。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="Interrupt" signature="void Interrupt()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="InterruptChannel" signature="void InterruptChannel()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="InterruptMotionControllers" signature="void InterruptMotionControllers(bool a)">
+      <DescriptionEN>Parameter boolean determines finding clear
+      space.</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsAlive" signature="bool IsAlive()">
+      <DescriptionEN>Is this unit alive?</DescriptionEN>
+      <DescriptionCN>此单位是否还活着?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否还活着</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsAncient" signature="bool IsAncient()">
+      <DescriptionEN>Is this creature an Ancient?</DescriptionEN>
+      <DescriptionCN>该生物是否为远古野怪?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为远古野怪</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsAttackImmune" signature="bool IsAttackImmune()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsAttacking" signature="bool IsAttacking()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsAttackingEntity" signature="bool IsAttackingEntity(handle a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a</Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsBlind" signature="bool IsBlind()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsBlockDisabled" signature="bool IsBlockDisabled()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsCommandRestricted" signature="bool IsCommandRestricted()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsControllableByAnyPlayer" signature="bool IsControllableByAnyPlayer()">
+      <DescriptionEN>Is this unit controlled by any non-bot
+      player?</DescriptionEN>
+      <DescriptionCN>该单位是否为非Bot玩家所控制?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为非Bot玩家所控制</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsCreature" signature="bool IsCreature()">
+      <DescriptionEN>Is this a Creature type NPC</DescriptionEN>
+      <DescriptionCN>此单位是否为怪物类型单位?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为怪物类型单位</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsDeniable" signature="bool IsDeniable()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsDisarmed" signature="bool IsDisarmed()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsDominated" signature="bool IsDominated()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsEvadeDisabled" signature="bool IsEvadeDisabled()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsFrozen" signature="bool IsFrozen()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsHardDisarmed" signature="bool IsHardDisarmed()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsHero" signature="bool IsHero()">
+      <DescriptionEN>Is this a hero or hero
+      illusion?</DescriptionEN>
+      <DescriptionCN>此单位是否为英雄或英雄幻象?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为英雄或英雄幻象</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsHexed" signature="bool IsHexed()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsIdle" signature="bool IsIdle()">
+      <DescriptionEN>Is this creature currently
+      idle?</DescriptionEN>
+      <DescriptionCN>该生物是否处于闲置状态?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否处于闲置状态</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsIllusion" signature="bool IsIllusion()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>该单位是否为幻象单位?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为幻象单位</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsInvisible" signature="bool IsInvisible()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsInvulnerable" signature="bool IsInvulnerable()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsLowAttackPriority" signature="bool IsLowAttackPriority()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsMagicImmune" signature="bool IsMagicImmune()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>该单位是否魔法免疫?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否魔法免疫</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsMechanical" signature="bool IsMechanical()">
+      <DescriptionEN>Is the unit mechanical?</DescriptionEN>
+      <DescriptionCN>该单位是否为机械单位?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsMovementImpaired" signature="bool IsMovementImpaired()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsMuted" signature="bool IsMuted()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsNeutralUnitType" signature="bool IsNeutralUnitType()">
+      <DescriptionEN>Is this a neutral?</DescriptionEN>
+      <DescriptionCN>该单位是否为野怪?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为野怪</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsNightmared" signature="bool IsNightmared()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsOpposingTeam" signature="bool IsOpposingTeam(int a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a</Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsOutOfGame" signature="bool IsOutOfGame()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsOwnedByAnyPlayer" signature="bool IsOwnedByAnyPlayer()">
+      <DescriptionEN>Is this unit owned by any non-bot
+      player?</DescriptionEN>
+      <DescriptionCN>该单位是否为非Bot之玩家所有?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为非Bot之玩家所有</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsPhantom" signature="bool IsPhantom()">
+      <DescriptionEN>Is this a phantom unit?</DescriptionEN>
+      <DescriptionCN>该单位是否为幻象单位?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsPhantomBlocker" signature="bool IsPhantomBlocker()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsPhased" signature="bool IsPhased()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>是否在相位状态?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否在相位状态</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsPositionInRange" signature="bool IsPositionInRange(Vector a, float b)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>是否在某点的范围内</DescriptionCN>
+      <HowToCall>
+        <Parameter>Vector a:点位置, float b:范围</Parameter>
+        <Return>bool:是否在某点的范围内</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsRangedAttacker" signature="bool IsRangedAttacker()">
+      <DescriptionEN>Is this unit a ranged
+      attacker?</DescriptionEN>
+      <DescriptionCN>该单位攻击类型是否为远程攻击?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为远程攻击</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsRealHero" signature="bool IsRealHero()">
+      <DescriptionEN>Returns true if the hero is a true Hero, not a
+      creep or an Illusion of a hero</DescriptionEN>
+      <DescriptionCN>返回该单位是否为真正的英雄单位，而非小兵或是幻象。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为真正的英雄单位，而非小兵或是幻象。</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsRooted" signature="bool IsRooted()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsSilenced" signature="bool IsSilenced()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>该单位是否被沉默?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否被沉默</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsSoftDisarmed" signature="bool IsSoftDisarmed()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsSpeciallyDeniable" signature="bool IsSpeciallyDeniable()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsStunned" signature="bool IsStunned()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>该单位是否被晕眩了?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否被晕眩</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsSummoned" signature="bool IsSummoned()">
+      <DescriptionEN>Is this unit summoned?</DescriptionEN>
+      <DescriptionCN>此单位是否为召唤物?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为召唤物</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsTower" signature="bool IsTower()">
+      <DescriptionEN>Is this a tower?</DescriptionEN>
+      <DescriptionCN>此单位是否为塔?</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool:是否为塔</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsUnableToMiss" signature="bool IsUnableToMiss()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="IsUnselectable" signature="bool IsUnselectable()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="Kill" signature="void Kill(handle a, handle b)">
+      <DescriptionEN>Kills this NPC, with the params Ability and
+      Attacker</DescriptionEN>
+      <DescriptionCN>杀死一个单位，参数为使用的技能与攻击者。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:技能, handle b:攻击者</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MakeIllusion" signature="void MakeIllusion()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MakePhantomBlocker" signature="void MakePhantomBlocker()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MakeVisibleDueToAttack" signature="void MakeVisibleDueToAttack(int a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MakeVisibleToTeam" signature="void MakeVisibleToTeam(int a, float b)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a, float b</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="ModifyHealth" signature="void ModifyHealth(int a, handle b, bool c, int d)">
+      <DescriptionEN>Sets the health to a specific value, with
+      optional flags or inflictors.</DescriptionEN>
+      <DescriptionCN>设置血量为所指定的值</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:血量, handle b, bool c, int d</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MoveToNPC" signature="void MoveToNPC(handle a)">
+      <DescriptionEN>Move to follow a unit.</DescriptionEN>
+      <DescriptionCN>移动至指定的单位。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:单位</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MoveToNPCToGiveItem" signature="void MoveToNPCToGiveItem(handle a, handle b)">
+      <DescriptionEN>Give an item to another unit.</DescriptionEN>
+      <DescriptionCN>将身上的物品丢给指定的单位。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:物品, handle b:单位</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MoveToPosition" signature="void MoveToPosition(Vector a)">
+      <DescriptionEN>Issue a Move-To command</DescriptionEN>
+      <DescriptionCN>移动到指定的位置。</DescriptionCN>
+      <HowToCall>
+        <Parameter>Vector a:位置</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MoveToPositionAggressive" signature="void MoveToPositionAggressive(Vector a)">
+      <DescriptionEN>Issue an Attack-Move-To
+      command</DescriptionEN>
+      <DescriptionCN>移动到指定的位置。</DescriptionCN>
+      <HowToCall>
+        <Parameter>Vector a:位置</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="MoveToTargetToAttack" signature="void MoveToTargetToAttack(handle a)">
+      <DescriptionEN>Move to a target to attack.</DescriptionEN>
+      <DescriptionCN>移动至指定的单位，并且发动攻击。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:单位</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="NoHealthBar" signature="bool NoHealthBar()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="NoTeamMoveTo" signature="bool NoTeamMoveTo()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="NoTeamSelect" signature="bool NoTeamSelect()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="NotOnMinimap" signature="bool NotOnMinimap()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="NotOnMinimapForEnemies" signature="bool NotOnMinimapForEnemies()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="NoUnitCollision" signature="bool NoUnitCollision()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="PassivesDisabled" signature="bool PassivesDisabled()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="PerformAttack" signature="void PerformAttack(handle a, bool b, bool c, bool d, bool e)">
+
+      <DescriptionEN>Performs an attack on a target. Params:
+      Target, bUseCastAttackOrb, bProcessProcs, bSkipCooldown,
+      bIgnoreInvis</DescriptionEN>
+      <DescriptionCN>对一单位执行攻击。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:目标, bool b:bUseCastAttackOrb, bool
+        c:bProcessProcs, bool d:bSkipCooldown, bool
+        e:bIgnoreInvis</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="PickupDroppedItem" signature="void PickupDroppedItem(handle a)">
+      <DescriptionEN>Pick up a dropped item.</DescriptionEN>
+      <DescriptionCN>捡起掉落的物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:物品</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="PickupRune" signature="void PickupRune(handle a)">
+      <DescriptionEN>Pick up a rune.</DescriptionEN>
+      <DescriptionCN>捡起神符。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:神符</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="ProvidesVision" signature="bool ProvidesVision()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="ReduceMana" signature="void ReduceMana(float a)">
+      <DescriptionEN>Remove mana from this unit, this can be used
+      for involuntary mana loss, not for mana that is
+      spent.</DescriptionEN>
+      <DescriptionCN>
+      移除单位的魔力，不过是用在该单位非自愿失去魔力，而非用在使用技能消耗魔力的情况。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:移除单位的魔力</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="RemoveAbility" signature="void RemoveAbility(string a)">
+      <DescriptionEN>Remove an ability from this unit by
+      name.</DescriptionEN>
+      <DescriptionCN>以技能名称移除该单位相应的技能。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:技能名称</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="RemoveItem" signature="void RemoveItem(handle a)">
+      <DescriptionEN>Removes the passed item from this unit's
+      inventory.</DescriptionEN>
+      <DescriptionCN>将该单位库存中的过期物品移除。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:物品</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="RemoveModifierByName" signature="void RemoveModifierByName(string a)">
+      <DescriptionEN>Removes a modifier</DescriptionEN>
+      <DescriptionCN>以名称移除修改器。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:修改器名称</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="RemoveModifierByNameAndCaster" signature="void RemoveModifierByNameAndCaster(string a, handle b)">
+
+      <DescriptionEN>Removes a modifier that was cast by the given
+      caster</DescriptionEN>
+      <DescriptionCN>以施法者与修改器名称移除修改器。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:修改器名称, handle b:施法者</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="RemoveNoDraw" signature="void RemoveNoDraw()">
+      <DescriptionEN>Remove the no draw flag.</DescriptionEN>
+      <DescriptionCN>Remove the no draw flag.</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="RespawnUnit" signature="void RespawnUnit()">
+      <DescriptionEN>Respawns the target unit if it can be
+      respawned.</DescriptionEN>
+      <DescriptionCN>复活该单位。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SellItem" signature="void SellItem(handle a)">
+      <DescriptionEN>Sells the passed item in this unit's
+      inventory.</DescriptionEN>
+      <DescriptionCN>卖出该单位的物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:物品</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetAdditionalBattleMusicWeight" signature="void SetAdditionalBattleMusicWeight(float a)">
+      <DescriptionEN>Combat involving this creature will have this
+      weight added to the music calcuations</DescriptionEN>
+      <DescriptionCN>获取当与该单位战斗时将会计算的战斗音乐权重。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetAttackCapability" signature="void SetAttackCapability(int a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetAttacking" signature="void SetAttacking(handle a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetBaseAttackTime" signature="void SetBaseAttackTime(float a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetBaseDamageMax" signature="void SetBaseDamageMax(int a)">
+      <DescriptionEN>Sets the minimum base damage.</DescriptionEN>
+      <DescriptionCN>设置基础最大攻击力。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:基础最大攻击力</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetBaseDamageMin" signature="void SetBaseDamageMin(int a)">
+      <DescriptionEN>Sets the minimum base damage.</DescriptionEN>
+      <DescriptionCN>设置基础最小攻击力。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:基础最小攻击力</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetBaseHealthRegen" signature="void SetBaseHealthRegen(float a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetBaseMagicalResistanceValue" signature="void SetBaseMagicalResistanceValue(float a)">
+      <DescriptionEN>Sets base magical armor value.</DescriptionEN>
+      <DescriptionCN>设置基础魔法抗性值。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:基础魔法抗性值</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetBaseManaRegen" signature="void SetBaseManaRegen(float a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>设置基础魔力恢复值。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:基础魔力恢复值</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetBaseMaxHealth" signature="void SetBaseMaxHealth(float a)">
+      <DescriptionEN>Set a new base max health
+      value.</DescriptionEN>
+      <DescriptionCN>设置基础最大血量。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:基础最大血量</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetBaseMoveSpeed" signature="void SetBaseMoveSpeed(int a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>设置基础跑速。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:基础跑速</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetControllableByPlayer" signature="void SetControllableByPlayer(int a, bool b)">
+      <DescriptionEN>Set this unit controllable by the player with
+      the passed ID.</DescriptionEN>
+      <DescriptionCN>以玩家ID设置该单位的控制权。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:玩家ID, bool b:控制权</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetCursorCastTarget" signature="void SetCursorCastTarget(handle a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetCursorPosition" signature="void SetCursorPosition(Vector a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>Vector a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetCursorTargetingNothing" signature="void SetCursorTargetingNothing(bool a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetDayTimeVisionRange" signature="void SetDayTimeVisionRange(int a)">
+      <DescriptionEN>Set the base vision range.</DescriptionEN>
+      <DescriptionCN>设置基础的视间视野距离。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:基础的视间视野距离</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetDeathXP" signature="void SetDeathXP(int a)">
+      <DescriptionEN>Set the XP bounty on this unit</DescriptionEN>
+      <DescriptionCN>设置该单位的击杀经验值奖赏。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:击杀经验值奖赏</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetForceAttackTarget" signature="void SetForceAttackTarget(handle a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetHasInventory" signature="void SetHasInventory(bool a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetHullRadius" signature="void SetHullRadius(float a)">
+      <DescriptionEN>Set the collision hull radius of this
+      NPC</DescriptionEN>
+      <DescriptionCN>设置该单位的碰撞半径。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:碰撞半径</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetIdleAcquire" signature="void SetIdleAcquire(bool a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetInitialGoalEntity" signature="void SetInitialGoalEntity(handle a)">
+      <DescriptionEN>Sets the initial waypoint goal for this
+      NPC</DescriptionEN>
+      <DescriptionCN>设置该单位的初始路径点。</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a:初始路径点</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetMana" signature="void SetMana(float a)">
+      <DescriptionEN>Set the mana on this unit.</DescriptionEN>
+      <DescriptionCN>设置该单位的魔力值。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:魔力值</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetMaximumGoldBounty" signature="void SetMaximumGoldBounty(int a)">
+      <DescriptionEN>Set the maximum gold bounty for this
+      unit.</DescriptionEN>
+      <DescriptionCN>设置该单位的最高赏金。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:最高赏金</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetMinimumGoldBounty" signature="void SetMinimumGoldBounty(int a)">
+      <DescriptionEN>Set the minimum gold bounty for this
+      unit.</DescriptionEN>
+      <DescriptionCN>设置该单位的最低赏金。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:最低赏金</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetMoveCapability" signature="void SetMoveCapability(int a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetMustReachEachGoalEntity" signature="void SetMustReachEachGoalEntity(bool a)">
+      <DescriptionEN>Set whether this NPC is required to reach each
+      goal entity, rather than being allowed to 'unkink' their
+      path</DescriptionEN>
+      <DescriptionCN>设置该单位是否要走访每个路径点。</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a:是否要走访每个路径点</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetNeverMoveToClearSpace" signature="void SetNeverMoveToClearSpace(bool a)">
+      <DescriptionEN>If set to true, we will never attempt to move
+      this unit to clear space, even when it
+      unphases.</DescriptionEN>
+      <DescriptionCN>如果设置为True，则不会将该单位移动到净空的地方。</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a:是否不会移动到净空的地方</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetNightTimeVisionRange" signature="void SetNightTimeVisionRange(int a)">
+      <DescriptionEN>Set the base vision range.</DescriptionEN>
+      <DescriptionCN>设置基础夜间视野距离。</DescriptionCN>
+      <HowToCall>
+        <Parameter>int a:基础夜间视野距离</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetOriginalModel" signature="void SetOriginalModel(string originalModel)">
+      <DescriptionEN>Sets the original model of this entity, which
+      it will tend to fall back to anytime its state
+      changes</DescriptionEN>
+      <DescriptionCN>设置单位原模型。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string originalModel:原模型</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetPhysicalArmorBaseValue" signature="void SetPhysicalArmorBaseValue(float a)">
+      <DescriptionEN>Sets base physical armor
+      value.</DescriptionEN>
+      <DescriptionCN>设置基础护甲值。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:基础护甲值</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetRangedProjectileName" signature="void SetRangedProjectileName(string a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetStolenScepter" signature="void SetStolenScepter(bool a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>bool a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SetUnitName" signature="void SetUnitName(string a)">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="ShouldIdleAcquire" signature="bool ShouldIdleAcquire()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SpendMana" signature="void SpendMana(float a, handle b)">
+      <DescriptionEN>Spend mana from this unit, this can be used
+      for spending mana from abilities or item
+      usage.</DescriptionEN>
+      <DescriptionCN>消耗魔力，可以用在技能消耗或使用物品。</DescriptionCN>
+      <HowToCall>
+        <Parameter>float a:消耗魔力, handle b:技能或物品</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="Stop" signature="void Stop()">
+      <DescriptionEN>Stop the current order.</DescriptionEN>
+      <DescriptionCN>使该单位暂停当前动作。</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="SwapAbilities" signature="void SwapAbilities(string a, string b, bool c, bool d)">
+
+      <DescriptionEN>Swaps the slots of the two passed abilities
+      and sets them enabled/disabled: const char* AbilityName1,
+      const char* AbilityName2, bool bEnable1, bool bEnable2. The
+      boolean controls which ability is active. The ability order
+      is never swapped when swapping abilities, only the boolean
+      statements are flipped.</DescriptionEN>
+      <DescriptionCN>交换两个技能的字段，并设置其是否生效。</DescriptionCN>
+      <HowToCall>
+        <Parameter>string a:技能名称1, string b:技能名称2, bool c:是否生效,
+        bool d:是否生效</Parameter>
+        <Return></Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="TimeUntilNextAttack" signature="float TimeUntilNextAttack()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>float</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="TriggerModifierDodge" signature="bool TriggerModifierDodge()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="TriggerSpellAbsorb" signature="bool TriggerSpellAbsorb(handle a)">
+      <DescriptionEN>Query whether the passed ability will trigger
+      spell absorb on this unit.</DescriptionEN>
+      <DescriptionCN>判断传递的技能是否会触发该单位的技能吸收</DescriptionCN>
+      <HowToCall>
+        <Parameter>handle a</Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+    <function name="UnitCanRespawn" signature="bool UnitCanRespawn()">
+      <DescriptionEN>No Description Set</DescriptionEN>
+      <DescriptionCN>无叙述</DescriptionCN>
+      <HowToCall>
+        <Parameter></Parameter>
+        <Return>bool</Return>
+        <PS></PS>
+      </HowToCall>
+    </function>
+
+  </functions>
+</class>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[FindAbilityByName(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:FindAbilityByName  Retrieve an ability by name from the unit. 
+    -- @return handle
+    -- @param string_1 string
+    function CDOTA_BaseNPC:FindAbilityByName( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>FindAbilityByName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

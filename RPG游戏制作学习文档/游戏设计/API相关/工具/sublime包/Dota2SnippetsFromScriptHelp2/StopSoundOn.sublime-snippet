@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[StopSoundOn(${1:string_1},${2:handle_2})${3:--[[
+     StopSoundOn  Stop named sound on Entity 
+    -- @return void
+    -- @param string_1 string
+    -- @param handle_2 handle
+    function StopSoundOn( string_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>StopSoundOn</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

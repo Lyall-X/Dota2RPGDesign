@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetOrCreatePublicScriptScope()${1:--[[
+     CEntityInstance:GetOrCreatePublicScriptScope  Retrieve, creating if necessary, the public script-side data associated with an entity 
+    -- @return handle
+    function CEntityInstance:GetOrCreatePublicScriptScope(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetOrCreatePublicScriptScope</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

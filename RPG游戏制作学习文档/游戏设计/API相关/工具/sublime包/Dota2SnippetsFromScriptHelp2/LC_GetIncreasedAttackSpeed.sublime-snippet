@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetIncreasedAttackSpeed()${1:--[[
+     CDOTA_BaseNPC_Hero:GetIncreasedAttackSpeed  Hero attack speed is also affected by agility. 
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetIncreasedAttackSpeed(  ) end
+    ]]}]]></content>
+    <tabTrigger>getIncreasedAttackSpeed</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

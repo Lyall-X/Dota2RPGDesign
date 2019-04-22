@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMaxStamina()${1:--[[
+     CRPG_Unit:GetMaxStamina  () - returns maximum stamina amount. 
+    -- @return float
+    function CRPG_Unit:GetMaxStamina(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMaxStamina</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

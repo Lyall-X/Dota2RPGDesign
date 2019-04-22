@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetGameTime()${1:--[[
+     CDOTAGamerules:GetGameTime  Returns the number of seconds elapsed since map start. This time doesn't count up when the game is paused 
+    -- @return float
+    function CDOTAGamerules:GetGameTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>getGameTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

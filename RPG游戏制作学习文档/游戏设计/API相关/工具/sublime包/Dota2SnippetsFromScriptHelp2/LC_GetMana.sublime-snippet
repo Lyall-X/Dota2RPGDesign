@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMana()${1:--[[
+     CDOTA_BaseNPC:GetMana  Get the mana on this unit. 
+    -- @return float
+    function CDOTA_BaseNPC:GetMana(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMana</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

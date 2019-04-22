@@ -1,0 +1,155 @@
+// Rewrite of the Slardar Amplify Damage
+// Author: chrislotix
+// Date: 01.01.2015.
+// Changed: 14.01.2015 - Fixed particle attachment in Lua
+// Changed: 07.02.2015. - Amplify Damage reveals invisible units properly
+"slardar_amplify_damage_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"slardar_amplify_damage"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	 {
+	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"
+	  "particle"	"particles/units/heroes/hero_slardar/slardar_amp_damage.vpcf"
+	  "particle"	"particles/status_fx/status_effect_slardar_amp_damage.vpcf"
+	 }
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.35 0.35 0.35"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"10.0 10.0 10.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"25 25 25"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"6.0"	// Very valuable compared to cost.
+
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_reduction"		"-10 -15 -20"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"25.0 25.0 25.0"
+		}
+	}
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target"	"TARGET"
+			"ModifierName"	"modifier_amplify_damage_datadriven"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Slardar.Amplify_Damage"
+			"Target"	"TARGET"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_amplify_damage_datadriven"
+		{
+			"Duration"	"%duration"
+			"isDebuff"	"1"			
+			"StatusEffectName" "particles/status_fx/status_effect_slardar_amp_damage.vpcf"
+			"StatusEffectPriority"	"20"
+
+			"OnCreated"
+			{
+				// Closest datadriven particle attachment for this, shows the cloud but they don't go overhead, just origin
+				//"AttachEffect"
+				//{
+				//	"EffectName"		"particles/units/heroes/hero_slardar/slardar_amp_damage.vpcf"
+				//	"EffectAttachType"	"follow_customorigin"
+				//	"Target"			"TARGET"
+
+				//	"ControlPointEntities"
+				//	{
+				//		"TARGET"	"follow_overhead"	//Armor
+				//		"TARGET"	"follow_overhead"	//Rain
+				//		"TARGET"	"follow_overhead"	//Cloud
+				//	}
+				//}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_slardar/amplify_damage.lua"
+					"Function"		"AmplifyDamageParticle"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_slardar/amplify_damage.lua"
+					"Function"		"EndAmplifyDamageParticle"
+				}
+			}
+
+			"ThinkInterval"  "0.5"
+			"OnIntervalThink"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_amplify_damage_reveal_datadriven"
+					"Target" 		"TARGET"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_amplify_damage_reveal_datadriven"
+					"Target" 		"TARGET"
+					"Duration"		"0.5"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_reduction"				
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_PROVIDES_VISION"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_amplify_damage_reveal_datadriven"
+		{
+			"IsHidden"		"1"
+			"IsPurgable"	"0"
+			"States"
+			{
+				"MODIFIER_STATE_INVISIBLE" 			"MODIFIER_STATE_VALUE_DISABLED"
+			}
+		}
+	}
+}
+
+

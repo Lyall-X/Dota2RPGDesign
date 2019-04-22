@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMustReachEachGoalEntity()${1:--[[
+     CDOTA_BaseNPC:GetMustReachEachGoalEntity  Set whether this NPC is required to reach each goal entity, rather than being allowed to unkink their path. 
+    -- @return bool
+    function CDOTA_BaseNPC:GetMustReachEachGoalEntity(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetMustReachEachGoalEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

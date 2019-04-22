@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[AngleDiff(${1:float_1},${2:float_2})${3:--[[
+     AngleDiff  Returns the number of degrees difference between two yaw angles 
+    -- @return float
+    -- @param float_1 float
+    -- @param float_2 float
+    function AngleDiff( float_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>angleDiff</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

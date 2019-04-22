@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[IsNearbyTree(${1:Vector_1},${2:float_2},${3:bool_3})${4:--[[
+     GridNav:IsNearbyTree  (position, radius, checkFullTreeRadius?) Checks whether there are any trees overlapping the given point 
+    -- @return bool
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    -- @param bool_3 bool
+    function GridNav:IsNearbyTree( Vector_1, float_2, bool_3 ) end
+    ]]}]]></content>
+    <tabTrigger>isNearbyTree</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

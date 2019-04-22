@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsBlocking()${1:--[[
+     CRPG_Unit:IsBlocking  () - is this unit blocking? 
+    -- @return bool
+    function CRPG_Unit:IsBlocking(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsBlocking</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

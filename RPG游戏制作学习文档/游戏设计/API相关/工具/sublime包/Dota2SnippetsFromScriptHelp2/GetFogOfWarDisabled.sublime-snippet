@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetFogOfWarDisabled()${1:--[[
+     CDOTABaseGameMode:GetFogOfWarDisabled  Turn the fog of war on or off. 
+    -- @return bool
+    function CDOTABaseGameMode:GetFogOfWarDisabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetFogOfWarDisabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

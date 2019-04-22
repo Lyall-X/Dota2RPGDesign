@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSightConeAngle()${1:--[[
+     CRPG_Unit:GetSightConeAngle  () - returns angle in which the unit can see things up to sight range 
+    -- @return float
+    function CRPG_Unit:GetSightConeAngle(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetSightConeAngle</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

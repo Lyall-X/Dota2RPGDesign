@@ -1,0 +1,50 @@
+// Rewrite of Void Stone
+// Author: Rook
+// Date: January 25, 2015
+
+"item_void_stone_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1057"  //Valve's version of this item uses the ID "57".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_void_stone"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"875"
+	"ItemShopTags"					"regen_mana"
+	"ItemQuality"					"secret_shop"
+	"ItemAliases"					"void stone"
+	"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+	"SecretShop"					"1"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"bonus_mana_regen_percentage"		"100"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_void_stone_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+			}
+		}
+	}
+}

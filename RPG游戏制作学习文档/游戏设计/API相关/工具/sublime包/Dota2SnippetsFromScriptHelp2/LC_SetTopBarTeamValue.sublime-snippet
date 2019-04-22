@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetTopBarTeamValue(${1:int_1},${2:int_2})${3:--[[
+     CDOTABaseGameMode:SetTopBarTeamValue  Set the team values on the top game bar. 
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTABaseGameMode:SetTopBarTeamValue( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setTopBarTeamValue</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

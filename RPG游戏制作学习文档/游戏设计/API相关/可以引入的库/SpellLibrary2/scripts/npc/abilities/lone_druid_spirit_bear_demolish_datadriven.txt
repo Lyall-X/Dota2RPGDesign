@@ -1,0 +1,24 @@
+"lone_druid_spirit_bear_demolish_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_resistance"		"33"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_building_damage"		"40"
+		}
+	}
+}
+

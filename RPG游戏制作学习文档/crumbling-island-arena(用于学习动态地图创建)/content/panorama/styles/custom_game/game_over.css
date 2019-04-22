@@ -1,0 +1,670 @@
+.GameOverBackground
+{
+    width: 100%;
+    height: 100%;
+    overflow: clip;
+
+    opacity: 0.0;
+    transition-property: opacity;
+    transition-duration: 1.0s;
+}
+
+#GameOverBlur
+{
+    width: 100%;
+    height: 100%;
+}
+
+.Blurred
+{
+    blur: gaussian( 2, 2, 2 );
+}
+
+#GameOverBackgroundImage
+{
+    saturation: 0.0;
+}
+
+#GameOverScoreboard
+{
+    horizontal-align: center;
+    vertical-align: center;
+    flow-children: down;
+    width: 90%;
+}
+
+#GameOverChat
+{
+    align: center bottom;
+    width: 45%;
+    height: 30%;
+    background-color: #00000099;
+    border-radius: 3px;
+}
+
+.GameOverScoreboardVisible
+{
+    opacity: 1.0;
+}
+
+.TableRow
+{
+    flow-children: right;
+    width: 100%;
+}
+
+.TableCell
+{
+    width: fill-parent-flow(1.0);
+    height: 80px;
+    border-radius: 3px;
+    background-color: black;
+}
+
+.TableNameCell
+{
+    width: 250px;
+}
+
+.TableColumnHeader
+{
+    width: fill-parent-flow(1.0);
+    height: 30px;
+    border-radius: 3px;
+}
+
+.TableColumnHeaderWide
+{
+    width: 250px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.TableColumnHeaderText
+{
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    vertical-align: center;
+    horizontal-align: center;
+    text-shadow: 0px 0px 3px 3.0 black;
+    color: gold;
+    font-size: 22;
+}
+
+.TableCellText
+{
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    vertical-align: center;
+    horizontal-align: center;
+    text-shadow: 0px 0px 3px 3.0 black;
+    color: white;
+    white-space: nowrap;
+}
+
+.TableIconMini
+{
+    margin: 3px;
+}
+
+.TableCellIcons
+{
+    align: center center;
+    flow-children: right-wrap;
+}
+
+.TableCellString
+{
+    font-size: 22;
+}
+
+.TableCellNumber
+{
+    font-size: 36;
+    font-weight: bold;
+}
+
+.TableIcon
+{
+    background-color: white;
+    horizontal-align: right;
+    vertical-align: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.WinnerIcon
+{
+    opacity-mask: url("file://{images}/status_icons/trophy.psd");
+}
+
+.RunnerUpIcon
+{
+    opacity-mask: url('file://{images}/control_icons/star_favorite.psd');
+}
+
+.MultipleHeroesIcon
+{
+    align: center center;
+    width: 32px;
+    height: 32px;
+    background-image: url('file://{images}/hud/ancient.png');
+    background-size: 100% 100%;
+}
+
+.RankUpdateParent
+{
+    align: center center;
+    flow-children: right;
+}
+
+.GameOverRank
+{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    tooltip-position: top;
+    tooltip-body-position: 50% 100%;
+    background-color: rgba(0, 255, 255, 0.02);
+}
+
+.RankLoading
+{
+    align: center center;
+}
+
+.TableFooter
+{
+    margin-top: 40px;
+    font-size: 22;
+    horizontal-align: center;
+    vertical-align: center;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    color: white;
+    text-shadow: 0px 0px 3px 3.0 black;
+}
+
+#ExitButton
+{
+    width: 300px;
+    height: 36px;
+
+    background-color: #4d5860;
+    border-style: solid;
+    border-width: 1px;
+
+    padding: 4px 10px;
+
+    border-color: #404040;
+    border-radius: 3px;
+
+    transition-property: background-color;
+    transition-duration: 0.05s;
+
+    box-shadow: #00000055 -4px -4px 8px 8px;
+    vertical-align: top;
+    horizontal-align: center;
+    wash-color: #74EAFE66;
+    margin-bottom: 12px;
+}
+
+#ExitButton:enabled:hover
+{
+    background-color: #6c7d88;
+
+    border-top-color: #aaaaaa77;
+    border-left-color: #aaaaaa33;
+    border-bottom-color: #333333;
+    border-right-color: #404040;
+}
+
+#ExitButton:active
+{
+    background-color: white;
+    sound: "ui_generic_button_click";
+}
+
+#ExitButton Label
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2px;
+    width: 100%;
+}
+
+#ExitButton:hover Label
+{
+    color: #FFFFFF;
+}
+
+#ExitButton:active Label
+{
+    color: black;
+}
+
+.ConnectionStatePanel
+{
+    width: 100%;
+    height: 100%;
+}
+
+.ConnectionStateDisconnected
+{
+    background-image: url('file://{images}/custom_game/icon_disconnect.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#NotificationArea
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.91);
+}
+
+#RewardArea
+{
+    align: center center;
+    flow-children: down;
+}
+
+#RewardRays
+{
+    width: 100%;
+    height: 100%;
+}
+
+.RewardHidden
+{
+    opacity: 0.0;
+}
+
+#RewardModel
+{
+    width: 500px;
+    height: 700px;
+    opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+    horizontal-align: center;
+    margin-top: -100px;
+}
+
+#RewardReceivedHeader
+{
+    align: center top;
+    color: white;
+    letter-spacing: 10px;
+    font-size: 90px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: red 0px 0px 4px 4px;
+    transform: rotateX(8deg);
+}
+
+#RewardTip
+{
+    horizontal-align: center;
+    font-size: 16px;
+    color: #BBBBBB;
+    text-transform: uppercase;
+}
+
+#RewardArea #ClickToClose
+{
+    transform: rotateX(-8deg);
+}
+
+#RankElements
+{
+    flow-children: down;
+    align: center center;
+}
+
+#RankContainer, #RankNewContainer
+{
+    horizontal-align: center;
+}
+
+#Rank, #RankNew
+{
+    width: 256px;
+    height: 256px;
+    saturation: 1.0;
+    background-color: rgba(0, 0, 0, 0.18);
+    border-radius: 50%;
+}
+
+#ClickToClose, #RankUpdatedLabel, #EliteRankText, #RankLabel, #RankLabelNew, #RewardReceivedHeader, #RewardTip, #PassProgressHeader {
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+#RankLabel, #RankLabelNew
+{
+    align: center bottom;
+    color: white;
+    font-size: 100px;
+    margin-bottom: -20px;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+
+#EliteRankText
+{
+    margin-top: 50px;
+    align: center bottom;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 38px;
+    text-shadow: gold 0px 0px 4px 4px;
+}
+
+.EliteRankLabel
+{
+    text-shadow: gold 0px 0px 3px 3.0;
+    font-size: 27px;
+    margin-bottom: -1px;
+}
+
+#ClickToClose
+{
+    margin-top: 50px;
+    align: center bottom;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: skyblue 0px 0px 4px 4px;
+}
+
+#RankUpdatedLabel
+{
+    margin-bottom: 50px;
+    align: center top;
+    color: white;
+    letter-spacing: 10px;
+    font-size: 90px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: skyblue 0px 0px 4px 4px;
+}
+
+#RankEffect
+{
+    width:100%;
+    height:100%;
+    margin-top: 200px;
+}
+
+.NormalText
+{
+    text-shadow: skyblue 0px 0px 8px 8px;
+}
+
+.EliteText
+{
+    text-shadow: gold 0px 0px 8px 8px;
+}
+
+.RankOpenAnimationClass
+{
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-name: RankOpen;
+}
+
+.RankEndAnimationClass
+{
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-name: RankEnd;
+}
+
+.RankAnimationClass
+{
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-name: RankAnimation;
+}
+
+#PassProgressHeader
+{
+    horizontal-align: center;
+    margin-bottom: 40px;
+    color: white;
+    letter-spacing: 10px;
+    font-size: 90px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: gold 0px 0px 2px 2px;
+    transform: rotateX(8deg);
+}
+
+.PassNotification
+{
+    align: center center;
+    flow-children: down;
+    margin-top: 140px;
+}
+
+.PassNotification #QuestList
+{
+    width: fit-children;
+    align: center center;
+    height: 300px;
+    margin-top: 40px;
+}
+
+.PassNotification #LevelProgress
+{
+    background-color: #000000DD;
+    border: 0;
+}
+
+.PassNotification #LevelBar
+{
+    height: fit-children;
+    horizontal-align: center;
+}
+
+.PassNotification #LevelText
+{
+    font-weight: normal;
+    text-transform: uppercase;
+    text-shadow: black 1px 1px 1px 1px;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.PassNotification #LevelBar
+{
+    width: 900px;
+}
+
+.PassNotification #QuestList .QuestPanel
+{
+    width: 220px;
+}
+
+#NextLevelReward
+{
+    margin-top: 40px;
+    margin-left: 20px;
+    horizontal-align: center;
+    flow-children: right;
+    padding-left: 60px; /* For animations */
+    padding-right: 60px;
+}
+
+#NextLevelRewardContainer
+{
+    width: 106px;
+}
+
+.RewardItemBorder
+{
+    box-shadow: red -1px -1px 2px 2px;
+}
+
+#NextLevelRewardHeroImage
+{
+    align: right bottom;
+}
+
+#NextLevelReward Label
+{
+    color: white;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+#NextLevelRewardImage
+{
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin-left: 20px;
+    border: 1px solid #333333;
+}
+
+.QuestComplete
+{
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-name: QuestCompleteAnimation;
+}
+
+.LevelIncrease
+{
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-name: LevelIncrease;
+}
+
+.PassResultRays
+{
+    hue-rotation: 30deg;
+}
+
+#PassRewardContainer
+{
+    align: center center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    width: 160px;
+    height: 160px;
+}
+
+#PassRewardImageContainer
+{
+    background-color: black;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+#PassRewardImage
+{
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    box-shadow: 0 0 0 0;
+}
+
+#PassRewardHeroImage
+{
+    align: right bottom;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+@keyframes 'RankOpen'
+{
+    0%
+    {
+        transform: scale3d(0.1, 0.1, 0.1);
+    }
+
+    65%
+    {
+        transform: scale3d(1.4, 1.4, 1.4);
+    }
+    
+    100%
+    {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes 'RankEnd'
+{
+    0%
+    {
+        transform: scale3d(1, 1, 1);
+    }
+
+    100%
+    {
+        transform: scale3d(0.1, 0.1, 0.1);
+    }
+}
+
+@keyframes 'RankAnimation'
+{
+    0%
+    {
+        transform: scale3d(0.2, 0.2, 0.2);
+    }
+
+    50%
+    {
+        transform: scale3d(1.8, 1.8, 1.8);
+    }
+    
+    100%
+    {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes 'QuestCompleteAnimation'
+{
+
+    0%
+    {
+        opacity: 1;
+    }
+
+    100%
+    {
+        wash-color: gold;
+        opacity: 0;
+    }
+}
+
+@keyframes 'LevelIncrease'
+{
+    0%
+    {
+        transform: scale3d(1, 1, 1);
+    }
+
+    65%
+    {
+        transform: scale3d(1.4, 1.4, 1.4);
+    }
+    
+    100%
+    {
+        transform: scale3d(1, 1, 1);
+    }
+}

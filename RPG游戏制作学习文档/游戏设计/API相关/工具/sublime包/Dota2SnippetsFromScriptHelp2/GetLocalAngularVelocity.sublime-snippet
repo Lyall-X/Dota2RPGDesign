@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetLocalAngularVelocity()${1:--[[
+     CBaseEntity:GetLocalAngularVelocity  Maybe local angvel 
+    -- @return QAngle
+    function CBaseEntity:GetLocalAngularVelocity(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetLocalAngularVelocity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

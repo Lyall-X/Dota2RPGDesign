@@ -1,0 +1,69 @@
+#columns{
+	-moz-columns: 550px auto;
+	-webkit-columns: 550px auto;
+	columns: 550px auto;
+	-moz-column-gap: 0px;
+	-webkit-column-gap: 0px;
+	column-gap: 0px;
+}
+
+.component{
+	width:550px;
+	padding:10px;
+	background-color: E3E3E3;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-size:10pt;
+	display:inline-block;
+	text-align:left;
+}
+
+.previewImg{
+	max-width: 550px;
+	max-height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	display:block;
+	margin-top:10px;
+	margin-bottom:-10px;
+}
+
+.componentName{
+	font-size:16pt;
+	margin-bottom:5px;
+	display:inline-block;
+}
+
+.component ul{
+	margin:0;
+	padding: 0;
+	padding: 5px 0px 5px 30px;
+	background-color:#C9C9C9;
+	margin-bottom:10px;
+}
+
+.defaultVal {
+	color: #696969;
+}
+
+.clear {
+	height:1px;
+	clear:both;
+	background-color:#000;
+	margin-bottom:15px;
+}
+
+.component p {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+/*-----CPanel stuff ------*/
+.component textarea{
+	width:100%;
+	min-height:80px;
+}
+
+.component input[type=text]{
+	width:400px;
+}

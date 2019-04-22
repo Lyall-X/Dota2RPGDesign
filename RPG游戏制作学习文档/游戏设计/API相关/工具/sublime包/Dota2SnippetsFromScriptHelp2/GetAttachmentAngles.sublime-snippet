@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetAttachmentAngles(${1:int_1})${2:--[[
+     CBaseAnimating:GetAttachmentAngles  Get the attachement id's angles as a p,y,r vector. 
+    -- @return Vector
+    -- @param int_1 int
+    function CBaseAnimating:GetAttachmentAngles( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetAttachmentAngles</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

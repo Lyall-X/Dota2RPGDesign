@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetTextReplaceValue(${1:int_1},${2:int_2})${3:--[[
+     CDotaSubquestBase:SetTextReplaceValue  Set a subquest value 
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDotaSubquestBase:SetTextReplaceValue( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetTextReplaceValue</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

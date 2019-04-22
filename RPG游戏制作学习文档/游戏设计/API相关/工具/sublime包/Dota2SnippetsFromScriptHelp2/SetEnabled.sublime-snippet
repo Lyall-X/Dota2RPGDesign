@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetEnabled(${1:bool_1},${2:bool_2})${3:--[[
+     CDOTA_SimpleObstruction:SetEnabled  Enable or disable the obstruction 
+    -- @return void
+    -- @param bool_1 bool
+    -- @param bool_2 bool
+    function CDOTA_SimpleObstruction:SetEnabled( bool_1, bool_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetEnabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

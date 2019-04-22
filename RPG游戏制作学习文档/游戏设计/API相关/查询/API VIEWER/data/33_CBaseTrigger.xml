@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CBaseTrigger" nameCN="基础触发器"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="Disable" signature="void Disable()">
+		  <DescriptionEN>Disable the trigger</DescriptionEN>
+		  <DescriptionCN>禁止触发器</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Enable" signature="void Enable()">
+		  <DescriptionEN>Enable the trigger</DescriptionEN>
+		  <DescriptionCN>允许触发器</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="IsTouching" signature="bool IsTouching(handle a)">
+		  <DescriptionEN>Checks whether the passed entity is touching the
+		  trigger.</DescriptionEN>
+		  <DescriptionCN>检查指定实体是否正在接触触发器</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>handle a</Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

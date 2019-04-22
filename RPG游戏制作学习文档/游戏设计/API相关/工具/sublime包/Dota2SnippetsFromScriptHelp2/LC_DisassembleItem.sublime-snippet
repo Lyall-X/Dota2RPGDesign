@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[DisassembleItem(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:DisassembleItem  Disassemble the passed item in this unit's inventory. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:DisassembleItem( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>disassembleItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

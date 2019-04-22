@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[DebugDrawScreenTextLine(${1:float_1},${2:float_2},${3:int_3},${4:string_4},${5:int_5},${6:int_6},${7:int_7},${8:int_8},${9:float_9})${10:--[[
+     DebugDrawScreenTextLine  Draw text with a line offset (x, y, lineOffset, text, r, g, b, a, duration) 
+    -- @return void
+    -- @param float_1 float
+    -- @param float_2 float
+    -- @param int_3 int
+    -- @param string_4 string
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param int_7 int
+    -- @param int_8 int
+    -- @param float_9 float
+    function DebugDrawScreenTextLine( float_1, float_2, int_3, string_4, int_5, int_6, int_7, int_8, float_9 ) end
+    ]]}]]></content>
+    <tabTrigger>debugDrawScreenTextLine</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

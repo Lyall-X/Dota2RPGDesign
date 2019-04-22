@@ -1,0 +1,147 @@
+// Rewrite of the Invoker Alacrity ability
+// Author: Pizzalol
+// Date: 12.04.2015.
+"invoker_alacrity_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"MaxLevel"						"1"
+	"HotKeyOverride"				"Z"
+	"AbilityTextureName"			"invoker_alacrity"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		"particle"		"particles/units/heroes/hero_invoker/invoker_alacrity.vpcf"
+		"particle"		"particles/units/heroes/hero_invoker/invoker_alacrity_buff.vpcf"
+		"particle"		"particles/status_fx/status_effect_alacrity.vpcf"
+	}
+	
+	// Unit Targeting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"650"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"15"
+	"AbilityManaCost"				"45"
+		
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_attack_speed"		"20 30 40 50 60 70 80"
+			"levelkey"					"wexlevel"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_damage"				"20 30 40 50 60 70 80"
+			"levelkey"					"exortlevel"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"9"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Invoker.Alacrity"
+			"Target" 		"TARGET"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_alacrity_datadriven"
+			"Target" 		"TARGET"
+			"Duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_alacrity_datadriven"
+		{
+			"IsBuff"	"1"
+
+			"StatusEffectName" 		"particles/status_fx/status_effect_alacrity.vpcf" 	   
+			"StatusEffectPriority"  "10"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_alacrity.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+
+				"AttachEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_invoker/invoker_alacrity_buff.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_invoker/alacrity.lua"
+					"Function"		"Alacrity"
+					"speed_modifier"	"modifier_alacrity_attack_speed_datadriven"
+					"damage_modifier"	"modifier_alacrity_damage_datadriven"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_alacrity_damage_datadriven"
+					"Target" 		"TARGET"
+				}
+
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_alacrity_attack_speed_datadriven"
+					"Target" 		"TARGET"
+				}
+			}
+		}
+
+		"modifier_alacrity_attack_speed_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "1"
+			}
+		}
+
+		"modifier_alacrity_damage_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "1"
+			}
+		}
+	}
+}
+

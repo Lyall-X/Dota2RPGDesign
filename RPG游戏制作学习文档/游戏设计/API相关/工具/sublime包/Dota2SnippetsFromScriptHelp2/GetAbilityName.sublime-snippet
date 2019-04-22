@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAbilityName()${1:--[[
+     CDOTABaseAbility:GetAbilityName  Returns the name of this ability. 
+    -- @return string
+    function CDOTABaseAbility:GetAbilityName(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAbilityName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="Convars" nameCN="控制台变量"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="GetBool"
+		signature="table GetBool(string variableName)">
+		  <DescriptionEN>GetBool(name) : returns the convar as a boolean
+		  flag.</DescriptionEN>
+		  <DescriptionCN>GetBool(name) :
+		  将指定的控制台变量（convar）作为boolean返回.</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string variableName</Parameter>
+		    <Return>table</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetCommandClient"
+		signature="handle GetCommandClient()">
+		  <DescriptionEN>GetCommandClient() : returns the player who issued
+		  this console command.</DescriptionEN>
+		  <DescriptionCN>GetCommandClient() : 返回输入该控制台指令的玩家</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetDOTACommandClient"
+		signature="handle GetDOTACommandClient()">
+		  <DescriptionEN>GetDOTACommandClient() : returns the DOTA player
+		  who issued this console command.</DescriptionEN>
+		  <DescriptionCN>GetDOTACommandClient() :
+		  返回输入该控制台智力的DOTA玩家</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetFloat"
+		signature="table GetFloat(string name)">
+		  <DescriptionEN>GetFloat(name) : returns the convar as a float.
+		  May return nil if no such convar.</DescriptionEN>
+		  <DescriptionCN>GetFloat(name) : 将指定的控制台变量（convar）作为float返回.
+		  不存在时返回nil</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string name</Parameter>
+		    <Return>table</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetInt"
+		signature="table GetInt(string a)">
+		  <DescriptionEN>GetInt(name) : returns the convar as an int. May
+		  return nil if no such convar.</DescriptionEN>
+		  <DescriptionCN>GetInt(name) : 将指定的控制台变量（convar）作为int返回.
+		  不存在时返回nil</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a</Parameter>
+		    <Return>table</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetStr"
+		signature="table GetStr(string variableName)">
+		  <DescriptionEN>GetStr(name) : returns the convar as a string. May
+		  return nil if no such convar.</DescriptionEN>
+		  <DescriptionCN>GetStr(name) : 将指定的控制台变量（convar）作为string返回.
+		  不存在时返回nil</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string variableName</Parameter>
+		    <Return>table</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="RegisterCommand"
+		signature="void RegisterCommand(string variableName, handle function, string helpText, int flags)">
+		
+		  <DescriptionEN>RegisterCommand(name, fn, helpString, flags) :
+		  register a console command.</DescriptionEN>
+		  <DescriptionCN>RegisterCommand(name, fn, helpString, flags) :
+		  注册一个控制台指令.</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string variableName, handle function, string
+		    helpText, int flags</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="RegisterConvar"
+		signature="void RegisterConvar(string name, string defaultValue, string helpText, int flags)">
+		
+		  <DescriptionEN>RegisterConvar(name, defaultValue, helpString,
+		  flags): register a new console variable.</DescriptionEN>
+		  <DescriptionCN>RegisterConvar(name, defaultValue, helpString,
+		  flags): 注册一个新的控制台变量.</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string name, string defaultValue, string helpText,
+		    int flags</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetBool"
+		signature="void SetBool(string variableName, bool value)">
+		  <DescriptionEN>SetBool(name, val) : sets the value of the convar
+		  to the bool.</DescriptionEN>
+		  <DescriptionCN>SetBool(name,val) :
+		  将指定控制台变量（convar）设置为指定bool.</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string variableName, bool value</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetFloat"
+		signature="void SetFloat(string variableName, float value)">
+		  <DescriptionEN>SetFloat(name, val) : sets the value of the convar
+		  to the float.</DescriptionEN>
+		  <DescriptionCN>SetFloat(name,val) :
+		  将指定控制台变量（convar）设置为指定float.</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string variableName, float value</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetInt"
+		signature="void SetInt(string a, int b)">
+		  <DescriptionEN>SetInt(name, val) : sets the value of the convar
+		  to the int.</DescriptionEN>
+		  <DescriptionCN>SetInt(name,val) :
+		  将指定控制台变量（convar）设置为指定int.</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a, int b</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetStr"
+		signature="void SetStr(string a, string b)">
+		  <DescriptionEN>SetStr(name, val) : sets the value of the convar
+		  to the string.</DescriptionEN>
+		  <DescriptionCN>SetStr(name,val) :
+		  将指定控制台变量（convar）设置为指定string.</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a, string b</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

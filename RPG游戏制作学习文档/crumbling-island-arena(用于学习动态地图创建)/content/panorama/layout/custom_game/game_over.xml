@@ -1,0 +1,99 @@
+﻿<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/game_over.css" />
+        <include src="file://{resources}/styles/custom_game/util.css" />
+        <include src="file://{resources}/styles/custom_game/quests.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/odiff.js" />
+        <include src="file://{resources}/scripts/custom_game/structure.js" />
+        <include src="file://{resources}/scripts/custom_game/underscore-min.js" />
+        <include src="file://{resources}/scripts/custom_game/util.js" />
+        <include src="file://{resources}/scripts/custom_game/pass.js" />
+        <include src="file://{resources}/scripts/custom_game/notifications.js" />
+        <include src="file://{resources}/scripts/custom_game/game_over.js" />
+    </scripts>
+    <snippets>
+        <snippet name="RankNotification">
+            <Panel>
+                <DOTAScenePanel id="RankEffect" class="Hidden" map="maps/scenes/badge_level_up.vmap"/>
+                <Panel id="RankElements">
+                    <Label id="RankUpdatedLabel" text="#RankUpdated"/>
+                    <Panel id="RankContainer">
+                        <Image id="Rank"/>
+                        <Label id="RankLabel"/>
+                    </Panel>
+                    <Panel id="RankNewContainer">
+                        <Image id="RankNew"/>
+                        <Label id="RankLabelNew"/>
+                    </Panel>
+                    <Label id="ClickToClose" text="#RankClose"/>
+                </Panel>
+            </Panel>
+        </snippet>
+
+        <snippet name="RewardNotification">
+            <Panel>
+                <DOTAScenePanel id="RewardRays" map="maps/scenes/red_godrays.vmap"/>
+
+                <Panel id="RewardArea">
+                    <Label id="RewardReceivedHeader" text="#RewardReceived"/>
+                    <Panel id="RewardModelContainer"/>
+                    <Label id="RewardTip" text="#RewardTip"/>
+                    <Label id="ClickToClose" text="#RankClose"/>
+                </Panel>
+            </Panel>
+        </snippet>
+
+        <snippet name="PassNotification">
+            <Panel>
+                <Panel id="PassNotification" class="PassNotification PassContent">
+                    <Label id="PassProgressHeader" text="#PassProgress"/>
+                    <Label id="LevelText"/>
+                    <Panel id="LevelBar">
+                        <ProgressBar id="LevelProgress" max="1000">
+                            <Label id="LevelProgressText"/>
+                        </ProgressBar>
+                    </Panel>
+                    <Panel id="NextLevelReward">
+                        <Label text="#NextLevelReward"/>
+                        <Panel id="NextLevelRewardContainer" onmouseout="$.DispatchEvent('DOTAHideTextTooltip');">
+                            <Image id="NextLevelRewardImage" scaling="stretch-to-fit-y-preserve-aspect"/>
+                            <DOTAHeroImage id="NextLevelRewardHeroImage" heroimagestyle="icon" heroname="npc_dota_hero_crystal_maiden"/>
+                        </Panel>
+                    </Panel>
+                    <Panel id="QuestList"/>
+                </Panel>
+            </Panel>
+        </snippet>
+
+        <snippet name="PassRewardNotification">
+            <Panel>
+                <DOTAScenePanel id="RewardRays" class="PassResultRays" map="maps/scenes/red_godrays.vmap"/>
+
+                <Panel id="RewardArea">
+                    <Label id="PassProgressHeader" text="#RewardReceived"/>
+                    <Panel id="PassRewardContainer" onmouseout="$.DispatchEvent('DOTAHideTextTooltip');">
+                        <Panel id="PassRewardImageContainer">
+                            <Image id="PassRewardImage" scaling="stretch-to-fit-y-preserve-aspect"/>
+                        </Panel>
+                        <DOTAHeroImage id="PassRewardHeroImage" scaling="none" heroimagestyle="portrait"/>
+                    </Panel>
+                    <Label id="RewardTip" text="#RewardTip"/>
+                    <Label id="ClickToClose" text="#RankClose"/>
+                </Panel>
+            </Panel>
+        </snippet>
+    </snippets>
+
+    <Panel class="GameOverBackground" style="visibility: visible;" hittest="false">
+        <Panel id="GameOverBlur" hittest="false">
+            <Image id="GameOverBackgroundImage" src="file://{images}/custom_game/loadscreen.png" hittest="false" scaling="none"/>
+            <Panel hittest="false" id="GameOverScoreboard">
+            </Panel>
+        </Panel>
+        <Panel id="NotificationArea" class="Hidden">
+        </Panel>
+    </Panel>
+
+</root>

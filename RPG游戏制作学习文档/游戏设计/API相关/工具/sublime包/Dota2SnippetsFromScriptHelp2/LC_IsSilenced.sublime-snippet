@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsSilenced()${1:--[[
+     CDOTA_BaseNPC:IsSilenced   
+    -- @return bool
+    function CDOTA_BaseNPC:IsSilenced(  ) end
+    ]]}]]></content>
+    <tabTrigger>isSilenced</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

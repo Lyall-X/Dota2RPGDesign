@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[PassivesDisabled()${1:--[[
+     CDOTA_BaseNPC:PassivesDisabled   
+    -- @return bool
+    function CDOTA_BaseNPC:PassivesDisabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>passivesDisabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

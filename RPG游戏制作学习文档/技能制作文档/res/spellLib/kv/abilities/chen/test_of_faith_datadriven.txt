@@ -1,0 +1,96 @@
+// Rewrite of the Chen Test of Faith ability
+// Author: Pizzalol
+// Date: December 30, 2015
+// Version: 6.86
+// Type: Datadriven
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_chen/test_of_faith.lua
+//
+// KV files:
+// scripts/npc/abilities/chen/test_of_faith_teleport_datadriven.txt
+"test_of_faith_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"chen_test_of_faith"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+		"particle"			"particles/units/heroes/hero_chen/chen_test_of_faith.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600 600 600 600"
+	"AbilityCooldown"				"16 16 16 16"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90 100 110 120"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_min"			"50 100 150 200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_max"			"100 200 300 400"
+		}
+	}
+
+	"OnUpgrade"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_chen/test_of_faith.lua"
+			"Function"		"LevelUpAbility"
+			"ability_name"	"test_of_faith_teleport_datadriven"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Chen.TestOfFaith.Target"
+			"Target" 		"TARGET"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_chen/chen_test_of_faith.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "TARGET"
+		}
+
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Type"			"DAMAGE_TYPE_PURE"
+			"Damage"		"? %damage_min %damage_max"
+		}
+	}
+}

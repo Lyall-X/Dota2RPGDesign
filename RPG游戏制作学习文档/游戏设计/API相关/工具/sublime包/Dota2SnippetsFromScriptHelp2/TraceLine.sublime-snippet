@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[TraceLine(${1:handle_1})${2:--[[
+     TraceLine  Pass table - Inputs: startpos, endpos, mask, ignore  -- outputs: pos, fraction, hit, enthit, startsolid 
+    -- @return bool
+    -- @param handle_1 handle
+    function TraceLine( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>TraceLine</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

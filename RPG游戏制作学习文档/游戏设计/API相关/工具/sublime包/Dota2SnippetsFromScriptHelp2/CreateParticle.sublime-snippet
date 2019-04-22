@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[CreateParticle(${1:string_1},${2:int_2},${3:handle_3})${4:--[[
+     CScriptParticleManager:CreateParticle  Creates a new particle effect 
+    -- @return int
+    -- @param string_1 string
+    -- @param int_2 int
+    -- @param handle_3 handle
+    function CScriptParticleManager:CreateParticle( string_1, int_2, handle_3 ) end
+    ]]}]]></content>
+    <tabTrigger>CreateParticle</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

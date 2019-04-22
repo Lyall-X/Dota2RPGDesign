@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[RegisterConvar(${1:string_1},${2:string_2},${3:string_3},${4:int_4})${5:--[[
+     Convars:RegisterConvar  RegisterConvar(name, defaultValue, helpString, flags): register a new console variable. 
+    -- @return void
+    -- @param string_1 string
+    -- @param string_2 string
+    -- @param string_3 string
+    -- @param int_4 int
+    function Convars:RegisterConvar( string_1, string_2, string_3, int_4 ) end
+    ]]}]]></content>
+    <tabTrigger>registerConvar</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

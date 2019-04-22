@@ -1,0 +1,123 @@
+"tinker_heat_seeking_missile_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"tinker_heat_seeking_missile"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0 0 0 0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25.0 25.0 25.0 25.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"100 175 250 325"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"120 140 160 180"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{ 
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"2500 2500 2500 2500"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"targets"			"2 2 2 2"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"speed"				"900 900 900 900"
+		}
+	}
+	
+	// Datadriven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+		"particle"				"particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+		"particle"				"particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf"
+		"particle"				"particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"			"CASTER"
+			"EffectName"		"Hero_Tinker.Heat-Seeking_Missile"
+		}
+	
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_tinker/heat_seeking_missile"
+			"Function"			"heat_seeking_missile_seek_targets"
+		}
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"FireSound"
+		{
+			"Target"			"TARGET"
+			"EffectName"		"Hero_Tinker.Heat-Seeking_Missile.Impact"
+		}
+	
+		"FireEffect"
+		{
+			"Target"			"TARGET"
+			"EffectName"		"particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf"
+			"EffectAttachType"	"start_at_customorigin"
+			"ControlPointEntities"
+			{
+				"TARGET"		"attach_origin"
+			}
+		}
+	
+		"Damage"
+		{
+			"Target"			"TARGET"
+			"Damage"			"%AbilityDamage"
+			"Type"				"DAMAGE_TYPE_MAGICAL"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_heat_seeking_missile_dud"
+		{
+			"IsHidden"			"1"
+			"IsPurgable"		"0"
+			
+			"Duration"			"1.0"
+			
+			"EffectName"		"particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf"
+			"EffectAttachType"	"start_at_origin"
+			
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"Target"	"TARGET"
+					"EffectName"	"Hero_Tinker.Heat-Seeking_Missile_Dud"
+				}
+			}
+		}
+	}
+}

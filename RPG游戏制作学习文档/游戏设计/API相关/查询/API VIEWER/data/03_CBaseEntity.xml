@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Daiyfoo翻译 -->
+
+<class nameEN="CBaseEntity" nameCN="基础实体"
+	descriptionEN="The base class for stuff"
+	descriptionCN="实体的基础类" extends="">
+	<functions>
+		<function name="ApplyAbsVelocityImpulse" signature="void ApplyAbsVelocityImpulse(Vector a)">
+			<DescriptionEN>Apply a Velocity Impulse
+			</DescriptionEN>
+			<DescriptionCN>添加一个速度冲击</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:添加的矢量
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="ApplyLocalAngularVelocityImpulse" signature="void ApplyLocalAngularVelocityImpulse(Vector a)">
+			<DescriptionEN>Apply an Ang Velocity Impulse
+			</DescriptionEN>
+			<DescriptionCN>添加一个角速度的冲击</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:添加的矢量
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="EmitSound" signature="void EmitSound(string soundName)">
+			<DescriptionEN>
+			</DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter>string:添加的声音名字
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="EmitSoundParams" signature="void EmitSoundParams(string soundName, int pitch, float volume, float soundTime)">
+			<DescriptionEN>Plays/modifies a sound from this entity. changes sound if Pitch and/or Volume or SoundTime is > 0.
+			</DescriptionEN>
+			<DescriptionCN>播放/修改这个实体的声音.当音调,音量或播放时间大于零时改变声音</DescriptionCN>
+			<HowToCall>
+				<Parameter>string:添加的声音名字 pitch:音调 volume:音量 soundTime:播放时间
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="EyeAngles" signature="QAngle EyeAngles()">
+			<DescriptionEN>Get the qangles that this entity is looking at.
+			</DescriptionEN>
+			<DescriptionCN>获得这个实体的视角qangles</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>QAngle:?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="EyePosition" signature="Vector EyePosition()">
+			<DescriptionEN>Get vector to eye position - absolute coords
+			</DescriptionEN>
+			<DescriptionCN>获得指向视角位置的矢量,位置为绝对坐标</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:指向视角位置的矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FirstMoveChild" signature="handle FirstMoveChild()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GatherCriteria" signature="void GatherCriteria(handle a)">
+			<DescriptionEN>Returns a table containing the criteria that would be used for response queries on this entity. This is the same as the table that is passed to response rule script function callbacks.
+			</DescriptionEN>
+			<DescriptionCN>返回一个表包含用在这个实体的判定的标准.这个表等同于传入脚本方法的调用.</DescriptionCN>
+			<HowToCall>
+				<Parameter>handle:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbsOrigin" signature="Vector GetAbsOrigin()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAngles" signature="QAngle GetAngles()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>QAngle:?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAnglesAsVector" signature="Vector GetAnglesAsVector()">
+			<DescriptionEN>Get entity pitch, yaw, roll as a vector
+			</DescriptionEN>
+			<DescriptionCN>获得实体的间距,偏航,滚动的矢量?</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:间距,偏航,滚动的矢量?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAngularVelocity" signature="Vector GetAngularVelocity()">
+			<DescriptionEN>Get the local angular velocity - returns a vector of pitch,yaw,roll
+			</DescriptionEN>
+			<DescriptionCN>获得当前角速度,返回间距,偏航,滚动的矢量?</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:间距,偏航,滚动的矢量?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetBaseVelocity" signature="Vector GetBaseVelocity()">
+			<DescriptionEN>Get Base velocity
+			</DescriptionEN>
+			<DescriptionCN>获得基础速度</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:基础速度的矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetBoundingMaxs" signature="Vector GetBoundingMaxs()">
+			<DescriptionEN>Get a vector containing max bounds, centered on object
+			</DescriptionEN>
+			<DescriptionCN>获得一个包含最大范围,以物体为中心的矢量</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:一个包含最大范围,以物体为中心的矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetBoundingMins" signature="Vector GetBoundingMins()">
+			<DescriptionEN>Get a vector containing min bounds, centered on object
+			</DescriptionEN>
+			<DescriptionCN>获得一个包含最小范围,以物体为中心的矢量</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:一个包含最小范围,以物体为中心的矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetBounds" signature="table GetBounds()">
+			<DescriptionEN>Get a table containing the 'Mins' &amp; 'Maxs' vector bounds, centered on object
+			</DescriptionEN>
+			<DescriptionCN>获得一个以物体为中心,包含最小和最大范围的矢量的表</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>table:一个以物体为中心,包含最小和最大范围的矢量的表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCenter" signature="Vector GetCenter()">
+			<DescriptionEN>Get vector to center of object - absolute coords
+			</DescriptionEN>
+			<DescriptionCN>获得指向物体中心的矢量,以绝对坐标的形式</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:指向物体中心的矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetChildren" signature="handle GetChildren()">
+			<DescriptionEN>Get the entities parented to this entity.
+			</DescriptionEN>
+			<DescriptionCN>获得继承这个实体的实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:继承这个实体的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetContext" signature="table GetContext(string a)">
+			<DescriptionEN>GetContext( name ): looks up a context and returns it if available. May return string, float, or nil (if the context isn't found)
+			</DescriptionEN>
+			<DescriptionCN>GetContext( name ):检查一个对象的状态然后返回对象是否可用.可能返回string,float,或nil(如果对象没有找到)</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:对象的名字
+				</Parameter>
+				<Return>table:对象的状态</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetForwardVector" signature="Vector GetForwardVector()">
+			<DescriptionEN>Get the forward vector of the entity
+			</DescriptionEN>
+			<DescriptionCN>获得这个实体的前进矢量</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:实体的前进矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetHealth" signature="int GetHealth()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:生命值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetLocalAngularVelocity" signature="QAngle GetLocalAngularVelocity()">
+			<DescriptionEN>Maybe local angvel
+			</DescriptionEN>
+			<DescriptionCN>可能为当前角度</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>QAngle:?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetLocalVelocity" signature="Vector GetLocalVelocity()">
+			<DescriptionEN>Get Entity relative velocity
+			</DescriptionEN>
+			<DescriptionCN>获得实体相对速度</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:实体相对速度</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetMaxHealth" signature="int GetMaxHealth()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:最大生命值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetModelName" signature="string GetModelName()">
+			<DescriptionEN>Returns the name of the model
+			</DescriptionEN>
+			<DescriptionCN>获得模型的名字</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:模型的名字</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetMoveParent" signature="handle GetMoveParent()">
+			<DescriptionEN>If in hierarchy, retrieves the entity's parent
+			</DescriptionEN>
+			<DescriptionCN>如果在有继承对象,恢复实体所继承的对象</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:所继承的对象</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetOrigin" signature="Vector GetOrigin()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetOwner" signature="handle GetOwner()">
+			<DescriptionEN>Gets this entity's owner
+			</DescriptionEN>
+			<DescriptionCN>获得实体的所有者</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:实体的所有者</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetOwnerEntity" signature="handle GetOwnerEntity()">
+			<DescriptionEN>Get the owner entity, if there is one
+			</DescriptionEN>
+			<DescriptionCN>获得拥有者的实体,如果有的话</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:所有者的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetRightVector" signature="Vector GetRightVector()">
+			<DescriptionEN>Get the right vector of the entity
+			</DescriptionEN>
+			<DescriptionCN>获得实体的右方矢量?</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:实体的右方矢量?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetRootMoveParent" signature="handle GetRootMoveParent()">
+			<DescriptionEN>If in hierarchy, walks up the hierarchy to find the root parent
+			</DescriptionEN>
+			<DescriptionCN>如果在继承关系里,在继承关系中寻找所继承的根源对象</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:根源(父类)对象</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetSoundDuration" signature="float GetSoundDuration(string soundName, string actormodelname)">
+			<DescriptionEN>Returns float duration of the sound. Takes soundname and optional actormodelname.
+			</DescriptionEN>
+			<DescriptionCN>返回声音的播放时间.传入声音名字和可选的应用模型名字.</DescriptionCN>
+			<HowToCall>
+				<Parameter>soundName:声音名字 actormodelname:应用的模型名字
+				</Parameter>
+				<Return>float:声音播放时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetTeam" signature="int GetTeam()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:实体所在队伍的索引</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetUpVector" signature="Vector GetUpVector()">
+			<DescriptionEN>Get the up vector of the entity
+			</DescriptionEN>
+			<DescriptionCN>获得实体的右方矢量</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:实体的右方矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetUpVector" signature="Vector GetUpVector()">
+			<DescriptionEN>Get the up vector of the entity
+			</DescriptionEN>
+			<DescriptionCN>获得实体的上方矢量</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:实体的上方矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetVelocity" signature="Vector GetVelocity()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:实体的速度矢量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsAlive" signature="bool IsAlive()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:实体是否生存</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsPlayer" signature="bool IsPlayer()">
+			<DescriptionEN>Is this a player entity?
+			</DescriptionEN>
+			<DescriptionCN>是否为玩家的实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:是否为玩家的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="Kill" signature="void Kill()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>杀死实体</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="NextMovePeer" signature="handle NextMovePeer()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:继承关系里下一个同级实体.</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OverrideFriction" signature="void OverrideFriction(float a, float b)">
+			<DescriptionEN>Takes duration, value for a temporary override
+			</DescriptionEN>
+			<DescriptionCN>暂时重写阻力的持续时间和值</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:持续时间? b:大小的值?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="PrecacheScriptSound" signature="void PrecacheScriptSound(string a)">
+			<DescriptionEN>Precache a sound for later playing.
+			</DescriptionEN>
+			<DescriptionCN>预载声音文件</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:声音的名字
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetAbsOrigin" signature="void SetAbsOrigin(Vector origin)">
+			<DescriptionEN>SetAbsOrigin
+			</DescriptionEN>
+			<DescriptionCN>设置AbsOrigin</DescriptionCN>
+			<HowToCall>
+				<Parameter>origin:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetAngles" signature="void SetAngles(float pitch, float yaw, float roll)">
+			<DescriptionEN>Set entity pitch, yaw, roll
+			</DescriptionEN>
+			<DescriptionCN>设置实体的距离,偏航,翻滚?</DescriptionCN>
+			<HowToCall>
+				<Parameter>pitch:距离 yaw:偏航 roll:翻滚?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetAngularVelocity" signature="void SetAngularVelocity(float pitch, float yaw, float roll)">
+			<DescriptionEN>Set the local angular velocity - takes float pitch,yaw,roll velocities
+			</DescriptionEN>
+			<DescriptionCN>设置当前角速度,使用float距离,偏航,翻滚速度</DescriptionCN>
+			<HowToCall>
+				<Parameter>pitch:距离 yaw:偏航 roll:翻滚?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetContext" signature="void SetContext(string a, string b, float c)">
+			<DescriptionEN>SetContext( name , value, duration ): store any key/value pair in this entity's dialog contexts. Value must be a string. Will last for duration (set 0 to mean 'forever').
+			</DescriptionEN>
+			<DescriptionCN>SetContext( 名字 , 值, 持续时间 ):存储任何在实体对话内容里的配对值.值是一个字符串.持续一段时间.(0代表永久)</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:名字 b:配对值 c:持续时间
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetContextNum" signature="void SetContextNum(string a, float b, float c)">
+			<DescriptionEN>SetContext( name , value, duration ): store any key/value pair in this entity's dialog contexts. Value must be a number (int or float). Will last for duration (set 0 to mean 'forever').
+			</DescriptionEN>
+			<DescriptionCN>SetContext( 名字 , 值, 持续时间 ):存储任何在实体对话内容里的配对值.值是一个数字(int或者float).持续一段时间.(0代表永久)</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:名字 b:配对值 c:持续时间
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetContextThink" signature="void SetContextThink(string a, handle b, float c)">
+			<DescriptionEN>Set a think function on this entity.
+			</DescriptionEN>
+			<DescriptionCN>在这个实体上设置一个判定方法</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:方法名? b:实体? c:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetForwardVector" signature="void SetForwardVector(Vector forwardVec)">
+			<DescriptionEN>Set the orientation of the entity to have this forward forwardVec
+			</DescriptionEN>
+			<DescriptionCN>设置实体的方向为前进矢量</DescriptionCN>
+			<HowToCall>
+				<Parameter>forwardVec:前进矢量
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetFriction" signature="void SetFriction(float a)">
+			<DescriptionEN>Set PLAYER friction, ignored for objects
+			</DescriptionEN>
+			<DescriptionCN>设置玩家阻力,无视物体</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:阻力值?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetGravity" signature="void SetGravity(float a)">
+			<DescriptionEN>Set PLAYER gravity, ignored for objects
+			</DescriptionEN>
+			<DescriptionCN>设置玩家引力,无视物体</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:引力值?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetHealth" signature="void SetHealth(int hp)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>hp:生命值
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetMaxHealth" signature="void SetMaxHealth(int maxHP)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>maxHp:最大生命值
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetModel" signature="void SetModel(string modelName)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>modelName:模型名字
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetOrigin" signature="void SetOrigin(Vector origin)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>origin:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetOwner" signature="void SetOwner(handle owningEntity)">
+			<DescriptionEN>Sets this entity's owner
+			</DescriptionEN>
+			<DescriptionCN>设定实体的所有者</DescriptionCN>
+			<HowToCall>
+				<Parameter>owningEntity:实体的所有者
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetParent" signature="void SetParent(handle a, string b)">
+			<DescriptionEN>Set the parent for this entity.
+			</DescriptionEN>
+			<DescriptionCN>设定这个实体的所继承的父实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:这个实体的所继承的父实体 b:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetRenderColor" signature="void SetRenderColor(int a, int b, int c)">
+			<DescriptionEN>SetRenderColor( r, g, b ): Sets the render color of the entity.
+			</DescriptionEN>
+			<DescriptionCN>SetRenderColor( r, g, b ):设定实体的渲染颜色</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:rgb色表的r通道,一下同理 b:g c:b
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetSize" signature="void SetSize(Vector a, Vector b)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:x轴矢量? b:y轴矢量?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetTeam" signature="void SetTeam(int team)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>team:队伍的索引
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetVelocity" signature="void SetVelocity(Vector a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:速度的矢量
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="StopSound" signature="void StopSound(string soundName)">
+			<DescriptionEN>Stops a named sound playing from this entity.
+			</DescriptionEN>
+			<DescriptionCN>停止播放这个实体的特定的声音</DescriptionCN>
+			<HowToCall>
+				<Parameter>soundName:声音的名字
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="Trigger" signature="void Trigger()">
+			<DescriptionEN>Fires off this entity's OnTrigger responses
+			</DescriptionEN>
+			<DescriptionCN>触发这个实体的触发器</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	
+	</functions>
+
+</class>

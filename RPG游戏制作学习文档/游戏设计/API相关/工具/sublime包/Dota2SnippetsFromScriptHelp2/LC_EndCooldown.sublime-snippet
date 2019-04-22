@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[EndCooldown()${1:--[[
+     CDOTABaseAbility:EndCooldown  Clear the cooldown remaining on this ability. 
+    -- @return void
+    function CDOTABaseAbility:EndCooldown(  ) end
+    ]]}]]></content>
+    <tabTrigger>endCooldown</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

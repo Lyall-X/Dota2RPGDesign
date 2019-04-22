@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetCustomXPRequiredToReachNextLevel(${1:handle_1})${2:--[[
+     CDOTABaseGameMode:SetCustomXPRequiredToReachNextLevel  Allows definition of a table of hero XP values. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTABaseGameMode:SetCustomXPRequiredToReachNextLevel( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setCustomXPRequiredToReachNextLevel</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

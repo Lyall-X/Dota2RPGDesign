@@ -1,0 +1,7 @@
+这个文件夹里面存放的是技能和物品的图标，图标文件的制作，可以使用PS打开范例所提供的sample_item.png及sample_abilituy.png，在这两个文件的基础上进行修改。
+要注意的是，在技能npc_abilities_custom.txt及物品文档npc_items_custom.txt
+中的AbilityTextureName字段，
+例如
+"AbilityTextureName"	"ability_sample_xxx"
+那么他对应的技能图标名字应该为sample_xxx.png
+物品图标类似。

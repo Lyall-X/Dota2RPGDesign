@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[CreateByClassname(${1:string_1})${2:--[[
+     CEntities:CreateByClassname  Creates an entity by classname 
+    -- @return handle
+    -- @param string_1 string
+    function CEntities:CreateByClassname( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>CreateByClassname</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

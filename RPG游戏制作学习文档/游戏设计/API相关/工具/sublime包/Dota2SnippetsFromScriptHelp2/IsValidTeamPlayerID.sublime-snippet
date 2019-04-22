@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[IsValidTeamPlayerID(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:IsValidTeamPlayerID   
+    -- @return bool
+    -- @param int_1 int
+    function CDOTA_PlayerResource:IsValidTeamPlayerID( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>IsValidTeamPlayerID</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

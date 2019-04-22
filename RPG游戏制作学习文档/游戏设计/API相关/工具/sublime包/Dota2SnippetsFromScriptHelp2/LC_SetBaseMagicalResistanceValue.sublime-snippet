@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetBaseMagicalResistanceValue(${1:float_1})${2:--[[
+     CDOTA_BaseNPC:SetBaseMagicalResistanceValue  Sets base magical armor value. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTA_BaseNPC:SetBaseMagicalResistanceValue( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setBaseMagicalResistanceValue</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

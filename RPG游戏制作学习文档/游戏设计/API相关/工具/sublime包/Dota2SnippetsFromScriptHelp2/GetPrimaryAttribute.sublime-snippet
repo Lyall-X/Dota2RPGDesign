@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetPrimaryAttribute()${1:--[[
+     CDOTA_BaseNPC_Hero:GetPrimaryAttribute  0 = strength, 1 = agility, 2 = intelligence. 
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetPrimaryAttribute(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetPrimaryAttribute</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

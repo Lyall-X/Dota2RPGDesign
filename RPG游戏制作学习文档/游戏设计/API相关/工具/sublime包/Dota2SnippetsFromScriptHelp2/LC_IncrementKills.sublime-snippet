@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[IncrementKills(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:IncrementKills   
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:IncrementKills( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>incrementKills</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

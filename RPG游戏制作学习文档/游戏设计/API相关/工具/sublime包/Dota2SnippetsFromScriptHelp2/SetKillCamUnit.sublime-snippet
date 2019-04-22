@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetKillCamUnit(${1:handle_1})${2:--[[
+     CDOTAPlayer:SetKillCamUnit  Set the kill cam unit for this hero. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTAPlayer:SetKillCamUnit( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetKillCamUnit</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

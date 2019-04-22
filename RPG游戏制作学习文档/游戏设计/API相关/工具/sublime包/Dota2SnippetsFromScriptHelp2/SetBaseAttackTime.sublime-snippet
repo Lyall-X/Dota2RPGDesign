@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetBaseAttackTime(${1:float_1})${2:--[[
+     CDOTA_BaseNPC:SetBaseAttackTime   
+    -- @return void
+    -- @param float_1 float
+    function CDOTA_BaseNPC:SetBaseAttackTime( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetBaseAttackTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

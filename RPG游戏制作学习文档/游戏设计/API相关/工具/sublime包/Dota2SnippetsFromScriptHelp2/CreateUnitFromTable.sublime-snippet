@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[CreateUnitFromTable(${1:handle_1},${2:Vector_2})${3:--[[
+     CreateUnitFromTable  Creates a DOTA unit by its dota_npc_units.txt name from a table of entity key values and a position to spawn at. 
+    -- @return handle
+    -- @param handle_1 handle
+    -- @param Vector_2 Vector
+    function CreateUnitFromTable( handle_1, Vector_2 ) end
+    ]]}]]></content>
+    <tabTrigger>CreateUnitFromTable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

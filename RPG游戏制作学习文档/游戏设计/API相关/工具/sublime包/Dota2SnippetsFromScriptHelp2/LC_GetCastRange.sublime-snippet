@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCastRange()${1:--[[
+     CDOTABaseAbility:GetCastRange  Gets the cast range of the ability. 
+    -- @return int
+    function CDOTABaseAbility:GetCastRange(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCastRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

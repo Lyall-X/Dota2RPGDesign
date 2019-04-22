@@ -1,0 +1,35 @@
+"shredder_reactive_armor_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"bonus_armor"						"1"
+		}
+		"02"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"bonus_hp_regen"							"1"
+		}
+		"03"
+		{
+			"var_type"							"FIELD_INTEGER"
+			"stack_limit"						"4 8 12 16"
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"stack_duration"					"16.0 16.0 16.0 16.0"
+		}
+	}
+}
+

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBaseHealthRegen()${1:--[[
+     CDOTA_BaseNPC:GetBaseHealthRegen   
+    -- @return float
+    function CDOTA_BaseNPC:GetBaseHealthRegen(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetBaseHealthRegen</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

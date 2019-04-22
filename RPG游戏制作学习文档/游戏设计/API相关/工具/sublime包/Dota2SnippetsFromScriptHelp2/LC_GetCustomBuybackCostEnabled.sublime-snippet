@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCustomBuybackCostEnabled()${1:--[[
+     CDOTABaseGameMode:GetCustomBuybackCostEnabled  Turns on capability to define custom buyback costs. 
+    -- @return bool
+    function CDOTABaseGameMode:GetCustomBuybackCostEnabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCustomBuybackCostEnabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[ReduceMana(${1:float_1})${2:--[[
+     CDOTA_BaseNPC:ReduceMana  Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTA_BaseNPC:ReduceMana( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>reduceMana</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

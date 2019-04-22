@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetReliableGold(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetReliableGold   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetReliableGold( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetReliableGold</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

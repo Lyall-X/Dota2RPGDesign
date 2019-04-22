@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetGameModeEntity()${1:--[[
+     CDOTAGamerules:GetGameModeEntity  Get the game mode entity 
+    -- @return handle
+    function CDOTAGamerules:GetGameModeEntity(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetGameModeEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

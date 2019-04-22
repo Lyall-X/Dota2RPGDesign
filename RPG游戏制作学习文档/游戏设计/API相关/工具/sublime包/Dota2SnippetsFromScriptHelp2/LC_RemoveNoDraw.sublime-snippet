@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[RemoveNoDraw()${1:--[[
+     CDOTA_BaseNPC:RemoveNoDraw  Remove the no draw flag. 
+    -- @return void
+    function CDOTA_BaseNPC:RemoveNoDraw(  ) end
+    ]]}]]></content>
+    <tabTrigger>removeNoDraw</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

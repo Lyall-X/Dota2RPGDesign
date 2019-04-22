@@ -1,0 +1,24 @@
+"juggernaut_blade_dance_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"blade_dance_crit_mult"		"200"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"blade_dance_crit_chance"	"15 20 25 35"
+		}
+	}
+}
+

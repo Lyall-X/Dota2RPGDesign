@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[PlaysDefaultAnimWhenStolen()${1:--[[
+     CDOTABaseAbility:PlaysDefaultAnimWhenStolen   
+    -- @return bool
+    function CDOTABaseAbility:PlaysDefaultAnimWhenStolen(  ) end
+    ]]}]]></content>
+    <tabTrigger>playsDefaultAnimWhenStolen</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

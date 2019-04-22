@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[DebugDrawCircle(${1:Vector_1},${2:Vector_2},${3:float_3},${4:float_4},${5:bool_5},${6:float_6})${7:--[[
+     DebugDrawCircle  Draw a debug circle (center, vRgb, a, rad, ztest, duration) 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Vector_2 Vector
+    -- @param float_3 float
+    -- @param float_4 float
+    -- @param bool_5 bool
+    -- @param float_6 float
+    function DebugDrawCircle( Vector_1, Vector_2, float_3, float_4, bool_5, float_6 ) end
+    ]]}]]></content>
+    <tabTrigger>debugDrawCircle</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetManaRegen()${1:--[[
+     CDOTA_BaseNPC_Hero:GetManaRegen  Hero mana regen is affected by attributes. 
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetManaRegen(  ) end
+    ]]}]]></content>
+    <tabTrigger>getManaRegen</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

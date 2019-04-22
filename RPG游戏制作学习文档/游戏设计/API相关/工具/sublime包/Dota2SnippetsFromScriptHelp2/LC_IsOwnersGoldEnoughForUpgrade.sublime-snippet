@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsOwnersGoldEnoughForUpgrade()${1:--[[
+     CDOTABaseAbility:IsOwnersGoldEnoughForUpgrade   
+    -- @return bool
+    function CDOTABaseAbility:IsOwnersGoldEnoughForUpgrade(  ) end
+    ]]}]]></content>
+    <tabTrigger>isOwnersGoldEnoughForUpgrade</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[DoEntFire(${1:string_1},${2:string_2},${3:string_3},${4:float_4},${5:handle_5},${6:handle_6})${7:--[[
+     DoEntFire  #EntFire:Generate and entity i/o event 
+    -- @return void
+    -- @param string_1 string
+    -- @param string_2 string
+    -- @param string_3 string
+    -- @param float_4 float
+    -- @param handle_5 handle
+    -- @param handle_6 handle
+    function DoEntFire( string_1, string_2, string_3, float_4, handle_5, handle_6 ) end
+    ]]}]]></content>
+    <tabTrigger>DoEntFire</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

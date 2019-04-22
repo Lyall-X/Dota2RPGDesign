@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetOriginalLobbyTeam(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetOriginalLobbyTeam  The team this player was originally assigned in the lobby. DOTA_TEAM_NOTEAM if no lobby info. 
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetOriginalLobbyTeam( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetOriginalLobbyTeam</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

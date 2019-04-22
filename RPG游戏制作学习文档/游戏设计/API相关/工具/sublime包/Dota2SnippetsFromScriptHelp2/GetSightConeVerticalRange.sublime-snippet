@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSightConeVerticalRange()${1:--[[
+     CRPG_Unit:GetSightConeVerticalRange  () - returns vertical range of unit's sight cone 
+    -- @return float
+    function CRPG_Unit:GetSightConeVerticalRange(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetSightConeVerticalRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

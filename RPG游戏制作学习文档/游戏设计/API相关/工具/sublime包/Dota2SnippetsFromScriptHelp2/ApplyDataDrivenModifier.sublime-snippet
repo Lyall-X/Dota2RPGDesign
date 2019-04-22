@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[ApplyDataDrivenModifier(${1:handle_1},${2:handle_2},${3:string_3},${4:handle_4})${5:--[[
+     CDOTA_Item_DataDriven:ApplyDataDrivenModifier  Applies a data driven modifier to the target 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param handle_2 handle
+    -- @param string_3 string
+    -- @param handle_4 handle
+    function CDOTA_Item_DataDriven:ApplyDataDrivenModifier( handle_1, handle_2, string_3, handle_4 ) end
+    ]]}]]></content>
+    <tabTrigger>ApplyDataDrivenModifier</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

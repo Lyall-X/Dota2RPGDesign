@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsBuybackEnabled()${1:--[[
+     CDOTABaseGameMode:IsBuybackEnabled  Enables or disables buyback completely. 
+    -- @return bool
+    function CDOTABaseGameMode:IsBuybackEnabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsBuybackEnabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

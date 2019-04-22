@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[EmitGlobalSound(${1:string_1})${2:--[[
+     EmitGlobalSound  Play named sound for all players 
+    -- @return void
+    -- @param string_1 string
+    function EmitGlobalSound( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>EmitGlobalSound</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

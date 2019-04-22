@@ -1,0 +1,50 @@
+// Rewrite of the Bane Nightmare End Sub-ability
+// Author: Pizzalol
+// Date: October 22, 2015
+// Version: 6.83
+// Type: Datadriven
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_bane/nightmare.lua
+//
+// KV files:
+// scripts/npc/abilities/bane/nightmare_datadriven.txt
+"nightmare_end_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"bane_nightmare_end"
+
+	"OnToggleOn"
+	{
+		"RemoveModifier"
+        {
+        	"ModifierName"	"modifier_nightmare_datadriven"
+        	"Target"
+        	{
+        		"Center"	"CASTER"
+        		"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+        	}
+        }
+
+        "RemoveModifier"
+        {
+        	"ModifierName"	"modifier_nightmare_invul_datadriven"
+        	"Target"
+        	{
+        		"Center"	"CASTER"
+        		"Flags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+        	}
+        }
+
+		"RunScript"
+        {
+        	"ScriptFile"		"scripts/vscripts/heroes/hero_bane/nightmare.lua"
+            "Function"			"NightmareCasterEnd"
+        }
+	}
+}

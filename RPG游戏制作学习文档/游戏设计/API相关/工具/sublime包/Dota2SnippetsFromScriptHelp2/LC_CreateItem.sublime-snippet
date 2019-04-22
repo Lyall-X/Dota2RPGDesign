@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[CreateItem(${1:string_1},${2:handle_2},${3:handle_3})${4:--[[
+     CreateItem  Create a DOTA item 
+    -- @return handle
+    -- @param string_1 string
+    -- @param handle_2 handle
+    -- @param handle_3 handle
+    function CreateItem( string_1, handle_2, handle_3 ) end
+    ]]}]]></content>
+    <tabTrigger>createItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

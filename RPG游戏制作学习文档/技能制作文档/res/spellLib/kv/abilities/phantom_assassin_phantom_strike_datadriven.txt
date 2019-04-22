@@ -1,0 +1,121 @@
+// Rewrite of the Phantom Assassin Phantom Strike ability
+// Author: Pizzalol
+// Date: 29.09.2015.
+"phantom_assassin_phantom_strike_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"phantom_assassin_phantom_strike"
+	"CastFilterRejectCaster" 		"1"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1000 1000 1000 1000"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"14 11 8 5"
+
+	// Duration
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDuration"				"3 3 3 3"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 50 50 50"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"130"
+		}
+		
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_max_attack_count"	"4"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tooltip_range"			"1000 1000 1000 1000"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"Blink"
+		{
+			"Target"	"TARGET"
+		}
+
+		"FireSound"
+		{
+			"EffectName"		"Hero_PhantomAssassin.Strike.Start"
+			"Target"			"CASTER"
+		}
+
+		"AttachEffect"
+		{
+			"EffectName"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Target"			"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"		"Hero_PhantomAssassin.Strike.End"
+			"Target"			"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_phantom_assassin/phantom_strike.lua"
+			"Function"		"PhantomStrike"
+			"phantom_strike_modifier"	"modifier_phantom_strike_datadriven"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_phantom_strike_datadriven"
+		{
+			"IsBuff"	"1"
+
+			"OnAttackLanded"
+			// "%attack_damage" is set to the damage value before mitigation
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_phantom_assassin/phantom_strike.lua"
+					"Function"		"PhantomStrikeAttack"
+					"phantom_strike_modifier"	"modifier_phantom_strike_datadriven"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+			}
+		}
+	}
+}
+

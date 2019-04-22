@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetModelRadius()${1:--[[
+     CDOTA_BaseNPC:GetModelRadius   
+    -- @return float
+    function CDOTA_BaseNPC:GetModelRadius(  ) end
+    ]]}]]></content>
+    <tabTrigger>getModelRadius</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

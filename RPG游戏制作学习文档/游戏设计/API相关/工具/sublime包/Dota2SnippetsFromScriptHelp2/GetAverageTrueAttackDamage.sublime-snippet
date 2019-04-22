@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAverageTrueAttackDamage()${1:--[[
+     CDOTA_BaseNPC:GetAverageTrueAttackDamage  Returns the average value of the minimum and maximum damage values. 
+    -- @return int
+    function CDOTA_BaseNPC:GetAverageTrueAttackDamage(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAverageTrueAttackDamage</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

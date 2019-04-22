@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAttackRange()${1:--[[
+     CDOTA_BaseNPC:GetAttackRange  Gets this unit's attack range after all modifiers. 
+    -- @return float
+    function CDOTA_BaseNPC:GetAttackRange(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAttackRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

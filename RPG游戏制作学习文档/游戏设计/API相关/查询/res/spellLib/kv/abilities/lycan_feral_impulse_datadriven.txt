@@ -1,0 +1,113 @@
+// Rewrite of the Lycan Feral Impulse
+// Author: chrislotix, Pizzalol
+// Date: 24.03.2015.
+"lycan_feral_impulse_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"lycan_feral_impulse"
+	
+	// Casting
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"900 900 900 900"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"15 20 25 30"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"15 20 25 30"
+		}
+		// Extra
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"think_interval"		"0.5"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_feral_impulse_datadriven"
+		{
+			"Passive" 	"1"
+
+			"OnCreated"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"CASTER"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+						"Types" 	"DOTA_UNIT_TARGET_BASIC"
+					}
+				
+					"Action"    
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"heroes/hero_lycan/feral_impulse.lua"
+							"Function"		"FeralImpulse"
+							"modifier"		"modifier_feral_impulse_unit_datadriven"
+						}
+					}
+				}
+			}
+
+			"ThinkInterval"  "%think_interval"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"CASTER"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+						"Types" 	"DOTA_UNIT_TARGET_BASIC"
+					}
+				
+					"Action"    
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"heroes/hero_lycan/feral_impulse.lua"
+							"Function"		"FeralImpulse"
+							"modifier"		"modifier_feral_impulse_unit_datadriven"
+						}
+					}
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+			    "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_damage" 
+			}
+		}
+
+		"modifier_feral_impulse_unit_datadriven"
+		{
+			"IsBuff"		"1"
+			"IsPurgable"	"0"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+			    "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%bonus_damage" 
+			}
+		}
+	}	
+}
+

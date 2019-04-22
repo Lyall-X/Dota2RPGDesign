@@ -1,0 +1,148 @@
+// Rewrite of Enrage
+// Author: YOLOSPAGHETTI
+// Date: February 5, 2016
+"ursa_enrage_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"ursa_enrage"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0 0.0 0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"50.0 40.0 30.0"
+	"AbilityDuration"				"4.0 4.0 4.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0 0 0"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_reduction" 			"-80 -80 -80"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_multiplier" 		"1.5 1.75 2"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration" 					"4.0 4.0 4.0"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"scepter_cooldown" 			"30 24 18"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"model_scale" 				"1.2"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+		"particle"						"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"					"CASTER"
+			"EffectName"				"Hero_Ursa.Enrage"
+		}
+	
+		"ApplyModifier"
+		{
+			"Target"					"CASTER"
+			"ModifierName"				"modifier_enrage_buff_datadriven"
+		}
+	
+		"RunScript"
+		{
+			"ScriptFile"				"heroes/hero_ursa/enrage.lua"
+			"Function"					"Purge"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_enrage_buff_datadriven"
+		{
+			"IsHidden"					"0"
+			"IsPurgable"				"0"
+			"IsBuff"					"1"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"					"CASTER"
+					"EffectName"				"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+					"EffectAttachType"			"start_at_customorigin"
+					"ControlPointEntities"
+					{
+						"CASTER"				"attach_attack1"
+					}
+				}
+				
+				"AttachEffect"
+				{
+					"Target"					"CASTER"
+					"EffectName"				"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+					"EffectAttachType"			"start_at_customorigin"
+					"ControlPointEntities"
+					{
+						"CASTER"				"attach_attack2"
+					}
+				}
+			}
+			
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"				"heroes/hero_ursa/enrage.lua"
+					"Function"					"BonusDamage"
+				}
+			}
+			
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_ursa/enrage.lua"
+					"Function"		"ChangeAppearance"
+				}
+			}
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%damage_reduction"
+			}
+			
+			"Duration"					"%duration"
+		}
+	}
+}

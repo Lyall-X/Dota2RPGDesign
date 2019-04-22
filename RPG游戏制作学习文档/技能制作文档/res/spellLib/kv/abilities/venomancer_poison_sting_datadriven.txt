@@ -1,0 +1,104 @@
+// Rewrite of the Venomancer Poison Sting ability
+// Author: Pizzalol and Rook
+// Date: 22.12.2014.
+// Known bugs:
+//     The Plague Ward interaction with Poison Sting is hardcoded in modifier_poison_sting_debuff_datadriven_on_destroy().
+//         This can be fixed once we are able to determine the caster of a modifier.
+"venomancer_poison_sting_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"venomancer_poison_sting"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"6.0 9.0 12.0 15.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"5 10 15 20"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movement_speed"			"-11 -12 -13 -14"
+		}			
+	}
+
+	"Modifiers"
+	{
+		"modifier_poison_sting_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_poison_sting_debuff_datadriven"
+					"Target"		"TARGET"
+				}
+			}
+		}
+
+		"modifier_poison_sting_debuff_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%duration"
+
+			"ThinkInterval"	"1.0"
+
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%damage"
+				}
+			}
+
+			"OnCreated"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%damage"
+				}
+				
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_venomancer/poison_sting.lua"
+					"Function"			"modifier_poison_sting_debuff_datadriven_on_created"
+				}
+			}
+			
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_venomancer/poison_sting.lua"
+					"Function"			"modifier_poison_sting_debuff_datadriven_on_destroy"
+				}
+			}
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%movement_speed"
+			}
+		}
+	}
+}

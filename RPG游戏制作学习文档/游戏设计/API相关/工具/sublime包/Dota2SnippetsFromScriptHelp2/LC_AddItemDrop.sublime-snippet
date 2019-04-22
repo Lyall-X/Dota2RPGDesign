@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[AddItemDrop(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC_Creature:AddItemDrop  Add the specified item drop to this creature 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC_Creature:AddItemDrop( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>addItemDrop</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

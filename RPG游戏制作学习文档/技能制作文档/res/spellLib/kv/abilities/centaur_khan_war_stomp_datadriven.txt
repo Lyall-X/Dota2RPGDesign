@@ -1,0 +1,38 @@
+"centaur_khan_war_stomp_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"MaxLevel"						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"20.0"
+	"AbilityDamage"					"25"
+	"AbilityManaCost"				"100"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"250"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"non_hero_stun_duration"		"3.0"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"hero_stun_duration"			"2.0"
+		}
+	}
+}
+

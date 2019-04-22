@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetFacingTargetEntity()${1:--[[
+     CRPG_Unit:GetFacingTargetEntity  Returns the facing target entity, if set. 
+    -- @return handle
+    function CRPG_Unit:GetFacingTargetEntity(  ) end
+    ]]}]]></content>
+    <tabTrigger>getFacingTargetEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

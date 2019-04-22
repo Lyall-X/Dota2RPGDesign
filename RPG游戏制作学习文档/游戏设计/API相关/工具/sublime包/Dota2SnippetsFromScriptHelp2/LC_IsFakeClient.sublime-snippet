@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[IsFakeClient(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:IsFakeClient   
+    -- @return bool
+    -- @param int_1 int
+    function CDOTA_PlayerResource:IsFakeClient( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>isFakeClient</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

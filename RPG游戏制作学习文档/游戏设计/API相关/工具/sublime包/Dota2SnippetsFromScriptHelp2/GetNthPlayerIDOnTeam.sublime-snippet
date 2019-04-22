@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GetNthPlayerIDOnTeam(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:GetNthPlayerIDOnTeam   
+    -- @return int
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:GetNthPlayerIDOnTeam( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>GetNthPlayerIDOnTeam</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

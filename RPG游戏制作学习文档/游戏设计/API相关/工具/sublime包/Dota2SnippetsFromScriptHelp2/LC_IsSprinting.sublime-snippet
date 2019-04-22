@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsSprinting()${1:--[[
+     CRPG_Unit:IsSprinting  () - returns true if unit is sprinting 
+    -- @return bool
+    function CRPG_Unit:IsSprinting(  ) end
+    ]]}]]></content>
+    <tabTrigger>isSprinting</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnUpgrade()${1:--[[
+     CDOTABaseAbility:OnUpgrade   
+    -- @return void
+    function CDOTABaseAbility:OnUpgrade(  ) end
+    ]]}]]></content>
+    <tabTrigger>onUpgrade</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSensingCylinderRadius()${1:--[[
+     CRPG_Unit:GetSensingCylinderRadius  () - returns radius of unit's 360 degree sensing cylinder 
+    -- @return float
+    function CRPG_Unit:GetSensingCylinderRadius(  ) end
+    ]]}]]></content>
+    <tabTrigger>getSensingCylinderRadius</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

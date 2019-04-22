@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetCurrentCharges(${1:int_1})${2:--[[
+     CDOTA_Item:SetCurrentCharges  Set the number of charges on this item 
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_Item:SetCurrentCharges( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setCurrentCharges</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

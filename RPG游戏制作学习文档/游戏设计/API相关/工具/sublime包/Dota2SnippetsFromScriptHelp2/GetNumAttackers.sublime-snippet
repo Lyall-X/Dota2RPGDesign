@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetNumAttackers()${1:--[[
+     CDOTA_BaseNPC_Hero:GetNumAttackers   
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetNumAttackers(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetNumAttackers</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

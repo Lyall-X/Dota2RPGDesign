@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetRightVector()${1:--[[
+     CBaseEntity:GetRightVector  Get the right vector of the entity. 
+    -- @return Vector
+    function CBaseEntity:GetRightVector(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetRightVector</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

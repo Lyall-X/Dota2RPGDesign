@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CBaseAnimating" nameCN="基础动画"
+	descriptionEN=""
+	descriptionCN="" extends="CBaseEntity">
+	<functions>
+		<function name="GetAttachmentAngles"
+		signature="Vector GetAttachmentAngles(int a)">
+		  <DescriptionEN>Get the attachement id's angles as a p,y,r
+		  vector</DescriptionEN>
+		  <DescriptionCN>获得指定ID附件的角度，返回vector(p,y,r)</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="GetAttachmentOrigin"
+		signature="Vector GetAttachmentOrigin(int a)">
+		  <DescriptionEN>Get the attachement id's origin
+		  vector</DescriptionEN>
+		  <DescriptionCN>获得指定ID附件的源vector</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="IsSequenceFinished"
+		signature="bool IsSequenceFinished()">
+		  <DescriptionEN>Ask whether the main sequence is done
+		  playing</DescriptionEN>
+		  <DescriptionCN>查询主序列是否播放结束</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="ScriptLookupAttachment"
+		signature="int ScriptLookupAttachment(string a)">
+		  <DescriptionEN>Get the named attachment id</DescriptionEN>
+		  <DescriptionCN>获得指定名序列的ID</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a</Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetBodygroup"
+		signature="void SetBodygroup(int a, int b)">
+		  <DescriptionEN>Sets a bodygroup</DescriptionEN>
+		  <DescriptionCN>设置一个bodygroup</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a, int b</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetModelScale"
+		signature="void SetModelScale(float scale)">
+		  <DescriptionEN>Sets the model's scale to scale,so if a unit had
+		  its model scale at 1, and you use?SetModelScale(10.0), it would
+		  set the scale to 10.0.</DescriptionEN>
+		  <DescriptionCN>
+		  设置模型放大率。如果模型缩放为1，使用SetModelScale(10.0)将放大率设置成10.0.</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float scale</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetPoseParameter"
+		signature="float SetPoseParameter(string a, float b)">
+		  <DescriptionEN>Set the specified pose parameter to the specified
+		  value</DescriptionEN>
+		  <DescriptionCN>将指定的位置参数（pose parameter）设定为指定值</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a, float b</Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

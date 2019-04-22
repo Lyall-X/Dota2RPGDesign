@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAttackSpeed()${1:--[[
+     CDOTA_BaseNPC:GetAttackSpeed   
+    -- @return float
+    function CDOTA_BaseNPC:GetAttackSpeed(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAttackSpeed</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

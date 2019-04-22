@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsRealHero()${1:--[[
+     CDOTA_BaseNPC:IsRealHero  Is this a real hero? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsRealHero(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsRealHero</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

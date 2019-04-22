@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[IsBlocked(${1:Vector_1})${2:--[[
+     GridNav:IsBlocked  Checks whether the given position is blocked 
+    -- @return bool
+    -- @param Vector_1 Vector
+    function GridNav:IsBlocked( Vector_1 ) end
+    ]]}]]></content>
+    <tabTrigger>IsBlocked</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

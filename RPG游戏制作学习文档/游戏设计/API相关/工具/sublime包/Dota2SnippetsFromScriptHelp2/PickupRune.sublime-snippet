@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[PickupRune(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:PickupRune  Pick up a rune. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:PickupRune( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>PickupRune</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

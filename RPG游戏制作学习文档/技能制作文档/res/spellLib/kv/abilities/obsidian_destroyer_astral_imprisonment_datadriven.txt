@@ -1,0 +1,195 @@
+// Rewrite of the Obsidian Destroyer Astral Imprisonment
+// Author: chrislotix
+// Date: 06.01.2015.
+// Changed: 27.04.2015.
+// Changed by: Pizzalol
+// Reason: Improved the AI hiding method
+"obsidian_destroyer_astral_imprisonment_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"obsidian_destroyer_astral_imprisonment"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"		
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_prison.vpcf"
+		
+		
+	}
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDuration"				"1.0 2.0 3.0 4.0"
+	"AbilityCooldown"				"18.0 16.0 14.0 12.0"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0.25 0.25 0.25 0.25"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"120 140 160 180"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.5" // applies multiple modifiers
+
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"int_steal"				"-4 -6 -8 -10"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"steal_duration"		"60.0 60.0 60.0 60.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"prison_duration"		"1.0 2.0 3.0 4.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"int_gain"				"4 6 8 10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+
+		"FireSound"
+		{
+			"EffectName" "Hero_ObsidianDestroyer.AstralImprisonment.Cast"
+			"Target"	"TARGET"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_ObsidianDestroyer.AstralImprisonment"
+			"Target"	"TARGET"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_astral_imprisonment_int_steal_target_datadriven"
+			"Target"
+			{
+				"Center" "TARGET"
+				"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+			}
+		}		
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_astral_imprisonment_datadriven"
+			"Target"	"TARGET"
+		}
+	}
+
+	
+
+	"Modifiers"
+	{
+		"modifier_astral_imprisonment_datadriven"
+		{
+			"Duration"	"%prison_duration"
+			"IsDebuff"	"1"
+			"IsHidden"	"0"
+			"EffectName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_prison.vpcf"
+			"EffectAttachType"	"attach_origin"
+
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_INVULNERABLE"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/astral_imprisonment.lua"
+					"Function"	"AstralImprisonmentStart"				
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/astral_imprisonment.lua"
+					"Function"	"AstralImprisonmentStopSound"					
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_ObsidianDestroyer.AstralImprisonment.End"
+					"Target"	"TARGET"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/astral_imprisonment.lua"
+					"Function"	"AstralImprisonmentEnd"					
+				}
+			}				
+		}
+
+		"modifier_astral_imprisonment_int_steal_datadriven"
+		{
+			"Duration"	"%steal_duration"
+			"IsDebuff"	"0"
+			"IsPurgable"	"0"
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_gain"
+			}
+		}
+
+		"modifier_astral_imprisonment_int_steal_target_datadriven"
+		{
+			"Duration"	"%steal_duration"
+			"IsDebuff"	"1"
+			"IsPurgable"	"0"
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"OnCreated"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_astral_imprisonment_int_steal_datadriven"
+					"Target"	"CASTER"		
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_steal"
+			}
+		}
+	}
+}
+
+

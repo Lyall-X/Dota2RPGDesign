@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[RemoveAbility(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:RemoveAbility  Remove an ability from this unit by name. 
+    -- @return void
+    -- @param string_1 string
+    function CDOTA_BaseNPC:RemoveAbility( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>removeAbility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

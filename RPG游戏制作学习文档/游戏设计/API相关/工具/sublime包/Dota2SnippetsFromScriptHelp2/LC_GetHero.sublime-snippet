@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetHero(${1:int_1})${2:--[[
+     CScriptHeroList:GetHero  Get the Nth hero in the Hero List 
+    -- @return handle
+    -- @param int_1 int
+    function CScriptHeroList:GetHero( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getHero</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

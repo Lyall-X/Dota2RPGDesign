@@ -1,0 +1,89 @@
+// Rewrite of Furion Force of Nature
+// Author: Noya
+// Date: April 5, 2015
+// The original version lets you cast it in a position where no trees will be spawned, change check_trees_precast to 1 to avoid this
+"furion_force_of_nature_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityTextureName"			"furion_force_of_nature"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+	"AbilityCooldown"				"37 37 37 37"
+	"AbilityManaCost"				"160 160 160 160"
+	"AOERadius"						"%area_of_effect"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"area_of_effect"		"150 225 300 375"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_treants"			"2 3 4 5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"60 60 60 60"
+		}
+
+		// If this is set to 1, the spell wont go on cooldown and waste mana if cast on a position with no trees
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"check_trees_precast"	"0"
+		}
+	}
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_furion/furion_force_of_nature_cast.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		"model"		"models/heroes/furion/treant.vmdl"
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_furion/force_of_nature.lua"
+			"Function"		"CheckTrees"
+			"Target"		"POINT"
+		}
+	}
+
+	"OnSpellStart"
+	{		
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_furion/force_of_nature.lua"
+			"Function"		"ForceOfNature"
+			"Target"		"POINT"
+			"UnitName"		"npc_dota_furion_treant"
+		}	
+
+		"DestroyTrees"
+		{
+			"Target" 		"POINT"
+			"Radius"		"%area_of_effect"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Furion.ForceOfNature"
+			"Target" 		"CASTER"
+		}									
+	}
+}
+

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetRecommendedItemsDisabled()${1:--[[
+     CDOTABaseGameMode:GetRecommendedItemsDisabled  Turn the panel for showing recommended items at the shop off/on. 
+    -- @return bool
+    function CDOTABaseGameMode:GetRecommendedItemsDisabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetRecommendedItemsDisabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

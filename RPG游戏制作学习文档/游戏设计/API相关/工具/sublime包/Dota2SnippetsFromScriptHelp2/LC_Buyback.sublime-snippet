@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Buyback()${1:--[[
+     CDOTA_BaseNPC_Hero:Buyback  Spend the gold and buyback with this hero. 
+    -- @return void
+    function CDOTA_BaseNPC_Hero:Buyback(  ) end
+    ]]}]]></content>
+    <tabTrigger>buyback</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

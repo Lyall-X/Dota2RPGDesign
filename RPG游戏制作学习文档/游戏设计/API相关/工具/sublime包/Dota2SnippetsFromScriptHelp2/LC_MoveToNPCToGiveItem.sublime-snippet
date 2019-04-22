@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[MoveToNPCToGiveItem(${1:handle_1},${2:handle_2})${3:--[[
+     CDOTA_BaseNPC:MoveToNPCToGiveItem  Give an item to another unit. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param handle_2 handle
+    function CDOTA_BaseNPC:MoveToNPCToGiveItem( handle_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>moveToNPCToGiveItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

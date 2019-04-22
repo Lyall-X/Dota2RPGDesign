@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[HasAttackCapability()${1:--[[
+     CDOTA_BaseNPC:HasAttackCapability   
+    -- @return bool
+    function CDOTA_BaseNPC:HasAttackCapability(  ) end
+    ]]}]]></content>
+    <tabTrigger>hasAttackCapability</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

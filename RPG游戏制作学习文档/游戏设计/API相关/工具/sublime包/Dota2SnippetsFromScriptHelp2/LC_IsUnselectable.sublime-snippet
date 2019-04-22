@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsUnselectable()${1:--[[
+     CDOTA_BaseNPC:IsUnselectable   
+    -- @return bool
+    function CDOTA_BaseNPC:IsUnselectable(  ) end
+    ]]}]]></content>
+    <tabTrigger>isUnselectable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

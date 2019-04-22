@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetPrimaryStatValue()${1:--[[
+     CDOTA_BaseNPC_Hero:GetPrimaryStatValue   
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetPrimaryStatValue(  ) end
+    ]]}]]></content>
+    <tabTrigger>getPrimaryStatValue</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

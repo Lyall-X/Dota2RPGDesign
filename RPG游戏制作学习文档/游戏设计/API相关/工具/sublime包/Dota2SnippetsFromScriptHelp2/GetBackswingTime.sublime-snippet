@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBackswingTime()${1:--[[
+     CDOTABaseAbility:GetBackswingTime   
+    -- @return float
+    function CDOTABaseAbility:GetBackswingTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetBackswingTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

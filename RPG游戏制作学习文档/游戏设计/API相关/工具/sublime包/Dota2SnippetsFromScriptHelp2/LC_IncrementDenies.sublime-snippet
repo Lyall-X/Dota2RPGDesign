@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[IncrementDenies(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:IncrementDenies   
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_PlayerResource:IncrementDenies( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>incrementDenies</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

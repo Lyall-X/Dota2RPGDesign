@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Daiyfoo翻译 -->
+
+<class nameEN="CEntityInstance" nameCN="实体实例"
+	descriptionEN="No Description Set"
+	descriptionCN="目前未有描述" extends="CBaseEntity">
+	<functions>
+		<function name="ConnectOutput" signature="void ConnectOutput(string a, string b)">
+			<DescriptionEN>Adds an I/O connection that will call the named function on this entity when the specified output fires.
+			</DescriptionEN>
+			<DescriptionCN>添加一个I/O链接,这可以当特定输出触发时,在这个实体调用方法</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:? b:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="Destroy" signature="void Destroy()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>摧毁实例</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="DisconnectOutput" signature="void DisconnectOutput(string a, string b)">
+			<DescriptionEN>Removes a connected script function from an I/O event on this entity.
+			</DescriptionEN>
+			<DescriptionCN>从这个实体的I/O事件移除已连接的脚本方法</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:? b:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="DisconnectRedirectedOutput" signature="void DisconnectRedirectedOutput(string a, string b, handle c)">
+			<DescriptionEN>Removes a connected script function from an I/O event on the passed entity.
+			</DescriptionEN>
+			<DescriptionCN>从传入实体的I/O事件移除已连接的脚本方法</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:? b:? c:传入的实体
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="entindex" signature="int entindex()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:实例的索引</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FireOutput" signature="void FireOutput(string outputName, handle activator, handle caller, table args, float delay)">
+			<DescriptionEN>Fire an entity output
+			</DescriptionEN>
+			<DescriptionCN>触发实体的输出</DescriptionCN>
+			<HowToCall>
+				<Parameter>outputName:输出名 activator:激活的实体 caller:调用的实体 args:参数的表 delay:延迟秒数
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetClassname" signature="string GetClassname()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:类名</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetDebugName" signature="string GetDebugName()">
+			<DescriptionEN>Get the entity name w/help if not defined (i.e. classname/etc)
+			</DescriptionEN>
+			<DescriptionCN>如果没有定义的话获得实体名字的帮助</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:测试名字的帮助</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetEntityHandle" signature="ehandle GetEntityHandle()">
+			<DescriptionEN>Get the entity as an EHANDLE
+			</DescriptionEN>
+			<DescriptionCN>获得这个实体的EHANDLE</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>ehandle:这个实体的ehandle</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetEntityIndex" signature="int GetEntityIndex()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:实体的索引</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetIntAttr" signature="int GetIntAttr(string a)">
+			<DescriptionEN>Get Integer Attribute
+			</DescriptionEN>
+			<DescriptionCN>获得整型属性</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:?
+				</Parameter>
+				<Return>int:整型属性</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetName" signature="string GetName()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:实体名字</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetOrCreatePrivateScriptScope" signature="handle GetOrCreatePrivateScriptScope()">
+			<DescriptionEN>Retrieve, creating if necessary, the private per-instance script-side data associated with an entity
+			</DescriptionEN>
+			<DescriptionCN>恢复实体相关的每个实例私有的脚本数据,必要时会创建</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:实体相关的每个实例私有的脚本数据</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetOrCreatePublicScriptScope" signature="handle GetOrCreatePublicScriptScope()">
+			<DescriptionEN>Retrieve, creating if necessary, the public script-side data associated with an entity
+			</DescriptionEN>
+			<DescriptionCN>恢复实体相关的公用脚本数据,必要时会创建</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:实体相关的公用脚本数据</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetPrivateScriptScope" signature="handle GetPrivateScriptScope()">
+			<DescriptionEN>Retrieve the private per-instance script-side data associated with an entity
+			</DescriptionEN>
+			<DescriptionCN>恢复实体相关的每个实例私有的脚本数据</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:实体相关的每个实例私有的脚本数据</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetPublicScriptScope" signature="handle GetPublicScriptScope()">
+			<DescriptionEN>Retrieve the public script-side data associated with an entity
+			</DescriptionEN>
+			<DescriptionCN>恢复实体相关的公用脚本数据</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:实体相关的公用脚本数据</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="RedirectOutput" signature="void RedirectOutput(string a, string b, handle c)">
+			<DescriptionEN>Adds an I/O connection that will call the named function on the passed entity when the specified output fires.
+			</DescriptionEN>
+			<DescriptionCN>添加一个I/O链接,这可以当特定输出触发时,在这个实体调用方法</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:? b:? c:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="RemoveSelf" signature="void RemoveSelf()">
+			<DescriptionEN>Delete this entity
+			</DescriptionEN>
+			<DescriptionCN>删除这个实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetIntAttr" signature="void SetIntAttr(string a, int b)">
+			<DescriptionEN>Set Integer Attribute
+			</DescriptionEN>
+			<DescriptionCN>设置整型属性</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:? b:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	
+	</functions>
+
+</class>

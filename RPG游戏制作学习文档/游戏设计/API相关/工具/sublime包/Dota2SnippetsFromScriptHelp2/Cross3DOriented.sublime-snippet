@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[Cross3DOriented(${1:Vector_1},${2:Quaternion_2},${3:float_3},${4:int_4},${5:int_5},${6:int_6},${7:int_7},${8:bool_8},${9:float_9})${10:--[[
+     CDebugOverlayScriptHelper:Cross3DOriented  Draws an oriented cross. Specify origin in world space. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Quaternion_2 Quaternion
+    -- @param float_3 float
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param int_7 int
+    -- @param bool_8 bool
+    -- @param float_9 float
+    function CDebugOverlayScriptHelper:Cross3DOriented( Vector_1, Quaternion_2, float_3, int_4, int_5, int_6, int_7, bool_8, float_9 ) end
+    ]]}]]></content>
+    <tabTrigger>Cross3DOriented</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

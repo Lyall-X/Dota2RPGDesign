@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetMaxHealth(${1:int_1})${2:--[[
+     CBaseEntity:SetMaxHealth  Set the maximum health of this entity. 
+    -- @return void
+    -- @param int_1 int
+    function CBaseEntity:SetMaxHealth( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setMaxHealth</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

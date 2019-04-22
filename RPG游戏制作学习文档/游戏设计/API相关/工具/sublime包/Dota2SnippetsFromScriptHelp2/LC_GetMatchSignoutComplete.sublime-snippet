@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMatchSignoutComplete()${1:--[[
+     CDOTAGamerules:GetMatchSignoutComplete  Have we received the post match signout message that includes reward information 
+    -- @return bool
+    function CDOTAGamerules:GetMatchSignoutComplete(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMatchSignoutComplete</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[DestroyParticle(${1:int_1},${2:bool_2})${3:--[[
+     CScriptParticleManager:DestroyParticle  (int index, bool bDestroyImmediately) - Destroy a particle, if bDestroyImmediately destroy it without playing end caps. 
+    -- @return void
+    -- @param int_1 int
+    -- @param bool_2 bool
+    function CScriptParticleManager:DestroyParticle( int_1, bool_2 ) end
+    ]]}]]></content>
+    <tabTrigger>DestroyParticle</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

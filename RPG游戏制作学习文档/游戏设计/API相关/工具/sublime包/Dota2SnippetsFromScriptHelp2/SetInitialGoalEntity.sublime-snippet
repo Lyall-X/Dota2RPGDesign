@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetInitialGoalEntity(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:SetInitialGoalEntity  Sets the initial waypoint goal for this NPC. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:SetInitialGoalEntity( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetInitialGoalEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetHealthRegen()${1:--[[
+     CDOTA_BaseNPC_Hero:GetHealthRegen  Hero health regen is affected by attributes. 
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetHealthRegen(  ) end
+    ]]}]]></content>
+    <tabTrigger>getHealthRegen</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

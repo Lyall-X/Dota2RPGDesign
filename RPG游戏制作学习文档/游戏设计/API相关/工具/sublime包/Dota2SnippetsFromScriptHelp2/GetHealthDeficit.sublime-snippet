@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetHealthDeficit()${1:--[[
+     CDOTA_BaseNPC:GetHealthDeficit  Returns integer amount of health missing from max. 
+    -- @return int
+    function CDOTA_BaseNPC:GetHealthDeficit(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetHealthDeficit</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

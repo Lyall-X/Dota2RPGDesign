@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMaxLevel()${1:--[[
+     CDOTABaseAbility:GetMaxLevel   
+    -- @return int
+    function CDOTABaseAbility:GetMaxLevel(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMaxLevel</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

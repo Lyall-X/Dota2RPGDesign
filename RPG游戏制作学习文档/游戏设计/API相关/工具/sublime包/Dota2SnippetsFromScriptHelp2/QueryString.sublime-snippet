@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[QueryString(${1:utlstringtoken_1},${2:string_2})${3:--[[
+     CInfoData:QueryString  Query string data for this key 
+    -- @return string
+    -- @param utlstringtoken_1 utlstringtoken
+    -- @param string_2 string
+    function CInfoData:QueryString( utlstringtoken_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>QueryString</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

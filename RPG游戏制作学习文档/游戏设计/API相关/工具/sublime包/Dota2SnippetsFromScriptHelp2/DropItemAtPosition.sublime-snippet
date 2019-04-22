@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[DropItemAtPosition(${1:Vector_1},${2:handle_2})${3:--[[
+     CDOTA_BaseNPC:DropItemAtPosition  Drop an item at a given point. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param handle_2 handle
+    function CDOTA_BaseNPC:DropItemAtPosition( Vector_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>DropItemAtPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

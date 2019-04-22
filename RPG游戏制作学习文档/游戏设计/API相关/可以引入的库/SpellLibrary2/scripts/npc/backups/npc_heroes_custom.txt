@@ -1,0 +1,24 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_antimage_datadriven"
+	{
+		"override_hero" "npc_dota_hero_abaddon"
+	
+		"Ability1" "viper_poison_attack_datadriven"
+		"Ability2" "antimage_blink_datadriven"
+		"Ability3" "bounty_hunter_wind_walk_datadriven"
+		"Ability4" "dragon_knight_elder_dragon_form_datadriven"
+	}
+	"npc_dota_hero_ancient_apparition_datadriven"
+	{
+		"override_hero" "npc_dota_hero_ancient_apparition"
+	
+		"AbilityLayout"	"4"
+	
+		"Ability1"	"lina_dragon_slave_datadriven"
+		"Ability2"	"ancient_apparition_chilling_touch_datadriven"
+		"Ability3"	"ancient_apparition_ice_blast"
+		"Ability4"	"ancient_apparition_ice_blast_datadriven"
+		"Ability5"	"ancient_apparition_ice_blast_release_datadriven"
+	}
+}

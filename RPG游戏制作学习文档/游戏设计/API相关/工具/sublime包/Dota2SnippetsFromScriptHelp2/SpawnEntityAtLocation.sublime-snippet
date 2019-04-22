@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SpawnEntityAtLocation(${1:Vector_1},${2:Vector_2})${3:--[[
+     CEnvEntityMaker:SpawnEntityAtLocation  Create an entity at a specified location and orientaton, orientation is Euler angle in degrees (pitch, yaw, roll) 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Vector_2 Vector
+    function CEnvEntityMaker:SpawnEntityAtLocation( Vector_1, Vector_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SpawnEntityAtLocation</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

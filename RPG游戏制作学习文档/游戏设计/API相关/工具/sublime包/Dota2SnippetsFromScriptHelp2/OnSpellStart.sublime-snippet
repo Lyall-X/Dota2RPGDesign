@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnSpellStart()${1:--[[
+     CDOTABaseAbility:OnSpellStart   
+    -- @return void
+    function CDOTABaseAbility:OnSpellStart(  ) end
+    ]]}]]></content>
+    <tabTrigger>OnSpellStart</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

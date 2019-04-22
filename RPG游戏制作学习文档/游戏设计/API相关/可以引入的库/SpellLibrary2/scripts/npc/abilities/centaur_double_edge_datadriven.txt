@@ -1,0 +1,81 @@
+// Rewrite of Centaur Double Edge
+// Author: Noya
+// Date: 9.1.2015.
+// Notes: Particle is fucked up in Source 2 (even the original spell)
+"centaur_double_edge_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"centaur_double_edge"
+
+	// Stats		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8.0 8.0 8.0 8.0"
+	"AbilityCastRange"				"150 150 150 150"
+	"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+
+	//------------------------------------------------------------------------------
+	"AbilityManaCost"				"0 0 0 0"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"edge_damage"					"175 250 325 400"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"radius"						"190"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+		"particle"	"particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target" 			"CASTER"
+			"EffectName"		"Hero_Centaur.DoubleEdge"
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_centaur/double_edge.lua"
+			"Function"		"DoubleEdgeParticle"
+		}
+		"Damage"
+		{
+			"Target"
+			{
+				"Center"  	"TARGET"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%edge_damage"
+		}
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_centaur/double_edge.lua"
+			"Function"		"DoubleEdgeSelfDamage"
+		}
+	}
+}
+

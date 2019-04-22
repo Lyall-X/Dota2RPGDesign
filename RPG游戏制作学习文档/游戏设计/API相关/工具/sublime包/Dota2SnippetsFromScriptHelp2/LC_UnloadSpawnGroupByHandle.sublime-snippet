@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[UnloadSpawnGroupByHandle(${1:int_1})${2:--[[
+     UnloadSpawnGroupByHandle  Unload a spawn group by handle 
+    -- @return void
+    -- @param int_1 int
+    function UnloadSpawnGroupByHandle( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>unloadSpawnGroupByHandle</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

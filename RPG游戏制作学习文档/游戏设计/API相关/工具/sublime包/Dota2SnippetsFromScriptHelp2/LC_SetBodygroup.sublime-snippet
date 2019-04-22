@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetBodyGroup(${1:string_1})${2:--[[
+     CBodyComponent:SetBodyGroup   
+    -- @return void
+    -- @param string_1 string
+    function CBodyComponent:SetBodyGroup( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setBodyGroup</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCurrentActiveAbility()${1:--[[
+     CDOTA_BaseNPC:GetCurrentActiveAbility  Get the ability this unit is currently casting. 
+    -- @return handle
+    function CDOTA_BaseNPC:GetCurrentActiveAbility(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCurrentActiveAbility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

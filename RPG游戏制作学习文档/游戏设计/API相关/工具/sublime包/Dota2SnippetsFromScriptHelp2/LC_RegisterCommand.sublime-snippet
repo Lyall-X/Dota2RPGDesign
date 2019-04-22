@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[RegisterCommand(${1:string_1},${2:handle_2},${3:string_3},${4:int_4})${5:--[[
+     Convars:RegisterCommand  RegisterCommand(name, fn, helpString, flags) : register a console command. 
+    -- @return void
+    -- @param string_1 string
+    -- @param handle_2 handle
+    -- @param string_3 string
+    -- @param int_4 int
+    function Convars:RegisterCommand( string_1, handle_2, string_3, int_4 ) end
+    ]]}]]></content>
+    <tabTrigger>registerCommand</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,84 @@
+// Rewrite of Abaddon Death Coil
+// Author: Noya
+// Date: 8.1.2015.
+// Notes: Disabling Self target is done with a lua workaround. 
+//		  To show "Can't target self" you can add the CustomError Flash module by zedor: https://github.com/zedor/CustomError
+//		  The ability animation still plays even when the spells is self targeted
+//		  Projectile is only cosmetic, the damage/heal is not tied to it
+"abaddon_death_coil_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"abaddon_death_coil"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"5.0 5.0 5.0 5.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 60 70 80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"projectile_speed"		"1250"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"self_damage"			"75 100 125 150"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"target_damage"			"100 150 200 250"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_amount"			"100 150 200 250"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		"particle" 	"particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_abaddon/death_coil.lua"
+			"Function"		"DeathCoilPreCast"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_abaddon/death_coil.lua"
+			"Function"		"DeathCoil"
+		}
+	}
+}
+

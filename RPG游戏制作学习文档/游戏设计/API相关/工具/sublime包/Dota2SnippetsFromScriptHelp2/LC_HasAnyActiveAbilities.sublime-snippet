@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[HasAnyActiveAbilities()${1:--[[
+     CDOTA_BaseNPC:HasAnyActiveAbilities   
+    -- @return bool
+    function CDOTA_BaseNPC:HasAnyActiveAbilities(  ) end
+    ]]}]]></content>
+    <tabTrigger>hasAnyActiveAbilities</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

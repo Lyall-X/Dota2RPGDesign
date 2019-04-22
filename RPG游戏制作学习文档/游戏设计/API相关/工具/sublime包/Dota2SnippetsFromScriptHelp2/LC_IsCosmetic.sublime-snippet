@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsCosmetic()${1:--[[
+     CDOTABaseAbility:IsCosmetic   
+    -- @return bool
+    function CDOTABaseAbility:IsCosmetic(  ) end
+    ]]}]]></content>
+    <tabTrigger>isCosmetic</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

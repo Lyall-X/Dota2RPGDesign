@@ -1,0 +1,75 @@
+// Rewrite of Terrorblade Conjure Image
+// Author: Noya
+// Date: 10.1.2015.
+// Notes: Datadriven Modifiers with "AllowIllusionDuplicate" aren't automatically created with this method and need to be added manually in lua
+"terrorblade_conjure_image_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"terrorblade_conjure_image"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.5"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"illusion_duration"					"32.0"
+		}
+		"02"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"illusion_outgoing_damage"			"-70.0 -60.0 -50.0 -40.0"		
+		}
+		"03"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"illusion_outgoing_tooltip"			"30.0 40.0 50.0 60.0"
+		}
+		"04"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"illusion_incoming_damage"			"325.0"
+		}
+		"05"
+		{
+			"var_type"							"FIELD_FLOAT"
+			"illusion_incoming_damage_total_tooltip"			"425.0"
+		}			
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_Terrorblade.ConjureImage"
+			"Target"			"CASTER"
+		}
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_terrorblade/conjure_image.lua"
+			"Function"			"ConjureImage"
+		}
+	}
+}
+

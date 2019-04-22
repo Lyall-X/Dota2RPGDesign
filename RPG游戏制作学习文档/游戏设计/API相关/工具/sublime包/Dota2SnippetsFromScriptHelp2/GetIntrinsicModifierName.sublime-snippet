@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetIntrinsicModifierName()${1:--[[
+     CDOTABaseAbility:GetIntrinsicModifierName   
+    -- @return string
+    function CDOTABaseAbility:GetIntrinsicModifierName(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetIntrinsicModifierName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

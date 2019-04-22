@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetHPRegenGain(${1:float_1})${2:--[[
+     CDOTA_BaseNPC_Creature:SetHPRegenGain  Set the hit points regen gained per level on this creature. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTA_BaseNPC_Creature:SetHPRegenGain( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetHPRegenGain</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

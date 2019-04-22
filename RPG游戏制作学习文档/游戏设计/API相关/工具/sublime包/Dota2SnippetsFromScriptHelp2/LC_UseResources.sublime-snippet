@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[UseResources(${1:bool_1},${2:bool_2},${3:bool_3})${4:--[[
+     CDOTABaseAbility:UseResources   
+    -- @return void
+    -- @param bool_1 bool
+    -- @param bool_2 bool
+    -- @param bool_3 bool
+    function CDOTABaseAbility:UseResources( bool_1, bool_2, bool_3 ) end
+    ]]}]]></content>
+    <tabTrigger>useResources</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

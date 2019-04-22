@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsRooted()${1:--[[
+     CDOTA_BaseNPC:IsRooted   
+    -- @return bool
+    function CDOTA_BaseNPC:IsRooted(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsRooted</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

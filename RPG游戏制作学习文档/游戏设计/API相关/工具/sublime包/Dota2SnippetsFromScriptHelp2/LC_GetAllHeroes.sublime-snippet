@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAllHeroes()${1:--[[
+     CScriptHeroList:GetAllHeroes  Returns all the heroes in the world 
+    -- @return table
+    function CScriptHeroList:GetAllHeroes(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAllHeroes</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

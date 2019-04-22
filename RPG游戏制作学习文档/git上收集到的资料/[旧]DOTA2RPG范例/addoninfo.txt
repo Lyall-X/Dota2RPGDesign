@@ -1,0 +1,13 @@
+"AddonInfo"
+{
+	"addonSteamAppID"	"816"
+	"addontitle"	"Dota2X"
+	"addonversion"	"0.1"
+	"addontagline"	"Dota2X"
+	"addonauthor"	"XavierCHN"
+	"addonSteamGroupName"	""
+	"addonauthorSteamID"	""
+	"addonContent_Campaign"	"0"
+	"addonURL0"	"https://github.com/XavierCHN/Dota2X/"
+	"addonDescription"	"Dota2X"
+}

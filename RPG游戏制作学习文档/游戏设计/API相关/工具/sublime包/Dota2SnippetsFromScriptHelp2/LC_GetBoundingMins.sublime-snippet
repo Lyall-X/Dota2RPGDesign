@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBoundingMins()${1:--[[
+     CBaseEntity:GetBoundingMins  Get a vector containing min bounds, centered on object. 
+    -- @return Vector
+    function CBaseEntity:GetBoundingMins(  ) end
+    ]]}]]></content>
+    <tabTrigger>getBoundingMins</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

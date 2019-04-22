@@ -1,0 +1,852 @@
+// Comment:
+// NOTE1: Need adjustment for sound
+// NOTE2: Post death attack(?) should not be working
+"sandking_epicenter_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"sandking_epicenter"
+	"AbilityCastAnimation"			"ACT_DOTA_IDLE"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"140.0 120.0 100.0"
+	"AbilityDuration"				"3.0 3.0 3.0"
+	"AbilityChannelTime"			"2.0 2.0 2.0"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"175 250 325"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.2"	// Damage is the main component of spell
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_radius"	"275 325 375 425 475 525 575 650 675 700 775 825"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulses"	"6 8 10"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_damage"	"110 110 110"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_slow"	"-30 -30 -30"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_slow_as"	"-30"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_slow_duration_tooltip"	"3"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulses_scepter"	"8 10 12"
+		}
+		"08"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"epicenter_cooldown_scepter"	"120.0 100.0 80.0"
+		}
+		// radius of each pulse
+		"09"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"epicenter_damage_interval"		"0.5"
+		}
+		"10"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_01_radius"		"275"
+		}
+		"11"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_02_radius"		"325"
+		}
+		"12"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_03_radius"		"375"
+		}
+		"13"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_04_radius"		"425"
+		}
+		"14"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_05_radius"		"475"
+		}
+		"15"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_06_radius"		"525"
+		}
+		"16"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_07_radius"		"575"
+		}
+		"17"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_08_radius"		"650"
+		}
+		"18"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_09_radius"		"675"
+		}
+		"19"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"epicenter_pulse_10_radius"		"700"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+		"particle"				"particles/generic_gameplay/generic_stunned.vpcf"
+		"particle"				"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+		"particle"				"particles/units/heroes/hero_sandking/sandking_epicenter_tell.vpcf"
+	}
+		
+		
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"		"modifier_epicenter_precast_datadriven"
+			"Target"			"CASTER"
+		}
+			
+		"FireSound"
+		{
+			"EffectName"		"Ability.SandKing_Epicenter.spell"
+			"Target"			"CASTER"
+		}
+	}
+		
+	"OnChannelFinish"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"		"modifier_epicenter_precast_datadriven"
+			"Target"			"CASTER"
+		}
+	}
+		
+	"OnChannelSucceeded"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"		"modifier_epicenter_buff_datadriven"
+			"Target"			"CASTER"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_epicenter_precast_datadriven"
+		{
+			"IsPurgable"				"0"
+			"IsHidden"					"0"
+		
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter_tell.vpcf"
+					"EffectAttachType"	"start_at_custom_origin"
+					"ControlPointEntities"
+					{
+						"CASTER"		"attach_tail"
+						"CASTER"		"attach_tail"
+						"CASTER"		"attach_tail"
+					}
+				}
+			}
+		}
+	
+		"modifier_epicenter_buff_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"0"
+			"Duration"			"%epicenter_damage_interval * %epicenter_pulses + 0.25"
+			
+			"OnCreated"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_01_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_02_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_03_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_04_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_05_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_06_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_06_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_07_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_08_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_09_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_10_datadriven"
+					"Target"			"CASTER"
+				}
+				
+				"FireSound"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"Ability.SandKing_Epicenter"
+				}
+			}
+			
+			"OnDestroy"
+			{
+				// 1 to 6 is not needed
+				"RemoveModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_07_datadriven"
+					"Target"			"CASTER"
+				}
+				"RemoveModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_08_datadriven"
+					"Target"			"CASTER"
+				}
+				"RemoveModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_09_datadriven"
+					"Target"			"CASTER"
+				}
+				"RemoveModifier"
+				{
+					"ModifierName"		"modifier_epicenter_pulse_10_datadriven"
+					"Target"			"CASTER"
+				}
+			}
+		}
+		
+		"modifier_epicenter_debuff_datadriven"
+		{
+			"IsDebuff"			"1"
+			"Duration"			"%epicenter_slow_duration_tooltip"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+					"EffectAttachType"	"follow_overhead"
+					"Target"			"TARGET"
+				}
+			}
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%epicenter_slow"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%epicenter_slow_as"
+			}
+		}
+	
+		// Main pulses modifier
+		"modifier_epicenter_pulse_01_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 1 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 1"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_01_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_01_radius %epicenter_pulse_01_radius %epicenter_pulse_01_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_02_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 2 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 2"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_02_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_02_radius %epicenter_pulse_02_radius %epicenter_pulse_02_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_03_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 3 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 3"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_03_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_03_radius %epicenter_pulse_03_radius %epicenter_pulse_03_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_04_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 4 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 4"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_04_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_04_radius %epicenter_pulse_04_radius %epicenter_pulse_04_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_05_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 5 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 5"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_05_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_05_radius %epicenter_pulse_05_radius %epicenter_pulse_05_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_06_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 6 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 6"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_06_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_06_radius %epicenter_pulse_06_radius %epicenter_pulse_06_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_07_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 7 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 7"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_07_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_07_radius %epicenter_pulse_07_radius %epicenter_pulse_07_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_08_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 8 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 8"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_08_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_08_radius %epicenter_pulse_08_radius %epicenter_pulse_08_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_09_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 9 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 9"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_09_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_09_radius %epicenter_pulse_09_radius %epicenter_pulse_09_radius"
+					}
+				}
+			}
+		}
+		
+		"modifier_epicenter_pulse_10_datadriven"
+		{
+			"IsPurgable"		"0"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Duration"			"%epicenter_damage_interval * 10 + 0.1"
+			
+			"ThinkInterval"		"%epicenter_damage_interval * 10"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"CASTER"
+						"Radius"	"%epicenter_pulse_10_radius"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+							
+					"Action"
+					{
+						"Damage"
+						{
+							"Damage"	"%epicenter_damage"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Target"	"TARGET"
+						}
+						
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_epicenter_debuff_datadriven"
+							"Target"	"TARGET"
+						}
+					}
+				}
+						
+				"AttachEffect"
+				{
+					"Target"			"CASTER"
+					"EffectName"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPoints"
+					{
+						"01"			"%epicenter_pulse_10_radius %epicenter_pulse_10_radius %epicenter_pulse_10_radius"
+					}
+				}
+			}
+		}
+	}
+}

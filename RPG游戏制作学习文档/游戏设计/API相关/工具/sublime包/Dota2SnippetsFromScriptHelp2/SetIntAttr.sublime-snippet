@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetIntAttr(${1:string_1},${2:int_2})${3:--[[
+     CEntityInstance:SetIntAttr  Set Integer Attribute 
+    -- @return void
+    -- @param string_1 string
+    -- @param int_2 int
+    function CEntityInstance:SetIntAttr( string_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetIntAttr</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

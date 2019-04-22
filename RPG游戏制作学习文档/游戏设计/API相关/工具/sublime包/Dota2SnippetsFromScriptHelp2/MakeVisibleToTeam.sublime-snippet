@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[MakeVisibleToTeam(${1:int_1},${2:float_2})${3:--[[
+     CDOTA_BaseNPC:MakeVisibleToTeam   
+    -- @return void
+    -- @param int_1 int
+    -- @param float_2 float
+    function CDOTA_BaseNPC:MakeVisibleToTeam( int_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>MakeVisibleToTeam</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

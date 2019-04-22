@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[QueryFloat(${1:utlstringtoken_1},${2:float_2})${3:--[[
+     CInfoData:QueryFloat  Query float data for this key 
+    -- @return float
+    -- @param utlstringtoken_1 utlstringtoken
+    -- @param float_2 float
+    function CInfoData:QueryFloat( utlstringtoken_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>QueryFloat</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

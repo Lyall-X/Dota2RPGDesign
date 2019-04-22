@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CPhysicsProp" nameCN="物理元件"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="DisableMotion" signature="void DisableMotion()">
+			<DescriptionEN>Enable motion for the prop</DescriptionEN>
+			<DescriptionCN>禁止该元件运动</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS>原文有误</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="EnableMotion" signature="void EnableMotion()">
+			<DescriptionEN>Enable motion for the prop</DescriptionEN>
+			<DescriptionCN>允许该元件运动</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	</functions>
+</class>

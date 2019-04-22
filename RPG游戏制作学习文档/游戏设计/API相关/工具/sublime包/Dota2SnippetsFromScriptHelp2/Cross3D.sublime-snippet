@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[Cross3D(${1:Vector_1},${2:float_2},${3:int_3},${4:int_4},${5:int_5},${6:int_6},${7:bool_7},${8:float_8})${9:--[[
+     CDebugOverlayScriptHelper:Cross3D  Draws a world-aligned cross. Specify origin in world space. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    -- @param int_3 int
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param bool_7 bool
+    -- @param float_8 float
+    function CDebugOverlayScriptHelper:Cross3D( Vector_1, float_2, int_3, int_4, int_5, int_6, bool_7, float_8 ) end
+    ]]}]]></content>
+    <tabTrigger>Cross3D</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

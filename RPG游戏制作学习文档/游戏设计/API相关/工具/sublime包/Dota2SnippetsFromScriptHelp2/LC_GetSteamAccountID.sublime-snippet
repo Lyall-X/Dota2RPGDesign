@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetSteamAccountID(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetSteamAccountID   
+    -- @return unsigned
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetSteamAccountID( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getSteamAccountID</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

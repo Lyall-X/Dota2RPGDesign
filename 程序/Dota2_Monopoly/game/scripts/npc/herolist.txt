@@ -1,0 +1,25 @@
+//这个文档所定义的是当前在英雄选择面板中可以选择的英雄，其中，1代表可以选择
+//0代表不可以选择（不在列表中出现）
+//要特别注意的是，如果你在npc_heroes_custom中定义了一个英雄
+//例如 npc_my_hero ，他的baseclass字段定义为 npc_dota_hero_ancient_apparition
+//那么你写在这个位置的英雄应该为npc_dota_hero_ancient_apparition ， 而不是 npc_my_hero
+
+//以下文档是包含了当前DOTA2的全部英雄
+//如果你要禁用某个，可以将他后面的数字改为0
+//也可以在他前面加上两个/来注释掉。
+
+"CustomHeroList"
+{
+	"npc_dota_hero_axe"			"1"
+//测试英雄
+
+  "npc_dota_hero_juggernaut"	  "1"
+  "npc_dota_hero_sven"					"1"
+  "npc_dota_hero_skywrath_mage"					"1"
+  "npc_dota_hero_pugna"					"1"
+  "npc_dota_hero_oracle"					"1"
+  "npc_dota_hero_phantom_assassin"					"1"
+  "npc_dota_hero_bounty_hunter"					"1"
+  "npc_dota_hero_sniper"					"1"
+  "npc_dota_hero_windrunner"					"1"
+}

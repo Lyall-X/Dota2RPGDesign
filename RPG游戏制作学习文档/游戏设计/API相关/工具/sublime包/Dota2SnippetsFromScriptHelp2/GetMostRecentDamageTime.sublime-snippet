@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMostRecentDamageTime()${1:--[[
+     CDOTA_BaseNPC_Hero:GetMostRecentDamageTime   
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetMostRecentDamageTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetMostRecentDamageTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

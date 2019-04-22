@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[TimeUntilNextAttack()${1:--[[
+     CDOTA_BaseNPC:TimeUntilNextAttack   
+    -- @return float
+    function CDOTA_BaseNPC:TimeUntilNextAttack(  ) end
+    ]]}]]></content>
+    <tabTrigger>timeUntilNextAttack</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

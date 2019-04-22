@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[Axis(${1:Vector_1},${2:Quaternion_2},${3:float_3},${4:bool_4},${5:float_5})${6:--[[
+     CDebugOverlayScriptHelper:Axis  Draws an axis. Specify origin + orientation in world space. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Quaternion_2 Quaternion
+    -- @param float_3 float
+    -- @param bool_4 bool
+    -- @param float_5 float
+    function CDebugOverlayScriptHelper:Axis( Vector_1, Quaternion_2, float_3, bool_4, float_5 ) end
+    ]]}]]></content>
+    <tabTrigger>Axis</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

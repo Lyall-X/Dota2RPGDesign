@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAutoCastState()${1:--[[
+     CDOTABaseAbility:GetAutoCastState   
+    -- @return bool
+    function CDOTABaseAbility:GetAutoCastState(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAutoCastState</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

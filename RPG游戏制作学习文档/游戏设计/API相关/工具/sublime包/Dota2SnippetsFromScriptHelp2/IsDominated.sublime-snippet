@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsDominated()${1:--[[
+     CDOTA_BaseNPC:IsDominated   
+    -- @return bool
+    function CDOTA_BaseNPC:IsDominated(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsDominated</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

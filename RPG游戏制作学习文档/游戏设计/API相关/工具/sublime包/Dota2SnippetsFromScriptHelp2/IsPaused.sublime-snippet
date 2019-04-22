@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsPaused()${1:--[[
+     CSceneEntity:IsPaused  If this scene is currently paused. 
+    -- @return bool
+    function CSceneEntity:IsPaused(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsPaused</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

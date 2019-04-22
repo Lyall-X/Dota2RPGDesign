@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[PayManaCost()${1:--[[
+     CDOTABaseAbility:PayManaCost   
+    -- @return void
+    function CDOTABaseAbility:PayManaCost(  ) end
+    ]]}]]></content>
+    <tabTrigger>payManaCost</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

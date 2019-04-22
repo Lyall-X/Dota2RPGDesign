@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetTimeOfLastItemPurchase(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetTimeOfLastItemPurchase   
+    -- @return float
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetTimeOfLastItemPurchase( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getTimeOfLastItemPurchase</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

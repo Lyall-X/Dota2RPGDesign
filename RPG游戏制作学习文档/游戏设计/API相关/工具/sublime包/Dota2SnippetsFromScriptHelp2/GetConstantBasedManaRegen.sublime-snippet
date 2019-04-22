@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetConstantBasedManaRegen()${1:--[[
+     CDOTA_BaseNPC:GetConstantBasedManaRegen  This Mana regen is derived from constant bonuses like Basilius. 
+    -- @return float
+    function CDOTA_BaseNPC:GetConstantBasedManaRegen(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetConstantBasedManaRegen</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

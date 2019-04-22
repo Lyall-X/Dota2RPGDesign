@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCurrentXP()${1:--[[
+     CDOTA_BaseNPC_Hero:GetCurrentXP  Returns the amount of XP  
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetCurrentXP(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCurrentXP</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

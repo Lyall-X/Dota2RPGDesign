@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IncrementModifierRefCount()${1:--[[
+     CDOTABaseAbility:IncrementModifierRefCount   
+    -- @return void
+    function CDOTABaseAbility:IncrementModifierRefCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>incrementModifierRefCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SendToConsole(${1:string_1})${2:--[[
+     SendToConsole  Send a string to the console as a client command 
+    -- @return void
+    -- @param string_1 string
+    function SendToConsole( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SendToConsole</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

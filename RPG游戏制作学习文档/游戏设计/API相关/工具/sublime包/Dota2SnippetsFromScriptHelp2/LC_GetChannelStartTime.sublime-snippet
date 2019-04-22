@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetChannelStartTime()${1:--[[
+     CDOTABaseAbility:GetChannelStartTime   
+    -- @return float
+    function CDOTABaseAbility:GetChannelStartTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>getChannelStartTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

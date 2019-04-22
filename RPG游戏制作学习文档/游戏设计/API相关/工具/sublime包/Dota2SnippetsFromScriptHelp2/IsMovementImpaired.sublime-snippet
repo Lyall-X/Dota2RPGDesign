@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsMovementImpaired()${1:--[[
+     CDOTA_BaseNPC:IsMovementImpaired   
+    -- @return bool
+    function CDOTA_BaseNPC:IsMovementImpaired(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsMovementImpaired</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

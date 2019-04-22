@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[QueryNumber(${1:utlstringtoken_1},${2:float_2})${3:--[[
+     CInfoData:QueryNumber  Query number data for this key 
+    -- @return float
+    -- @param utlstringtoken_1 utlstringtoken
+    -- @param float_2 float
+    function CInfoData:QueryNumber( utlstringtoken_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>queryNumber</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

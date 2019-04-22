@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[LookupSequence(${1:string_1})${2:--[[
+    ---[[ CBodyComponent:LookupSequence  Returns a sequence id given a name
+    -- @return <unknown>
+    -- @param string_1 string
+    function CBodyComponent:LookupSequence( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>LookupSequence</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

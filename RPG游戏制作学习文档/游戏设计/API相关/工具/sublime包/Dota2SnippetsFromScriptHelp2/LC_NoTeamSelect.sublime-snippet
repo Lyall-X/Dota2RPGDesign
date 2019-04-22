@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[NoTeamSelect()${1:--[[
+     CDOTA_BaseNPC:NoTeamSelect   
+    -- @return bool
+    function CDOTA_BaseNPC:NoTeamSelect(  ) end
+    ]]}]]></content>
+    <tabTrigger>noTeamSelect</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

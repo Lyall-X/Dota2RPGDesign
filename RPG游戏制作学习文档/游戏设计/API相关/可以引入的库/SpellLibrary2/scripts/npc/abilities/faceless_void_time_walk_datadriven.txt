@@ -1,0 +1,138 @@
+// Rewrite of the Faceless Void Time Walk ability
+// Author: Pizzalol
+// Date: 07.01.2015.
+"faceless_void_time_walk_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"faceless_void_time_walk"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700 900 1100 1300"
+	"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"19.0 17.0 15.0 13.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.25"	// mostly about the blink
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"3000"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"300"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"3.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movement_speed_pct"	"-20 -30 -40 -50"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_speed_pct"		"-20 -30 -40 -50"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tooltip_range"		"700 900 1100 1300"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_time_walk_slow_aura_datadriven"
+			"Target"		"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_FacelessVoid.TimeWalk"
+			"Target"		"CASTER"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_time_walk_datadriven"
+			"Target"		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"scripts/vscripts/heroes/hero_faceless_void/time_walk.lua"
+			"Function"		"TimeWalk"
+			"Target"		"POINT"
+			"caster_modifier"	"modifier_time_walk_datadriven"
+			"caster_aura"		"modifier_time_walk_slow_aura_datadriven"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_time_walk_slow_aura_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"Aura" 			"modifier_time_walk_slow_datadriven"
+			"Aura_Radius" 	"%radius"
+			"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		}
+
+		"modifier_time_walk_slow_datadriven"
+		{
+			"Duration"	"%duration"
+			"IsDebuff"	"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_speed_pct"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed_pct"
+			}
+		}
+
+		"modifier_time_walk_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+

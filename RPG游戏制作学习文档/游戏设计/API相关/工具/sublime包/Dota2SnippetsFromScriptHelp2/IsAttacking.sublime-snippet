@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsAttacking()${1:--[[
+     CDOTA_BaseNPC:IsAttacking   
+    -- @return bool
+    function CDOTA_BaseNPC:IsAttacking(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsAttacking</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetBuybackCooldownTime(${1:int_1},${2:float_2})${3:--[[
+     CDOTA_PlayerResource:SetBuybackCooldownTime   
+    -- @return void
+    -- @param int_1 int
+    -- @param float_2 float
+    function CDOTA_PlayerResource:SetBuybackCooldownTime( int_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setBuybackCooldownTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

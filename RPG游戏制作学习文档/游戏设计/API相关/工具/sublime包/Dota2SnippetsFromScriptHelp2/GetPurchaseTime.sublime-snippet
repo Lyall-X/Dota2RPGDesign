@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetPurchaseTime()${1:--[[
+     CDOTA_Item:GetPurchaseTime  Get the purchase time of this item 
+    -- @return float
+    function CDOTA_Item:GetPurchaseTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetPurchaseTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

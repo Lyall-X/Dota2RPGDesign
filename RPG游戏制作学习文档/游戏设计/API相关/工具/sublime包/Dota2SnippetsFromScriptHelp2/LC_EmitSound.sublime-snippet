@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[EmitSound(${1:string_1})${2:--[[
+     CBaseEntity:EmitSound  Plays a sound from this entity. 
+    -- @return void
+    -- @param string_1 string
+    function CBaseEntity:EmitSound( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>emitSound</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

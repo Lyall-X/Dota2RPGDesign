@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[MakePhantomBlocker()${1:--[[
+     CDOTA_BaseNPC:MakePhantomBlocker   
+    -- @return void
+    function CDOTA_BaseNPC:MakePhantomBlocker(  ) end
+    ]]}]]></content>
+    <tabTrigger>MakePhantomBlocker</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

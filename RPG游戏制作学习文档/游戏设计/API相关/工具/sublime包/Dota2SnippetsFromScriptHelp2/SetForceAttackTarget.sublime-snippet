@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetForceAttackTarget(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:SetForceAttackTarget   
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:SetForceAttackTarget( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetForceAttackTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

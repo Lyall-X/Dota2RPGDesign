@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDOTA_BaseNPC_Hero" nameCN="DOTA基础NPC 英雄"
+	descriptionEN=""
+	descriptionCN="" extends="CDOTA_BaseNPC">
+	<functions>
+		<function name="AddExperience" signature="bool AddExperience(float amount, bool applyBotDifficultyScaling)">
+			<DescriptionEN>Adds experience to this unit.
+			</DescriptionEN>
+			<DescriptionCN>给单位增加经验值</DescriptionCN>
+			<HowToCall>
+				<Parameter>amount：经验值，applyBotDifficultyScaling：应用机器人难度修正
+				</Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="Buyback" signature="void Buyback()">
+			<DescriptionEN>Spend the gold and buyback with this hero.
+			</DescriptionEN>
+			<DescriptionCN>花费金钱并买活英雄</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="CalculateStatBonus" signature="void CalculateStatBonus()">
+			<DescriptionEN>Recalculate all stats after the hero gains stats.
+			</DescriptionEN>
+			<DescriptionCN>英雄返回属性后，重新计算全部属性
+			</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="CanEarnGold"
+			signature="bool CanEarnGold()">
+			<DescriptionEN>Returns boolean value result of buyback gold limit time less than game time.
+			</DescriptionEN>
+			<DescriptionCN>返回布尔值，买活返回金钱限制时间是否少于游戏时间（其实就是是否能够正常返回金钱.....）</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>bool:能否返回金钱</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="ClearLastHitMultikill" signature="void ClearLastHitMultikill()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="ClearLastHitStreak" signature="void ClearLastHitStreak()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="ClearStreak" signature="void ClearStreak()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetAbilityPoints" signature="int GetAbilityPoints()">
+			<DescriptionEN>Gets the current unspent ability point's.</DescriptionEN>
+			<DescriptionCN>返回未分配的技能点数</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int: 技能点数</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetAgility" signature="float GetAgility()">
+		    <DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回敏捷值</DescriptionCN>
+		    <HowToCall>
+				<Parameter></Parameter>
+				<Return>float: 敏捷值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetAgilityGain" signature="float GetAgilityGain()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回敏捷成长</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：敏捷成长</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetAssists" signature="int GetAssists()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>返回助攻数，数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int：助攻数</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetAttacker" signature="int GetAttacker(int a)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter>a</Parameter>
+				<Return>int</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetBaseAgility" signature="float GetBaseAgility()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回基础敏捷</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：基础敏捷</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>	
+		<function name="GetBaseDamageMax" signature="int GetBaseDamageMax()">
+			<DescriptionEN>Hero damage is also affected by attributes.</DescriptionEN>
+			<DescriptionCN>返回基础攻击伤害最大值，英雄的基础攻击伤害也会受到属性影响</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：伤害最大值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetBaseDamageMin" signature="int GetBaseDamageMin()">
+			<DescriptionEN>Hero damage is also affected by attributes.</DescriptionEN>
+			<DescriptionCN>返回基础攻击伤害最小值，英雄的基础攻击伤害也会受到属性影响</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：伤害最小值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetBaseIntellect" signature="float GetBaseIntellect()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回基础智力</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：基础智力</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>	
+		<function name="GetBaseStrength" signature="float GetBaseStrength()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回基础力量</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：基础力量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetBonusDamageFromPrimaryStat" signature="int GetBonusDamageFromPrimaryStat()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回来自主属性奖励的攻击伤害值</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：奖励值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>	
+		<function name="GetBuybackCooldownTime()" signature="float GetBuybackCooldownTime()">
+			<DescriptionEN>Return float value for the amount of time left on cooldown for this hero's buyback.</DescriptionEN>
+			<DescriptionCN>返回该英雄买活CD的剩余时间</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：剩余时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetBuybackCost()" signature="int GetBuybackCost()">
+			<DescriptionEN>Return integer value for the gold cost of a buyback.</DescriptionEN>
+			<DescriptionCN>返回买活所需金钱</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：金钱数</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>	
+		<function name="GetBuybackGoldLimitTime" signature="float GetBuybackGoldLimitTime()">
+			<DescriptionEN>Returns the amount of time gold gain is limited after buying back.</DescriptionEN>
+			<DescriptionCN>返回买活所带来的金钱惩罚剩余时间</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：剩余时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetCurrentXP" signature="int GetCurrentXP()">
+			<DescriptionEN>Returns the amount of XP</DescriptionEN>
+			<DescriptionCN>返回当前经验值</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：经验值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetDeathGoldCost" signature="int GetDeathGoldCost()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回死亡损失金钱</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：损失金钱量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetDeaths" signature="int GetDeaths()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回死亡次数</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：死亡次数</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetDenies" signature="int GetDenies()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回反补次数</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：反补数</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetGold" signature="int GetGold()">
+			<DescriptionEN>Returns gold amount for the player owning this hero</DescriptionEN>
+			<DescriptionCN>返回该英雄拥有者所有的金钱数量</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetGoldBounty" signature="int GetGoldBounty()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetHealthRegen" signature="float GetHealthRegen()">
+			<DescriptionEN>Hero health regen is affected by attributes.</DescriptionEN>
+			<DescriptionCN>返回每秒生命回复，英雄生命回复受到属性影响</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：每秒生命回复</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetIncreasedAttackSpeed" signature="float GetIncreasedAttackSpeed()">
+			<DescriptionEN>Hero attack speed is also affected by agility.</DescriptionEN>
+			<DescriptionCN>返回攻击速度增加值（IAS），英雄攻击速度受到敏捷影响</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：IAS值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetIntellect" signature="float GetIntellect()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回智力值</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：智力值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetIntellectGain" signature="float GetIntellectGain()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回智力成长</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：智力成长</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetKills" signature="int GetKills()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>返回击杀数，数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：击杀数</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetLastHits" signature="int GetLastHits()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>返回正补数，数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：正补数</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetManaRegen" signature="float GetManaRegen()">
+			<DescriptionEN>Hero mana regen is affected by attributes.</DescriptionEN>
+			<DescriptionCN>返回每秒魔法回复，英雄魔法回复受到属性影响</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：每秒魔法回复</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetMostRecentDamageTime" signature="float GetMostRecentDamageTime()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回最近一次伤害时间</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetMultipleKillCount" signature="int GetMultipleKillCount()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回多杀计数</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetNumAttackers" signature="int GetNumAttackers()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetPhysicalArmorValue" signature="float GetPhysicalArmorValue()">
+			<DescriptionEN>Hero armor is affected by attributes.</DescriptionEN>
+			<DescriptionCN>返回护甲值，英雄护甲受到属性影响</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：护甲值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetPlayerID" signature="int GetPlayerID()">
+			<DescriptionEN>Returns player ID of the player owning this hero</DescriptionEN>
+			<DescriptionCN>返回英雄拥有者的ID</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：玩家ID</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetPrimaryAttribute" signature="int GetPrimaryAttribute()">
+			<DescriptionEN>0 = strength, 1 = agility, 2 = intelligence.</DescriptionEN>
+			<DescriptionCN>返回英雄主要属性，0 = 力量, 1 = 敏捷, 2 = 智力.</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int：0 = 力量, 1 = 敏捷, 2 = 智力</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetPrimaryStatValue" signature="float GetPrimaryStatValue()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回主属性值</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：主属性值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetRespawnTime" signature="float GetRespawnTime()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回复活时间</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：复活时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetStatsBasedManaRegen" signature="float GetStatsBasedManaRegen()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回属性提供的魔法回复</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="int GetStreak()" signature="int GetStreak()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回连杀数</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetStrength" signature="float GetStrength()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回力量值</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：力量值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetStrengthGain" signature="float GetStrengthGain()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回力量成长</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：力量成长</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="GetTimeUntilRespawn" signature="float GetTimeUntilRespawn()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回复活所需的时间</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>float：剩余时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="HasAnyAvailableInventorySpace" signature="bool HasAnyAvailableInventorySpace()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回是否有可用物品栏空间</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="HasFlyingVision" signature="bool HasFlyingVision()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>返回是否拥有空中视野</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="HasOwnerAbandoned" signature="bool HasOwnerAbandoned()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="HasRoomForItem" signature="int HasRoomForItem(string a, bool b, bool c)">
+			<DescriptionEN>Args: const char* pItemName, bool bIncludeStashCombines, bool bAllowSelling</DescriptionEN>
+			<DescriptionCN>参数: const char* pItemName, bool bIncludeStashCombines, bool bAllowSelling</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：道具名，b：包括配方，c：允许出售</Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="HeroLevelUp" signature="void HeroLevelUp(bool a)">
+			<DescriptionEN>Levels up the hero, true or false to play effects.</DescriptionEN>
+			<DescriptionCN>升级英雄, 参数决定是否播放升级效果.</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：是否播放升级效果</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IncrementAssists" signature="void IncrementAssists()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IncrementDeaths" signature="void IncrementDeaths()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IncrementDenies" signature="void IncrementDenies()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IncrementKills" signature="void IncrementKills(int kills)">
+			<DescriptionEN>Passed ID is for the victim, killer ID is ID of the current hero. Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>增加击杀数，击杀者为当前英雄，传入ID为受害者ID。数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter>kills：受害者ID</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="void IncrementLastHitMultikill()" signature="void IncrementLastHitMultikill()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IncrementLastHits()" signature="void IncrementLastHits()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IncrementLastHitStreak" signature="void IncrementLastHitStreak()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IncrementNearbyCreepDeaths()" signature="void IncrementNearbyCreepDeaths()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IncrementStreak" signature="void IncrementStreak()">
+			<DescriptionEN>Value is stored in PlayerResource.</DescriptionEN>
+			<DescriptionCN>数值存储在玩家资源(PlayerResource)中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IsBuybackDisabledByReapersScythe" signature="bool IsBuybackDisabledByReapersScythe()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>是否被死神镰刀禁止买活</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IsReincarnating" signature="bool IsReincarnating()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>是否处于重生中</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="KilledHero" signature="void KilledHero(handle a, handle b)">
+			<DescriptionEN>Args: Hero, Inflictor</DescriptionEN>
+			<DescriptionCN>参数: 英雄, 加害者</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：英雄句柄，b:加害者句柄</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="ModifyAgility" signature="void ModifyAgility(float a)">
+			<DescriptionEN>Adds passed value to base attribute value, then calls CalculateStatBonus.</DescriptionEN>
+			<DescriptionCN>增加指定值到英雄基础敏捷，随后调用CalculateStatBonus</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="ModifyGold" signature="int ModifyGold(int goldAmmt, bool reliable, int reason)">
+			<DescriptionEN>Gives this hero some gold. Args: int nGoldChange, bool bReliable, int reason</DescriptionEN>
+			<DescriptionCN>给予英雄金钱。参数: int 金钱数, bool 是否为可靠金钱, int 原因</DescriptionCN>
+			<HowToCall>
+				<Parameter>goldAmmt：金钱数，reliable：是否为可靠金钱，reason：原因</Parameter>
+				<Return>int</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="ModifyIntellect" signature="void ModifyIntellect(float a)">
+			<DescriptionEN>Adds passed value to base attribute value, then calls CalculateStatBonus.</DescriptionEN>
+			<DescriptionCN>增加指定值到英雄基础智力，随后调用CalculateStatBonus</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="ModifyStrength" signature="void ModifyStrength(float a)">
+			<DescriptionEN>Adds passed value to base attribute value, then calls CalculateStatBonus.</DescriptionEN>
+			<DescriptionCN>增加指定值到英雄基础力量，随后调用CalculateStatBonus</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="PerformTaunt" signature="void PerformTaunt()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="RecordLastHit" signature="void RecordLastHit()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="RespawnHero" signature="void RespawnHero(bool buyback, bool unknown1, bool unknown2)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetAbilityPoints" signature="void SetAbilityPoints(int a)">
+			<DescriptionEN>Sets the current unspent ability point's.</DescriptionEN>
+			<DescriptionCN>设置当前可用技能点</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetBaseAgility" signature="void SetBaseAgility(float a)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>设置基础敏捷</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetBaseIntellect" signature="void SetBaseIntellect(float a)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>设置基础智力</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetBaseStrength" signature="void SetBaseStrength(float a)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>设置基础力量</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetBuybackCooldownTime" signature="void SetBuybackCooldownTime(float a)">
+			<DescriptionEN>Sets the buyback cooldown time.</DescriptionEN>
+			<DescriptionCN>设置买活冷却时间</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetBuyBackDisabledByReapersScythe" signature="void SetBuyBackDisabledByReapersScythe(bool a)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN>设置是否被死神镰刀禁止买活</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：布尔值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetBuybackGoldLimitTime" signature="void SetBuybackGoldLimitTime(float a)">
+			<DescriptionEN>Set the amount of time gold gain is limited after buying back.</DescriptionEN>
+			<DescriptionCN>设置买活后金钱惩罚时间</DescriptionCN>
+			<HowToCall>
+				<Parameter>a</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetCustomDeathXP" signature="void SetCustomDeathXP(int a)">
+			<DescriptionEN>Sets a custom experience value for this hero.
+ Tip:	GameRules boolean must be set for this to work!</DescriptionEN>
+			<DescriptionCN>设置该英雄死亡提供的经验值
+ Tip:	需要设置GameRules!</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetGold" signature="void SetGold(int amount, bool reliableGold)">
+			<DescriptionEN>Sets the gold amount for the player owning this hero</DescriptionEN>
+			<DescriptionCN>设置英雄拥有者的金钱</DescriptionCN>
+			<HowToCall>
+				<Parameter>amount：整数数值，reliableGold：是否可靠金钱</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetPlayerID" signature="void SetPlayerID(int a)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS>设置玩家ID</PS>
+			</HowToCall>
+		</function>
+		<function name="SetRespawnPosition" signature="void SetRespawnPosition(Vector a)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter>a：Vector</Parameter>
+				<Return></Return>
+				<PS>设置复活位置</PS>
+			</HowToCall>
+		</function>
+		<function name="SetTimeUntilRespawn" signature="void SetTimeUntilRespawn(float a)">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter>a：浮点数值</Parameter>
+				<Return></Return>
+				<PS>设置复活还需要的时间</PS>
+			</HowToCall>
+		</function>
+		<function name="ShouldDoFlyHeightVisual" signature="bool ShouldDoFlyHeightVisual()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SpendGold" signature="void SpendGold(int amount, int reason)">
+			<DescriptionEN>Args: int nGold, int nReason</DescriptionEN>
+			<DescriptionCN>参数: int 金钱, int 原因</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="UnitCanRespawn" signature="bool UnitCanRespawn()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="UpgradeAbility" signature="void UpgradeAbility(handle a)">
+			<DescriptionEN>This upgrades the passed ability if it exists and the hero has enough ability point's.</DescriptionEN>
+			<DescriptionCN>升级指定技能，需要英雄拥有该技能和技能点</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：技能句柄</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="WillReincarnate" signature="bool WillReincarnate()">
+			<DescriptionEN></DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>bool：是否将重生</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>	
+	</functions>
+</class>

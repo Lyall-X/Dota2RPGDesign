@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetContainedItem()${1:--[[
+     CDOTA_Item_Physical:GetContainedItem  Returned the contained item. 
+    -- @return handle
+    function CDOTA_Item_Physical:GetContainedItem(  ) end
+    ]]}]]></content>
+    <tabTrigger>getContainedItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

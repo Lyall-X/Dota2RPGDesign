@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetSpawnCallback(${1:handle_1},${2:handle_2})${3:--[[
+     CPointTemplate:SetSpawnCallback  SetSpawnCallback( hCallbackFunc, hCallbackScope, hCallbackData ) : Set a callback for when the template spawns entities. The spawned entities will be passed in as an array. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param handle_2 handle
+    function CPointTemplate:SetSpawnCallback( handle_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setSpawnCallback</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

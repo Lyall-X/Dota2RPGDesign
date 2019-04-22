@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[EyeAngles()${1:--[[
+     CBaseEntity:EyeAngles  Get the qangles that this entity is looking at. 
+    -- @return QAngle
+    function CBaseEntity:EyeAngles(  ) end
+    ]]}]]></content>
+    <tabTrigger>EyeAngles</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

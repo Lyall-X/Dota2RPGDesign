@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDOTA_BaseNPC_Creature" nameCN="DOTA基础NPC 生物"
+	descriptionEN=""
+	descriptionCN="" extends="CDOTA_BaseNPC">
+	<functions>
+		<function name="AddItemDrop" signature="void AddItemDrop(handle a)">
+			<DescriptionEN>Add the specified item drop to this creature</DescriptionEN>
+			<DescriptionCN>为该生物添加特别的道具掉落</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：道具句柄</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="CreatureLevelUp" signature="void CreatureLevelUp(int a)">
+			<DescriptionEN>Level the creature up by the specified number of levels</DescriptionEN>
+			<DescriptionCN>升级目标生物指定级别</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="IsChampion" signature="bool IsChampion()">
+			<DescriptionEN>Is this unit a champion?</DescriptionEN>
+			<DescriptionCN>是否为冠军生物</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>bool</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetArmorGain" signature="void SetArmorGain(float a)">
+			<DescriptionEN>Set the armor gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的护甲</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：浮点数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetAttackTimeGain" signature="void SetAttackTimeGain(float a)">
+			<DescriptionEN>Set the attack time gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的攻击速度</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：浮点数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetBountyGain" signature="void SetBountyGain(int a)">
+			<DescriptionEN>Set the bounty gold gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的奖励金币</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetChampion" signature="void SetChampion(bool a)">
+			<DescriptionEN>Flag this unit as a champion creature.</DescriptionEN>
+			<DescriptionCN>将该生物标记为冠军生物</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：布尔值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetDamageGain" signature="void SetDamageGain(int a)">
+			<DescriptionEN>Set the damage gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的攻击伤害</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetDisableResistanceGain(" signature="void SetDisableResistanceGain(float a)">
+			<DescriptionEN>Set the disable resistance gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的控制抗性</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：浮点数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetHPGain" signature="void SetHPGain(int a)">
+			<DescriptionEN>Set the hit point's gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的生命值</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetHPRegenGain" signature="void SetHPRegenGain(float a)">
+			<DescriptionEN>Set the hit point's regen gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的生命回复</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：浮点数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetMagicResistanceGain" signature="void SetMagicResistanceGain(float a)">
+			<DescriptionEN>Set the magic resistance gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的魔法抗性</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：浮点数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetManaGain" signature="void SetManaGain(float a)">
+			<DescriptionEN>Set the mana point's gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的魔法值</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetManaRegenGain" signature="void SetManaRegenGain(float a)">
+			<DescriptionEN>Set the mana point's gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的魔法回复</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：浮点数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetMoveSpeedGain" signature="void SetMoveSpeedGain(int a)">
+			<DescriptionEN>Set the move speed gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的移动速度</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetXPGain" signature="void SetXPGain(int a)">
+			<DescriptionEN>Set the xp reward gained per level on this creature.</DescriptionEN>
+			<DescriptionCN>设置该生物每级增加的经验值</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	</functions>
+</class>

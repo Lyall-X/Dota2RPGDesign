@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetAnimation(${1:string_1})${2:--[[
+     CBodyComponent:SetAnimation  Pass string for the animation to play on this model 
+    -- @return void
+    -- @param string_1 string
+    function CBodyComponent:SetAnimation( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setAnimation</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

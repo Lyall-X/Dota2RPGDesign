@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[AppendToLogFile(${1:string_1},${2:string_2})${3:--[[
+     AppendToLogFile  Appends a string to a log file on the server 
+    -- @return void
+    -- @param string_1 string
+    -- @param string_2 string
+    function AppendToLogFile( string_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>appendToLogFile</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

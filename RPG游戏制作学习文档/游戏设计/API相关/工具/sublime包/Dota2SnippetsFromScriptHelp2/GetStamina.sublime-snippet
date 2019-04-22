@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetStamina()${1:--[[
+     CRPG_Unit:GetStamina  () - returns current stamina amount. 
+    -- @return float
+    function CRPG_Unit:GetStamina(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetStamina</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

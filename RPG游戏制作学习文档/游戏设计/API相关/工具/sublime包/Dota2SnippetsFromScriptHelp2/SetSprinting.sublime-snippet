@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetSprinting(${1:bool_1})${2:--[[
+     CRPG_Unit:SetSprinting  ( bSprinting ) - set if this unit is sprinting or not 
+    -- @return void
+    -- @param bool_1 bool
+    function CRPG_Unit:SetSprinting( bool_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetSprinting</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

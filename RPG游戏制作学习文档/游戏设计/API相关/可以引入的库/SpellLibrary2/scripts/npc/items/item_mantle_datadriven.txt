@@ -1,0 +1,48 @@
+// Rewrite of Mantle of Intelligence
+// Author: Rook
+// Date: January 25, 2015
+
+"item_mantle_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1015"  //Valve's version of this item uses the ID "15".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_mantle"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"150"
+	"ItemShopTags"					"int"
+	"ItemQuality"					"component"
+	"ItemAliases"					"mantle of intelligence"
+		
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intelligence"	"3"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_mantle_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+			}
+		}
+	}
+}

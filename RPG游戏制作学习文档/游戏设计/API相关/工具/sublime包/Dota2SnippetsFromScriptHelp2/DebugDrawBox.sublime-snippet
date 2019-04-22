@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[DebugDrawBox(${1:Vector_1},${2:Vector_2},${3:Vector_3},${4:int_4},${5:int_5},${6:int_6},${7:int_7},${8:float_8})${9:--[[
+     DebugDrawBox  Draw a debug overlay box (origin, mins, maxs, forward, r, g, b, a, duration ) 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Vector_2 Vector
+    -- @param Vector_3 Vector
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param int_7 int
+    -- @param float_8 float
+    function DebugDrawBox( Vector_1, Vector_2, Vector_3, int_4, int_5, int_6, int_7, float_8 ) end
+    ]]}]]></content>
+    <tabTrigger>DebugDrawBox</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

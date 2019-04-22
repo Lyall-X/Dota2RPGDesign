@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetPlayerReservedState(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetPlayerReservedState   
+    -- @return bool
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetPlayerReservedState( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetPlayerReservedState</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

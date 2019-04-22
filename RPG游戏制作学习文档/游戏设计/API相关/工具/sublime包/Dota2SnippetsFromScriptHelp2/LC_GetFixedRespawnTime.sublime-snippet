@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetFixedRespawnTime()${1:--[[
+     CDOTABaseGameMode:GetFixedRespawnTime  Gets the fixed respawn time. 
+    -- @return float
+    function CDOTABaseGameMode:GetFixedRespawnTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>getFixedRespawnTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

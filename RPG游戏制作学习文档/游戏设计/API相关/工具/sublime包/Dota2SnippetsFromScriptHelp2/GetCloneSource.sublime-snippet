@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCloneSource()${1:--[[
+     CDOTABaseAbility:GetCloneSource   
+    -- @return handle
+    function CDOTABaseAbility:GetCloneSource(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCloneSource</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

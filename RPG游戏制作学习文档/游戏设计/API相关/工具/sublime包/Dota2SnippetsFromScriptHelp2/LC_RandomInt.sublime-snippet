@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[RandomInt(${1:int_1},${2:int_2})${3:--[[
+     RandomInt  Get a random int within a range 
+    -- @return int
+    -- @param int_1 int
+    -- @param int_2 int
+    function RandomInt( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>randomInt</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetHorn()${1:--[[
+     CDOTA_Unit_Nian:GetHorn  Is the Nian horn? 
+    -- @return handle
+    function CDOTA_Unit_Nian:GetHorn(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetHorn</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetOwner()${1:--[[
+     CBaseEntity:GetOwner  Gets this entity's owner 
+    -- @return handle
+    function CBaseEntity:GetOwner(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetOwner</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

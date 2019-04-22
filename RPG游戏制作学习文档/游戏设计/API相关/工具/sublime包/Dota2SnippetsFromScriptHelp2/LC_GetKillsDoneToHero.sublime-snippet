@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GetKillsDoneToHero(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:GetKillsDoneToHero   
+    -- @return int
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:GetKillsDoneToHero( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>getKillsDoneToHero</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

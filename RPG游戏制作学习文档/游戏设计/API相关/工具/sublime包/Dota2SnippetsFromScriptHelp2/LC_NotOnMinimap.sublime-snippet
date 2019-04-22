@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[NotOnMinimap()${1:--[[
+     CDOTA_BaseNPC:NotOnMinimap   
+    -- @return bool
+    function CDOTA_BaseNPC:NotOnMinimap(  ) end
+    ]]}]]></content>
+    <tabTrigger>notOnMinimap</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

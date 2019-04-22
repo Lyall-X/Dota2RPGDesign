@@ -1,0 +1,134 @@
+// Rewrite of the Venomancer Plague Ward ability
+// Author: Pizzalol and Rook
+// Date: 30.09.2015.
+"venomancer_plague_ward_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"venomancer_plague_ward"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+		"model"				"models/heroes/venomancer/venomancer_ward.vmdl"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"850"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"5.0"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"20 20 20 20"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"40.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ward_hp_tooltip"		"75 200 325 450"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ward_damage_tooltip"	"10 19 29 38"
+		}
+	}
+
+	"OnSpellStart"
+	{			
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_venomancer/plague_ward.lua"
+			"Function"			"venomancer_plague_ward_datadriven_on_spell_start"
+			"Target"			"POINT"
+			"Duration"			"%duration"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_plague_ward_datadriven"
+		{
+			"Passive"		"0"
+			"IsHidden"		"1"
+			"IsBuff"		"1"
+			"IsDebuff"		"0"
+			"IsPurgable"	"0"
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_venomancer/plague_ward.lua"
+					"Function"			"modifier_plague_ward_datadriven_on_attack_landed"
+				}
+			}
+		}
+		
+		//A hidden modifier.  Stacks of this modifier are used to slow the target by the correct amount.
+		//The stack count is set to 0 when a Poison Sting debuff originating from Venomancer is applied, and restored when that debuff
+		//expires, if this modifier still exists.
+		"modifier_plague_ward_datadriven_poison_sting_debuff_movement_speed"
+		{
+			"Passive"		"0"
+			"IsHidden"		"1"
+			"IsBuff"		"0"
+			"IsDebuff"		"1"
+			"IsPurgable"	"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-1"
+			}
+		}
+		
+		//A visible modifier.  Deals damage over time to the target, but only if the target does not also have a 
+		//Poison Sting debuff originating from Venomancer.
+		"modifier_plague_ward_datadriven_poison_sting_debuff"
+		{
+			"Passive"		"0"
+			"IsHidden"		"0"
+			"IsBuff"		"0"
+			"IsDebuff"		"1"
+			"IsPurgable"	"1"
+
+			"ThinkInterval"	"1.0"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_venomancer/plague_ward.lua"
+					"Function"			"modifier_plague_ward_datadriven_debuff_on_interval_think"
+				}
+			}
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_venomancer/plague_ward.lua"
+					"Function"			"modifier_plague_ward_datadriven_debuff_on_interval_think"
+				}
+			}
+		}
+	}		
+}

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAssociatedSecondaryAbilities()${1:--[[
+     CDOTABaseAbility:GetAssociatedSecondaryAbilities   
+    -- @return string
+    function CDOTABaseAbility:GetAssociatedSecondaryAbilities(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAssociatedSecondaryAbilities</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

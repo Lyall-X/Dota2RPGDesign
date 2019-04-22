@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetNianFightStartTime(${1:float_1})${2:--[[
+     CDOTAGamerules:SetNianFightStartTime  Sets the start time for the Nian fight 
+    -- @return void
+    -- @param float_1 float
+    function CDOTAGamerules:SetNianFightStartTime( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setNianFightStartTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAlwaysShowPlayerInventory()${1:--[[
+     CDOTABaseGameMode:GetAlwaysShowPlayerInventory  Show the player hero's inventory in the HUD, regardless of what unit is selected. 
+    -- @return bool
+    function CDOTABaseGameMode:GetAlwaysShowPlayerInventory(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAlwaysShowPlayerInventory</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

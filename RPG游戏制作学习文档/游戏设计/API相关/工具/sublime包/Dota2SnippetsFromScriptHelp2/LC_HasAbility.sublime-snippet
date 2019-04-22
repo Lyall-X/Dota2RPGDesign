@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[HasAbility(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:HasAbility  See whether this unit has an ability by name. 
+    -- @return bool
+    -- @param string_1 string
+    function CDOTA_BaseNPC:HasAbility( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>hasAbility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,1 @@
+modifier_pugna_e = class({})

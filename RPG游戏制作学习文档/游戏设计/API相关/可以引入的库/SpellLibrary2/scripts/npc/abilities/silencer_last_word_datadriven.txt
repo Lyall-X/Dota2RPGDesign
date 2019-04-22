@@ -1,0 +1,204 @@
+// Rewrite of the Silencer Last Word
+// Author: chrislotix
+// Date: 11.01.2015.
+// NOTE: Will trigger on items with mana cost
+"silencer_last_word_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"silencer_last_word"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"		
+		"particle"		"particles/units/heroes/hero_silencer/silencer_last_word.vpcf"
+		"particle"		"particles/units/heroes/hero_silencer/silencer_last_word_status.vpcf"
+		"particle"		"particles/generic_gameplay/generic_silence.vpcf"		
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3"
+	"AbilityCastRange"				"900"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"36.0 28.0 20.0 12.0"
+	"AbilityManaCost"				"115"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.3"	// Applies multiple modifiers
+
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"	"3 4 5 6"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"debuff_duration"	"5"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"150 200 250 300"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Silencer.LastWord.Cast"
+			"Target"	"TARGET"
+		}	
+
+		"ApplyModifier"
+		{
+			"ModifierName" "modifier_last_word_datadriven"
+			"Target"	"TARGET"
+		}
+
+	}
+
+	"Modifiers"
+	{
+		"modifier_last_word_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%debuff_duration"
+			"ThinkInterval"	"%debuff_duration"
+			"EffectName"	"particles/units/heroes/hero_silencer/silencer_last_word_status.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"States"
+			{
+				"MODIFIER_STATE_PROVIDES_VISION"	"MODIFIER_STATE_VALUE_ENABLED"	
+			}
+			
+
+			"OnIntervalThink"
+			{
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_Silencer.LastWord.Damage"
+					"Target"		"TARGET"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_last_word_disarm_datadriven"
+					"Target"	"TARGET" 
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_last_word_silence_datadriven"
+					"Target"	"TARGET"
+				}							
+			}			
+
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Silencer.LastWord.Target"
+					"Target"		"TARGET"
+				}
+			}
+
+			"OnSpentMana"
+			{
+
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_silencer/last_word.lua"
+					"Function"		"LastWordStopSound"
+					"Target"		"UNIT"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_Silencer.LastWord.Damage"
+					"Target"		"UNIT"
+				}
+
+				"RemoveModifier"
+				{
+					"ModifierName" "modifier_last_word_datadriven"
+					"Target"	"UNIT"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_last_word_silence_datadriven"
+					"Target"	"UNIT"
+				}
+
+				"Damage"
+				{
+					"Target" "UNIT"
+					"Type" "DAMAGE_TYPE_MAGICAL"
+					"Damage" "%damage"
+				}
+			}
+		}
+
+		"modifier_last_word_silence_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%duration"
+			"EffectName"	"particles/generic_gameplay/generic_silence.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_last_word_disarm_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%duration"
+			"EffectName"	"particles/units/heroes/hero_silencer/silencer_last_word_disarm.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"OnCreated"
+			{
+				"Damage"
+				{
+					"Target" "TARGET"
+					"Type" "DAMAGE_TYPE_MAGICAL"
+					"Damage" "%damage"	
+				}			
+			}	
+
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"	"MODIFIER_STATE_VALUE_ENABLED"				
+			}
+		}
+	}
+}
+
+
+

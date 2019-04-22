@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsHidden()${1:--[[
+     CDOTABaseAbility:IsHidden   
+    -- @return bool
+    function CDOTABaseAbility:IsHidden(  ) end
+    ]]}]]></content>
+    <tabTrigger>isHidden</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

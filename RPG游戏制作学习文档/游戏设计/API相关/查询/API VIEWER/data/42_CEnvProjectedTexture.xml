@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CEnvProjectedTexture" nameCN="环境投影纹理"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="SetFarRange" signature="void SetFarRange(float a)">
+		  <DescriptionEN>Set light maximum range</DescriptionEN>
+		  <DescriptionCN>设置光照最大距离</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetLinearAttenuation"
+		signature="void SetLinearAttenuation(float a)">
+		  <DescriptionEN>Set light linear attenuation value</DescriptionEN>
+		  <DescriptionCN>设置光照线性淡化值</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetNearRange"
+		signature="void SetNearRange(float a)">
+		  <DescriptionEN>Set light minimum range</DescriptionEN>
+		  <DescriptionCN>设置光照最小距离</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetQuadraticAttenuation"
+		signature="void SetQuadraticAttenuation(float a)">
+		  <DescriptionEN>Set light quadratic attenuation
+		  value</DescriptionEN>
+		  <DescriptionCN>设置光照二次项淡化值</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetVolumetrics"
+		signature="void SetVolumetrics(bool a, float b, float c, int d, float e)">
+		
+		  <DescriptionEN>Turn on/off light volumetrics: bool bOn, float
+		  flIntensity, float flNoise, int nPlanes, float
+		  flPlaneOffset</DescriptionEN>
+		  <DescriptionCN>开关体积光参数: bool bOn, float flIntensity, float
+		  flNoise, int nPlanes, float flPlaneOffset</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>bool a, float b, float c, int d, float e</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

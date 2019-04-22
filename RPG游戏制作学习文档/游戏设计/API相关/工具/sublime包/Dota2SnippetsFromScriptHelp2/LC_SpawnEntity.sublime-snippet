@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[SpawnEntity()${1:--[[
+     CEnvEntityMaker:SpawnEntity  Create an entity at the location of the maker 
+    -- @return void
+    function CEnvEntityMaker:SpawnEntity(  ) end
+    ]]}]]></content>
+    <tabTrigger>spawnEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

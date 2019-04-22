@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetCreepMinimapIconScale(${1:float_1})${2:--[[
+     CDOTAGamerules:SetCreepMinimapIconScale  (flMinimapCreepIconScale) - Scale the creep icons on the minimap. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTAGamerules:SetCreepMinimapIconScale( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setCreepMinimapIconScale</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

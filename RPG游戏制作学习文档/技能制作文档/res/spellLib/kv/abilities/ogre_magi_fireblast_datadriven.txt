@@ -1,0 +1,261 @@
+// Rewrite of the Ogre Magi Fireblast ability
+// Author: YOLOSPAGHETTI
+// Date: February 14, 2016
+"ogre_magi_fireblast_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"ogre_magi_fireblast"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"		"particles/generic_gameplay/generic_stunned.vpcf"
+		"particle"		"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf"
+		"particle"		"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast_cast.vpcf"
+		"soundfile"		"sounds/weapons/hero/ogre_magi/fireblast_cast.vsnd"
+		"soundfile"		"sounds/weapons/hero/ogre_magi/fireblast_target.vsnd"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"475"
+	"AbilityCastPoint"				"0.45"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"12"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"75 85 95 105"
+	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"55 110 165 220"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"stun_duration"		"1.5"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"multicast_delay"	"0.4"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"multicast_delay3"	"0.8"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"multicast_delay4"	"1.2"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_fireblast_datadriven"
+			"Target"	"TARGET"
+		}
+		
+		"FireEffect"
+		{
+			"EffectName"		"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast.vpcf"
+			"EffectAttachType"	"follow_overhead"
+			"Target"			"TARGET"
+		}
+		
+		"FireSound"
+		{
+			"EffectName"	"Hero_OgreMagi.Fireblast.Cast"
+			"Target"		"CASTER"
+		}
+		
+		"Damage"
+		{
+			"Target"  "TARGET"
+			"Type"    "DAMAGE_TYPE_MAGICAL"
+			"Damage"  "%AbilityDamage"
+		}
+	}
+	
+	"Modifiers"
+	{		
+		"modifier_fireblast_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%stun_duration"
+			
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+			
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast_cast.vpcf"
+					"EffectAttachType"	"follow_overhead"
+					"Target"			"TARGET"
+				}
+			
+				"FireSound"
+				{
+					"EffectName"	"Hero_OgreMagi.Fireblast.Target"
+					"Target"		"TARGET"
+				}
+			}
+			
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		
+		"modifier_fireblast_multicast2"
+		{
+			"IsDebuff"	"1"
+			
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+			
+			"OnCreated"
+			{
+				"DelayedAction"
+				{
+					"Delay" "%multicast_delay"
+					"Action"
+					{
+						"Damage"
+						{
+							"Target"  "TARGET"
+							"Type"    "DAMAGE_TYPE_MAGICAL"
+							"Damage"  "%AbilityDamage"
+						}
+				
+						"FireEffect"
+						{
+							"EffectName"		"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast_cast.vpcf"
+							"EffectAttachType"	"follow_overhead"
+							"Target"			"TARGET"
+						}
+						
+						"FireSound"
+						{
+							"EffectName"	"Hero_OgreMagi.Fireblast.Target"
+							"Target"		"TARGET"
+						}
+					}
+				}
+			}
+			
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		
+		"modifier_fireblast_multicast3"
+		{
+			"IsDebuff"	"1"
+			
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+			
+			"OnCreated"
+			{
+				"DelayedAction"
+				{
+					"Delay" "%multicast_delay3"
+					"Action"
+					{
+						"Damage"
+						{
+							"Target"  "TARGET"
+							"Type"    "DAMAGE_TYPE_MAGICAL"
+							"Damage"  "%AbilityDamage"
+						}
+				
+						"FireEffect"
+						{
+							"EffectName"		"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast_cast.vpcf"
+							"EffectAttachType"	"follow_overhead"
+							"Target"			"TARGET"
+						}
+						
+						"FireSound"
+						{
+							"EffectName"	"Hero_OgreMagi.Fireblast.Target"
+							"Target"		"TARGET"
+						}
+					}
+				}
+			}
+			
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		
+		"modifier_fireblast_multicast4"
+		{
+			"IsDebuff"	"1"
+			
+			"EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+			
+			"OnCreated"
+			{
+				"DelayedAction"
+				{
+					"Delay" "%multicast_delay4"
+					"Action"
+					{
+						"Damage"
+						{
+							"Target"  "TARGET"
+							"Type"    "DAMAGE_TYPE_MAGICAL"
+							"Damage"  "%AbilityDamage"
+						}
+				
+						"FireEffect"
+						{
+							"EffectName"		"particles/units/heroes/hero_ogre_magi/ogre_magi_fireblast_cast.vpcf"
+							"EffectAttachType"	"follow_overhead"
+							"Target"			"TARGET"
+						}
+						
+						"FireSound"
+						{
+							"EffectName"	"Hero_OgreMagi.Fireblast.Target"
+							"Target"		"TARGET"
+						}
+					}
+				}
+			}
+			
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

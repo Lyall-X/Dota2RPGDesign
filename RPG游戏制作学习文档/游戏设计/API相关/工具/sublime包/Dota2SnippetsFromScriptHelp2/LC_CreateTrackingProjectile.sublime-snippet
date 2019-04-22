@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[CreateTrackingProjectile(${1:handle_1})${2:--[[
+     ProjectileManager:CreateTrackingProjectile  Creates a tracking projectile 
+    -- @return void
+    -- @param handle_1 handle
+    function ProjectileManager:CreateTrackingProjectile( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>createTrackingProjectile</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

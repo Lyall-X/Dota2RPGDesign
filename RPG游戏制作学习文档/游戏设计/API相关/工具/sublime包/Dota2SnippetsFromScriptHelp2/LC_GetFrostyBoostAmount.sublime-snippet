@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GetFrostyBoostAmount(${1:int_1},${2:int_2})${3:--[[
+     GetFrostyBoostAmount   
+    -- @return float
+    -- @param int_1 int
+    -- @param int_2 int
+    function GetFrostyBoostAmount( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>getFrostyBoostAmount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

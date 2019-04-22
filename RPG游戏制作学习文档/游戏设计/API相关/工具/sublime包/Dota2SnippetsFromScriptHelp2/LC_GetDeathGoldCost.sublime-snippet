@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetDeathGoldCost()${1:--[[
+     CDOTA_BaseNPC_Hero:GetDeathGoldCost   
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetDeathGoldCost(  ) end
+    ]]}]]></content>
+    <tabTrigger>getDeathGoldCost</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

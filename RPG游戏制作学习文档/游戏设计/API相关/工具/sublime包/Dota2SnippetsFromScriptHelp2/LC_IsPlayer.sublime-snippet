@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsPlayer()${1:--[[
+     CBaseEntity:IsPlayer  Is this entity a player? 
+    -- @return bool
+    function CBaseEntity:IsPlayer(  ) end
+    ]]}]]></content>
+    <tabTrigger>isPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

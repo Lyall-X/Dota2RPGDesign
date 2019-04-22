@@ -1,0 +1,49 @@
+// Rewrite of Boots of Speed
+// Author: Rook
+// Date: January 25, 2015
+
+"item_boots_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1029"  //Valve's version of this item uses the ID "29".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/boots_of_speed.mdl"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_boots"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"450"
+	"ItemShopTags"					"move_speed"
+	"ItemQuality"					"component"
+	"ItemAliases"					"boots of speed"
+	"SideShop"						"1"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"bonus_movement_speed"			"50"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_boots_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[Heal(${1:float_1},${2:handle_2})${3:--[[
+     CDOTA_BaseNPC:Heal  Heal this unit. 
+    -- @return void
+    -- @param float_1 float
+    -- @param handle_2 handle
+    function CDOTA_BaseNPC:Heal( float_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>Heal</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

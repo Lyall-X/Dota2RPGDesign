@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetPlayer(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetPlayer   
+    -- @return handle
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetPlayer( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Daiyfoo翻译 -->
+
+<class nameEN="CEntities" nameCN="实体"
+	descriptionEN="No Description Set. Global accessor variable: Entities"
+	descriptionCN="目前未有描述.全局访问变量:Entities" extends="">
+	<functions>
+		<function name="CreateByClassname" signature="handle CreateByClassname(string className)">
+			<DescriptionEN>Creates an entity by classname
+			</DescriptionEN>
+			<DescriptionCN>用类名来创建一个实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>className:类名
+				</Parameter>
+				<Return>handle:创建的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindAllByClassname" signature="table FindAllByClassname(string a)">
+			<DescriptionEN>Finds all entities by class name. Returns an array containing all the found entities.
+			</DescriptionEN>
+			<DescriptionCN>通过类名来寻找所有实体.返回被找到实体的数组或表.</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:类名
+				</Parameter>
+				<Return>table:被找到实体的数组或表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindAllByClassnameWithin" signature="table FindAllByClassnameWithin(string a, Vector b, float c)">
+			<DescriptionEN>Find entities by class name within a radius.
+			</DescriptionEN>
+			<DescriptionCN>在一个半径范围内通过类名寻找实体.</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:类名 b:中心点矢量 c:范围半径
+				</Parameter>
+				<Return>table:被找到实体的数组或表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindAllByModel" signature="table FindAllByModel(string modelName)">
+			<DescriptionEN>Find entities by model name.
+			</DescriptionEN>
+			<DescriptionCN>通过模型名字来找到对象.</DescriptionCN>
+			<HowToCall>
+				<Parameter>modelName:模型名字
+				</Parameter>
+				<Return>table:被找到实体的数组或表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindAllByName" signature="table FindAllByName(string name)">
+			<DescriptionEN>Find all entities by name. Returns an array containing all the found entities in it.
+			</DescriptionEN>
+			<DescriptionCN>通过名字来寻找所有实体.返回被找到实体的数组或表.</DescriptionCN>
+			<HowToCall>
+				<Parameter>name:名字
+				</Parameter>
+				<Return>table:被找到实体的数组或表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindAllByNameWithin" signature="table FindAllByNameWithin(string name, Vector origin, float maxRadius)">
+			<DescriptionEN>Find entities by name within a radius.
+			</DescriptionEN>
+			<DescriptionCN>在半径范围内通过名字来寻找实体.</DescriptionCN>
+			<HowToCall>
+				<Parameter>name:名字 origin:中心点矢量 maxRadius:最大半径范围
+				</Parameter>
+				<Return>table:被找到实体的数组或表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindAllByTarget" signature="table FindAllByTarget(string targetName)">
+			<DescriptionEN>Find entities by targetname.
+			</DescriptionEN>
+			<DescriptionCN>通过目标名字来寻找实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>targetName:目标名字
+				</Parameter>
+				<Return>table:被找到实体的数组或表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindAllInSphere" signature="table FindAllInSphere(Vector origin, float maxRadius)">
+			<DescriptionEN>Find entities within a radius.
+			</DescriptionEN>
+			<DescriptionCN>在(球形)范围内寻找实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>origin:中心点适量 maxRadius:最大半径范围
+				</Parameter>
+				<Return>table:被找到实体的数组或表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByClassname" signature="handle FindByClassname(handle startFrom, string className)">
+			<DescriptionEN>Find entities by class name. Pass nil to start an iteration, or reference to a previously found entity to continue a search
+			</DescriptionEN>
+			<DescriptionCN>通过类名寻找实体.传入nil就从头进行迭代寻找,传入之前找到的实体可以以之作为起点开始寻找</DescriptionCN>
+			<HowToCall>
+				<Parameter>startFrom:开始寻找的起点实体 className:类名
+				</Parameter>
+				<Return>handle:起点实体下一个找到的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByClassnameNearest" signature="handle FindByClassnameNearest(string className, Vector origin, float maxRadius)">
+			<DescriptionEN>Find entities by class name nearest to a point.
+			</DescriptionEN>
+			<DescriptionCN>在最近一个点通过类名寻找实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>className:类名 origin:中心原点 maxRadius:范围半径
+				</Parameter>
+				<Return>handle:最近中心点找到的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByClassnameWithin" signature="handle FindByClassnameWithin(handle startFrom, string className, Vector origin, float maxRadius)">
+			<DescriptionEN>Find entities by class name within a radius. Pass nil to start an iteration, or reference to a previously found entity to continue a search
+			</DescriptionEN>
+			<DescriptionCN>在半径范围内通过类名寻找实体.传入nil就从头进行迭代寻找,传入之前找到的实体可以以之作为起点开始寻找</DescriptionCN>
+			<HowToCall>
+				<Parameter>startFrom:作为寻找起点的实体 className:类名 origin:中心原点 maxRadius:范围半径
+				</Parameter>
+				<Return>handle:在范围内起点实体寻找到的下一个实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByModel" signature="handle FindByModel(handle startFrom, string modelName)">
+			<DescriptionEN>Find entities by model name. Pass nil to start an iteration, or reference to a previously found entity to continue a search
+			</DescriptionEN>
+			<DescriptionCN>通过模型名字寻找实体.传入nil就从头进行迭代寻找,传入之前找到的实体可以以之作为起点开始寻找</DescriptionCN>
+			<HowToCall>
+				<Parameter>startFrom:作为寻找起点的实体 modelName:模型名字
+				</Parameter>
+				<Return>handle:通过模型名字在起点实体下一个寻找到的下一个实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByModelWithin" signature="handle FindByModelWithin(handle startFrom, string modelName, Vector origin, float maxRadius)">
+			<DescriptionEN>Find entities by model name within a radius. Pass nil to start an iteration, or reference to a previously found entity to continue a search
+			</DescriptionEN>
+			<DescriptionCN>在半径范围内通过模型名字寻找实体.传入nil就从头进行迭代寻找,传入之前找到的实体可以以之作为起点开始寻找</DescriptionCN>
+			<HowToCall>
+				<Parameter>startFrom:作为寻找起点的实体 className:模型名 origin:中心原点 maxRadius:范围半径
+				</Parameter>
+				<Return>handle:在范围内起点实体寻找到的下一个实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByName" signature="handle FindByName(handle lastEnt, string searchString)">
+			<DescriptionEN>Find entities by name. Pass nil to start an iteration, or reference to a previously found entity to continue a search
+			</DescriptionEN>
+			<DescriptionCN>通过名字寻找实体.传入nil就从头进行迭代寻找,传入之前找到的实体可以以之作为起点开始寻找</DescriptionCN>
+			<HowToCall>
+				<Parameter>lastEnt:作为寻找起点的实体 searchString:名字
+				</Parameter>
+				<Return>handle:在范围内起点实体寻找到的下一个实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByNameNearest" signature="handle FindByNameNearest(string name, Vector origin, float maxRadius)">
+			<DescriptionEN>Find entities by name nearest to a point.
+			</DescriptionEN>
+			<DescriptionCN>通过名字寻找最近原点的实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>name:名字 origin:中心原点 maxRadius:范围半径
+				</Parameter>
+				<Return>handle:通过名字寻找到最近原点的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByNameWithin" signature="handle FindByNameWithin(handle startFrom, string name, Vector origin, float maxRadius)">
+			<DescriptionEN>Find entities by name within a radius. Pass nil to start an iteration, or reference to a previously found entity to continue a search
+			</DescriptionEN>
+			<DescriptionCN>在半径范围内通过名字寻找实体.传入nil就从头进行迭代寻找,传入之前找到的实体可以以之作为起点开始寻找</DescriptionCN>
+			<HowToCall>
+				<Parameter>startFrom:作为寻找起点的实体 name:名字 origin:中心原点 maxRadius:范围半径
+				</Parameter>
+				<Return>handle:在范围内起点实体寻找到的下一个实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindByTarget" signature="handle FindByTarget(handle startFrom, string targetName)">
+			<DescriptionEN>Find entities by targetname. Pass nil to start an iteration, or reference to a previously found entity to continue a search
+			</DescriptionEN>
+			<DescriptionCN>通过目标名字寻找实体.传入nil就从头进行迭代寻找,传入之前找到的实体可以以之作为起点开始寻找</DescriptionCN>
+			<HowToCall>
+				<Parameter>startFrom:作为寻找起点的实体 targetName:目标名字
+				</Parameter>
+				<Return>handle:通过目标名字在起点实体寻找到的下一个实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="FindInSphere" signature="handle FindInSphere(handle startFrom, Vector origin, float maxRadius)">
+			<DescriptionEN>Find entities within a radius. Pass nil to start an iteration, or reference to a previously found entity to continue a search
+			</DescriptionEN>
+			<DescriptionCN>在半径范围内寻找实体.传入nil就从头进行迭代寻找,传入之前找到的实体可以以之作为起点开始寻找</DescriptionCN>
+			<HowToCall>
+				<Parameter>startFrom:作为寻找起点的实体 origin:中心原点 maxRadius:范围半径
+				</Parameter>
+				<Return>handle:在范围内起点实体的下一个寻找到的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="First" signature="handle First()">
+			<DescriptionEN>Begin an iteration over the list of entities
+			</DescriptionEN>
+			<DescriptionCN>在实体数组或表中开始一个迭代程序</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:迭代的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="Next" signature="handle Next(handle startFrom)">
+			<DescriptionEN>Continue an iteration over the list of entities, providing reference to a previously found entity
+			</DescriptionEN>
+			<DescriptionCN>从指定列表中的实体开始迭代</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:迭代的实体</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	
+	</functions>
+
+</class>

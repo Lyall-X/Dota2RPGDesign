@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[FindAllInSphere(${1:Vector_1},${2:float_2})${3:--[[
+     CEntities:FindAllInSphere  Find entities within a radius. 
+    -- @return table
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    function CEntities:FindAllInSphere( Vector_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>FindAllInSphere</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

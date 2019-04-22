@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnOwnerSpawned()${1:--[[
+     CDOTABaseAbility:OnOwnerSpawned   
+    -- @return void
+    function CDOTABaseAbility:OnOwnerSpawned(  ) end
+    ]]}]]></content>
+    <tabTrigger>OnOwnerSpawned</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

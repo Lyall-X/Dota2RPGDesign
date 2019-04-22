@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAnglesAsVector()${1:--[[
+     CBaseEntity:GetAnglesAsVector  Get entity pitch, yaw, roll as a vector. 
+    -- @return Vector
+    function CBaseEntity:GetAnglesAsVector(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAnglesAsVector</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

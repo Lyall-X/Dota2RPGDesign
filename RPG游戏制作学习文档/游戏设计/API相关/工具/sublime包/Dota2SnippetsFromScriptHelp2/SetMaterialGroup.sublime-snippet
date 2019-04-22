@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetMaterialGroup(${1:utlstringtoken_1})${2:--[[
+     CBodyComponent:SetMaterialGroup   
+    -- @return void
+    -- @param utlstringtoken_1 utlstringtoken
+    function CBodyComponent:SetMaterialGroup( utlstringtoken_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetMaterialGroup</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

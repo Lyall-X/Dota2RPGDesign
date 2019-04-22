@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetHeroCount()${1:--[[
+     CScriptHeroList:GetHeroCount  Returns the number of heroes in the world 
+    -- @return int
+    function CScriptHeroList:GetHeroCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetHeroCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

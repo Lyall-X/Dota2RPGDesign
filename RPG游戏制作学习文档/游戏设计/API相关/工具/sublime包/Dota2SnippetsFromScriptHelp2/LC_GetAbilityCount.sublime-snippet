@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAbilityCount()${1:--[[
+     CDOTA_BaseNPC:GetAbilityCount   
+    -- @return int
+    function CDOTA_BaseNPC:GetAbilityCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAbilityCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnAbilityPinged()${1:--[[
+     CDOTABaseAbility:OnAbilityPinged   
+    -- @return void
+    function CDOTABaseAbility:OnAbilityPinged(  ) end
+    ]]}]]></content>
+    <tabTrigger>onAbilityPinged</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[ClearLastHitStreak(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:ClearLastHitStreak   
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_PlayerResource:ClearLastHitStreak( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>clearLastHitStreak</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

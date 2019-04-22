@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[AxisAngleToQuaternion(${1:Vector_1},${2:float_2})${3:--[[
+     AxisAngleToQuaternion  (vector,float) constructs a quaternion representing a rotation by angle around the specified vector axis 
+    -- @return Quaternion
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    function AxisAngleToQuaternion( Vector_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>AxisAngleToQuaternion</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

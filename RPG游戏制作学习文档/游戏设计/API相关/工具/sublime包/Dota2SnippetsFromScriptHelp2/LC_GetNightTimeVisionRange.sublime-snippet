@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetNightTimeVisionRange()${1:--[[
+     CDOTA_BaseNPC:GetNightTimeVisionRange  Returns the vision range after modifiers. 
+    -- @return int
+    function CDOTA_BaseNPC:GetNightTimeVisionRange(  ) end
+    ]]}]]></content>
+    <tabTrigger>getNightTimeVisionRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

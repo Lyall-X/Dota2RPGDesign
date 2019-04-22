@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[AttackReady()${1:--[[
+     CDOTA_BaseNPC:AttackReady   
+    -- @return bool
+    function CDOTA_BaseNPC:AttackReady(  ) end
+    ]]}]]></content>
+    <tabTrigger>attackReady</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

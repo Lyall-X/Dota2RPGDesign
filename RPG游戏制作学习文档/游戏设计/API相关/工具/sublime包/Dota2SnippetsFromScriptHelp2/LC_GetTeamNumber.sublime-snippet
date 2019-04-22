@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetTeamNumber()${1:--[[
+     CBaseEntity:GetTeamNumber  Get the team number of this entity. 
+    -- @return int
+    function CBaseEntity:GetTeamNumber(  ) end
+    ]]}]]></content>
+    <tabTrigger>getTeamNumber</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

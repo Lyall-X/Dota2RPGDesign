@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCurrentScene()${1:--[[
+     CBaseFlex:GetCurrentScene  Returns the instance of the oldest active scene entity (if any). 
+    -- @return handle
+    function CBaseFlex:GetCurrentScene(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCurrentScene</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

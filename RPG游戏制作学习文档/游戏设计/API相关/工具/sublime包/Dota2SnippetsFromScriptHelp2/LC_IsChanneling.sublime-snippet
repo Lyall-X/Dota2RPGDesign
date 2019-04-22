@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsChanneling()${1:--[[
+     CDOTABaseAbility:IsChanneling  Returns whether the ability is currently channeling. 
+    -- @return bool
+    function CDOTABaseAbility:IsChanneling(  ) end
+    ]]}]]></content>
+    <tabTrigger>isChanneling</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

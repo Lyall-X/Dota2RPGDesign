@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetCustomTeamAssignment(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:SetCustomTeamAssignment  Set custom team assignment for this player. 
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:SetCustomTeamAssignment( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetCustomTeamAssignment</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

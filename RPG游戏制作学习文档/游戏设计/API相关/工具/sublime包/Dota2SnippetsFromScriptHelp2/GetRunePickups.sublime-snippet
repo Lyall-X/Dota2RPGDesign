@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetRunePickups(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetRunePickups   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetRunePickups( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetRunePickups</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

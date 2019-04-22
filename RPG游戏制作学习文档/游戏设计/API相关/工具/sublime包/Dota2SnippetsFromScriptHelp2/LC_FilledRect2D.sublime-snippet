@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[FilledRect2D(${1:Vector2D_1},${2:Vector2D_2},${3:int_3},${4:int_4},${5:int_5},${6:int_6},${7:float_7})${8:--[[
+     CDebugOverlayScriptHelper:FilledRect2D  Draws a screen-space filled 2D rectangle. Coordinates are in pixels. 
+    -- @return void
+    -- @param Vector2D_1 Vector2D
+    -- @param Vector2D_2 Vector2D
+    -- @param int_3 int
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param float_7 float
+    function CDebugOverlayScriptHelper:FilledRect2D( Vector2D_1, Vector2D_2, int_3, int_4, int_5, int_6, float_7 ) end
+    ]]}]]></content>
+    <tabTrigger>filledRect2D</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

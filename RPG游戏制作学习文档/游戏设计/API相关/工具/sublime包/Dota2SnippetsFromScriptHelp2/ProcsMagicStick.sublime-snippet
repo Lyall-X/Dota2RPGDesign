@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ProcsMagicStick()${1:--[[
+     CDOTABaseAbility:ProcsMagicStick   
+    -- @return bool
+    function CDOTABaseAbility:ProcsMagicStick(  ) end
+    ]]}]]></content>
+    <tabTrigger>ProcsMagicStick</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,446 @@
+
+<!-- saved from url=(0041)http://yrrep.me/dota/flash-components.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Dota 2 UI Components</title>
+		<link rel="stylesheet" type="text/css" href="./Dota 2 UI Components_files/style.css">
+		<link rel="stylesheet" type="text/css" href="./Dota 2 UI Components_files/components.css">
+	</head>
+	
+	<body>
+		<img src="./Dota 2 UI Components_files/d2logo.png" alt="" id="logo">
+		<h1>Built-in flash UI components</h1>
+		<div id="topdiv">
+			This page contains a list of flash elements that are used in the default Valve UI. You can use these elements yourself by replacing
+			placeholder movieclips in your actionscript. To do this you firstly have to add import:
+			<pre class="code">import flash.utils.getDefinitionByName;</pre>
+
+		Then add the following function:
+<pre class="code"><span class="comment">//Parameters: 
+    <i>mc</i> - The movieclip to replace
+    <i>type</i> - The name of the class you want to replace with
+    <i>keepDimensions</i> - Resize from default dimensions to the dimensions of <i>mc</i> (optional, false by default)</span>
+<b>public function</b> replaceWithValveComponent(mc:<b>MovieClip</b>, type:<b>String</b>, keepDimensions:<b>Boolean</b> = <b>false</b>) : <b>MovieClip</b> {
+    <b>var</b> parent = mc.parent;
+    <b>var</b> oldx = mc.x;
+    <b>var</b> oldy = mc.y;
+    <b>var</b> oldwidth = mc.width;
+    <b>var</b> oldheight = mc.height;
+    
+    <b>var</b> newObjectClass = getDefinitionByName(type);
+    <b>var</b> newObject = <b>new newObjectClass</b>();
+    newObject.x = oldx;
+    newObject.y = oldy;
+    if (keepDimensions) {
+        newObject.width = oldwidth;
+        newObject.height = oldheight;
+    }
+    
+    parent.removeChild(mc);
+    parent.addChild(newObject);
+    
+    <b>return</b> newObject;
+}</pre>
+
+	Once you replaced an element with a valve component you can just manipulate it like any other movieclip, setting properties, adding eventlisteners
+	(make sure you have the right imports!). These elements have all common properties (x, y, width, height, visible, etc...).
+	<br>Here is a small example:
+<pre class="code"><b>import</b> scaleform.clik.events.*;
+
+<b>var</b> slider = replaceWithValveComponent(oldMovieClip, "Slider_New");
+slider.maximum = 3000;
+slider.addEventListener(SliderEvent.VALUE_CHANGE, handler);</pre>
+
+<h3>(Most) Valve-made components:</h3>
+		</div>
+		
+		<div class="clear"></div>
+		
+		<div id="columns">
+			<center>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/ws3PkKZ.png" alt=""><br>
+						<span class="componentName">Slider_New</span>
+												<br>
+												Properties:
+						<ul>
+							<li>maximum
+</li><li>minimum
+</li><li>value
+</li><li>snapInterval
+</li>						</ul>
+						Events:
+						<ul>
+							<li>SliderEvent.VALUE_CHANGE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/VSkrC6P.png" alt=""><br>
+						<span class="componentName">DotaCheckBoxDota</span>
+						<span class="compSubClass">subclass of <i>Button</i></span>						<br>
+						<p>Use movieclips with their origin in the top-left corner (not the center!) to position this component! Setting a label will make that label appear to the right of the checkbox.</p>						Properties:
+						<ul>
+							<li>selected
+</li><li>enabled
+</li><li>label
+</li>						</ul>
+						Events:
+						<ul>
+							<li>Event.SELECT
+</li><li>ButtonEvent.CLICK
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/s8OtG3p.png" alt=""><br>
+						<span class="componentName">TabBar_Settings_Button</span>
+												<br>
+												Properties:
+						<ul>
+							<li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/5WY6BAA.png" alt=""><br>
+						<span class="componentName">d_RadioButton_2nd</span>
+												<br>
+												Properties:
+						<ul>
+							<li>label
+</li><li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/yUjWdAP.png" alt=""><br>
+						<span class="componentName">d_RadioButton_2nd_side</span>
+												<br>
+						<p>label<br>
+enabled<br>
+</p>						Properties:
+						<ul>
+							<li>label
+</li><li>enabled
+</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/5KATWVa.png" alt=""><br>
+						<span class="componentName">button_big</span>
+												<br>
+												Properties:
+						<ul>
+							<li>label
+</li><li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/mMRQkH0.png" alt=""><br>
+						<span class="componentName">s_play_settings_button</span>
+												<br>
+												Properties:
+						<ul>
+							<li>label
+</li><li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/d7ndXwM.png" alt=""><br>
+						<span class="componentName">chrome_button_primary</span>
+												<br>
+												Properties:
+						<ul>
+							<li>label
+</li><li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/zB4JY8p.png" alt=""><br>
+						<span class="componentName">chrome_button_normal</span>
+												<br>
+												Properties:
+						<ul>
+							<li>label
+</li><li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/RkteulS.png" alt=""><br>
+						<span class="componentName">ComboBoxSkinned</span>
+												<br>
+						<p>Add items like this: combobox.dataprovider = ["Item1", "Item2", "etc"];</p>						Properties:
+						<ul>
+							<li>enabled
+</li><li>dataprovider
+</li><li>dropdown
+</li><li>menuDirection
+</li><li>menuMargin
+</li><li>menuOffset
+</li><li>menuPadding
+</li><li>menuRowCount
+</li><li>menuWidth
+</li><li>thumbOffset
+</li><li>selectedIndex
+</li><li>scrollbar
+</li>						</ul>
+						Events:
+						<ul>
+							<li>ListEvent.INDEX_CHANGE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/oUm3wcH.png" alt=""><br>
+						<span class="componentName">d_ListItemRendererSkinned</span>
+												<br>
+												Properties:
+						<ul>
+							<li>label
+</li><li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/1Os6Wu5.png" alt=""><br>
+						<span class="componentName">ButtonRefresh2</span>
+												<br>
+												Properties:
+						<ul>
+							<li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/7QGXWZM.png" alt=""><br>
+						<span class="componentName">arrow_down</span>
+												<br>
+												Properties:
+						<ul>
+							<li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/lwv79oi.png" alt=""><br>
+						<span class="componentName">arrow_right</span>
+												<br>
+												Properties:
+						<ul>
+							<li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/ZC2xQd6.png" alt=""><br>
+						<span class="componentName">arrow_left</span>
+												<br>
+												Properties:
+						<ul>
+							<li>enabled</li>						</ul>
+						Events:
+						<ul>
+							<li>ButtonEvent.PRESS
+</li><li>ButtonEvent.CLICK
+</li><li>ButtonEvent.DRAG_OVER
+</li><li>ButtonEvent.DRAG_OUT
+</li><li>ButtonEvent.RELEASE_OUTSIDE
+</li>						</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/WfNoFBK.png" alt=""><br>
+						<span class="componentName">bg_overlayBox</span>
+												<br>
+												Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/cwcj3CA.png" alt=""><br>
+						<span class="componentName">DB4_floading_panel</span>
+						<span class="compSubClass">subclass of <i>MovieClip</i></span>						<br>
+						<p>Just a movieclip containing a background image.</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/Ogieb69.png" alt=""><br>
+						<span class="componentName">DB4_outerpanel</span>
+						<span class="compSubClass">subclass of <i>MovieClip</i></span>						<br>
+						<p>Just a movieclip containing a background image.</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/cQq4Su2.png" alt=""><br>
+						<span class="componentName">ButtonThinPrimary</span>
+												<br>
+						<p>[WIP] component_library<br>
+For gray button use ButtonThinSecondary</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/PZFC0P8.png" alt=""><br>
+						<span class="componentName">button_big_purchase</span>
+												<br>
+						<p>[WIP] component_library</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/X4wbVXl.png" alt=""><br>
+						<span class="componentName">WindowSkinned</span>
+												<br>
+						<p>[WIP] component_library<br>
+Can be closed and dragged around.</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/j5g2NE3.png" alt=""><br>
+						<span class="componentName">ButtonSkinned</span>
+												<br>
+						<p>[WIP] component_library</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/XZOhCnj.png" alt=""><br>
+						<span class="componentName">s_closeBtn</span>
+												<br>
+						<p>[WIP] component_library</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/5QiwlnW.png" alt=""><br>
+						<span class="componentName">s_RoshanPopup</span>
+												<br>
+						<p>[WIP] overlay</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+									<div class="component">
+						<img class="previewImg" src="./Dota 2 UI Components_files/fscZEcp.png" alt=""><br>
+						<span class="componentName">s_SpecSpellSteal</span>
+												<br>
+						<p>[WIP] overlay</p>						Properties:
+						<ul>
+													</ul>
+						Events:
+						<ul>
+													</ul>
+					</div>
+							</center>
+		</div>
+		
+		<div class="clear"></div>
+		<center>List by SinZ &amp; Perry<br><a href="http://yrrep.me/dota/flash-components-edit.php">Edit</a></center>
+		<script async="" src="./Dota 2 UI Components_files/analytics.js"></script><script>
+			
+		
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+			ga('create', 'UA-52507051-1', 'auto');
+			ga('send', 'pageview');
+
+		</script>
+	
+</body></html>

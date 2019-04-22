@@ -1,0 +1,489 @@
+// Rewrite of the Dragon Knight Elder Dragon Form
+// Author: chrislotix/Pizzalol
+// Date: 03.01.2015.
+// Changed: 12.01.2015.
+// Reason: Fixed wearables
+// NOTE: Dragon Form is always a Green Dragon
+// NOTE2: -------------------------- Projectile model will be the corresponding dragon form auto attack model --------------------------
+// Until Valve implements a way to retrieve the original attack projectile
+// NOTE3: Its important to include
+// SendToServerConsole("dota_combine_models 0")
+// SendToConsole("dota_combine_models 0")
+// in your addon, check barebones.lua in CaptureGameMode() to see how its done
+"dragon_knight_elder_dragon_form_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"dragon_knight_elder_dragon_form"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+		"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green.vpcf"
+		"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
+		"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
+		"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_corrosive.vpcf"
+		"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_fire.vpcf"
+		"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost.vpcf"
+		"model"			"models/heroes/dragon_knight/dragon_knight_dragon.vmdl"
+		
+	}
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"115.0 115.0 115.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 50 50"		
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.35"	// Attacks are primarily about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"60.0 60.0 60.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_movement_speed"		"25 25 25"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_attack_range"		"372 372 372"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"corrosive_breath_damage"	"20 20 20"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"corrosive_breath_duration"	"5.0 5.0 5.0"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"splash_radius"				"100 200 250"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"splash_damage_percent"		"100 75 50"
+		}
+		"09"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"frost_bonus_movement_speed"	"-30 -30 -30"
+		}
+		"10"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"frost_bonus_attack_speed"		"-20 -20 -20"
+		}
+		"11"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"frost_duration"				"3.0 3.0 3.0"
+		}
+		"12"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"frost_aoe"					"250"
+		}		
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_DragonKnight.ElderDragonForm"
+			"Target"		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+			"Function"				"Transform"
+			"modifier_one"			"modifier_green_dragon_datadriven"
+			"modifier_two"			"modifier_red_dragon_datadriven"
+			"modifier_three"		"modifier_blue_dragon_datadriven"
+		}
+
+	}
+
+	"Modifiers"
+	{
+		"modifier_green_dragon_datadriven"
+		{
+			"Duration"	"%duration"
+			"IsHidden"	"1"
+			"AllowIllusionDuplicate"    "1"
+
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_corrosive_breath_attack_datadriven"
+					"Target"		"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ModelSwapStart"
+					"model"					"models/heroes/dragon_knight/dragon_knight_dragon.vmdl"
+					"projectile_model"		"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_corrosive.vpcf"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"HideWearables"
+				}
+			}
+
+			"OnAttack"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_DragonKnight.ElderDragonShoot1.Attack"
+					"Target"	"CASTER"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_green.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ModelSwapEnd"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ShowWearables"
+				}
+			}
+
+			"OnAttackLanded"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_DragonKnight.ProjectileImpact"
+					"Target"		"TARGET"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%bonus_movement_speed"				
+			}
+		}
+
+		"modifier_red_dragon_datadriven"
+		{
+			"Duration"	"%duration"
+			"IsHidden"	"1"
+			"AllowIllusionDuplicate"    "1"
+
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ModelSwapStart"
+					"model"					"models/heroes/dragon_knight/dragon_knight_dragon.vmdl"
+					"projectile_model"		"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_fire.vpcf"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"HideWearables"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_corrosive_breath_attack_datadriven"
+					"Target"		"CASTER"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_splash_attack_datadriven"
+					"Target"		"CASTER"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ModelSwapEnd"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ShowWearables"
+				}
+			}
+
+			"OnAttack"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_DragonKnight.ElderDragonShoot2.Attack"
+					"Target"	"CASTER"
+				}
+			}
+
+			
+			"OnAttackLanded"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_DragonKnight.ProjectileImpact"
+					"Target"		"TARGET"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%bonus_movement_speed"				
+			}
+		}
+
+		"modifier_blue_dragon_datadriven"
+		{
+			"Duration"	"%duration"
+			"IsHidden"	"1"
+			"AllowIllusionDuplicate"    "1"
+
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ModelSwapStart"
+					"model"					"models/heroes/dragon_knight/dragon_knight_dragon.vmdl"
+					"projectile_model"		"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost.vpcf"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"HideWearables"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_corrosive_breath_attack_datadriven"
+					"Target"		"CASTER"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_splash_attack_datadriven"
+					"Target"		"CASTER"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_frost_breath_attack_datadriven"
+					"Target"		"CASTER"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_blue.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ModelSwapEnd"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"				"ShowWearables"
+				}
+			}
+
+			"OnAttack"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_DragonKnight.ElderDragonShoot3.Attack"
+					"Target"	"CASTER"
+				}
+			}
+
+
+			"OnAttacklanded"
+			{
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_DragonKnight.ProjectileImpact"
+					"Target"		"TARGET"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%bonus_attack_range"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%bonus_movement_speed"				
+			}
+		}
+
+		"modifier_corrosive_breath_attack_datadriven"
+		{
+			"Duration"	"%duration"
+
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_corrosive_breath_datadriven"
+					"Target"	"TARGET"
+				}
+			}
+		}
+
+		"modifier_splash_attack_datadriven"
+		{
+			"Duration"	"%duration"
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_dragon_knight/elder_dragon_form.lua"
+					"Function"		"Splash"
+				}
+			}
+		}
+
+		"modifier_frost_breath_attack_datadriven"
+		{
+			"Duration"	"%duration"
+
+			"OnAttackLanded"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Radius"	"%frost_aoe"
+						"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+						"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+					"Action"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_frost_breath_slow_datadriven"
+							"Target"		"TARGET"
+						}
+					}
+				}
+			}
+		}
+
+		"modifier_corrosive_breath_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%corrosive_breath_duration"
+
+			"ThinkInterval"	"1.0"
+
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%corrosive_breath_damage"
+				}
+			}
+		}
+
+		"modifier_frost_breath_slow_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%frost_duration"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%frost_bonus_movement_speed"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%frost_bonus_attack_speed"
+			}
+		}
+	}
+}

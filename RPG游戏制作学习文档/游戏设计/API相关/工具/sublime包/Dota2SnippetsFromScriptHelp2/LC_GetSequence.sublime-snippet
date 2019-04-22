@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSequence()${1:--[[
+    ---[[ CBodyComponent:GetSequence  Returns the active sequence
+    -- @return <unknown>
+    function CBodyComponent:GetSequence(  ) end
+    ]]}]]></content>
+    <tabTrigger>getSequence</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

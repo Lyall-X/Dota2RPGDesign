@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetContainedItem(${1:handle_1})${2:--[[
+     CDOTA_Item_Physical:SetContainedItem  Set the contained item. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_Item_Physical:SetContainedItem( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setContainedItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

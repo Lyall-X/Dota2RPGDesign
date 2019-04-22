@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsNoclipping()${1:--[[
+     CBasePlayer:IsNoclipping  Returns true if the player is in noclip mode. 
+    -- @return bool
+    function CBasePlayer:IsNoclipping(  ) end
+    ]]}]]></content>
+    <tabTrigger>isNoclipping</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

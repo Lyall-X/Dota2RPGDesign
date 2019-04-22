@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CScriptHeroList" nameCN="脚本英雄列表"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="GetAllHeroes" signature="table GetAllHeroes()">
+		  <DescriptionEN>Returns all the heroes in the
+		  world</DescriptionEN>
+		  <DescriptionCN>返回当前世界全部英雄</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>table</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetHero" signature="handle GetHero(int heroId)">
+		  <DescriptionEN>Get the Nth hero in the Hero List</DescriptionEN>
+		  <DescriptionCN>获取英雄列表中第N位英雄</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int heroId：英雄ID</Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetHeroCount" signature="int GetHeroCount()">
+		  <DescriptionEN>Returns the number of heroes in the
+		  world</DescriptionEN>
+		  <DescriptionCN>返回当前世界英雄数目</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

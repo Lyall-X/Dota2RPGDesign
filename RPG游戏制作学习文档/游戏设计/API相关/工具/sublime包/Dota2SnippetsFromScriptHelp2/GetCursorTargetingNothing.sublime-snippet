@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCursorTargetingNothing()${1:--[[
+     CDOTA_BaseNPC:GetCursorTargetingNothing   
+    -- @return bool
+    function CDOTA_BaseNPC:GetCursorTargetingNothing(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCursorTargetingNothing</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

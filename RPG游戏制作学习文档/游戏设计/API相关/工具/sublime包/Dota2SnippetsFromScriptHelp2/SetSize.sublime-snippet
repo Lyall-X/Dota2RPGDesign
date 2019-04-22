@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetSize(${1:Vector_1},${2:Vector_2})${3:--[[
+     CBaseEntity:SetSize   
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Vector_2 Vector
+    function CBaseEntity:SetSize( Vector_1, Vector_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetSize</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

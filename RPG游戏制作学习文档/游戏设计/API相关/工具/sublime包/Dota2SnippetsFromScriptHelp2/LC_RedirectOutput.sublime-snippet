@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[RedirectOutput(${1:string_1},${2:string_2},${3:handle_3})${4:--[[
+     CEntityInstance:RedirectOutput  Adds an I/O connection that will call the named function on the passed entity when the specified output fires. 
+    -- @return void
+    -- @param string_1 string
+    -- @param string_2 string
+    -- @param handle_3 handle
+    function CEntityInstance:RedirectOutput( string_1, string_2, handle_3 ) end
+    ]]}]]></content>
+    <tabTrigger>redirectOutput</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

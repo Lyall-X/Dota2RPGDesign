@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[LoadSceneFromString(${1:string_1},${2:string_2})${3:--[[
+     CSceneEntity:LoadSceneFromString  given a dummy scene name and a vcd string, load the scene 
+    -- @return bool
+    -- @param string_1 string
+    -- @param string_2 string
+    function CSceneEntity:LoadSceneFromString( string_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>loadSceneFromString</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

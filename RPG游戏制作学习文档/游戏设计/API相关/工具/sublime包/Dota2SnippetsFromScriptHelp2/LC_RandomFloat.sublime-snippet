@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[RandomFloat(${1:float_1},${2:float_2})${3:--[[
+     RandomFloat  Get a random float within a range 
+    -- @return float
+    -- @param float_1 float
+    -- @param float_2 float
+    function RandomFloat( float_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>randomFloat</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

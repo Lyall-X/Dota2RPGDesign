@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAttackAnimationPoint()${1:--[[
+     CDOTA_BaseNPC:GetAttackAnimationPoint   
+    -- @return float
+    function CDOTA_BaseNPC:GetAttackAnimationPoint(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAttackAnimationPoint</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

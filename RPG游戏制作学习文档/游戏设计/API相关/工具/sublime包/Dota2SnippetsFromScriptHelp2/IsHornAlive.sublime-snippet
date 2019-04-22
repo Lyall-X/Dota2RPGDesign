@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsHornAlive()${1:--[[
+     CDOTA_Unit_Nian:IsHornAlive  Is the Nian's horn broken? 
+    -- @return bool
+    function CDOTA_Unit_Nian:IsHornAlive(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsHornAlive</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

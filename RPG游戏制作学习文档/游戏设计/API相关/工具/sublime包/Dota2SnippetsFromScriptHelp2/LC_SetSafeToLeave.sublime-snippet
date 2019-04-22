@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetSafeToLeave(${1:bool_1})${2:--[[
+     CDOTAGamerules:SetSafeToLeave  (bSafeToLeave) - Mark this game as safe to leave. 
+    -- @return void
+    -- @param bool_1 bool
+    function CDOTAGamerules:SetSafeToLeave( bool_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setSafeToLeave</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

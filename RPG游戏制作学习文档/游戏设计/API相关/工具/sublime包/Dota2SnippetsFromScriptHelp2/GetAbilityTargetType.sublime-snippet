@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAbilityTargetType()${1:--[[
+     CDOTABaseAbility:GetAbilityTargetType   
+    -- @return int
+    function CDOTABaseAbility:GetAbilityTargetType(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAbilityTargetType</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

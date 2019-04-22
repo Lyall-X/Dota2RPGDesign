@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetCooldown(${1:int_1})${2:--[[
+     CDOTABaseAbility:GetCooldown  Get the cooldown duration for this ability at a given level, not the amount of cooldown actually left. 
+    -- @return float
+    -- @param int_1 int
+    function CDOTABaseAbility:GetCooldown( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getCooldown</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

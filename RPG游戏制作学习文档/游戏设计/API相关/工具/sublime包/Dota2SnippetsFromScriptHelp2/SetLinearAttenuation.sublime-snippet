@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetLinearAttenuation(${1:float_1})${2:--[[
+     CEnvProjectedTexture:SetLinearAttenuation  Set light linear attenuation value 
+    -- @return void
+    -- @param float_1 float
+    function CEnvProjectedTexture:SetLinearAttenuation( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetLinearAttenuation</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

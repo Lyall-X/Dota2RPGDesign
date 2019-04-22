@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAttackRangeBuffer()${1:--[[
+     CDOTA_BaseNPC:GetAttackRangeBuffer  Gets the attack range buffer. 
+    -- @return float
+    function CDOTA_BaseNPC:GetAttackRangeBuffer(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAttackRangeBuffer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

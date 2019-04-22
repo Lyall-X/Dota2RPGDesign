@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GetDamageDoneToHero(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:GetDamageDoneToHero   
+    -- @return int
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:GetDamageDoneToHero( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>GetDamageDoneToHero</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

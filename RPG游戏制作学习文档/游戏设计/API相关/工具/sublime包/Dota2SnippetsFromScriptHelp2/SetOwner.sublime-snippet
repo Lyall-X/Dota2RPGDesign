@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetOwner(${1:handle_1})${2:--[[
+     CBaseEntity:SetOwner  Sets this entity's owner 
+    -- @return void
+    -- @param handle_1 handle
+    function CBaseEntity:SetOwner( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetOwner</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[DrawTickMarkedLine(${1:Vector_1},${2:Vector_2},${3:float_3},${4:int_4},${5:int_5},${6:int_6},${7:int_7},${8:int_8},${9:bool_9},${10:float_10})${11:--[[
+     CDebugOverlayScriptHelper:DrawTickMarkedLine  Draws a dashed line. Specify endpoints in world space. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Vector_2 Vector
+    -- @param float_3 float
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param int_7 int
+    -- @param int_8 int
+    -- @param bool_9 bool
+    -- @param float_10 float
+    function CDebugOverlayScriptHelper:DrawTickMarkedLine( Vector_1, Vector_2, float_3, int_4, int_5, int_6, int_7, int_8, bool_9, float_10 ) end
+    ]]}]]></content>
+    <tabTrigger>drawTickMarkedLine</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

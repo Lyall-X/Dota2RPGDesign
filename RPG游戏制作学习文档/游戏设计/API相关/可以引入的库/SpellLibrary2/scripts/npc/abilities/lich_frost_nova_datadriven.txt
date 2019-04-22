@@ -1,0 +1,144 @@
+// Rewrite of Lich Frost Nova
+// Author: Noya
+// Date: 18.1.2015.
+"lich_frost_nova_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"lich_frost_nova"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+	"AoERadius"						"200"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8.0"
+	"AbilityDuration"				"4.0 4.0 4.0 4.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"50 100 150 200"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125 150 170 190"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{			
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"200 200 200 200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow_movement_speed"	"-30 -30 -30 -30"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow_attack_speed"		"-20 -20 -20 -20"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aoe_damage"			"75 100 125 150"
+		}
+	}
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+		"particle"	"particles/status_fx/status_effect_frost_lich.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+	}
+	
+
+	"OnSpellStart"
+	{
+		"FireEffect"
+		{
+			"EffectName"		"particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Target"			"TARGET"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Ability.FrostNova"
+			"Target"		"TARGET"
+		}
+
+		"Damage"
+		{
+			"Type"		"DAMAGE_TYPE_MAGICAL"
+			"Target"	"TARGET"
+			"Damage"	"%AbilityDamage"
+		}
+
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  				"TARGET"
+				"Radius" 				"%radius"
+				"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 				"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			}
+
+			"Action"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"    	"modifier_frost_nova_slow"
+					"Target"			"TARGET"
+					"Duration"			"%AbilityDuration"
+				}
+
+				"Damage"
+				{
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Target"	"TARGET"
+					"Damage"	"%aoe_damage"
+				}
+
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_frost_nova_slow"
+		{
+			"IsDebuff"		"1"
+
+			"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
+			"StatusEffectPriority"	"10"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow_movement_speed"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%slow_attack_speed"
+			}
+		}
+	}
+}
+

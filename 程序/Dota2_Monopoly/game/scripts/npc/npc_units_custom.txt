@@ -1,0 +1,28 @@
+// Dota2 Editor
+// Get latest version: https://github.com/zombieJ/nw-dota2editor
+
+"DOTAUnits"
+{
+	"Version"		"1"
+		"Anm1"	
+	{   
+	    "BaseClass"                 "npc_dota_creature" 
+		"Model"		                "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"ModelScale"                "0.7"
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型
+        "AttackAcquisitionRange"    "500"                       // 警戒范围
+        "AttackRange"               "100"                       // 攻击范围
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"   // 移动类型
+
+        "AttackRate"                "1.7"                       // 攻击间隔
+        "BountyGoldMin"             "20"                     // 最小金钱奖励
+        "BountyGoldMax"             "30"                     // 最大金钱奖励
+        "ArmorPhysical"             "5"         // 基础护甲
+        "MagicalResistance"         "20"         // 基础魔抗                                                          
+        "AttackDamageMin"           "10"                       // 最小伤害
+        "AttackDamageMax"           "15"                       // 最大伤害
+        "StatusHealth"				"200"
+        "BountyXP"                  "200"                     // 经验奖励
+	}
+}

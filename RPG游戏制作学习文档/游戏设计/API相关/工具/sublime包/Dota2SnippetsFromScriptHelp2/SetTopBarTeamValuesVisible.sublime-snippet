@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetTopBarTeamValuesVisible(${1:bool_1})${2:--[[
+     CDOTABaseGameMode:SetTopBarTeamValuesVisible  Turning on/off the team values on the top game bar. 
+    -- @return void
+    -- @param bool_1 bool
+    function CDOTABaseGameMode:SetTopBarTeamValuesVisible( bool_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetTopBarTeamValuesVisible</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

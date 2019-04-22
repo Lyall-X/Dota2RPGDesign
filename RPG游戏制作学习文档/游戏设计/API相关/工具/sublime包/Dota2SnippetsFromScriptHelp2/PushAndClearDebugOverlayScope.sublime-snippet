@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[PushAndClearDebugOverlayScope(${1:utlstringtoken_1})${2:--[[
+     CDebugOverlayScriptHelper:PushAndClearDebugOverlayScope  Pushes an identifier used to group overlays. Deletes all existing overlays using this overlay id. 
+    -- @return void
+    -- @param utlstringtoken_1 utlstringtoken
+    function CDebugOverlayScriptHelper:PushAndClearDebugOverlayScope( utlstringtoken_1 ) end
+    ]]}]]></content>
+    <tabTrigger>PushAndClearDebugOverlayScope</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

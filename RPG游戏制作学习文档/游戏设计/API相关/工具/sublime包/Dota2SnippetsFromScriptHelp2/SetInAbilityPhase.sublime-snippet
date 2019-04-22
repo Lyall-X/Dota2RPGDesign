@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetInAbilityPhase(${1:bool_1})${2:--[[
+     CDOTABaseAbility:SetInAbilityPhase   
+    -- @return void
+    -- @param bool_1 bool
+    function CDOTABaseAbility:SetInAbilityPhase( bool_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetInAbilityPhase</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

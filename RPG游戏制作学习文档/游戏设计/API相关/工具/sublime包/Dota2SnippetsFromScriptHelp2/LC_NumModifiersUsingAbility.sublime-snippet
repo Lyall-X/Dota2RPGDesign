@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[NumModifiersUsingAbility()${1:--[[
+     CDOTABaseAbility:NumModifiersUsingAbility   
+    -- @return int
+    function CDOTABaseAbility:NumModifiersUsingAbility(  ) end
+    ]]}]]></content>
+    <tabTrigger>numModifiersUsingAbility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

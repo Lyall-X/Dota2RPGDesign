@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[SetContextNum(${1:string_1},${2:float_2},${3:float_3})${4:--[[
+     CBaseEntity:SetContextNum  SetContextNum( name , value, duration ): store any key/value pair in this entity's dialog contexts. Value must be a number (int or float). Will last for duration (set 0 to mean 'forever'). 
+    -- @return void
+    -- @param string_1 string
+    -- @param float_2 float
+    -- @param float_3 float
+    function CBaseEntity:SetContextNum( string_1, float_2, float_3 ) end
+    ]]}]]></content>
+    <tabTrigger>setContextNum</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

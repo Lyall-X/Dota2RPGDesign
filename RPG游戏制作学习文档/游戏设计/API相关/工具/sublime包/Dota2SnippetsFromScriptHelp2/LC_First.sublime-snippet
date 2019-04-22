@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[First()${1:--[[
+     CEntities:First  Begin an iteration over the list of entities 
+    -- @return handle
+    function CEntities:First(  ) end
+    ]]}]]></content>
+    <tabTrigger>first</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

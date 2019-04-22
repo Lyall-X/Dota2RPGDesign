@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[SetCustomHealthLabel(${1:pLabel},${2:r},${3:g},${4:b})${5:--[[
+     CDOTA_BaseNPC:SetCustomHealthLabel   
+    -- @return void
+    -- @param pLabel string
+    -- @param r int
+    -- @param g int
+    -- @param b int
+    function CDOTA_BaseNPC:SetCustomHealthLabel( pLabel, r, g, b ) end
+    ]]}]]></content>
+    <tabTrigger>SetCustomHealthLabel</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

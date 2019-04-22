@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[UnitCanRespawn()${1:--[[
+     CDOTA_BaseNPC_Hero:UnitCanRespawn   
+    -- @return bool
+    function CDOTA_BaseNPC_Hero:UnitCanRespawn(  ) end
+    ]]}]]></content>
+    <tabTrigger>UnitCanRespawn</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCursorCastTarget()${1:--[[
+     CDOTA_BaseNPC:GetCursorCastTarget   
+    -- @return handle
+    function CDOTA_BaseNPC:GetCursorCastTarget(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCursorCastTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

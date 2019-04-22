@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Defeated()${1:--[[
+     CDOTAGamerules:Defeated  Kills the ancient, etc. 
+    -- @return void
+    function CDOTAGamerules:Defeated(  ) end
+    ]]}]]></content>
+    <tabTrigger>Defeated</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

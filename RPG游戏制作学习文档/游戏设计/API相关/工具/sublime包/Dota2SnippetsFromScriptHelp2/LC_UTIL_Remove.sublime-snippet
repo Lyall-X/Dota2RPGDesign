@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[UTIL_Remove(${1:handle_1})${2:--[[
+     UTIL_Remove  Removes the specified entity 
+    -- @return void
+    -- @param handle_1 handle
+    function UTIL_Remove( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>uTIL_Remove</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

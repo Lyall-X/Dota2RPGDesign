@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[EjectItemFromStash(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:EjectItemFromStash  Drops the selected item out of this unit's stash. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:EjectItemFromStash( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>EjectItemFromStash</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

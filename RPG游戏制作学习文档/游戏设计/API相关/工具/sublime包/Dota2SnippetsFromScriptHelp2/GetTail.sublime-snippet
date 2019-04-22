@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetTail()${1:--[[
+     CDOTA_Unit_Nian:GetTail  Is the Nian's tail broken? 
+    -- @return handle
+    function CDOTA_Unit_Nian:GetTail(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetTail</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

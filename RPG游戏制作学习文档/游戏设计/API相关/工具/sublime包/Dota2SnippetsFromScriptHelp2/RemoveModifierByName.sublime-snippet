@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[RemoveModifierByName(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:RemoveModifierByName  Removes a modifier. 
+    -- @return void
+    -- @param string_1 string
+    function CDOTA_BaseNPC:RemoveModifierByName( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>RemoveModifierByName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

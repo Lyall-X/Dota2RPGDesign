@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMovementTargetPosition()${1:--[[
+     CRPG_Unit:GetMovementTargetPosition  () - Return movement target position, if none is set, vec3_invalid is returned 
+    -- @return Vector
+    function CRPG_Unit:GetMovementTargetPosition(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetMovementTargetPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

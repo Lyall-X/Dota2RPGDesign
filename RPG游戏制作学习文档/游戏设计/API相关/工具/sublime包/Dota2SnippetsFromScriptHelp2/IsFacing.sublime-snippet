@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[IsFacing(${1:Vector_1},${2:float_2})${3:--[[
+     CRPG_Unit:IsFacing  ( vecTargetPosition, flAngleTolerance ) - returns true if the unit is within flAngleTolerance degrees of the target position 
+    -- @return bool
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    function CRPG_Unit:IsFacing( Vector_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>IsFacing</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

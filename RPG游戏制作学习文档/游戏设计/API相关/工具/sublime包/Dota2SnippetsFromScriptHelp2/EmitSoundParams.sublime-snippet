@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[EmitSoundParams(${1:string_1},${2:int_2},${3:float_3},${4:float_4})${5:--[[
+     CBaseEntity:EmitSoundParams  Plays/modifies a sound from this entity. changes sound if nPitch and/or flVol or flSoundTime is > 0. 
+    -- @return void
+    -- @param string_1 string
+    -- @param int_2 int
+    -- @param float_3 float
+    -- @param float_4 float
+    function CBaseEntity:EmitSoundParams( string_1, int_2, float_3, float_4 ) end
+    ]]}]]></content>
+    <tabTrigger>EmitSoundParams</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

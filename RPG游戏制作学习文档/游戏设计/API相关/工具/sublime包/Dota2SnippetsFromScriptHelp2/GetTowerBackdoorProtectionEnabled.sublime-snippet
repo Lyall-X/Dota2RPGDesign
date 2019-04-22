@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetTowerBackdoorProtectionEnabled()${1:--[[
+     CDOTABaseGameMode:GetTowerBackdoorProtectionEnabled  Enables/Disables tower backdoor protection. 
+    -- @return bool
+    function CDOTABaseGameMode:GetTowerBackdoorProtectionEnabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetTowerBackdoorProtectionEnabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

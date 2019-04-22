@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMaxMana()${1:--[[
+     CDOTA_BaseNPC:GetMaxMana  Get the maximum mana of this unit. 
+    -- @return float
+    function CDOTA_BaseNPC:GetMaxMana(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetMaxMana</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

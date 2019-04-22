@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[DeleteCreatedSpawnGroups()${1:--[[
+     CPointTemplate:DeleteCreatedSpawnGroups  DeleteCreatedSpawnGroups() : Deletes any spawn groups that this point_template has spawned. Note: The point_template will not be deleted by this. 
+    -- @return void
+    function CPointTemplate:DeleteCreatedSpawnGroups(  ) end
+    ]]}]]></content>
+    <tabTrigger>deleteCreatedSpawnGroups</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,1642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由天才_IMBA翻译 -->
+
+<class nameEN="Global" nameCN="全局函数"
+	descriptionEN="Global functions. These can be called without any class"
+	descriptionCN="全局函数。可在任何类中调用" extends="">
+	<functions>
+		<function name="AngleDiff" signature="float AngleDiff(float ang1, float ang2)">
+			<DescriptionEN>Returns the number of degrees difference between two yaw angles
+			</DescriptionEN>
+			<DescriptionCN>返回两个偏航角度之差</DescriptionCN>
+			<HowToCall>
+				<Parameter>ang1：偏航角，ang2：偏航角
+				</Parameter>
+				<Return>float：偏航角差值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="AppendToLogFile" signature="void AppendToLogFile(string a, string b)">
+			<DescriptionEN>Appends a string to a log file on the server
+			</DescriptionEN>
+			<DescriptionCN>在服务器日志文件上增加一个string</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ApplyDamage" signature="float ApplyDamage(handle DamageTable)">
+			<DescriptionEN>Applies damage to a unit.Table Inputs: victim, attacker, damage, damage_type, damage_flags, ability
+			</DescriptionEN>
+			<DescriptionCN>对单位造成伤害，Table输入：victim, attacker, damage, damage_type, damage_flags, ability</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="AxisAngleToQuaternion" signature="Quaternion AxisAngleToQuaternion(Vector a, float b)">
+			<DescriptionEN>(vector,float) constructs a quaternion representing a rotation by angle around the specified vector axis
+			</DescriptionEN>
+			<DescriptionCN>(vector,float) 构造一个四元数，表现出围绕给定的vector 轴线的旋转角</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CancelEntityIOEvents" signature="void CancelEntityIOEvents(ehandle a)">
+			<DescriptionEN>Create all I/O events for a particular entity
+			</DescriptionEN>
+			<DescriptionCN>为特定的实体创建所有输入/输出事件</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CreateEffect" signature="bool CreateEffect(handle a)">
+			<DescriptionEN>Pass table - Inputs: entity, effect
+			</DescriptionEN>
+			<DescriptionCN>传递table - 输入：实体，效果</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CreateHeroForPlayer" signature="handle CreateHeroForPlayer(string a, handle b)">
+			<DescriptionEN>Creates a DOTA hero by its dota_npc_units.txt name and sets it as the given player's controlled hero
+			</DescriptionEN>
+			<DescriptionCN>用DOTA英雄的dota_npc_units.txt中的名字创建它并把它设为给定玩家的控制英雄</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CreateItem" signature="handle CreateItem(string item_name, handle owner, handle owner)">
+			<DescriptionEN>Creates an item with classname item_name that owner can use.
+			</DescriptionEN>
+			<DescriptionCN>用类名称item_name创建一个owner可以使用的物品</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CreateItemOnPositionSync" signature="handle CreateItemOnPositionSync(Vector a, handle b)">
+			<DescriptionEN>Create a physical item at a given location
+			</DescriptionEN>
+			<DescriptionCN>在给定位置创建一个可见的物品</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CreateTrigger" signature="handle CreateTrigger(Vector a, Vector b, Vector c)">
+			<DescriptionEN>CreateTrigger( vecMin, vecMax ) : Creates and returns an AABB trigger
+			</DescriptionEN>
+			<DescriptionCN>CreateTrigger( vecMin, vecMax ) : 创建并返回一个AABB触发器</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CreateTriggerRadiusApproximate" signature="handle CreateTriggerRadiusApproximate(Vector a, float b)">
+			<DescriptionEN>CreateTriggerRadiusApproximate( vecOrigin, flRadius ) : Creates and returns an AABB trigger thats bigger than the radius provided
+			</DescriptionEN>
+			<DescriptionCN>CreateTriggerRadiusApproximate( vecOrigin, flRadius ) : 创建并返回一个比给定radius大的AABB触发器</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CreateUnitByName" signature="handle CreateUnitByName(string a, Vector b, bool c, handle d, handle e, int f)">
+			<DescriptionEN>Creates a DOTA unit by its dota_npc_units.txt name ( szUnitName, vLocation, bFindClearSpace, hNPCOwner, hUnitOwner, iTeamNumber )
+			</DescriptionEN>
+			<DescriptionCN>用DOTA单位的dota_npc_units.txt中的名字创建它( szUnitName, vLocation, bFindClearSpace, hNPCOwner, hUnitOwner, iTeamNumber )</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="CreateUnitByNameAsync" signature="int CreateUnitByNameAsync(string a, Vector b, bool c, handle d, handle e, int f, handle g)">
+			<DescriptionEN>Creates a DOTA unit by its dota_npc_units.txt name ( szUnitName, vLocation, bFindClearSpace, hNPCOwner, hUnitOwner, iTeamNumber, hCallback )
+			</DescriptionEN>
+			<DescriptionCN>用DOTA单位的dota_npc_units.txt中的名字创建它( szUnitName, vLocation, bFindClearSpace, hNPCOwner, hUnitOwner, iTeamNumber, hCallback )</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="cvar_getf" signature="float cvar_getf(string a)">
+			<DescriptionEN>Gets the value of the given cvar, as a float.
+			</DescriptionEN>
+			<DescriptionCN>获取给定cvar的值，返回float.</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="cvar_setf" signature="bool cvar_setf(string a, float b)">
+			<DescriptionEN>Sets the value of the given cvar, as a float.
+			</DescriptionEN>
+			<DescriptionCN>设置给定cvar的值, 传递float.</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugBreak" signature="void DebugBreak()">
+			<DescriptionEN>Breaks in the debugger
+			</DescriptionEN>
+			<DescriptionCN>在debugger（调试模式）中停止运行</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawBox" signature="void DebugDrawBox(Vector a, Vector b, Vector c, int d, int e, int f, int g, float h)">
+			<DescriptionEN>Draw a debug overlay box (origin, mins, maxs, r, g, b, a, duration )
+			</DescriptionEN>
+			<DescriptionCN>显示一个debug overlay窗口(origin, mins, maxs, r, g, b, a, duration )</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawBoxDirection" signature="void DebugDrawBoxDirection(Vector a, Vector b, Vector c, Vector d, Vector e, float f, float g)">
+			<DescriptionEN>Draw a debug forward box (cent, min, max, forward, vRgb, a, duration)
+			</DescriptionEN>
+			<DescriptionCN>显示一个debug forward窗口(cent, min, max, forward, vRgb, a, duration)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawCircle" signature="void DebugDrawCircle(Vector a, Vector b, float c, float d, bool e, float f)">
+			<DescriptionEN>Draw a debug circle (center, vRgb, a, rad, ztest, duration)
+			</DescriptionEN>
+			<DescriptionCN>显示一个debug圆(center, vRgb, a, rad, ztest, duration)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawClear" signature="void DebugDrawClear()">
+			<DescriptionEN>Try to clear all the debug overlay info
+			</DescriptionEN>
+			<DescriptionCN>尝试清理所有debug overlay信息</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawLine" signature="void DebugDrawLine(Vector a, Vector b, int c, int d, int e, bool f, float g)">
+			<DescriptionEN>Draw a debug overlay line (origin, target, r, g, b, ztest, duration)
+			</DescriptionEN>
+			<DescriptionCN>显示一个debug overlay线段origin, target, r, g, b, ztest, duration)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawLine_vCol" signature="void DebugDrawLine_vCol(Vector a, Vector b, Vector c, bool d, float e)">
+			<DescriptionEN>Draw a debug line using color vec (start, end, vRgb, a, ztest, duration)
+			</DescriptionEN>
+			<DescriptionCN>使用vec颜色显示一个debug线段(start, end, vRgb, a, ztest, duration)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawScreenTextLine" signature="void DebugDrawScreenTextLine(float a, float b, int c, string d, int e, int f, int g, int h, float i)">
+			<DescriptionEN>Draw text with a line offset (x, y, lineOffset, text, r, g, b, a, duration)
+			</DescriptionEN>
+			<DescriptionCN>显示给定行间距（lineoffset）的文字(x, y, lineOffset, text, r, g, b, a, duration)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawSphere" signature="void DebugDrawSphere(Vector a, Vector b, float c, float d, bool e, float f)">
+			<DescriptionEN>Draw a debug sphere (center, vRgb, a, rad, ztest, duration)
+			</DescriptionEN>
+			<DescriptionCN>显示一个debug球(center, vRgb, a, rad, ztest, duration)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugDrawText" signature="void DebugDrawText(Vector a, string b, bool c, float d)">
+			<DescriptionEN>Draw text in 3d (origin, text, bViewCheck, duration)
+			</DescriptionEN>
+			<DescriptionCN>显示3d文字(origin, text, bViewCheck, duration)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DebugScreenTextPretty" signature="void DebugScreenTextPretty(float a, float b, int c, string d, int e, int f, int g, int h, float i, string j, int k, bool l)">
+			<DescriptionEN>Draw pretty debug text (x, y, lineOffset, text, r, g, b, a, duration, font, size, bBold)
+			</DescriptionEN>
+			<DescriptionCN>显示漂亮的debug文字(x, y, lineOffset, text, r, g, b, a, duration, font, size, bBold)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DoEntFire" signature="void DoEntFire(string a, string b, string c, float d, handle e, handle f)">
+			<DescriptionEN>EntFire: Generate an entity i/o event ( szTarget, szAction, szValue, flDelay, hActivator, hCaller )
+			</DescriptionEN>
+			<DescriptionCN>EntFire: 构造一个实体的输入/输出事件( szTarget, szAction, szValue, flDelay, hActivator, hCaller )</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DoEntFireByInstanceHandle" signature="void DoEntFireByInstanceHandle(handle a, string b, string c, float d, handle e, handle f)">
+			<DescriptionEN>EntFireByHandle:Generate and entity i/o event
+			</DescriptionEN>
+			<DescriptionCN>EntFireByHandle:构造一个实体的输入/输出事件</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DoIncludeScript" signature="bool DoIncludeScript(string a, handle b)">
+			<DescriptionEN>Execute a script (internal)
+			</DescriptionEN>
+			<DescriptionCN>运行一个内部脚本</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DoScriptAssert" signature="void DoScriptAssert(bool a, string b)">
+			<DescriptionEN>ScriptAssert:Asserts the passed in value. Prints out a message and brings up the assert dialog.
+			</DescriptionEN>
+			<DescriptionCN>ScriptAssert:断言传入数据是数值，输出信息并显示断言对话框（参考编程中的Assert功能，主要用于调试，译者注）</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="DoUniqueString" signature="string DoUniqueString(string a)">
+			<DescriptionEN>UniqueString:Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to table's when not sure what keys are already in use in that table.
+			</DescriptionEN>
+			<DescriptionCN>UniqueString:使用任意的根字符串构造一个保证在VM脚本运行周期内唯一的字符串。当给表增加数据但不确定已用关键字时有用</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="EmitGlobalSound" signature="void EmitGlobalSound(string a)">
+			<DescriptionEN>Play named sound for all players
+			</DescriptionEN>
+			<DescriptionCN>为所有玩家播放给定名称的音效</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="EmitSoundOn" signature="void EmitSoundOn(string a, handle b)">
+			<DescriptionEN>Play named sound on Entity
+			</DescriptionEN>
+			<DescriptionCN>在一个实体上播放给定名称的音效</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="EmitSoundOnClient" signature="void EmitSoundOnClient(string a, handle b)">
+			<DescriptionEN>Play named sound only on the client for the passed in player
+			</DescriptionEN>
+			<DescriptionCN>为指定玩家播放给定名称的音效</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="EntIndexToHScript" signature="handle EntIndexToHScript(int a)">
+			<DescriptionEN>Turn an entity index integer to an HScript representing that entity's script instance.
+			</DescriptionEN>
+			<DescriptionCN>把一个实体的整数索引转化为表达该实体脚本实例的HScript</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ExecuteOrderFromTable" signature="void ExecuteOrderFromTable(handle a)">
+			<DescriptionEN>Issue an order from a script table
+			</DescriptionEN>
+			<DescriptionCN>从一个Script表发布命令</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ExponentialDecay" signature="float ExponentialDecay(float a, float b, float c)">
+			<DescriptionEN>Smooth curve decreasing slower as it approaches zero
+			</DescriptionEN>
+			<DescriptionCN>平滑的曲线，接近0时减少较慢</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FileToString" signature="string FileToString(string a)">
+			<DescriptionEN>Reads a string from a file to send to script.Directory traversal doesn't seem to work. The characters '.', '/' and '\\' are ignored.The files are read from C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\dota_ugc\game\dota\ems.The function is used in conjunction with StringToFile
+			</DescriptionEN>
+			<DescriptionCN>从文件读取字符串给脚本，目录遍历似乎无效，字符'.','/'和'\\'被忽略，文件从C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\dota_ugc\game\dota\ems读取，函数的用途与StringToFile相反</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FindClearSpaceForUnit" signature="void FindClearSpaceForUnit(handle a, Vector b, bool c)">
+			<DescriptionEN>Place a unit somewhere not already occupied.
+			</DescriptionEN>
+			<DescriptionCN>在未被占用的地方创建单位</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FindUnitsInRadius" signature="table FindUnitsInRadius(int a, Vector b, handle c, float d, int e, int f, int g, int h, bool i)">
+			<DescriptionEN>Finds the units in a given radius with the given flags. ( iTeamNumber, vPosition, hCacheUnit, flRadius, iTeamFilter, iTypeFilter, iFlagFilter, iOrder, bCanGrowCache )
+			</DescriptionEN>
+			<DescriptionCN>在给定范围内用给定flags搜索单位( iTeamNumber, vPosition, hCacheUnit, flRadius, iTeamFilter, iTypeFilter, iFlagFilter, iOrder, bCanGrowCache )</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FireEntityIOInputNameOnly" signature="void FireEntityIOInputNameOnly(ehandle a, string b)">
+			<DescriptionEN>Fire Entity's Action Input w/no data
+			</DescriptionEN>
+			<DescriptionCN>触发实体的动作输入w/no数据</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FireEntityIOInputString" signature="void FireEntityIOInputString(ehandle a, string b, string c)">
+			<DescriptionEN>Fire Entity's Action Input with passed String - you own the memory
+			</DescriptionEN>
+			<DescriptionCN>用给定字符串（由你分配内存）触发实体的动作输入</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FireEntityIOInputVec" signature="void FireEntityIOInputVec(ehandle a, string b, Vector c)">
+			<DescriptionEN>Fire Entity's Action Input with passed Vector ( hEntity, szActionName, vector )
+			</DescriptionEN>
+			<DescriptionCN>用给定的Vector( hEntity, szActionName, vector )触发实体的动作输入</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FireGameEvent" signature="void FireGameEvent(string eventName, handle parameterTable)">
+			<DescriptionEN>Fire a pre-defined event, which can be found either in custom_events.txt or in dota's resource/*.res
+			</DescriptionEN>
+			<DescriptionCN>触发一个预定义事件，可以在custom_events.txt或dota的资源/*.res中找到</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FireGameEventLocal" signature="void FireGameEventLocal(string a, handle b)">
+			<DescriptionEN>Fire a game event without broadcasting to the client.
+			</DescriptionEN>
+			<DescriptionCN>触发一个游戏事件但不广播给客户端</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="FrameTime" signature="float FrameTime()">
+			<DescriptionEN>Get the time spent on the server in the last frame
+			</DescriptionEN>
+			<DescriptionCN>获取上一帧在服务器上花费的时间</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetFrameCount" signature="int GetFrameCount()">
+			<DescriptionEN>Returns the engines current frame count
+			</DescriptionEN>
+			<DescriptionCN>返回引擎当然的帧数</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetFrostyBoostAmount" signature="float GetFrostyBoostAmount(int a, int b)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>无</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetFrostyPointsForRound" signature="int GetFrostyPointsForRound(int a, int b, int c)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>无</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetGoldFrostyBoostAmount" signature="float GetGoldFrostyBoostAmount(int a, int b)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>无</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetGoldFrostyPointsForRound" signature="int GetGoldFrostyPointsForRound(int a, int b, int c)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>无</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetGroundPosition" signature="Vector GetGroundPosition(Vector a, handle b)">
+			<DescriptionEN>Returns the supplied position moved to the ground. Second parameter is an NPC for measuring movement collision hull offset.
+			</DescriptionEN>
+			<DescriptionCN>返回移动到地面的供给位置。第二个参数是一个NPC，用于测量碰撞体积</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetListenServerHost" signature="handle GetListenServerHost()">
+			<DescriptionEN>Get the local player on a listen server.
+			</DescriptionEN>
+			<DescriptionCN>在广播服务器获取本地玩家</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetMapName" signature="string GetMapName()">
+			<DescriptionEN>Get the name of the map.
+			</DescriptionEN>
+			<DescriptionCN>获取地图的名字</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetMaxOutputDelay" signature="float GetMaxOutputDelay(ehandle a, string b)">
+			<DescriptionEN>Get the longest delay for all events attached to an output
+			</DescriptionEN>
+			<DescriptionCN>获取输出事件的最大延迟</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetPhysAngularVelocity" signature="Vector GetPhysAngularVelocity(handle a)">
+			<DescriptionEN>Get Angular Velocity for VPHYS or normal object
+			</DescriptionEN>
+			<DescriptionCN>获取VPHYS或普通物体的角速度</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetPhysVelocity" signature="Vector GetPhysVelocity(handle a)">
+			<DescriptionEN>Get Velocity for VPHYS or normal object
+			</DescriptionEN>
+			<DescriptionCN>获取VPHYS或普通物体的速度</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetSystemDate" signature="string GetSystemDate()">
+			<DescriptionEN>Get the current real world date
+			</DescriptionEN>
+			<DescriptionCN>获取真实世界的日期</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetSystemTime" signature="string GetSystemTime()">
+			<DescriptionEN>Get the current real world time
+			</DescriptionEN>
+			<DescriptionCN>获取真实世界的时间</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetWorldMaxX" signature="float GetWorldMaxX()">
+			<DescriptionEN>Gets the world's maximum X position.
+			</DescriptionEN>
+			<DescriptionCN>获取地图X坐标最大值</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetWorldMaxY" signature="float GetWorldMaxY()">
+			<DescriptionEN>Gets the world's maximum Y position.
+			</DescriptionEN>
+			<DescriptionCN>获取地图Y坐标最大值</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetWorldMinX" signature="float GetWorldMinX()">
+			<DescriptionEN>Gets the world's minimum X position.
+			</DescriptionEN>
+			<DescriptionCN>获取地图X坐标最小值</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="GetWorldMinY" signature="float GetWorldMinY()">
+			<DescriptionEN>Gets the world's minimum Y position.
+			</DescriptionEN>
+			<DescriptionCN>获取地图Y坐标最小值</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="InitLogFile" signature="void InitLogFile(string a, string b)">
+			<DescriptionEN>If the given file doesn't exist, creates it with the given contents; does nothing if it exists
+			</DescriptionEN>
+			<DescriptionCN>如果给定文件不存在，用给定内容创建它；如果存在则不做任何动作</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="IsDedicatedServer" signature="bool IsDedicatedServer()">
+			<DescriptionEN>Returns true if this server is a dedicated server.
+			</DescriptionEN>
+			<DescriptionCN>如果服务器开放返回true</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="IsMarkedForDeletion" signature="bool IsMarkedForDeletion(handle a)">
+			<DescriptionEN>Returns true if the entity is valid and marked for deletion.
+			</DescriptionEN>
+			<DescriptionCN>如果实体有效并被标记为删除返回true</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="IsValidEntity" signature="bool IsValidEntity(handle a)">
+			<DescriptionEN>Checks to see if the given hScript is a valid entity
+			</DescriptionEN>
+			<DescriptionCN>检查给定hScript是否为有效实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ListenToGameEvent" signature="int ListenToGameEvent(string EventName, handle functionNameToCall, handle context)">
+			<DescriptionEN>Tip:In addition to listening for standard engine events, you can also create your own events by placing them in /scripts/custom_events.txt.Register as a listener for a game event from script.
+			</DescriptionEN>
+			<DescriptionCN>从脚本给游戏事件注册一个listner，Tip:另外，为listenstandard engine events,你也可以创建自己的事件，把它们放置在/scripts/custom_events.txt.</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="LoadKeyValues" signature="table LoadKeyValues(string a)">
+			<DescriptionEN>Creates a table from the specified keyvalues text file
+			</DescriptionEN>
+			<DescriptionCN>用给定的关键字文件创建table</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="LoadKeyValuesFromString" signature="table LoadKeyValuesFromString(string a)">
+			<DescriptionEN>Creates a table from the specified keyvalues string
+			</DescriptionEN>
+			<DescriptionCN>用给定的关键字string创建table</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="MakeStringToken" signature="int MakeStringToken(string a)">
+			<DescriptionEN>Checks to see if the given hScript is a valid entity
+			</DescriptionEN>
+			<DescriptionCN>检查给定的hScript是否是有效实体（？）</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="Msg" signature="void Msg(string a)">
+			<DescriptionEN>Print a message
+			</DescriptionEN>
+			<DescriptionCN>输出信息</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PauseGame" signature="void PauseGame(bool a)">
+			<DescriptionEN>Pause or unpause the game.
+			</DescriptionEN>
+			<DescriptionCN>暂停/开始游戏</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PlayerInstanceFromIndex" signature="handle PlayerInstanceFromIndex(int a)">
+			<DescriptionEN>Get a script instance of a player by index.
+			</DescriptionEN>
+			<DescriptionCN>通过索引获取玩家的脚本实例</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrecacheEntityFromTable" signature="void PrecacheEntityFromTable(string a, handle b, handle c)">
+			<DescriptionEN>Precache an entity from KeyValues in table
+			</DescriptionEN>
+			<DescriptionCN>用关键字从table中预缓存一个实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrecacheEntityListFromTable" signature="void PrecacheEntityListFromTable(handle a, handle b)">
+			<DescriptionEN>Precache a list of entity KeyValues table's
+			</DescriptionEN>
+			<DescriptionCN>预缓存一个实体关键字列表</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrecacheItemByNameAsync" signature="void PrecacheItemByNameAsync(string a, handle b)">
+			<DescriptionEN>Asynchronously precaches a DOTA item by its dota_npc_items.txt name, provides a callback when it's finished.
+			</DescriptionEN>
+			<DescriptionCN>用DOTA物品的dota_npc_items.txt名称异步预缓存它,结束时提供回调</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrecacheItemByNameSync" signature="void PrecacheItemByNameSync(string a, handle b)">
+			<DescriptionEN>Precaches a DOTA item by its dota_npc_items.txt name
+			</DescriptionEN>
+			<DescriptionCN>用DOTA物品的dota_npc_items.txt名称预缓存它</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrecacheModel" signature="void PrecacheModel(string a, handle b)">
+			<DescriptionEN>( modelName, context ) - Manually precache a single model
+			</DescriptionEN>
+			<DescriptionCN>( modelName, context ) - 手动预缓存一个单一模型</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrecacheResource" signature="void PrecacheResource(string a, string b, handle c)">
+			<DescriptionEN>Manually precache a single resource
+			</DescriptionEN>
+			<DescriptionCN>手动预缓存一个单一资源</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrecacheUnitByNameAsync" signature="void PrecacheUnitByNameAsync(string a, handle b)">
+			<DescriptionEN>Asynchronously precaches a DOTA unit by its dota_npc_units.txt name, provides a callback when it's finished.
+			</DescriptionEN>
+			<DescriptionCN>用DOTA单位的dota_npc_units.txt名称异步预缓存它,结束时提供回调</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrecacheUnitByNameSync" signature="void PrecacheUnitByNameSync(string a, handle b)">
+			<DescriptionEN>Precaches a DOTA unit by its dota_npc_units.txt name
+			</DescriptionEN>
+			<DescriptionCN>用DOTA单位的dota_npc_units.txt名称预缓存它</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="PrintLinkedConsoleMessage" signature="void PrintLinkedConsoleMessage(string a, string b)">
+			<DescriptionEN>Print a console message with a linked console command
+			</DescriptionEN>
+			<DescriptionCN>Print a console message with a linked console command</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RandomFloat" signature="float RandomFloat(float a, float b)">
+			<DescriptionEN>Get a random float within a range
+			</DescriptionEN>
+			<DescriptionCN>获取范围内随机float</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RandomInt" signature="int RandomInt(int a, int b)">
+			<DescriptionEN>Get a random int within a range
+			</DescriptionEN>
+			<DescriptionCN>获取范围内随机int</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RandomVector" signature="Vector RandomVector(float maxLength)">
+			<DescriptionEN>Get a random 2D vector
+			</DescriptionEN>
+			<DescriptionCN>获取随机二维矢量</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RegisterSpawnGroupFilterProxy" signature="void RegisterSpawnGroupFilterProxy(string a)">
+			<DescriptionEN>Create a C proxy for a script-based spawn group filter
+			</DescriptionEN>
+			<DescriptionCN>为一个脚本基础的生成单位过滤器创建一个C代理</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ReloadMOTD" signature="void ReloadMOTD()">
+			<DescriptionEN>Reloads the MotD file
+			</DescriptionEN>
+			<DescriptionCN>重载MotD文件</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RemoveSpawnGroupFilterProxy" signature="void RemoveSpawnGroupFilterProxy(string a)">
+			<DescriptionEN>Remove the C proxy for a script-based spawn group filter
+			</DescriptionEN>
+			<DescriptionCN>为一个脚本基础的生成单位过滤器删除一个C代理</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RollPercentage" signature="bool RollPercentage(int a)">
+			<DescriptionEN>Rolls a number from 1 to 100 and returns true if the roll is less than or equal to the number specified
+			</DescriptionEN>
+			<DescriptionCN>随机生成1-100内的数，小于等于给定数则返回true</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RotateOrientation" signature="QAngle RotateOrientation(QAngle a, QAngle b)">
+			<DescriptionEN>Rotate a QAngle by another QAngle.
+			</DescriptionEN>
+			<DescriptionCN>旋转一个QAngle，用另一个QAngle</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RotatePosition" signature="Vector RotatePosition(Vector a, QAngle b, Vector c)">
+			<DescriptionEN>Rotate a Vector around a point.
+			</DescriptionEN>
+			<DescriptionCN>围绕点旋转一个Vector</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RotateQuaternionByAxisAngle" signature="Quaternion RotateQuaternionByAxisAngle(Quaternion a, Vector b, float c)">
+			<DescriptionEN>Rotates a quaternion by the specified angle around the specified vector axis
+			</DescriptionEN>
+			<DescriptionCN>围绕给定vector轴线旋转一个四元数</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="RotationDelta" signature="QAngle RotationDelta(QAngle a, QAngle b)">
+			<DescriptionEN>Find the delta between two QAngles.
+			</DescriptionEN>
+			<DescriptionCN>两个QAngle间的delta值</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="rr_AddDecisionRule" signature="bool rr_AddDecisionRule(handle a)">
+			<DescriptionEN>Add a rule to the decision database.
+			</DescriptionEN>
+			<DescriptionCN>给决定数据库增加一个规则</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="rr_CommitAIResponse" signature="bool rr_CommitAIResponse(handle a, handle b)">
+			<DescriptionEN>Commit the result of QueryBestResponse back to the given entity to play. Call with params (entity, airesponse)
+			</DescriptionEN>
+			<DescriptionCN>把QueryBestResponse的结果交付给定的实体播放，用参数调用(entity, airesponse)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="rr_GetResponseTargets" signature="handle rr_GetResponseTargets()">
+			<DescriptionEN>Retrieve a table of all available expresser targets, in the form { name : handle, name: handle }.
+			</DescriptionEN>
+			<DescriptionCN>获取所有提供的表达者目标的table，格式为{ name : handle, name: handle }.</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="rr_QueryBestResponse" signature="bool rr_QueryBestResponse(handle a, handle b, handle c)">
+			<DescriptionEN>Params: ( hEnt, hQuery, hResult ) // Static : tests 'query' against entity's response system and returns the best response found (or nil if none found).
+			</DescriptionEN>
+			<DescriptionCN>参数: ( hEnt, hQuery, hResult ) // 静态 : 对实体的回复系统测试 'query'并返回最佳回复(无回复返回nil)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="Say" signature="void Say(handle entity, string message, bool teamOnly)">
+			<DescriptionEN>Have Entity say string, and teamOnly or not
+			</DescriptionEN>
+			<DescriptionCN>让实体说string,是否仅限队友可见</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ScreenShake" signature="void ScreenShake(Vector a, float b, float c, float d, float e, int f, bool g)">
+			<DescriptionEN>Start a screenshake with the following parameters. vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake
+			</DescriptionEN>
+			<DescriptionCN>用下列参数开始镜头摇晃：vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SendFrostivusTimeElapsedToGC" signature="void SendFrostivusTimeElapsedToGC()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>无</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SendFrostyPointsMessageToGC" signature="void SendFrostyPointsMessageToGC(handle a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>无</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SendToConsole" signature="void SendToConsole(string a)">
+			<DescriptionEN>Send a string to the console as a client command
+			</DescriptionEN>
+			<DescriptionCN>给控制台发送string作为客户端命令</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SendToServerConsole" signature="void SendToServerConsole(string a)">
+			<DescriptionEN>Send a string to the console as a server command
+			</DescriptionEN>
+			<DescriptionCN>给控制台发送string作为服务器命令</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SetOpvarFloatAll" signature="void SetOpvarFloatAll(string a, string b, string c, float d)">
+			<DescriptionEN>Sets an opvar value for all players
+			</DescriptionEN>
+			<DescriptionCN>为所有玩家设置opvar值</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SetOpvarFloatPlayer" signature="void SetOpvarFloatPlayer(string a, string b, string c, float d, handle e)">
+			<DescriptionEN>Sets an opvar value for a single player ( szStackName, szOperatorName, szOpvarName, flOpvarValue, hEnt )
+			</DescriptionEN>
+			<DescriptionCN>为单一玩家设置opvar值( szStackName, szOperatorName, szOpvarName, flOpvarValue, hEnt )</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SetQuestName" signature="void SetQuestName(string a)">
+			<DescriptionEN>Set the current quest name.
+			</DescriptionEN>
+			<DescriptionCN>设置当前任务名</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SetQuestPhase" signature="void SetQuestPhase(int a)">
+			<DescriptionEN>Set the current quest phase.
+			</DescriptionEN>
+			<DescriptionCN>设置当前任务阶段</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SetRenderingEnabled" signature="void SetRenderingEnabled(ehandle a, bool b)">
+			<DescriptionEN>Set rendering on/off for an ehandle
+			</DescriptionEN>
+			<DescriptionCN>为ehandle设置rendering（渲染）开/关</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ShowGenericPopup" signature="void ShowGenericPopup(string title, string content, string unknown, string unknown, int containerType)">
+			<DescriptionEN>Shows a generic popup to all users
+			</DescriptionEN>
+			<DescriptionCN>对所有玩家显示通用的弹出窗口</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ShowGenericPopupToPlayer" signature="void ShowGenericPopupToPlayer(handle a, string b, string c, string d, string e, int f)">
+			<DescriptionEN>Show a generic popup dialog to a specific player.
+			</DescriptionEN>
+			<DescriptionCN>对给定玩家显示通用的弹出窗口</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="ShowMessage" signature="void ShowMessage(string a)">
+			<DescriptionEN>Print a hud message on all clients
+			</DescriptionEN>
+			<DescriptionCN>在所有客户端显示hud信息</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SpawnEntityFromTableSynchronous" signature="handle SpawnEntityFromTableSynchronous(string a, handle b)">
+			<DescriptionEN>Synchronously spawns a single entity from a table
+			</DescriptionEN>
+			<DescriptionCN>从table同步生成一个实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SpawnEntityGroupFromTable" signature="bool SpawnEntityGroupFromTable(handle groupSpawnTables, bool bAsync, handle hCallback)">
+			<DescriptionEN>Hierarchically spawn an entity group from a set of spawn tables.
+			</DescriptionEN>
+			<DescriptionCN>从一系列生成表中分级生成一个实体组</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SpawnEntityListFromTableAsynchronous" signature="int SpawnEntityListFromTableAsynchronous(handle a, handle b)">
+			<DescriptionEN>Asynchronously spawn an entity group from a list of spawn table's. A callback will be triggered when the spawning is complete
+			</DescriptionEN>
+			<DescriptionCN>从一个生成表列表异步生成一个实体组，生成完成后会触发一次回调</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SpawnEntityListFromTableSynchronous" signature="handle SpawnEntityListFromTableSynchronous(handle a)">
+			<DescriptionEN>Synchronously spawn an entity group from a list of spawn table's.
+			</DescriptionEN>
+			<DescriptionCN>从一个生成表列表同步生成一个实体组.</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SplineQuaternions" signature="Quaternion SplineQuaternions(Quaternion a, Quaternion b, float c)">
+			<DescriptionEN>(quaternion,quaternion,float) very basic interpolation of v0 to v1 over t on [0,1]
+			</DescriptionEN>
+			<DescriptionCN>(quaternion,quaternion,float)非常基础的v0到v1差值，t属于[0,1]为参数</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="SplineVectors" signature="Vector SplineVectors(Vector a, Vector b, float c)">
+			<DescriptionEN>(vector,vector,float) very basic interpolation of v0 to v1 over t on [0,1]
+			</DescriptionEN>
+			<DescriptionCN>(vector,vector,float)非常基础的v0到v1差值，t属于[0,1]为参数</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="StartSoundEvent" signature="void StartSoundEvent(string a, handle b)">
+			<DescriptionEN>Start a sound event
+			</DescriptionEN>
+			<DescriptionCN>开始音效事件</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="StopEffect" signature="void StopEffect(handle a, string b)">
+			<DescriptionEN>(hEntity, szEffectName)
+			</DescriptionEN>
+			<DescriptionCN>(hEntity, szEffectName)</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="StopListeningToAllGameEvents" signature="void StopListeningToAllGameEvents(handle a)">
+			<DescriptionEN>Stop listening to all game events within a specific context.
+			</DescriptionEN>
+			<DescriptionCN>停止listen在给定内容内的所有游戏事件</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="StopListeningToGameEvent" signature="bool StopListeningToGameEvent(int a)">
+			<DescriptionEN>Stop listening to a particular game event.
+			</DescriptionEN>
+			<DescriptionCN>停止listen特定的游戏事件</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="StopSoundEvent" signature="void StopSoundEvent(string a, handle b)">
+			<DescriptionEN>Stops a sound event
+			</DescriptionEN>
+			<DescriptionCN>停止音效事件</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="StopSoundOn" signature="void StopSoundOn(string soundName, handle playingEntity)">
+			<DescriptionEN>Stop named sound on Entity
+			</DescriptionEN>
+			<DescriptionCN>停止实体上的命名音效</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="StringToFile" signature="bool StringToFile(string a, string b)">
+			<DescriptionEN>* Directory traversal doesn't seem to work. The characters '.', '/' and '\\' are ignored.The file name cannot be blank, nor can it consist only of the ignored 0characters, else the function will do nothing and return false.Only one string can be stored at a time, the file is overwritten to at every call.The file ends with a NUL character.The files are stored at C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\dota_ugc\game\dota\ems. The function is used in conjunction with FileToString
+			</DescriptionEN>
+			<DescriptionCN>* 目录遍历似乎无效，字符'.','/'和'\\'被忽略，文件名不能为空，也不能包含忽略字符，否则函数无效并返回false，一次只能保存一个字符串，每次调用文件都被覆盖，文件以一个NUL字符结尾，文件被保存在C:\Program Files (x86)\Steam\steamapps\common\dota 2 beta\dota_ugc\game\dota\ems，函数用途与FileToString相反</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="Time" signature="float Time()">
+			<DescriptionEN>Get the current server time
+			</DescriptionEN>
+			<DescriptionCN>获取当前服务器时间</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="TraceCollideable" signature="bool TraceCollideable(handle a)">
+			<DescriptionEN>Pass table - Inputs: start, end, ent, (optional mins, maxs) -- outputs: pos, fraction, hit, startsolid, normal
+			</DescriptionEN>
+			<DescriptionCN>传递table - 输入: start, end, ent, (可选 mins, maxs) -- 输出: pos, fraction, hit, startsolid, normal</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="TraceHull" signature="bool TraceHull(handle a)">
+			<DescriptionEN>Pass table - Inputs: start, end, min, max, mask, ignore -- outputs: pos, fraction, hit, enthit, startsolid
+			</DescriptionEN>
+			<DescriptionCN>传递table - 输入: start, end, min, max, mask, ignore -- 输出: pos, fraction, hit, enthit, startsolid</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="TraceLine" signature="bool TraceLine(handle a)">
+			<DescriptionEN>Pass table - Inputs: startpos, endpos, mask, ignore -- outputs: pos, fraction, hit, enthit, startsolid
+			</DescriptionEN>
+			<DescriptionCN>Pass table - 输入: startpos, endpos, mask, ignore -- 输出: pos, fraction, hit, enthit, startsolid</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="UnloadSpawnGroup" signature="void UnloadSpawnGroup(string a)">
+			<DescriptionEN>Unload a spawn group by name
+			</DescriptionEN>
+			<DescriptionCN>通过名称去除生成组</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="UnloadSpawnGroupByHandle" signature="void UnloadSpawnGroupByHandle(int a)">
+			<DescriptionEN>Unload a spawn group by handle
+			</DescriptionEN>
+			<DescriptionCN>通过handle去除生成组</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="UpdateEventPoints" signature="void UpdateEventPoints(handle a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>无</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="UTIL_Remove" signature="void UTIL_Remove(handle a)">
+			<DescriptionEN>Removes the specified entity
+			</DescriptionEN>
+			<DescriptionCN>删除给定实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="UTIL_RemoveImmediate" signature="void UTIL_RemoveImmediate(handle a)">
+			<DescriptionEN>Immediately removes the specified entity
+			</DescriptionEN>
+			<DescriptionCN>立即删除给定实体</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="VectorToAngles" signature="QAngle VectorToAngles(Vector a)">
+			<DescriptionEN>Get Qangles (with no roll) for a Vector.
+			</DescriptionEN>
+			<DescriptionCN>为Vector获取Qangle（没有滚动）</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+		<function name="Warning" signature="void Warning(string a)">
+			<DescriptionEN>Print a warning
+			</DescriptionEN>
+			<DescriptionCN>输出警告</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+
+	</functions>
+</class>

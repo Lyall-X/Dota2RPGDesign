@@ -1,0 +1,292 @@
+<font color='#70EA72'>TEST!</font>
+
+DOTA_Tooltip_ability_                       //  名字
+DOTA_Tooltip_ability_ _Description          //  解释
+DOTA_Tooltip_ability_ _Lore                 //  PS
+DOTA_Tooltip_            //光环
+DOTA_Tooltip_ _Description  //光环说明
+
+AbilityDamageType                  伤害类型
+    - DAMAGE_TYPE_COMPOSITE            混合
+    - DAMAGE_TYPE_HP_REMOVAL           生命移除
+    - DAMAGE_TYPE_MAGICAL              魔法
+    - DAMAGE_TYPE_PHYSICAL             物理
+    - DAMAGE_TYPE_PURE                 纯粹
+
+AbilityBehavior
+    - DOTA_ABILITY_BEHAVIOR_AOE                             范围
+    - DOTA_ABILITY_BEHAVIOR_ATTACK                          攻击
+    - DOTA_ABILITY_BEHAVIOR_AURA                            光环
+    - DOTA_ABILITY_BEHAVIOR_AUTOCAST                        自动施法
+    - DOTA_ABILITY_BEHAVIOR_CHANNELLED                      持续施法
+    - DOTA_ABILITY_BEHAVIOR_DIRECTIONAL                     指定？
+    - DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET               不提示目标
+    - DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT            不打断移动
+    - DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK              不恢复攻击
+    - DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT            不继续移动
+    - DOTA_ABILITY_BEHAVIOR_HIDDEN                          隐藏
+    - DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING                忽略后摇
+    - DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL                  忽略弹道
+    - DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE             忽略伪队列？
+    - DOTA_ABILITY_BEHAVIOR_IGNORE_TURN                     忽略转身
+    - DOTA_ABILITY_BEHAVIOR_IMMEDIATE                       立即
+    - DOTA_ABILITY_BEHAVIOR_ITEM                            物品
+    - DOTA_ABILITY_BEHAVIOR_NO_TARGET                       无目标
+    - DOTA_ABILITY_BEHAVIOR_NOASSIST                        无辅助？
+    - DOTA_ABILITY_BEHAVIOR_NONE                            无
+    - DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN              盗取？
+    - DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE                   不可学习
+    - DOTA_ABILITY_BEHAVIOR_PASSIVE                         被动
+    - DOTA_ABILITY_BEHAVIOR_POINT                           点目标
+    - DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES                   禁用？
+    - DOTA_ABILITY_BEHAVIOR_RUNE_TARGET                     符文目标
+    - DOTA_ABILITY_BEHAVIOR_TOGGLE                          切换
+    - DOTA_ABILITY_BEHAVIOR_UNIT_TARGET                     单位目标
+    - DOTA_ABILITY_BEHAVIOR_UNRESTRICTED                    地面
+
+
+AbilityType
+    - DOTA_ABILITY_TYPE_ATTRIBUTES         属性
+    - DOTA_ABILITY_TYPE_BASIC              正常                     
+    - DOTA_ABILITY_TYPE_HIDDEN             隐藏
+    - DOTA_ABILITY_TYPE_ULTIMATE           大招
+
+
+AbilityUnitTargetType                   技能目标类型
+    - DOTA_UNIT_TARGET_ALL              所有
+    - DOTA_UNIT_TARGET_BASIC            单位 
+    - DOTA_UNIT_TARGET_BUILDING         建筑
+    - DOTA_UNIT_TARGET_COURIER          信使
+    - DOTA_UNIT_TARGET_CREEP            地面
+    - DOTA_UNIT_TARGET_CUSTOM           自定义
+    - DOTA_UNIT_TARGET_HERO             英雄
+    - DOTA_UNIT_TARGET_MECHANICAL       机械
+    - DOTA_UNIT_TARGET_NONE             无
+    - DOTA_UNIT_TARGET_OTHER            其他
+    - DOTA_UNIT_TARGET_TREE             树
+
+
+AbilityUnitTargetTeam                    技能目标敌友
+    - DOTA_UNIT_TARGET_TEAM_BOTH         敌人和友军
+    - DOTA_UNIT_TARGET_TEAM_CUSTOM       自定义
+    - DOTA_UNIT_TARGET_TEAM_ENEMY        敌人
+    - DOTA_UNIT_TARGET_TEAM_FRIENDLY     友军
+    - DOTA_UNIT_TARGET_TEAM_NONE         无
+
+
+Attributes				 属性
+    - DOTA_ATTRIBUTE_AGILITY		 敏捷
+    - DOTA_ATTRIBUTE_INTELLECT		 智力
+    - DOTA_ATTRIBUTE_STRENGTH		 力量
+
+AbilityUnitTargetFlags
+    - DOTA_UNIT_TARGET_FLAG_CHECK_DISABLE_HELP              "选择禁用帮助"
+    - DOTA_UNIT_TARGET_FLAG_DEAD                            "死亡"
+    - DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE                     "可见"
+    - DOTA_UNIT_TARGET_FLAG_INVULNERABLE                    "无敌"
+    - DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES            "魔法免疫"
+    - DOTA_UNIT_TARGET_FLAG_MANA_ONLY                       "只有魔法"
+    - DOTA_UNIT_TARGET_FLAG_MELEE_ONLY                      "只有近战"
+    - DOTA_UNIT_TARGET_FLAG_NO_INVIS
+    - DOTA_UNIT_TARGET_FLAG_NONE                            "无"
+    - DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS                    "不是远古"
+    - DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE               "不是攻击免疫"
+    - DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO                  "不是地面英雄"
+    - DOTA_UNIT_TARGET_FLAG_NOT_DOMINATED                   "不是支配控制"
+    - DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS                   "不是幻象"
+    - DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES         "不是魔法免疫"
+    - DOTA_UNIT_TARGET_FLAG_NOT_NIGHTMARED                  "不是夜魇"
+    - DOTA_UNIT_TARGET_FLAG_NOT_SUMMONED                    "不是召唤物"
+    - DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD                    "出界"
+    - DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED               "玩家控制"
+    - DOTA_UNIT_TARGET_FLAG_RANGED_ONLY                     "只有远程"
+
+Unit Order Types //命令
+    - DOTA_UNIT_ORDER_ATTACK_MOVE                           "攻击移动"
+    - DOTA_UNIT_ORDER_ATTACK_TARGET                         "攻击目标"
+    - DOTA_UNIT_ORDER_BUYBACK                               "回购"
+    - DOTA_UNIT_ORDER_CAST_NO_TARGET                        "施法无目标"
+    - DOTA_UNIT_ORDER_CAST_POSITION                         "施法位置"
+    - DOTA_UNIT_ORDER_CAST_RUNE                             "施法符文"
+    - DOTA_UNIT_ORDER_CAST_TARGET                           "施法目标"
+    - DOTA_UNIT_ORDER_CAST_TARGET_TREE                      "施法目标树"
+    - DOTA_UNIT_ORDER_CAST_TOGGLE                           "施法切换"
+    - DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO                      "施法自动切换"
+    - DOTA_UNIT_ORDER_DISASSEMBLE_ITEM                      "拆解物品"
+    - DOTA_UNIT_ORDER_DROP_ITEM                             "丢弃物品"
+    - DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH                 "从储物柜拿出物品"
+    - DOTA_UNIT_ORDER_GIVE_ITEM                             "给予物品"
+    - DOTA_UNIT_ORDER_GLYPH                                 ""
+    - DOTA_UNIT_ORDER_HOLD_POSITION                         "保持原地"
+    - DOTA_UNIT_ORDER_MOVE_ITEM                             "移动物品"
+    - DOTA_UNIT_ORDER_MOVE_TO_POSITION                      "移动到某位置"
+    - DOTA_UNIT_ORDER_MOVE_TO_TARGET                        "移动到某目标"
+    - DOTA_UNIT_ORDER_NONE                                  "无"
+    - DOTA_UNIT_ORDER_PICKUP_ITEM                           "拾起物品"
+    - DOTA_UNIT_ORDER_PICKUP_RUNE                           "使用符文"
+    - DOTA_UNIT_ORDER_PURCHASE_ITEM                         "购买物品"
+    - DOTA_UNIT_ORDER_SELL_ITEM                             "出售物品"
+    - DOTA_UNIT_ORDER_STOP                                  "停止"
+    - DOTA_UNIT_ORDER_TAUNT                                 "嘲讽"
+    - DOTA_UNIT_ORDER_TRAIN_ABILITY                         "学习技能"
+
+Pseudo-Random Types     //被动概率类型
+    - DOTA_PSEUDO_RANDOM_BREWMASTER_CRIT                    "酒仙"
+    - DOTA_PSEUDO_RANDOM_CHAOS_CRIT                         "混沌"
+    - DOTA_PSEUDO_RANDOM_FACELESS_BASH                      "J8脸"
+    - DOTA_PSEUDO_RANDOM_ITEM_ABYSSAL
+    - DOTA_PSEUDO_RANDOM_ITEM_BASHER
+    - DOTA_PSEUDO_RANDOM_ITEM_BUTTERFLY
+    - DOTA_PSEUDO_RANDOM_ITEM_GREATERCRIT
+    - DOTA_PSEUDO_RANDOM_ITEM_HALBRED_MAIM
+    - DOTA_PSEUDO_RANDOM_ITEM_LESSERCRIT
+    - DOTA_PSEUDO_RANDOM_ITEM_MAELSTROM
+    - DOTA_PSEUDO_RANDOM_ITEM_MJOLLNIR
+    - DOTA_PSEUDO_RANDOM_ITEM_MJOLLNIR_STATIC
+    - DOTA_PSEUDO_RANDOM_ITEM_MKB
+    - DOTA_PSEUDO_RANDOM_ITEM_PMS
+    - DOTA_PSEUDO_RANDOM_ITEM_SANGE_MAIM
+    - DOTA_PSEUDO_RANDOM_ITEM_SANGEYASHA_MAIM
+    - DOTA_PSEUDO_RANDOM_ITEM_STOUT
+    - DOTA_PSEUDO_RANDOM_ITEM_VANGUARD
+    - DOTA_PSEUDO_RANDOM_JUGG_CRIT                          "剑圣"
+    - DOTA_PSEUDO_RANDOM_LYCAN_CRIT                         "狼人"
+    - DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT               "幻刺"
+    - DOTA_PSEUDO_RANDOM_SKELETONKING_CRIT                  "骷髅王"
+    - DOTA_PSEUDO_RANDOM_SLARDAR_BASH                       "大鱼"
+    - DOTA_PSEUDO_RANDOM_SNIPER_HEADSHOT                    "火枪"
+    - DOTA_PSEUDO_RANDOM_TROLL_BASH                         "巨魔"
+
+"Duration" "%duration"
+ "EffectName" "generic_stunned"
+ "EffectAttachType" "follow_overhead"
+ "Duration"  "%stun_duration"
+ "OverrideAnimation" "ACT_DOTA_DISABLED"
+"States"
+ {
+   "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+ }
+
+MODIFIER_STATE_ROOTED                           "大树大招"
+MODIFIER_STATE_SOFT_DISARMED
+MODIFIER_STATE_DISARMED                         "无法攻击"
+MODIFIER_STATE_ATTACK_IMMUNE                    "攻击免疫"
+MODIFIER_STATE_SILENCED                         "沉默"
+MODIFIER_STATE_MUTED
+MODIFIER_STATE_STUNNED                          "眩晕"
+MODIFIER_STATE_HEXED                            "妖术"
+MODIFIER_STATE_INVISIBLE                        "隐形"
+MODIFIER_STATE_INVULNERABLE                     "无敌"
+MODIFIER_STATE_MAGIC_IMMUNE                     "魔法免疫"
+MODIFIER_STATE_PROVIDES_VISION                  "给予视野"
+MODIFIER_STATE_NIGHTMARED                       "夜宴"
+MODIFIER_STATE_BLOCK_DISABLED                   "禁用打断"
+MODIFIER_STATE_EVADE_DISABLED                   "禁用闪避"
+MODIFIER_STATE_UNSELECTABLE                     "不可选择"
+MODIFIER_STATE_CANNOT_MISS                      "不能Miss"
+MODIFIER_STATE_SPECIALLY_DENIABLE               ""
+MODIFIER_STATE_FROZEN                           "冷冻"
+MODIFIER_STATE_COMMAND_RESTRICTED               "禁用命令"
+MODIFIER_STATE_NOT_ON_MINIMAP                   "不在小地图"
+MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES       "不在敌人小地图"
+MODIFIER_STATE_LOW_ATTACK_PRIORITY              "低优先攻击"
+MODIFIER_STATE_NO_HEALTH_BAR                    "没有生命恢复"
+MODIFIER_STATE_FLYING                           "飞翔"
+MODIFIER_STATE_NO_UNIT_COLLISION                "无单位碰撞"
+MODIFIER_STATE_NO_TEAM_MOVE_TO                  "无队伍移动到"
+MODIFIER_STATE_NO_TEAM_SELECT                   "无队伍选择"
+MODIFIER_STATE_PASSIVES_DISABLED                "被动禁止"
+MODIFIER_STATE_DOMINATED                        "支配"
+MODIFIER_STATE_BLIND                            "无视野"
+MODIFIER_STATE_OUT_OF_GAME                      "出界"
+
+"OnChannelFinish"               "施法成功"
+"OnChannelInterrupted"          "施法中断"
+"OnChannelSucceeded"            "施法成功"
+"OnOwnerDied"                   "单位死亡"
+"OnOwnerSpawned"                "单位复活"
+"OnProjectileFinish"            "投射物投射成功"
+"OnProjectileHitUnit"           "投射物命中单位"
+"OnSpellStart"                  "开始施放法术"
+"OnToggleOff"                   "切换关闭"
+"OnToggleOn"                    "切换打开"
+"OnUpgrade"                     "升级"
+
+
+Find Types
+    - FIND_ANY_ORDER            "任何顺序"
+    - FIND_CLOSEST              "按最近"
+    - FIND_FARTHEST             "按最远"
+    - FIND_UNITS_EVERYWHERE     "随机"
+
+
+Properties	
+    MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE                                "预攻击伤害加成"
+    MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE                                "基础攻击加成"
+    MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY                               "持续隐形"
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT                              "移动速度加成，常量"
+    MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE                               "修改基础移动速度"
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE                            "移动速度加成，百分比"
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE                     "移动速度加成，百分比，唯一"
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE                                "移动速度加成，唯一"
+    MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE                                    "移动速度，独立"
+    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT                            "攻击速度加成，常量"
+    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY                  "攻击速度加成，常量，附加"
+    MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT                             "基础攻击速度，常量"
+    MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE                             "攻击加成，百分比"
+    MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION                    "攻击加成，百分比，幻象"
+    MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE                         "基础伤害降低，百分比"
+    MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE                            "吸收伤害,百分比"
+    MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE                   "吸收物理伤害,百分比"
+    MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT                        "吸收技能伤害,常量"
+    MODIFIER_PROPERTY_EVASION_CONSTANT                                      "闪避，常量"
+    MODIFIER_PROPERTY_AVOID_DAMAGE                                          "回避伤害"
+    MODIFIER_PROPERTY_AVOID_SPELL                                           "回避技能"
+    MODIFIER_PROPERTY_MISS_PERCENTAGE                                       "miss百分比"
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS                                  "物理护甲加成"
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_ILLUSIONS                        "物理护甲加成，幻象"
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE                           "物理护甲加成，唯一"
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE                    "物理护甲加成，"
+    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS                              "魔抗加成"
+    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_ITEM_UNIQUE                        "魔抗加成，物品"
+    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE                   "魔抗降低"
+    MODIFIER_PROPERTY_BASE_MANA_REGEN                                       "基础魔法恢复"
+    MODIFIER_PROPERTY_MANA_REGEN_CONSTANT                                   "魔法恢复，常量"
+    MODIFIER_PROPERTY_MANA_REGEN_CONSTANT_UNIQUE                            "魔法恢复，唯一"
+    MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE                                 "魔法恢复百分比"
+    MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE                           "总魔法恢复百分比"
+    MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT                                 "生命恢复，常量"
+    MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE                               "生命恢复，百分比"
+    MODIFIER_PROPERTY_HEALTH_BONUS                                          "生命加成"
+    MODIFIER_PROPERTY_MANA_BONUS                                            "魔法加成"
+    MODIFIER_PROPERTY_STATS_STRENGTH_BONUS                                  "力量加成"
+    MODIFIER_PROPERTY_STATS_AGILITY_BONUS                                   "敏捷加成"
+    MODIFIER_PROPERTY_STATS_INTELLECT_BONUS                                 "智力加成"
+    MODIFIER_PROPERTY_ATTACK_RANGE_BONUS                                    "攻击范围加成"
+    MODIFIER_PROPERTY_REINCARNATION                                         "复活"
+    MODIFIER_PROPERTY_RESPAWNTIME                                           "重生时间"
+    MODIFIER_PROPERTY_DEATHGOLDCOST                                         "死亡掉落金钱"
+    MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE                              "致命一击"
+    MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK                               "物理格挡，常量"
+    MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR            "总护甲"
+    MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK                                  
+    MODIFIER_PROPERTY_OVERRIDE_ANIMATION                                    "修改动画"
+    MODIFIER_PROPERTY_OVERRIDE_ANIMATION_WEIGHT                             "修改动画力度"
+    MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE                               "修改动画播放速度"
+    MODIFIER_PROPERTY_DISABLE_AUTOATTACK                                    "禁用自动攻击"
+    MODIFIER_PROPERTY_BONUS_DAY_VISION                                      "白天视野加成"
+    MODIFIER_PROPERTY_BONUS_NIGHT_VISION                                    "晚上视野加成"
+    MODIFIER_PROPERTY_MIN_HEALTH                                            "最小生命值"
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL                           "没有物理伤害"
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL                            "没有魔法伤害"
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE                               "没有纯粹伤害"
+    MODIFIER_PROPERTY_IS_ILLUSION                                           "是否幻象"
+    MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE                                  "转身速度百分比"
+    MODIFIER_PROPERTY_DISABLE_HEALING                                       "禁用恢复"
+
+
+Attributes
+    MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+    MODIFIER_ATTRIBUTE_MULTIPLE
+    MODIFIER_ATTRIBUTE_NONE
+    MODIFIER_ATTRIBUTE_PERMANENT

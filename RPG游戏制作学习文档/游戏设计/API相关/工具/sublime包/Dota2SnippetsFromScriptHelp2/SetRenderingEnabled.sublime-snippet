@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetRenderingEnabled(${1:ehandle_1},${2:bool_2})${3:--[[
+     SetRenderingEnabled  Set rendering on/off for an ehandle 
+    -- @return void
+    -- @param ehandle_1 ehandle
+    -- @param bool_2 bool
+    function SetRenderingEnabled( ehandle_1, bool_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetRenderingEnabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

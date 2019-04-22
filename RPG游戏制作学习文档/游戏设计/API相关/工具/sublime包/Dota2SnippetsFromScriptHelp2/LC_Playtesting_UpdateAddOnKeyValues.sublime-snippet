@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Playtesting_UpdateAddOnKeyValues()${1:--[[
+     CDOTAGamerules:Playtesting_UpdateAddOnKeyValues  Updates custom hero, unit and ability KeyValues in memory with the latest values from disk 
+    -- @return void
+    function CDOTAGamerules:Playtesting_UpdateAddOnKeyValues(  ) end
+    ]]}]]></content>
+    <tabTrigger>playtesting_UpdateAddOnKeyValues</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

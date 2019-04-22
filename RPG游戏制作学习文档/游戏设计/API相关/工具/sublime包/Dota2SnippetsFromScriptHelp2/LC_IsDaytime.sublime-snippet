@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsDaytime()${1:--[[
+     CDOTAGamerules:IsDaytime  Is it day time. 
+    -- @return bool
+    function CDOTAGamerules:IsDaytime(  ) end
+    ]]}]]></content>
+    <tabTrigger>isDaytime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

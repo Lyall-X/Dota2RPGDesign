@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsAlive()${1:--[[
+     CDOTA_BaseNPC:IsAlive  Is this unit alive? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsAlive(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsAlive</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

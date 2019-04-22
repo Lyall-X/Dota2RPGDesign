@@ -1,0 +1,146 @@
+// Rewrite of the Axe Culling Blade ability
+// Author: Pizzalol
+// Date: 10.02.2015.
+// NOTE: You need to specify the modifiers that need to be removed (only if they cant be purged)
+// which would otherwise prevent death in the culling_blade.lua file
+"axe_culling_blade_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"axe_culling_blade"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		"particle"			"particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
+		"particle"			"particles/units/heroes/hero_axe/axe_culling_blade_boost.vpcf"
+		"particle"			"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+		"particle"			"particles/units/heroes/hero_axe/axe_cullingblade_sprint.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"75.0 65.0 55.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"60 120 180"		
+	
+	// Cast Range
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"150"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"kill_threshold"			"250 350 450"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"150 250 300"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"speed_bonus"				"40"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"speed_duration"			"6"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"speed_aoe"					"900"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cooldown_scepter"			"6.0 6.0 6.0"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"kill_threshold_scepter"	"300 450 625"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"speed_duration_scepter"	"10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "TARGET"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_axe/culling_blade.lua"
+			"Function"			"CullingBlade"
+			"sound_fail"		"Hero_Axe.Culling_Blade_Fail"
+			"sound_success"		"Hero_Axe.Culling_Blade_Success"
+			"particle_kill"		"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+			"modifier_sprint"	"modifier_culling_blade_sprint_datadriven"	
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_culling_blade_sprint_datadriven"
+		{
+			"IsBuff"	"1"
+	
+			"EffectName"		"particles/units/heroes/hero_axe/axe_cullingblade_sprint.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_axe/axe_culling_blade_boost.vpcf"
+					"EffectAttachType"  "start_at_customorigin"
+					
+					"ControlPointEntities"
+					{
+						"TARGET"	"follow_origin"
+						"TARGET"	"follow_origin"
+					}
+				}
+			}
+	
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%speed_bonus"
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%speed_bonus" 
+			}
+		}
+	}
+}	
+

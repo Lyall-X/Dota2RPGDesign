@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CPointTemplate" nameCN="点模板"
+	descriptionEN=""
+	descriptionCN="" extends="CDotaQuest">
+	<functions>
+		<function name="DeleteCreatedSpawnGroups()"
+		signature="void DeleteCreatedSpawnGroups()">
+		  <DescriptionEN>DeleteCreatedSpawnGroups() : Deletes any spawn groups that this point_template has spawned. Note: The point_template will not be deleted by this.</DescriptionEN>
+		  <DescriptionCN>删除任何该点模板的刷新组。提示：并不删除点模板</DescriptionCN>
+		  <HowToCall>
+			<Parameter></Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="ForceSpawn"
+		signature="void ForceSpawn()">
+		  <DescriptionEN>ForceSpawn() : Spawns all of the entities the point_template is pointing at.</DescriptionEN>
+		  <DescriptionCN>强制刷新该点模板指向的全部实体</DescriptionCN>
+		  <HowToCall>
+			<Parameter></Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="GetSpawnedEntities"
+		signature="handle GetSpawnedEntities()">
+		  <DescriptionEN>GetSpawnedEntities() : Get the list of the most recent spawned entities</DescriptionEN>
+		  <DescriptionCN>获取最近被刷新的实体</DescriptionCN>
+		  <HowToCall>
+			<Parameter></Parameter>
+			<Return>handle</Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetSpawnCallback()"
+		signature="void SetSpawnCallback(handle a, handle b)">
+		  <DescriptionEN>SetSpawnCallback( hCallbackFunc, hCallbackScope, hCallbackData ) : Set a callback for when the template spawns entities. The spawned entities will be passed in as an array.</DescriptionEN>
+		  <DescriptionCN>设置刷新回调（hCallbackFunc, hCallbackScope, hCallbackData ），当模板产生实体时回调。被刷新的实体作为数组被传入</DescriptionCN>
+		  <HowToCall>
+			<Parameter>handle a, handle b</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

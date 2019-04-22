@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[cvar_getf(${1:string_1})${2:--[[
+     cvar_getf  Gets the value of the given cvar, as a float. 
+    -- @return float
+    -- @param string_1 string
+    function cvar_getf( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>cvar_getf</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

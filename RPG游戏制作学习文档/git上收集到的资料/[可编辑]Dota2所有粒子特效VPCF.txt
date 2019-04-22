@@ -1,0 +1,11 @@
+﻿http://toraxxx.d2modd.in/particles/
+这个地方，可以下载破解后的VPCF
+然后自己修改，保存到路径里面
+
+要哪个放哪个到particles文件夹…
+不然，RPG会太大…
+
+可以打开啊
+你放到content的文件夹
+assert browser还会显示出来
+双击就可以在特效编辑器编辑

@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetParent(${1:handle_1},${2:string_2})${3:--[[
+     CBaseEntity:SetParent  Set the parent for this entity. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param string_2 string
+    function CBaseEntity:SetParent( handle_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SetParent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

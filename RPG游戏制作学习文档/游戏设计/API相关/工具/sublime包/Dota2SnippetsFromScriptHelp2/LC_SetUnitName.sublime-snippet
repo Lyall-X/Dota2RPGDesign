@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetUnitName(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:SetUnitName   
+    -- @return void
+    -- @param string_1 string
+    function CDOTA_BaseNPC:SetUnitName( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setUnitName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

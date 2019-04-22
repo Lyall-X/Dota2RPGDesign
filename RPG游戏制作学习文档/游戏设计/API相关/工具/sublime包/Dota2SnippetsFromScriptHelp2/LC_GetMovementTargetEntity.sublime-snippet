@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMovementTargetEntity()${1:--[[
+     CRPG_Unit:GetMovementTargetEntity  Returns the movement target entity, if set. 
+    -- @return handle
+    function CRPG_Unit:GetMovementTargetEntity(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMovementTargetEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

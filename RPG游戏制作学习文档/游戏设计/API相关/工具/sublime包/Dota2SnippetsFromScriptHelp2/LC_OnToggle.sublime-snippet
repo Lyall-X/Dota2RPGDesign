@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnToggle()${1:--[[
+     CDOTABaseAbility:OnToggle   
+    -- @return void
+    function CDOTABaseAbility:OnToggle(  ) end
+    ]]}]]></content>
+    <tabTrigger>onToggle</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

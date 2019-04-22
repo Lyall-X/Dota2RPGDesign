@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetRespawnTime()${1:--[[
+     CDOTA_BaseNPC_Hero:GetRespawnTime   
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetRespawnTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetRespawnTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

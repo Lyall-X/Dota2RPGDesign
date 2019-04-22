@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetModelName()${1:--[[
+     CBaseEntity:GetModelName  Returns the name of the model. 
+    -- @return string
+    function CBaseEntity:GetModelName(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetModelName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

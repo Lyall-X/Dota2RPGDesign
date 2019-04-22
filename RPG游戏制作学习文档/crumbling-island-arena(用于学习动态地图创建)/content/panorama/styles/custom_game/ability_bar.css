@@ -1,0 +1,258 @@
+.AbilityPanel
+{
+    flow-children: right;
+    horizontal-align: center;
+}
+
+.Buff
+{
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    margin-left: 3px;
+    transition-property: opacity;
+    transition-duration: 0.1s;
+}
+
+.PositiveBuff
+{
+    box-shadow: #00FF21 0px 0px 8px 0px;
+    border: 1px solid #00FF21;
+}
+
+.NegativeBuff
+{
+    box-shadow: red 0px 0px 8px 0px;
+    border: 1px solid red;
+}
+
+.HiddenBuff
+{
+    opacity: 0;
+}
+
+.BuffTimeText
+{
+    color: white;
+    font-size: 12;
+    vertical-align: bottom;
+    horizontal-align: right;
+    text-shadow: 0px 0px 8px 8.0 #333333b0;
+    margin: 3px;
+}
+
+.BuffStacksText
+{
+    color: white;
+    font-size: 12;
+    vertical-align: top;
+    horizontal-align: right;
+    text-shadow: 0px 0px 8px 8.0 #333333b0;
+    margin: 3px;
+}
+
+.AbilityButton
+{
+    width: 72px;
+    height: 72px;
+    color: white;
+    font-size: 16px;
+    text-shadow: 2px 2px 2px #7b612b;
+    margin:5px;
+    border-radius: 5px;
+    background-color: black;
+    tooltip-position: top;
+    tooltip-body-position: 50% 100%;
+
+    transition-property: transform, saturation, wash-color, box-shadow, position;
+    transition-duration: 0.1s;
+}
+
+.AbilitySilenced
+{
+    background-image: url("file://{images}/custom_game/silence.png");
+    background-size: 90% 90%;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    background-color: #00000099;
+    opacity: 0.0;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+}
+
+.AbilityStunned
+{
+    background-image: url("file://{images}/custom_game/stun.png");
+    background-size: 90% 90%;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    background-color: #00000099;
+    opacity: 0.0;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+}
+
+.AbilityAttack
+{
+    border-radius: 50%;
+    margin-right: 40px;
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
+}
+
+.AbilityCustom
+{
+    border-radius: 50%;
+    margin-left: 40px;
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
+}
+
+.AbilityDisarmed
+{
+    wash-color: #ff0000;
+}
+
+.AbilityButtonDeactivated
+{
+    box-shadow: 0px 0px 5px 0px black;
+    saturation: 0.1;
+}
+
+.AbilityButtonEnabled
+{
+    box-shadow: 0px 0px 5px 0px #0094FF;
+}
+
+.AbilityButtonToggled
+{
+    box-shadow: 0px 0px 5px 0px #93FF3E;
+}
+
+.AbilityButtonOnCooldown
+{
+    box-shadow: 0px 0px 5px 0px red;
+    saturation: 0.1;
+}
+
+.AbilityButtonInside
+{
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    horizontal-align: center;
+    vertical-align: bottom;
+    transition-property: clip;
+    transition-duration: 0.1s;
+}
+
+.AbilityButtonInsideOnCooldown
+{
+    background-color: gray;
+}
+
+.AbilityBeingCast
+{
+    wash-color: #93FF3E;
+}
+
+.ShortcutText
+{
+    font-size: 16;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    align: left bottom;
+    background-color: #000000FD;
+    width: 28px;
+    height: 22px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 20px;
+    text-shadow: 0px 0px 8px 8.0 #333333b0;
+    color: #e5bc35;
+}
+
+.AbilityAttack .ShortcutText
+{
+    width: 24px;
+    height: 24px;
+    align: center bottom;
+    margin: 4px;
+    background-color: none;
+    background-image: url('file://{images}/custom_game/lmb.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.AbilityCustom .ShortcutText
+{
+    width: 24px;
+    height: 24px;
+    align: center bottom;
+    border-radius: 50%;
+}
+
+.CooldownText
+{
+    font-size: 18px;
+    vertical-align: top;
+    margin-top: 12px;
+    horizontal-align: center;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    text-shadow: 0px 0px 4px 4.0 black;
+}
+
+.AbilityAttack .CooldownText, .AbilityCustom .CooldownText
+{
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+
+/* Animation by Perry */
+
+@define animStart: #ffffff00;
+@define animStop: #ffffffbb;
+
+@keyframes 'shineAnim'
+{
+    0%
+    {
+        opacity: 0;
+        background-color: gradient(linear, 0% 100%, 100% 0%, from(animStart), color-stop(-0.1, animStop), color-stop(0.0, animStop), to(animStart));
+    }
+
+    20%
+    {
+        opacity: 1;
+        background-color: gradient(linear, 0% 100%, 100% 0%, from(animStart), color-stop(-0.1, animStop), color-stop(0.0, animStop), to(animStart));
+    }
+
+    50%
+    {
+        background-color: gradient(linear, 0% 100%, 100% 0%, from(animStart), color-stop(0.45, animStop), color-stop(0.55, animStop), to(animStart));
+    }
+
+    80%
+    {
+        opacity: 1;
+        background-color: gradient(linear, 0% 100%, 100% 0%, from(animStart), color-stop(1, animStop), color-stop(1.1, animStop), to(animStart));
+    }
+
+    100%
+    {
+        opacity: 0;
+        background-color: gradient(linear, 0% 100%, 100% 0%, from(animStart), color-stop(1, animStop), color-stop(1.2, animStop), to(animStart));
+    }
+}
+
+.CooldownEndShine {
+    width: 100%;
+    height: 100%;
+    animation-name: shineAnim;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}

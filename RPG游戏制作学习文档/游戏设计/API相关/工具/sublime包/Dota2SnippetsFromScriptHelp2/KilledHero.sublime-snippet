@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[KilledHero(${1:handle_1},${2:handle_2})${3:--[[
+     CDOTA_BaseNPC_Hero:KilledHero  Args: Hero, Inflictor 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param handle_2 handle
+    function CDOTA_BaseNPC_Hero:KilledHero( handle_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>KilledHero</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

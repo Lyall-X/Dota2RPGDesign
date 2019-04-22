@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[CanEarnGold()${1:--[[
+     CDOTA_BaseNPC_Hero:CanEarnGold  Returns boolean value result of buyback gold limit time less than game time. 
+    -- @return bool
+    function CDOTA_BaseNPC_Hero:CanEarnGold(  ) end
+    ]]}]]></content>
+    <tabTrigger>CanEarnGold</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

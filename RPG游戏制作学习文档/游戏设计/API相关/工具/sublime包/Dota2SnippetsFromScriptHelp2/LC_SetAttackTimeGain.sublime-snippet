@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetAttackTimeGain(${1:float_1})${2:--[[
+     CDOTA_BaseNPC_Creature:SetAttackTimeGain  Set the attack time gained per level on this creature. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTA_BaseNPC_Creature:SetAttackTimeGain( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setAttackTimeGain</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

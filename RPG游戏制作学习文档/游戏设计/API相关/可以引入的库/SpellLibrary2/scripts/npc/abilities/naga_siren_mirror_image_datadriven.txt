@@ -1,0 +1,122 @@
+"naga_siren_mirror_image_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"naga_siren_mirror_image"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.65"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"40.0 40.0 40.0 40.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"70 80 90 100"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"illusion_duration"			"30.0 30.0 30.0 30.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"outgoing_damage"			"-80 -75 -70 -65"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"outgoing_damage_tooltip"	"20 25 30 35"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"incoming_damage"			"500 400 300 200"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"tooltip_incoming_damage_total_pct"			"600 500 400 300"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"images_count"				"3 3 3 3"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"invuln_duration"			"0.3"
+		}			
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
+		"particle"					"particles/units/heroes/hero_siren/naga_siren_mirror_image.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_mirror_image"
+			"Target"		"CASTER"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_mirror_image"
+		{	
+			"Duration"			"%invuln_duration"
+			"IsHidden"			"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE" 			"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_LOW_ATTACK_PRIORITY"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_siren/naga_siren_mirror_image.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"CASTER"
+				}
+
+				"FireSound"
+				{
+					"EffectName"	"Hero_NagaSiren.MirrorImage"
+					"Target"		"CASTER"
+				}
+		    }
+
+		    "OnDestroy"
+		    {
+		    	"RunScript"
+			    {
+			        "ScriptFile"    "heroes/hero_naga_siren/mirror_image.lua"
+			        "Function"      "MirrorImage"
+			    }
+		    }
+		}
+	}
+}
+

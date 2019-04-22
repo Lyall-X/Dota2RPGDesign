@@ -1,0 +1,176 @@
+"DOTAAbilities"
+{
+			//物品定义文件，其实这个文件与技能的定义文件大同小异
+			//在DOTA2中，一个物品技能与一个英雄技能，在本质上并太大无区别
+			//这里只对物品的特殊属性进行一下说明
+	"item_example_item"
+	{
+		
+		"ID"							"1836"
+			//物品的ID，每个物品各不相同，且不能和技能相同
+			//以下部分的属性与技能相同，只有 item_datadriven 是作为物品的 数据驱动物品 基类来引用
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"BaseClass"						"item_datadriven"
+    	"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
+		"AbilityTextureName"			"item_sample_item"
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"13.0"
+		"AbilityManaCost"				"100"
+		
+			//以下是物品特殊的字段
+		"ItemCost"						"750"
+			//定义物品的价格
+		"ItemInitialCharges"			"0"
+			//定义物品的初始充能点数
+		"ItemDroppable"					"1"
+			//定义物品是否可以被丢弃，1表示可以丢弃
+		"ItemSellable"					"1"
+			//定义物品是否可以被出售，1表示可以出售
+		"ItemRequiresCharges"			"0"
+			//定义物品是否需要点数才能释放，0表示不需要点数
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+			//物品的共享类型，这里是不可共享，此外还有：
+			//ITEM_FULLY_SHAREABLE 完全共享，包括敌方
+			//ITEM_FULLY_SHAREABLE_STACKING 库存共享，例如守卫
+			//ITEM_PARTIALLY_SHAREABLE 队友可共享，例如两个875
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+			//公布类型，这里两个字段是 告知队友，告知观众，也就只有这两个字段了，没有告知敌方
+		
+		"MaxUpgradeLevel"				"1"
+		"ItemBaseLevel"					"1"
+			//物品的最大升级等级和当前等级。如果需要多等级，你可能还需要定义升级卷轴和升级物品
+		
+			//以下这些内容和技能的没有什么区别
+		"precache"
+		{
+			"particlefile"				"particles/frostivus_herofx.pcf"
+      		"soundfile"				"scripts/game_sounds_heroes/game_sounds_abaddon.txt"
+		}
+		"OnSpellStart"
+    	{
+     		"LinearProjectile"
+      		{
+        		"EffectName"			"queen_shadow_strike_linear_parent"
+				"MoveSpeed"				"%speed"
+        		"FixedDistance"   "%distance"
+				"StartRadius"			"%radius"
+				"EndRadius"				"%radius"
+				"TargetTeams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"			"DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"			"DOTA_UNIT_TARGET_FLAG_NONE"
+				"HasFrontalCone"		"0"
+				"ProvidesVision"		"0"
+				"VisionRadius"			"0"
+      		}
+      		"FireSound"
+			{
+				"EffectName"		"Hero_Abaddon.AphoticShield.Cast"
+				"Target"			  "CASTER"
+			}
+      		"ApplyModifier"
+			{
+				"Target"  		"CASTER"
+				"ModifierName"	"modifier_item_shield"
+			}
+    	}
+    
+		"OnProjectileHitUnit"
+		{			
+      		"DeleteOnHit" "0"
+			"Damage"
+			{
+				"Target"  		"TARGET"
+        		"Type"		"DAMAGE_TYPE_PURE"
+				"Damage"	"%damage"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_item_shield"
+			{
+				"EffectName"		"damage_immunity"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+				
+				"Duration" "%duration"
+				"TextureName" "abaddon_aphotic_shield"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%damage_reduction"
+				}
+			}
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4.0"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"-50"
+			}
+      		"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				  "150"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					  "1800"
+			}
+      		"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"distance"		    "900"
+			}
+     		"06"
+			{
+				"var_type"				"FIELD_INTEGER`"
+				"damage"		      "125"
+			}
+		}
+  	}
+  	//在这里需要特别注意的是物品的合成升级系统
+  	//例如我们有一个物品，他是两级的上面这个东西
+  	//这个两级的物品例如我们定义为
+  	//"item_sample_item_level2"
+  	//他需要一个item_sample_item和一个合成卷轴来合成
+  	//卷轴的名字必须为
+  	//item_recipe_sample_item_level2
+  	//否则系统将不会找到这个合成卷轴
+  	//这个卷轴定义如下
+  	"item_recipe_sample_item_level2"
+    {
+      "ID"                            "1899"
+      	//卷轴的ID，和上面一样的，不能和其他的东西重复
+      "Model"                         "models/props_gameplay/recipe.mdl"
+      	//定义物品丢在地上的模型，如果没有定义，就是默认的那个物品宝箱
+      "BaseClass"                     "item_recipe_arcane_boots"
+      	//基类，这里我们用秘法鞋的合成卷轴来定义
+      "ItemCost"                      "100"
+      	//定义卷轴的价格
+      	//如果定义一个价格为0的卷轴，那么这个物品合成的时候，将会显示为不需要卷轴  
+      "ItemRecipe"                    "1"
+      "ItemResult"                    "item_sample_item_level2"
+      	//定义物品合成的结果物品，我们还需要定义这个二级的sample_item
+      "ItemRequirements"
+      {
+          "01"                        "item_sample_item"
+          	//所需的物品，如果需要多个物品，则写明多个物品名称，互相之间用;分号隔开
+          	//如果说，这个物品可以使用不同的物品组合来合成，例如假腿
+          	//那么就在下方写上另外的配方
+          	//"02"						"item_gloves;item_boots;item_robe"
+          	//用加速手套，鞋子和法师长袍也可以合成假腿
+      }
+    }
+}

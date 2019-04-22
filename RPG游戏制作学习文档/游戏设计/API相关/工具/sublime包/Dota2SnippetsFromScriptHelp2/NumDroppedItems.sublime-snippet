@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[NumDroppedItems()${1:--[[
+     CDOTAGamerules:NumDroppedItems  Returns the number of items currently dropped on the ground 
+    -- @return int
+    function CDOTAGamerules:NumDroppedItems(  ) end
+    ]]}]]></content>
+    <tabTrigger>NumDroppedItems</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

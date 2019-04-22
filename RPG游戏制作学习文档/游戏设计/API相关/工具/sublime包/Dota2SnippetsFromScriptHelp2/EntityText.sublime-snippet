@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[EntityText(${1:ehandle_1},${2:int_2},${3:string_3},${4:int_4},${5:int_5},${6:int_6},${7:int_7},${8:float_8})${9:--[[
+     CDebugOverlayScriptHelper:EntityText  Draws text on an entity 
+    -- @return void
+    -- @param ehandle_1 ehandle
+    -- @param int_2 int
+    -- @param string_3 string
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param int_7 int
+    -- @param float_8 float
+    function CDebugOverlayScriptHelper:EntityText( ehandle_1, int_2, string_3, int_4, int_5, int_6, int_7, float_8 ) end
+    ]]}]]></content>
+    <tabTrigger>EntityText</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

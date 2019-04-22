@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetTotalPurchasedUpgradeGoldCost()${1:--[[
+     CDOTA_BaseNPC:GetTotalPurchasedUpgradeGoldCost  Get how much gold has been spent on ability upgrades. 
+    -- @return int
+    function CDOTA_BaseNPC:GetTotalPurchasedUpgradeGoldCost(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetTotalPurchasedUpgradeGoldCost</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

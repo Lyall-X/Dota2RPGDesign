@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ClearMovementTarget()${1:--[[
+     CRPG_Unit:ClearMovementTarget  () - Clear any movement target entity/position. 
+    -- @return void
+    function CRPG_Unit:ClearMovementTarget(  ) end
+    ]]}]]></content>
+    <tabTrigger>ClearMovementTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,34 @@
+// Rewrite of the Broodmother Spin Web Destroy ability
+// Author: Pizzalol
+// Date: 18.01.2015.
+// NOTE: This spell is part of the Broodmother Spin Web ability
+"broodmother_spin_web_destroy_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"broodmother_spin_web_destroy"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_broodmother/spin_web.lua"
+			"Function"				"spin_web_destroy"
+		}
+	}
+}

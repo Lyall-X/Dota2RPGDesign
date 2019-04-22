@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[NoUnitCollision()${1:--[[
+     CDOTA_BaseNPC:NoUnitCollision   
+    -- @return bool
+    function CDOTA_BaseNPC:NoUnitCollision(  ) end
+    ]]}]]></content>
+    <tabTrigger>NoUnitCollision</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

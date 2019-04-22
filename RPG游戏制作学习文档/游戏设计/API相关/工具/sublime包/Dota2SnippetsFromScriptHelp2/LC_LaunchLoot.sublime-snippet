@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[LaunchLoot(${1:bool_1},${2:float_2},${3:float_3},${4:Vector_4})${5:--[[
+     CDOTA_Item:LaunchLoot   
+    -- @return void
+    -- @param bool_1 bool
+    -- @param float_2 float
+    -- @param float_3 float
+    -- @param Vector_4 Vector
+    function CDOTA_Item:LaunchLoot( bool_1, float_2, float_3, Vector_4 ) end
+    ]]}]]></content>
+    <tabTrigger>launchLoot</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

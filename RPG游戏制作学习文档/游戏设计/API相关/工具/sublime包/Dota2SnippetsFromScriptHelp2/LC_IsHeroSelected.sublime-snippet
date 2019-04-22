@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[IsHeroSelected(${1:string_1})${2:--[[
+     CDOTA_PlayerResource:IsHeroSelected   
+    -- @return bool
+    -- @param string_1 string
+    function CDOTA_PlayerResource:IsHeroSelected( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>isHeroSelected</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

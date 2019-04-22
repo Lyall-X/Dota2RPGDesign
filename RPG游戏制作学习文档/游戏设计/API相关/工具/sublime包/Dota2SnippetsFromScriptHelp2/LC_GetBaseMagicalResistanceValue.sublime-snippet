@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBaseMagicalResistanceValue()${1:--[[
+     CDOTA_BaseNPC:GetBaseMagicalResistanceValue  Returns base magical armor value. 
+    -- @return float
+    function CDOTA_BaseNPC:GetBaseMagicalResistanceValue(  ) end
+    ]]}]]></content>
+    <tabTrigger>getBaseMagicalResistanceValue</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

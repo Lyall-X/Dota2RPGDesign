@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsHexed()${1:--[[
+     CDOTA_BaseNPC:IsHexed   
+    -- @return bool
+    function CDOTA_BaseNPC:IsHexed(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsHexed</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

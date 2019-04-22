@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnHeroLevelUp()${1:--[[
+     CDOTABaseAbility:OnHeroLevelUp   
+    -- @return void
+    function CDOTABaseAbility:OnHeroLevelUp(  ) end
+    ]]}]]></content>
+    <tabTrigger>OnHeroLevelUp</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

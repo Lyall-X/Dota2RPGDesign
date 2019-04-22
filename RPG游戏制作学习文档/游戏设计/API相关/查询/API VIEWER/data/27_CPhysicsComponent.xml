@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CPhysicsComponent" nameCN="物理组件"
+	descriptionEN=""
+	descriptionCN="" extends="CDotaQuest">
+	<functions>
+		<function name="ExpensiveInstantRayCast"
+		signature="bool ExpensiveInstantRayCast(Vector a, Vector b, handle c)">
+		  <DescriptionEN>Do an instant (i.e. blocking) Ray Cast. Will do a handle/queue version later. Don't plan to use this for real!</DescriptionEN>
+		  <DescriptionCN>进行一个立即（即阻挡）的光线投射，稍后会有handle/queue版本，并不计划实际使用这个！</DescriptionCN>
+		  <HowToCall>
+			<Parameter>Vector a, Vector b, handle c</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

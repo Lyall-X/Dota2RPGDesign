@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[FindByTarget(${1:handle_1},${2:string_2})${3:--[[
+     CEntities:FindByTarget  Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search 
+    -- @return handle
+    -- @param handle_1 handle
+    -- @param string_2 string
+    function CEntities:FindByTarget( handle_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>FindByTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

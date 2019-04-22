@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsRangedAttacker()${1:--[[
+     CDOTA_BaseNPC:IsRangedAttacker  Is this unit a ranged attacker? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsRangedAttacker(  ) end
+    ]]}]]></content>
+    <tabTrigger>isRangedAttacker</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

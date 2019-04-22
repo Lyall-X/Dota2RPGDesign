@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsAttributeBonus()${1:--[[
+     CDOTABaseAbility:IsAttributeBonus   
+    -- @return bool
+    function CDOTABaseAbility:IsAttributeBonus(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsAttributeBonus</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

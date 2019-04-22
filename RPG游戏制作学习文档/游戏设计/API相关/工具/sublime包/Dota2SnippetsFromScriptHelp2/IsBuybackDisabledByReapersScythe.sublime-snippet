@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsBuybackDisabledByReapersScythe()${1:--[[
+     CDOTA_BaseNPC_Hero:IsBuybackDisabledByReapersScythe   
+    -- @return bool
+    function CDOTA_BaseNPC_Hero:IsBuybackDisabledByReapersScythe(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsBuybackDisabledByReapersScythe</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

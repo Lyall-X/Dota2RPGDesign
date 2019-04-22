@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetIdealSpeed()${1:--[[
+     CDOTA_BaseNPC:GetIdealSpeed  Returns speed after all modifiers. 
+    -- @return float
+    function CDOTA_BaseNPC:GetIdealSpeed(  ) end
+    ]]}]]></content>
+    <tabTrigger>getIdealSpeed</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

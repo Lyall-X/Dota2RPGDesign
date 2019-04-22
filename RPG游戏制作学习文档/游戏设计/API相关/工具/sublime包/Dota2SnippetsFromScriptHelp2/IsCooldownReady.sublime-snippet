@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsCooldownReady()${1:--[[
+     CDOTABaseAbility:IsCooldownReady   
+    -- @return bool
+    function CDOTABaseAbility:IsCooldownReady(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsCooldownReady</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

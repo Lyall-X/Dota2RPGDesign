@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetHealth()${1:--[[
+     CBaseEntity:GetHealth  Get the health of this entity. 
+    -- @return int
+    function CBaseEntity:GetHealth(  ) end
+    ]]}]]></content>
+    <tabTrigger>getHealth</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

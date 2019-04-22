@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[FireGameEvent(${1:string_1},${2:handle_2})${3:--[[
+     FireGameEvent  Fire a game event. 
+    -- @return void
+    -- @param string_1 string
+    -- @param handle_2 handle
+    function FireGameEvent( string_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>FireGameEvent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

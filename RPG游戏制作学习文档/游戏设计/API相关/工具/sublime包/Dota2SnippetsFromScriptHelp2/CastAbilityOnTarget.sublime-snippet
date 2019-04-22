@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[CastAbilityOnTarget(${1:handle_1},${2:handle_2},${3:int_3})${4:--[[
+     CDOTA_BaseNPC:CastAbilityOnTarget  Cast an ability on a target entity. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param handle_2 handle
+    -- @param int_3 int
+    function CDOTA_BaseNPC:CastAbilityOnTarget( handle_1, handle_2, int_3 ) end
+    ]]}]]></content>
+    <tabTrigger>CastAbilityOnTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

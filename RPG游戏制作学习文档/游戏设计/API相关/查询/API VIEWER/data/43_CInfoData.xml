@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CInfoData" nameCN="信息数据"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="QueryColor"
+		signature="Vector QueryColor(utlstringtoken a, Vector b)">
+		  <DescriptionEN>Query color data for this key</DescriptionEN>
+		  <DescriptionCN>查询该键值颜色数据</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a, Vector b</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="QueryFloat"
+		signature="float QueryFloat(utlstringtoken a, float b)">
+		  <DescriptionEN>Query float data for this key</DescriptionEN>
+		  <DescriptionCN>查询该键值浮点（float）数据</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a, float b</Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="QueryInt"
+		signature="int QueryInt(utlstringtoken a, int b)">
+		  <DescriptionEN>Query int data for this key</DescriptionEN>
+		  <DescriptionCN>查询该键值整型（int）数据</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a, int b</Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="QueryNumber"
+		signature="float QueryNumber(utlstringtoken a, float b)">
+		  <DescriptionEN>Query number data for this key</DescriptionEN>
+		  <DescriptionCN>查询该键值数值数据</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a, float b</Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="QueryString"
+		signature="string QueryString(utlstringtoken a, string b)">
+		  <DescriptionEN>Query string data for this key</DescriptionEN>
+		  <DescriptionCN>查询该键值字符串（string）数据</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a, string b</Parameter>
+		    <Return>string</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="QueryVector"
+		signature="Vector QueryVector(utlstringtoken a, Vector b)">
+		  <DescriptionEN>Query vector data for this key</DescriptionEN>
+		  <DescriptionCN>查询该键值矢量（vector）数据</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>utlstringtoken a, Vector b</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetUseCustomHeroLevels()${1:--[[
+     CDOTABaseGameMode:GetUseCustomHeroLevels  Are custom-defined XP values for hero level ups in use? 
+    -- @return bool
+    function CDOTABaseGameMode:GetUseCustomHeroLevels(  ) end
+    ]]}]]></content>
+    <tabTrigger>getUseCustomHeroLevels</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,160 @@
+// Rewrite of the Keeper of the Light Spirit Form ability
+// Author: Pizzalol
+// Date: February 24, 2016
+// Version: 6.86
+// Type: Datadriven
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_keeper_of_the_light/spirit_form.lua
+//
+// KV files:
+// scripts/npc/abilities/keeper_of_the_light/illuminate_datadriven.txt
+// scripts/npc/abilities/keeper_of_the_light/illuminate_end_datadriven.txt
+// scripts/npc/abilities/keeper_of_the_light/recall_datadriven.txt
+// scripts/npc/abilities/keeper_of_the_light/blinding_light_datadriven.txt
+// scripts/npc/abilities/keeper_of_the_light/spirit_form_illuminate_datadriven.txt
+// scripts/npc/abilities/keeper_of_the_light/spirit_form_illuminate_end_datadriven.txt
+"spirit_form_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityTextureName"			"keeper_of_the_light_spirit_form"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"particle"			"particles/status_fx/status_effect_keeper_spirit_form.vpcf"
+		"particle"  		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_cast.vpcf"
+		"particle"  		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf"				
+	}
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"80.0 70.0 60.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100 100 100"		
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.35"	// Attacks are primarily about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"40.0 40.0 40.0"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_KeeperOfTheLight.SpiritForm"
+			"Target" 		"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_cast.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "CASTER"
+		}		
+		
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_spirit_form_datadriven"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+	}
+
+	"OnUpgrade"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_keeper_of_the_light/spirit_form.lua"
+			"Function"		"LevelUpAbility"
+			"ability_name"	"recall_datadriven"
+			"modifier"		"modifier_spirit_form_datadriven"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_keeper_of_the_light/spirit_form.lua"
+			"Function"		"LevelUpAbility"
+			"ability_name"	"blinding_light_datadriven"
+			"modifier"		"modifier_spirit_form_datadriven"
+		}
+	}
+	
+	
+	"Modifiers"
+	{
+		"modifier_spirit_form_datadriven"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"0"
+
+			"EffectName"			"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"StatusEffectName" 		"particles/status_fx/status_effect_keeper_spirit_form.vpcf" 	   
+			"StatusEffectPriority"  "10"
+			
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_keeper_of_the_light/spirit_form.lua"
+					"Function"		"SwapAbilities"
+					"main_ability_name"	"illuminate_datadriven"
+					"sub_ability_name"	"spirit_form_illuminate_datadriven"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_keeper_of_the_light/spirit_form.lua"
+					"Function"		"SpiritFormStart"
+					"illuminate"	"illuminate_datadriven"
+					"spirit_form_illuminate"	"spirit_form_illuminate_datadriven"
+					"recall"		"recall_datadriven"
+					"blinding_light"	"blinding_light_datadriven"
+				}				
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_keeper_of_the_light/spirit_form.lua"
+					"Function"		"SpiritFormEnd"
+					"illuminate"	"illuminate_datadriven"
+					"spirit_form_illuminate"	"spirit_form_illuminate_datadriven"
+					"recall"		"recall_datadriven"
+					"blinding_light"	"blinding_light_datadriven"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_keeper_of_the_light/spirit_form.lua"
+					"Function"		"SwapAbilities"
+					"main_ability_name"	"spirit_form_illuminate_datadriven"
+					"sub_ability_name"	"illuminate_datadriven"
+				}
+			}			
+		}
+	}	
+}

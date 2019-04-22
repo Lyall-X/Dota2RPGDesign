@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetOpposingTeamNumber()${1:--[[
+     CDOTA_BaseNPC:GetOpposingTeamNumber   
+    -- @return int
+    function CDOTA_BaseNPC:GetOpposingTeamNumber(  ) end
+    ]]}]]></content>
+    <tabTrigger>getOpposingTeamNumber</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GetSoundDuration(${1:string_1},${2:string_2})${3:--[[
+     CBaseEntity:GetSoundDuration  Returns float duration of the sound. Takes soundname and optional actormodelname. 
+    -- @return float
+    -- @param string_1 string
+    -- @param string_2 string
+    function CBaseEntity:GetSoundDuration( string_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>getSoundDuration</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ArrivedAtMovementTarget()${1:--[[
+     CRPG_Unit:ArrivedAtMovementTarget  Returns whether this unit has reached its movement target. 
+    -- @return bool
+    function CRPG_Unit:ArrivedAtMovementTarget(  ) end
+    ]]}]]></content>
+    <tabTrigger>ArrivedAtMovementTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

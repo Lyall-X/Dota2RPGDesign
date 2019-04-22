@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAgility()${1:--[[
+     CDOTA_BaseNPC_Hero:GetAgility   
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetAgility(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAgility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

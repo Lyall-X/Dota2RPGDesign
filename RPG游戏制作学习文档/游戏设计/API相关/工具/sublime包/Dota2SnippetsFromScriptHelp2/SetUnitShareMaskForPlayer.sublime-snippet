@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[SetUnitShareMaskForPlayer(${1:int_1},${2:int_2},${3:int_3},${4:bool_4})${5:--[[
+     CDOTA_PlayerResource:SetUnitShareMaskForPlayer   
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    -- @param int_3 int
+    -- @param bool_4 bool
+    function CDOTA_PlayerResource:SetUnitShareMaskForPlayer( int_1, int_2, int_3, bool_4 ) end
+    ]]}]]></content>
+    <tabTrigger>SetUnitShareMaskForPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

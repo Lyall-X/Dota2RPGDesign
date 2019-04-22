@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetMovementTargetPosition(${1:Vector_1},${2:float_2})${3:--[[
+     CRPG_Unit:SetMovementTargetPosition  ( vecTargetPosition, flTargetRange ) - Try to move this unit to the given range from the target point. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    function CRPG_Unit:SetMovementTargetPosition( Vector_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setMovementTargetPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

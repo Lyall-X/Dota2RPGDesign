@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[rr_AddDecisionRule(${1:handle_1})${2:--[[
+     rr_AddDecisionRule  Add a rule to the decision database. 
+    -- @return bool
+    -- @param handle_1 handle
+    function rr_AddDecisionRule( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>rr_AddDecisionRule</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

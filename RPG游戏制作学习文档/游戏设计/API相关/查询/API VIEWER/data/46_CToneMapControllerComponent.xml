@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CToneMapControllerComponent" nameCN="光泽贴图控制组件"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="GetBloomScale" signature="float GetBloomScale()">
+		  <DescriptionEN>Gets bloomscale for this tonemap
+		  controller</DescriptionEN>
+		  <DescriptionCN>获取该光泽贴图控制器（tonemap
+		  controller）的泛光缩放（bloomscale)</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetMaxExposure" signature="float GetMaxExposure()">
+		  <DescriptionEN>Gets max exposure for this tonemap
+		  controller</DescriptionEN>
+		  <DescriptionCN>获取该光泽贴图控制器（tonemap controller）的最大曝光（max
+		  exposure）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetMinExposure" signature="float GetMinExposure()">
+		  <DescriptionEN>Gets min exposure for this tonemap
+		  controller</DescriptionEN>
+		  <DescriptionCN>获取该光泽贴图控制器（tonemap controller）的最小曝光（min
+		  exposure）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetBloomScale"
+		signature="void SetBloomScale(float a)">
+		  <DescriptionEN>Sets bloom scale for this tonemap
+		  controller</DescriptionEN>
+		  <DescriptionCN>设置该光泽贴图控制器（tonemap
+		  controller）的泛光缩放（bloomscale)</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetMaxExposure"
+		signature="void SetMaxExposure(float a)">
+		  <DescriptionEN>Sets max exposure for this tonemap
+		  controller</DescriptionEN>
+		  <DescriptionCN>设置该光泽贴图控制器（tonemap controller）的最大曝光（max
+		  exposure）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetMinExposure"
+		signature="void SetMinExposure(float a)">
+		  <DescriptionEN>Sets min exposure for this tonemap
+		  controller</DescriptionEN>
+		  <DescriptionCN>设置该光泽贴图控制器（tonemap controller）的最小曝光（min
+		  exposure）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

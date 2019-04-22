@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetFacingTargetPosition(${1:Vector_1})${2:--[[
+     CRPG_Unit:SetFacingTargetPosition  ( vecTargetPosition ) - This unit will turn to face towards the specified position 
+    -- @return void
+    -- @param Vector_1 Vector
+    function CRPG_Unit:SetFacingTargetPosition( Vector_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setFacingTargetPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

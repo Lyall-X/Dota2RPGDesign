@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[StopListeningToGameEvent(${1:int_1})${2:--[[
+     StopListeningToGameEvent  Stop listening to a particular game event. 
+    -- @return bool
+    -- @param int_1 int
+    function StopListeningToGameEvent( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>stopListeningToGameEvent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

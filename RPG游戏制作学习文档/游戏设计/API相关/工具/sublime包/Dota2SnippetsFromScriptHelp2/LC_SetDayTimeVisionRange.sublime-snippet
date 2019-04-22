@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetDayTimeVisionRange(${1:int_1})${2:--[[
+     CDOTA_BaseNPC:SetDayTimeVisionRange  Set the base vision range. 
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_BaseNPC:SetDayTimeVisionRange( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setDayTimeVisionRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

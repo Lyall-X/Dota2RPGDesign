@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBoundingMaxs()${1:--[[
+     CBaseEntity:GetBoundingMaxs  Get a vector containing max bounds, centered on object. 
+    -- @return Vector
+    function CBaseEntity:GetBoundingMaxs(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetBoundingMaxs</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

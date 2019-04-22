@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[RemoveItem(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:RemoveItem  Removes the passed item from this unit's inventory. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:RemoveItem( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>removeItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

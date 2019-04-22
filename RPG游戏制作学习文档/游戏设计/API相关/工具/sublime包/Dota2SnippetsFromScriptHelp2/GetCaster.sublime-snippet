@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCaster()${1:--[[
+     CDOTABaseAbility:GetCaster   
+    -- @return handle
+    function CDOTABaseAbility:GetCaster(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCaster</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

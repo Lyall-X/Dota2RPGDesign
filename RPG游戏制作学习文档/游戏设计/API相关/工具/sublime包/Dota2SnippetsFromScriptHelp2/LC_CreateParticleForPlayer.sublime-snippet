@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[CreateParticleForPlayer(${1:string_1},${2:int_2},${3:handle_3},${4:handle_4})${5:--[[
+     CScriptParticleManager:CreateParticleForPlayer  Creates a new particle effect that only plays for the specified player 
+    -- @return int
+    -- @param string_1 string
+    -- @param int_2 int
+    -- @param handle_3 handle
+    -- @param handle_4 handle
+    function CScriptParticleManager:CreateParticleForPlayer( string_1, int_2, handle_3, handle_4 ) end
+    ]]}]]></content>
+    <tabTrigger>createParticleForPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

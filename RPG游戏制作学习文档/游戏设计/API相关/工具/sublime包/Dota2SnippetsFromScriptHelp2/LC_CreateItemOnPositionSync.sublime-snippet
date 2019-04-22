@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[CreateItemOnPositionSync(${1:Vector_1},${2:handle_2})${3:--[[
+     CreateItemOnPositionSync  Create a physical item at a given location 
+    -- @return handle
+    -- @param Vector_1 Vector
+    -- @param handle_2 handle
+    function CreateItemOnPositionSync( Vector_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>createItemOnPositionSync</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

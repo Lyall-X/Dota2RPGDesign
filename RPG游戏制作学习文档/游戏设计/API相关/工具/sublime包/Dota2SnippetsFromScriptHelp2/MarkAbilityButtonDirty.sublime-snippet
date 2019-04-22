@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[MarkAbilityButtonDirty()${1:--[[
+     CDOTABaseAbility:MarkAbilityButtonDirty  Mark the ability button for this ability as needing a refresh. 
+    -- @return void
+    function CDOTABaseAbility:MarkAbilityButtonDirty(  ) end
+    ]]}]]></content>
+    <tabTrigger>MarkAbilityButtonDirty</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

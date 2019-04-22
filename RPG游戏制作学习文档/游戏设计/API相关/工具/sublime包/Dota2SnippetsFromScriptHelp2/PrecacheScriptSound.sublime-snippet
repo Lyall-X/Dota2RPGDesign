@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[PrecacheScriptSound(${1:string_1})${2:--[[
+     CBaseEntity:PrecacheScriptSound  Precache a sound for later playing. 
+    -- @return void
+    -- @param string_1 string
+    function CBaseEntity:PrecacheScriptSound( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>PrecacheScriptSound</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

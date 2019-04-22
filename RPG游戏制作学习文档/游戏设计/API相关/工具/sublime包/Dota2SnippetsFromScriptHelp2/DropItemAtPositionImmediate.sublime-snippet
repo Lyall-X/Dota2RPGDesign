@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[DropItemAtPositionImmediate(${1:handle_1},${2:Vector_2})${3:--[[
+     CDOTA_BaseNPC:DropItemAtPositionImmediate  Immediately drop a carried item at a given position. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param Vector_2 Vector
+    function CDOTA_BaseNPC:DropItemAtPositionImmediate( handle_1, Vector_2 ) end
+    ]]}]]></content>
+    <tabTrigger>DropItemAtPositionImmediate</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

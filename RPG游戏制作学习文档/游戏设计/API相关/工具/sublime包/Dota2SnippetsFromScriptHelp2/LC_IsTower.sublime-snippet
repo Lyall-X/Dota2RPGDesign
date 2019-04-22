@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsTower()${1:--[[
+     CDOTA_BaseNPC:IsTower  Is this a tower? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsTower(  ) end
+    ]]}]]></content>
+    <tabTrigger>isTower</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

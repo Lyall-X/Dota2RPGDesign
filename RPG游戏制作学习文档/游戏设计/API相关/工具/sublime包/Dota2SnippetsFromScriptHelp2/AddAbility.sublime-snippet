@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[AddAbility(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:AddAbility  Add an ability to this unit by name. 
+    -- @return void
+    -- @param string_1 string
+    function CDOTA_BaseNPC:AddAbility( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>AddAbility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

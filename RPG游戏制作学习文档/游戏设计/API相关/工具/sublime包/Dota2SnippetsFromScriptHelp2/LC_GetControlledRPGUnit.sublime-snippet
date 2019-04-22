@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetControlledRPGUnit()${1:--[[
+     CDOTAPlayer:GetControlledRPGUnit  Get the RPG unit this player controls. 
+    -- @return handle
+    function CDOTAPlayer:GetControlledRPGUnit(  ) end
+    ]]}]]></content>
+    <tabTrigger>getControlledRPGUnit</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

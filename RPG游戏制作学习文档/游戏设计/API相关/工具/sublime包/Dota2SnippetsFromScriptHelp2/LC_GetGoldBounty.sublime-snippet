@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetGoldBounty()${1:--[[
+     CDOTA_BaseNPC_Hero:GetGoldBounty   
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetGoldBounty(  ) end
+    ]]}]]></content>
+    <tabTrigger>getGoldBounty</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

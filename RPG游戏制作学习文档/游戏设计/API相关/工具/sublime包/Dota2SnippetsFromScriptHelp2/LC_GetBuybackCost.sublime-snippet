@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBuybackCost()${1:--[[
+     CDOTA_BaseNPC_Hero:GetBuybackCost  Return integer value for the gold cost of a buyback. 
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetBuybackCost(  ) end
+    ]]}]]></content>
+    <tabTrigger>getBuybackCost</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

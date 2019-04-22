@@ -1,0 +1,233 @@
+// Rewrite of the Viper Viper Strike ability
+// Author: Pizzalol
+// Date: 19.12.2014.
+// Changed: 15.01.2015.
+// NOTE: Wonky projectile particle
+// NOTE2: Edit the warmup particle and delete 3 out of 4 children for it to work properly (thanks to Noya for the info)
+"viper_viper_strike_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"viper_viper_strike"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"		"particles/units/heroes/hero_viper/viper_viper_strike.vpcf" // Wonky projectile
+		"particle"		"particles/units/heroes/hero_viper/viper_viper_strike_debuff.vpcf" // ?
+		"particle"		"particles/units/heroes/hero_viper/viper_viper_strike_warmup.vpcf" //- Seems to be like a "link" meaning it needs the caster #0 and target #1
+		"particle"		"particles/status_fx/status_effect_poison_viper.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"80.0 50.0 30.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125 175 250"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"5.1 5.1 5.1"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"60 100 145"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_movement_speed"	"-40 -60 -80"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"-40 -60 -80"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_cost_scepter"		"125 125 125"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cooldown_scepter"		"12.0 12.0 12.0"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range_scepter"	"900"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"projectile_speed"	"1200"
+		}
+		// These are for the dissipating attack and movement slow over time
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_movement_speed_small"	"-8 -12 -16"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed_small"	"-8 -12 -16"
+		}
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"FireEffect"
+		{
+			"EffectName"		"particles/units/heroes/hero_viper/viper_viper_strike_warmup.vpcf"
+			"EffectAttachType"	"attach_origin"
+
+			"ControlPointEntities"
+			{
+				"CASTER"	"attach_attack1"
+				"CASTER"	"attach_attack1"
+			}
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+			"Target"           "TARGET"
+		    "EffectName"       "particles/units/heroes/hero_viper/viper_viper_strike.vpcf"
+		    "Dodgeable"        "1"
+		    "ProvidesVision"   "0"
+		    "MoveSpeed"        "%projectile_speed"
+		    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Viper.viperStrike"
+			"Target"		"CASTER"
+		}
+
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Viper.viperStrikeImpact"
+			"Target"		"TARGET"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_viper_strike_debuff_datadriven"
+			"Target"		"TARGET"
+		}
+
+		// Slow Part
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_viper_strike_slow_datadriven"
+			"Target"		"TARGET"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_viper_strike_slow_datadriven"
+			"Target"		"TARGET"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_viper_strike_slow_datadriven"
+			"Target"		"TARGET"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_viper_strike_slow_datadriven"
+			"Target"		"TARGET"
+		}
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_viper_strike_slow_datadriven"
+			"Target"		"TARGET"
+		}
+
+	}
+
+	"Modifiers"
+	{
+		"modifier_viper_strike_debuff_datadriven"
+		{
+			"IsDebuff"	"1"
+			"Duration"	"%duration"
+
+			"StatusEffectName"		"particles/status_fx/status_effect_poison_viper.vpcf"
+			"StatusEffectPriority"	"15"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_viper/viper_viper_strike_debuff.vpcf"
+					"EffectAttachType"	"attach_hitloc"	
+					"Target"			"TARGET"
+				}
+			}		
+
+			"ThinkInterval"	"1.0"
+			"OnIntervalThink"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_viper_strike_slow_datadriven"
+					"Target"		"TARGET"
+				}
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage"
+				}
+			}
+		}
+
+		"modifier_viper_strike_slow_datadriven"
+		{
+			"IsHidden"	"1"
+			"IsPurgable"	"0"
+
+			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_movement_speed_small"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed_small"
+			}
+		}
+	}
+}
+

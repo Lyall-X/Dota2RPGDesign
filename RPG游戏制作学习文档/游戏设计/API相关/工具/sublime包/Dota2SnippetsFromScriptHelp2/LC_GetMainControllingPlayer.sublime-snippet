@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMainControllingPlayer()${1:--[[
+     CDOTA_BaseNPC:GetMainControllingPlayer  Returns the player ID of the controlling player. 
+    -- @return int
+    function CDOTA_BaseNPC:GetMainControllingPlayer(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMainControllingPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

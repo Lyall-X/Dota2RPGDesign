@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[StacksWithOtherOwners()${1:--[[
+     CDOTA_Item:StacksWithOtherOwners   
+    -- @return bool
+    function CDOTA_Item:StacksWithOtherOwners(  ) end
+    ]]}]]></content>
+    <tabTrigger>stacksWithOtherOwners</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

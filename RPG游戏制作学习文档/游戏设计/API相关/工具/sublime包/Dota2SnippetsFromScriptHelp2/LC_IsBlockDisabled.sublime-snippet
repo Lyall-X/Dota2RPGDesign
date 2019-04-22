@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsBlockDisabled()${1:--[[
+     CDOTA_BaseNPC:IsBlockDisabled   
+    -- @return bool
+    function CDOTA_BaseNPC:IsBlockDisabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>isBlockDisabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

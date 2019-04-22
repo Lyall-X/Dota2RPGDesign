@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[CancelEntityIOEvents(${1:ehandle_1})${2:--[[
+     CancelEntityIOEvents  Create all I/O events for a particular entity 
+    -- @return void
+    -- @param ehandle_1 ehandle
+    function CancelEntityIOEvents( ehandle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>cancelEntityIOEvents</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[Line(${1:Vector_1},${2:Vector_2},${3:int_3},${4:int_4},${5:int_5},${6:int_6},${7:bool_7},${8:float_8})${9:--[[
+     CDebugOverlayScriptHelper:Line  Draws a line between two points 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param Vector_2 Vector
+    -- @param int_3 int
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param bool_7 bool
+    -- @param float_8 float
+    function CDebugOverlayScriptHelper:Line( Vector_1, Vector_2, int_3, int_4, int_5, int_6, bool_7, float_8 ) end
+    ]]}]]></content>
+    <tabTrigger>line</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

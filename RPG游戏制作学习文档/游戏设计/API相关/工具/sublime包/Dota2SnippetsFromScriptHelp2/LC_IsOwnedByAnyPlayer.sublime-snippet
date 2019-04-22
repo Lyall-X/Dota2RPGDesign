@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsOwnedByAnyPlayer()${1:--[[
+     CDOTA_BaseNPC:IsOwnedByAnyPlayer  Is this unit owned by any non-bot player? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsOwnedByAnyPlayer(  ) end
+    ]]}]]></content>
+    <tabTrigger>isOwnedByAnyPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,148 @@
+"tinker_march_of_the_machines_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"tinker_march_of_the_machines"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"300"
+	"AbilityCastPoint"				"0.53 0.53 0.53 0.53"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"35.0 35.0 35.0 35.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"16 24 32 40"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"145 150 165 190"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"900"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"collision_radius"		"50 50 50 50"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"splash_radius"			"150 150 150 150"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"6.0 6.0 6.0 6.0"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"400 400 400 400"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"machines_per_sec"		"24"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"distance"				"1800"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"distance_scepter"		"1800"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+		"particle"					"particles/units/heroes/hero_tinker/tinker_machine.vpcf"
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"Target"				"CASTER"
+			"EffectName"			"Hero_Tinker.March_of_the_Machines.Cast"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"				"POINT"
+			"EffectName"			"Hero_Tinker.March_of_the_Machines"
+		}
+	
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_tinker/march_of_the_machines.lua"
+			"Function"				"march_of_the_machines_spawn"
+			"Target"				"POINT"
+		}
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"					"1"
+	
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"			"TARGET"
+				"Radius"			"%splash_radius"
+				"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+			}
+			
+			"Action"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Damage"		"%AbilityDamage"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+				}
+			}
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_march_of_the_machines_dummy_datadriven"
+		{
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

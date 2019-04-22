@@ -1,0 +1,150 @@
+// Rewrite of the Slardar Slithereen Crush
+// Author: chrislotix
+// Date: 01.01.2015.
+"slardar_slithereen_crush_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"slardar_slithereen_crush"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	 {
+	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"
+	  "particle"	"particles/units/heroes/hero_slardar/slardar_crush.vpcf"
+	  "particle"	"particles/units/heroes/hero_slardar/slardar_crush_entity.vpcf"
+
+	 }
+
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8.0 8.0 8.0 8.0"
+	"AbilityDuration"				"1.6 1.9 2.2 2.5"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"50 100 150 200"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80 95 105 115"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.5"	// Applies multiple modifiers
+
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"crush_radius"				"350"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"crush_extra_slow"				"-20"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"crush_attack_slow_tooltip"		"-20"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"crush_extra_slow_duration"		"3.6 3.9 4.2 4.5"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"stun_duration"					"1.6 1.9 2.2 2.5"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_slardar/slardar_crush.vpcf"
+			"EffectAttachType"	"attach_origin"
+			"Target"	"CASTER"
+
+		}
+		"FireEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_slardar/slardar_crush_entity.vpcf"
+			"EffectAttachType" "attach_origin"
+			"Target"	"CASTER" 
+		}
+		"FireSound"
+		{
+			"EffectName" "Hero_Slardar.Slithereen_Crush"
+			"Target"	"CASTER"
+		}
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center" "CASTER"
+				"Radius" "%crush_radius"
+				"Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+			"Action"
+			{
+				"ApplyModifier"
+				{
+					"Target" "TARGET"
+					"ModifierName" 	"modifier_slithereen_crush_slow_datadriven"
+				}
+
+				"Stun"
+				{
+					"Duration"	"%stun_duration"
+					"Target"	"TARGET"
+				}
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_PHYSICAL"
+					"Damage"	"%AbilityDamage"
+				}
+
+			}
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_slithereen_crush_slow_datadriven"
+		{
+			"Duration" "%crush_extra_slow_duration"
+			"isDebuff" "1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%crush_extra_slow"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%crush_extra_slow"
+
+			}			
+		}
+	}
+
+}
+

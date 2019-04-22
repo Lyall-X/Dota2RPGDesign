@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[IsPositionInRange(${1:Vector_1},${2:float_2})${3:--[[
+     CDOTA_BaseNPC:IsPositionInRange   
+    -- @return bool
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    function CDOTA_BaseNPC:IsPositionInRange( Vector_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>IsPositionInRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

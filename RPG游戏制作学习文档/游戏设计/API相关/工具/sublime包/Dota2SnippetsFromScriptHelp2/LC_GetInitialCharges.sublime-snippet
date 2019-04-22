@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetInitialCharges()${1:--[[
+     CDOTA_Item:GetInitialCharges  Get the initial number of charges this item has. 
+    -- @return int
+    function CDOTA_Item:GetInitialCharges(  ) end
+    ]]}]]></content>
+    <tabTrigger>getInitialCharges</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

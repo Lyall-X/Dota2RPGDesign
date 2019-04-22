@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ResetToHeroSelection()${1:--[[
+     CDOTAGamerules:ResetToHeroSelection  Restart the game at hero selection 
+    -- @return void
+    function CDOTAGamerules:ResetToHeroSelection(  ) end
+    ]]}]]></content>
+    <tabTrigger>ResetToHeroSelection</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

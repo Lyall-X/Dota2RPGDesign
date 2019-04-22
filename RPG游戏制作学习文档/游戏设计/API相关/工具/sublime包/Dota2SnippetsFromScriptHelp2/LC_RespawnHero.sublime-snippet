@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[RespawnHero(${1:bool_1},${2:bool_2},${3:bool_3})${4:--[[
+     CDOTA_BaseNPC_Hero:RespawnHero  Respawn this hero. 
+    -- @return void
+    -- @param bool_1 bool
+    -- @param bool_2 bool
+    -- @param bool_3 bool
+    function CDOTA_BaseNPC_Hero:RespawnHero( bool_1, bool_2, bool_3 ) end
+    ]]}]]></content>
+    <tabTrigger>respawnHero</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

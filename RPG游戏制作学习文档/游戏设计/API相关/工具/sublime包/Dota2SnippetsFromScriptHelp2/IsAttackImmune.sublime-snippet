@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsAttackImmune()${1:--[[
+     CDOTA_BaseNPC:IsAttackImmune   
+    -- @return bool
+    function CDOTA_BaseNPC:IsAttackImmune(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsAttackImmune</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

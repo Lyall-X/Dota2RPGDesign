@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[CastAbility()${1:--[[
+     CDOTABaseAbility:CastAbility   
+    -- @return void
+    function CDOTABaseAbility:CastAbility(  ) end
+    ]]}]]></content>
+    <tabTrigger>castAbility</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

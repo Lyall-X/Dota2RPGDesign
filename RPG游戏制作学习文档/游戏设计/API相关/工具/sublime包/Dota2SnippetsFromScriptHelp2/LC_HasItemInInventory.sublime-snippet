@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[HasItemInInventory(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:HasItemInInventory  See whether this unit has an item by name. 
+    -- @return bool
+    -- @param string_1 string
+    function CDOTA_BaseNPC:HasItemInInventory( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>hasItemInInventory</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,124 @@
+// Rewrite of Omniknight Guardian Angel
+// Author: Noya
+// Date: 8.1.2015.
+// Notes: -
+"omniknight_guardian_angel_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"omniknight_guardian_angel"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"150.0 150.0 150.0"
+	"AbilityCastPoint"				"0.5 0.5 0.5"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"125 175 250"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"6.0 7.0 8.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"600 600 600"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration_scepter"			"8.0 9.0 10.0"
+		}
+	}
+
+	"precache"
+	{
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+		"particle"	"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf"
+		"particle"  "particles/status_fx/status_effect_guardian_angel.vpcf"
+		"particle"  "particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Omniknight.GuardianAngel.Cast"
+			"Target"		"CASTER"
+		}
+
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  		"CASTER"
+				"Radius"		"%radius"
+				"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+
+			"Action"
+			{
+				"ApplyModifier"
+				{
+					"Target" 		"TARGET"
+					"ModifierName"	"modifier_guardian_angel"
+				}
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_guardian_angel"
+		{
+			"IsBuff"			"1"
+			"IsPurgable"		"1"
+			"Duration"			"%duration"
+			"StatusEffectName"     "particles/status_fx/status_effect_guardian_angel.vpcf"
+			"StatusEffectPriority" "10"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf"
+					"EffectAttachType"	"follow_overhead"
+					"Target"			"CASTER"
+				}
+
+			 	"AttachEffect"
+				{
+					"Target"
+					{
+						"Center"  		"CASTER"
+						"Radius"		"%radius"
+						"Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+						"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"EffectName"				"particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf"
+					"EffectAttachType"			"follow_origin"
+					"EffectRadius"				"%radius"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
+			}
+		}
+	}
+}
+

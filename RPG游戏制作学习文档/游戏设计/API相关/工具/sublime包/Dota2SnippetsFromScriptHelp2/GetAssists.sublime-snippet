@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetAssists(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetAssists   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetAssists( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetAssists</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

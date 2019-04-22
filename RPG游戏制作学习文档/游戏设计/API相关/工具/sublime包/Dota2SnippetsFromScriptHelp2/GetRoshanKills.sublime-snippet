@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetRoshanKills(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetRoshanKills   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetRoshanKills( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetRoshanKills</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

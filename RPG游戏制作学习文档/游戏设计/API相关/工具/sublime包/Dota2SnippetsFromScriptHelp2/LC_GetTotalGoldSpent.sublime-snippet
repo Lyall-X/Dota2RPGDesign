@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetTotalGoldSpent(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetTotalGoldSpent   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetTotalGoldSpent( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getTotalGoldSpent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

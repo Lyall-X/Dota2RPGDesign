@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[RefCountsModifiers()${1:--[[
+     CDOTABaseAbility:RefCountsModifiers   
+    -- @return bool
+    function CDOTABaseAbility:RefCountsModifiers(  ) end
+    ]]}]]></content>
+    <tabTrigger>RefCountsModifiers</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

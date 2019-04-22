@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMultipleKillCount()${1:--[[
+     CDOTA_BaseNPC_Hero:GetMultipleKillCount   
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetMultipleKillCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetMultipleKillCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[ApplyDamage(${1:handle_1})${2:--[[
+     ApplyDamage  Damage an npc. 
+    -- @return float
+    -- @param handle_1 handle
+    function ApplyDamage( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>ApplyDamage</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

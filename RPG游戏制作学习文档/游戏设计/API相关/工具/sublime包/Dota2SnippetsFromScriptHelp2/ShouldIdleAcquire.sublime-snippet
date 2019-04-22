@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ShouldIdleAcquire()${1:--[[
+     CDOTA_BaseNPC:ShouldIdleAcquire   
+    -- @return bool
+    function CDOTA_BaseNPC:ShouldIdleAcquire(  ) end
+    ]]}]]></content>
+    <tabTrigger>ShouldIdleAcquire</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

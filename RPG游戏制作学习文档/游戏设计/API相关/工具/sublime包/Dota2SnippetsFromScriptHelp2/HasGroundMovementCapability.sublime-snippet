@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[HasGroundMovementCapability()${1:--[[
+     CDOTA_BaseNPC:HasGroundMovementCapability   
+    -- @return bool
+    function CDOTA_BaseNPC:HasGroundMovementCapability(  ) end
+    ]]}]]></content>
+    <tabTrigger>HasGroundMovementCapability</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

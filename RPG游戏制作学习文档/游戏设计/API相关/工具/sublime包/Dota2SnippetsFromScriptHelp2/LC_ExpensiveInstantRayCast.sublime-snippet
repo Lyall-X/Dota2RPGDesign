@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[ExpensiveInstantRayCast(${1:Vector_1},${2:Vector_2},${3:handle_3})${4:--[[
+     CPhysicsComponent:ExpensiveInstantRayCast  Do an instant (i.e. blocking) Ray Cast. Will do a handle/queue version later. Dont plan to use this for real! 
+    -- @return bool
+    -- @param Vector_1 Vector
+    -- @param Vector_2 Vector
+    -- @param handle_3 handle
+    function CPhysicsComponent:ExpensiveInstantRayCast( Vector_1, Vector_2, handle_3 ) end
+    ]]}]]></content>
+    <tabTrigger>expensiveInstantRayCast</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

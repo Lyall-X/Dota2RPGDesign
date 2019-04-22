@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[AddNoDraw()${1:--[[
+     CDOTA_BaseNPC:AddNoDraw  Adds the no draw flag. 
+    -- @return void
+    function CDOTA_BaseNPC:AddNoDraw(  ) end
+    ]]}]]></content>
+    <tabTrigger>AddNoDraw</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

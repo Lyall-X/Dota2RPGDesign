@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[YawArrow(${1:Vector_1},${2:float_2},${3:float_3},${4:float_4},${5:int_5},${6:int_6},${7:int_7},${8:int_8},${9:bool_9},${10:float_10})${11:--[[
+     CDebugOverlayScriptHelper:YawArrow  Draws a arrow associated with a specific yaw. Specify endpoints in world space. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    -- @param float_3 float
+    -- @param float_4 float
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param int_7 int
+    -- @param int_8 int
+    -- @param bool_9 bool
+    -- @param float_10 float
+    function CDebugOverlayScriptHelper:YawArrow( Vector_1, float_2, float_3, float_4, int_5, int_6, int_7, int_8, bool_9, float_10 ) end
+    ]]}]]></content>
+    <tabTrigger>YawArrow</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[MoveToTargetToAttack(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:MoveToTargetToAttack  Move to a target to attack. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:MoveToTargetToAttack( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>moveToTargetToAttack</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

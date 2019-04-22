@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[SendCustomMessage(${1:string_1},${2:int_2},${3:int_3})${4:--[[
+     CDOTAGamerules:SendCustomMessage  Sends a string to the defined team. 
+    -- @return void
+    -- @param string_1 string
+    -- @param int_2 int
+    -- @param int_3 int
+    function CDOTAGamerules:SendCustomMessage( string_1, int_2, int_3 ) end
+    ]]}]]></content>
+    <tabTrigger>SendCustomMessage</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

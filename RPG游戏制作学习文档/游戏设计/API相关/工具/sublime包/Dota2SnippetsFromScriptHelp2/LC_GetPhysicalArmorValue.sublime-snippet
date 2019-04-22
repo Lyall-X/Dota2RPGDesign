@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetPhysicalArmorValue()${1:--[[
+     CDOTA_BaseNPC_Hero:GetPhysicalArmorValue  Hero armor is affected by attributes. 
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetPhysicalArmorValue(  ) end
+    ]]}]]></content>
+    <tabTrigger>getPhysicalArmorValue</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

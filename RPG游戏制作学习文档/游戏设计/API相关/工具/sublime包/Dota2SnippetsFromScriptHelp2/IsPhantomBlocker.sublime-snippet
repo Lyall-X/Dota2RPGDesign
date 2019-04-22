@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsPhantomBlocker()${1:--[[
+     CDOTA_BaseNPC:IsPhantomBlocker   
+    -- @return bool
+    function CDOTA_BaseNPC:IsPhantomBlocker(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsPhantomBlocker</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

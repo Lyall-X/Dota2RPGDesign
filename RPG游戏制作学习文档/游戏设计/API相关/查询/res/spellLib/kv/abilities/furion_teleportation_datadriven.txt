@@ -1,0 +1,106 @@
+// Rewrite of Furion Teleportation
+// Author: Noya
+// Date: April 5, 2015
+// TODO: Check all sort of cancelling shenanigans
+"furion_teleportation_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+	"AbilityTextureName"		"furion_teleportation"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0" // ?? global
+	"AbilityCastPoint"				"3 3 3 3"
+	"AbilityCooldown"				"50 40 30 20"
+	"AbilityManaCost"				"50 50 50 50"
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_furion/furion_teleport_end.vpcf"
+		"particle"  "particles/units/heroes/hero_furion/furion_teleport_end_team.vpcf"
+		"particle"  "particles/units/heroes/hero_furion/furion_teleport.vpcf"
+		"particle"  "particles/units/heroes/hero_furion/furion_teleport_e.vpcf"	//Endcap if canceled
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_teleportation"
+			"Target" 		"CASTER"
+			"Duration"		"3"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Furion.Teleport_Grow"
+			"Target" 		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_furion/teleportation.lua"
+			"Function"		"CreateTeleportParticles"
+			"Target"		"POINT"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Furion.Teleport_Disappear"
+			"Target" 		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_furion/teleportation.lua"
+			"Function"		"Teleport"
+			"Target"		"POINT"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Furion.Teleport_Appear"
+			"Target" 		"CASTER"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_teleportation"
+		{
+			"IsHidden"			"0"
+	
+			"EffectName"		"particles/units/heroes/hero_furion/furion_teleport.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"OnOrder"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Furion.Teleport_Disappear"
+					"Target" 		"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_furion/teleportation.lua"
+					"Function"		"EndTeleport"
+				}
+
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_teleportation"
+					"Target" 		"CASTER"
+				}
+			}
+		}
+	}
+}
+

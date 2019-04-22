@@ -1,0 +1,23 @@
+// Rewrite of one of Invoker's empty slots
+// Author: Rook
+// Date: February 14, 2016
+// Version: 6.86
+// Type: Datadriven
+// NOTES: This is a placeholder ability for the Invoke ability
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_invoker/invoke.lua
+//
+// KV files:
+// scripts/npc/abilities/invoker/invoke_datadriven.txt
+// scripts/npc/abilities/invoker/invoker_empty2_datadriven.txt
+"invoker_empty1_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"MaxLevel"						"0"
+	"AbilityTextureName" 			"rubick_empty1"
+}

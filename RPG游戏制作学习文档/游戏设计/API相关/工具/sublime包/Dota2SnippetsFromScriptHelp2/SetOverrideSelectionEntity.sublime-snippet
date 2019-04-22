@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetOverrideSelectionEntity(${1:handle_1})${2:--[[
+     CDOTABaseGameMode:SetOverrideSelectionEntity  Set an override for the default selection entity, instead of each player's hero. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTABaseGameMode:SetOverrideSelectionEntity( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetOverrideSelectionEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

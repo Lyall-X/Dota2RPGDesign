@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[AddSubquest(${1:handle_1})${2:--[[
+     CDotaQuest:AddSubquest  Add a subquest to this quest 
+    -- @return void
+    -- @param handle_1 handle
+    function CDotaQuest:AddSubquest( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>addSubquest</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

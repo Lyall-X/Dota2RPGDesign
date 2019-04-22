@@ -1,0 +1,105 @@
+// Rewrite of the Dragon Knight Breathe Fire
+// Author: chrislotix
+// Date: 02.01.2015.
+
+"dragon_knight_breathe_fire_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"				   
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	   
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"dragon_knight_breathe_fire"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+		"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+	}
+
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"12.0 12.0 12.0 12.0"
+	
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"90 170 240 300"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100 110 120 130"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"start_radius"			"150 150 150 150"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"end_radius"			"250 250 250 250"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"range"					"650 650 650 650"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"1050"
+		}
+				
+	}
+	
+	"OnSpellStart"
+	{
+		"LinearProjectile"
+		{
+			"Target" "POINT"
+			"EffectName" "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
+			"MoveSpeed" "%speed"
+			"StartRadius" "%start_radius"
+			"StartPosition" "attach_origin"
+			"EndRadius" "%end_radius"
+			"FixedDistance" "%range"
+			"TargetTeams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"TargetTypes" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO | DOTA_UNITY_TARGET_MECHANICAL"
+			"TargetFlags" "DOTA_UNIT_TARGET_FLAG_NONE"
+			"HasFrontalCone" "1"
+			"ProvidesVision" "0"
+		}
+		"FireSound"
+		{
+			"EffectName" "Hero_DragonKnight.BreathFire"
+			"Target" "CASTER"
+		}
+	}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit" "0"
+			"Damage"
+			{
+				"Target" "TARGET"
+				"Type" "DAMAGE_TYPE_MAGICAL"
+				"Damage" "%AbilityDamage"
+			}
+		}
+}

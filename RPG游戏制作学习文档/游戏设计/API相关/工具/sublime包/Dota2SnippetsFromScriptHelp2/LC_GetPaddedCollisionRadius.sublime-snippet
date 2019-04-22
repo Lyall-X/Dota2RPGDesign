@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetPaddedCollisionRadius()${1:--[[
+     CDOTA_BaseNPC:GetPaddedCollisionRadius  Get the collision hull radius (including padding) of this NPC. 
+    -- @return float
+    function CDOTA_BaseNPC:GetPaddedCollisionRadius(  ) end
+    ]]}]]></content>
+    <tabTrigger>getPaddedCollisionRadius</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

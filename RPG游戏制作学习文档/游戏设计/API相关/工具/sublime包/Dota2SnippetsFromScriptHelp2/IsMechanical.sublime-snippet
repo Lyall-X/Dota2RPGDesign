@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsMechanical()${1:--[[
+     CDOTA_BaseNPC:IsMechanical  Is the unit mechanical? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsMechanical(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsMechanical</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

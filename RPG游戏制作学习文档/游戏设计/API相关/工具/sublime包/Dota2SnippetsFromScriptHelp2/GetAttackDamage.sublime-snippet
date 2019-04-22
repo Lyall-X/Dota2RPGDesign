@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAttackDamage()${1:--[[
+     CDOTA_BaseNPC:GetAttackDamage  Returns a random integer between the minimum and maximum base damage of the unit. 
+    -- @return int
+    function CDOTA_BaseNPC:GetAttackDamage(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAttackDamage</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

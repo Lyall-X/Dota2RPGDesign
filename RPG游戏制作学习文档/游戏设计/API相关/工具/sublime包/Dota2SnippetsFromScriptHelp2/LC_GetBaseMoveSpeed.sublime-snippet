@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBaseMoveSpeed()${1:--[[
+     CDOTA_BaseNPC:GetBaseMoveSpeed   
+    -- @return float
+    function CDOTA_BaseNPC:GetBaseMoveSpeed(  ) end
+    ]]}]]></content>
+    <tabTrigger>getBaseMoveSpeed</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

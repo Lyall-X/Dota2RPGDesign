@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsNeutralUnitType()${1:--[[
+     CDOTA_BaseNPC:IsNeutralUnitType  Is this a neutral? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsNeutralUnitType(  ) end
+    ]]}]]></content>
+    <tabTrigger>isNeutralUnitType</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

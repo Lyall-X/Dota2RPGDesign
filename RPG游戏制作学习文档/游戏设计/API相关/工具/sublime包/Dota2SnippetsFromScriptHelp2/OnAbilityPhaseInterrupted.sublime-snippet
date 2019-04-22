@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnAbilityPhaseInterrupted()${1:--[[
+     CDOTABaseAbility:OnAbilityPhaseInterrupted   
+    -- @return void
+    function CDOTABaseAbility:OnAbilityPhaseInterrupted(  ) end
+    ]]}]]></content>
+    <tabTrigger>OnAbilityPhaseInterrupted</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

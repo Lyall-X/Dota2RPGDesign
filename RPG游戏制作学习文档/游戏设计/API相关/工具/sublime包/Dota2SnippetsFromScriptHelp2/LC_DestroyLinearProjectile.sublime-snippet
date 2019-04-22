@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[DestroyLinearProjectile(${1:int_1})${2:--[[
+     ProjectileManager:DestroyLinearProjectile  Destroys the linear projectile matching the argument ID 
+    -- @return void
+    -- @param int_1 int
+    function ProjectileManager:DestroyLinearProjectile( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>destroyLinearProjectile</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

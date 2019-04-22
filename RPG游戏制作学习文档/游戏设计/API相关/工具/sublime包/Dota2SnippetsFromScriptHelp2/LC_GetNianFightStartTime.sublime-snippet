@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetNianFightStartTime()${1:--[[
+     CDOTAGamerules:GetNianFightStartTime  Gets the start time for the Nian fight 
+    -- @return float
+    function CDOTAGamerules:GetNianFightStartTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>getNianFightStartTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

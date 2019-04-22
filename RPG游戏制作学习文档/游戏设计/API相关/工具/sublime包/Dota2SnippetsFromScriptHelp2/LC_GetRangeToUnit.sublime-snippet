@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetRangeToUnit(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:GetRangeToUnit   
+    -- @return float
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:GetRangeToUnit( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getRangeToUnit</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

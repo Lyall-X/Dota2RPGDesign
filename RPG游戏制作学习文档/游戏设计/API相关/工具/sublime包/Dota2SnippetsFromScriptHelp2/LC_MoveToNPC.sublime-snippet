@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[MoveToNPC(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:MoveToNPC  Move to follow a unit. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:MoveToNPC( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>moveToNPC</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAbsOrigin()${1:--[[
+     CBaseEntity:GetAbsOrigin   
+    -- @return Vector
+    function CBaseEntity:GetAbsOrigin(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAbsOrigin</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

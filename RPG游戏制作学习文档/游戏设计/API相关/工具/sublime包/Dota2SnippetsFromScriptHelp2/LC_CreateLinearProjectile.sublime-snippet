@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[CreateLinearProjectile(${1:handle_1})${2:--[[
+     ProjectileManager:CreateLinearProjectile  Creates a linear projectile and returns the projectile ID 
+    -- @return int
+    -- @param handle_1 handle
+    function ProjectileManager:CreateLinearProjectile( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>createLinearProjectile</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

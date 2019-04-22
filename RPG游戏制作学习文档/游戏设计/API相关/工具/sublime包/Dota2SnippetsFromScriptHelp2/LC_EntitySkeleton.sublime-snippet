@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[EntitySkeleton(${1:ehandle_1},${2:float_2})${3:--[[
+     CDebugOverlayScriptHelper:EntitySkeleton  Draws the skeleton of the entity 
+    -- @return void
+    -- @param ehandle_1 ehandle
+    -- @param float_2 float
+    function CDebugOverlayScriptHelper:EntitySkeleton( ehandle_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>entitySkeleton</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

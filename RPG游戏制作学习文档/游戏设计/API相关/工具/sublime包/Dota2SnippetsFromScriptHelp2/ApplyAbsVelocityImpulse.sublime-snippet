@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[ApplyAbsVelocityImpulse(${1:Vector_1})${2:--[[
+     CBaseEntity:ApplyAbsVelocityImpulse  Apply a Velocity Impulse 
+    -- @return void
+    -- @param Vector_1 Vector
+    function CBaseEntity:ApplyAbsVelocityImpulse( Vector_1 ) end
+    ]]}]]></content>
+    <tabTrigger>ApplyAbsVelocityImpulse</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

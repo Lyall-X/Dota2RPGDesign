@@ -1,0 +1,135 @@
+"ability_fly"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			    "ability_fly"
+        "MaxLevel"                                      "1"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_batrider.vsndevts"
+		"particle"		"particles/units/heroes/hero_phantom_lancer/phantom_lancer_spawn_rope_fast.vpcf"
+	}
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"20"		
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	                "0.35"	// Attacks are primarily about the damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"2.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_movement_speed"		                "100"
+		}
+                "03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_vision"		                        "600"
+		}
+		
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Batrider.Firefly.Cast"
+			"Target"		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"			"courier_ability/fly_model.lua"
+			"Function"			"Transform"
+			"modifier_one"			"modifier_fly_datadriven"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_fly_datadriven"
+		{
+			"Duration"	"%duration"
+			"AllowIllusionDuplicate"    "1"
+
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_phantom_lancer/phantom_lancer_spawn_rope_fast.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	        "CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"courier_ability/fly_model.lua"
+					"Function"			"ModelSwapStart"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_phantom_lancer/phantom_lancer_spawn_rope_fast.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"	"CASTER"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"courier_ability/fly_model"
+					"Function"				"ModelSwapEnd"
+				}
+                                  "ApplyModifier"
+		               {   
+                                   "ModifierName"	"phase_move"
+		                   "Target"	        "CASTER"
+		                }
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "%bonus_movement_speed"
+                                "MODIFIER_PROPERTY_BONUS_DAY_VISION"	     "%bonus_vision"
+				"MODIFIER_PROPERTY_BONUS_NIGHT_VISION"	     "%bonus_vision"			
+			}
+                        "States"
+			{		
+			  "MODIFIER_STATE_FLYING"					"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+                "phase_move"
+		{
+				"IsHidden"				"1"
+				"Duration"			        "0.3"
+				"States"
+			{
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+         }
+   }

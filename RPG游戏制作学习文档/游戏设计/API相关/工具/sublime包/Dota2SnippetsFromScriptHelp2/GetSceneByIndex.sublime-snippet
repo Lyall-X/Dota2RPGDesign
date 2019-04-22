@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetSceneByIndex(${1:int_1})${2:--[[
+     CBaseFlex:GetSceneByIndex  Returns the instance of the scene entity at the specified index. 
+    -- @return handle
+    -- @param int_1 int
+    function CBaseFlex:GetSceneByIndex( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetSceneByIndex</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

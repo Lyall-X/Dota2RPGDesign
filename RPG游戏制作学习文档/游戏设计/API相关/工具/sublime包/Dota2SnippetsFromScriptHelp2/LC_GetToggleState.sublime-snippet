@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetToggleState()${1:--[[
+     CDOTABaseAbility:GetToggleState   
+    -- @return bool
+    function CDOTABaseAbility:GetToggleState(  ) end
+    ]]}]]></content>
+    <tabTrigger>getToggleState</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

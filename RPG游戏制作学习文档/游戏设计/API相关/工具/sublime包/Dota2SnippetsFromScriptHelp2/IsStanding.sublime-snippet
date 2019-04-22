@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsStanding()${1:--[[
+     CDOTA_MapTree:IsStanding  Returns true if the tree is standing, false if it has been cut down 
+    -- @return bool
+    function CDOTA_MapTree:IsStanding(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsStanding</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,122 @@
+// Rewrite of the Lina Light Strike Array ability
+// Author: Pizzalol
+// Date: 30.12.2014.
+// Changed: 09.01.2015.
+// Reason: Changed the damage from delayed action to a modifier
+"lina_laguna_blade_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"							// Changes dynamically with scepter	
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"lina_laguna_blade"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		"particle"			"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.45 0.45 0.45"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"70.0 60.0 50.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"280 420 680"
+		
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"450 675 950"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cast_range_scepter"		"900 900 900"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_delay"				"0.25"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Ability.LagunaBladeImpact"
+			"Target"		"TARGET"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Ability.LagunaBlade"
+			"Target"		"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+			"EffectAttachType"	"start_at_customorigin"
+			
+
+			"ControlPointEntities"
+			{
+				"CASTER"	"attach_attack1"
+				"TARGET"	"attach_hitloc"
+			}
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"		"modifier_laguna_blade_datadriven"
+			"Target"			"TARGET"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_laguna_blade_datadriven"
+		{
+			"IsHidden"	"1"
+			"Duration"	"%damage_delay"
+
+			"OnDestroy"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%damage"
+				}
+			}
+		}
+	}
+}
+
+
+

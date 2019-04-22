@@ -1,0 +1,503 @@
+.GameSetupBackground
+{
+    width: 100%;
+    height: 100%;
+    overflow: clip;
+
+    transition-property: opacity;
+    transition-duration: 1.0s;
+}
+
+.GameOverBackground Image
+{
+    saturation: 0.0;
+}
+
+.AnimationGameSetupVisible
+{
+    opacity: 1.0;
+}
+
+.AnimationGameSetupInvisible
+{
+    opacity: 0.0;
+}
+
+.MatchModeHeader
+{
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    color: white;
+    text-shadow: 0px 0px 2px 2.0 deepskyblue;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.VotingHeader
+{
+    text-align: center;
+    width: 100%;
+    margin: 5px;
+    margin-top: 5px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.VotingTimer
+{
+    text-align: center;
+    width: 100%;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    color: white;
+    font-size: 56px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#GameSetupChat
+{
+    align: center bottom;
+    width: 45%;
+    height: 20%;
+    background-color: #00000099;
+    border-radius: 3px;
+}
+
+.GameSetupDialog
+{
+    background-color: rgba(29, 39, 46, 0.94);
+    width: 50%;
+    border-radius: 3px;
+    box-shadow: -4px -4px 8px 8px black;
+    align: center center;
+    flow-children: down;
+}
+
+@keyframes 'panelStateAnimation'
+{
+    from
+    {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+
+    to
+    {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+}
+
+.HideVotingPanel
+{
+    opacity: 0;
+    transform: rotateX(90deg);
+    transform-origin: 50% 100%;
+    animation-name: panelStateAnimation; 
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-direction: normal;
+}
+
+.ShowVotingPanel
+{
+    opacity: 1;
+    transform: rotateX(0deg);
+    transform-origin: 50% 100%;
+    animation-name: panelStateAnimation; 
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-direction: reverse;
+}
+
+.VotingPanelHidden
+{
+    opacity: 0;
+}
+
+.VotingButtons
+{
+    flow-children: down;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.PlayerVotes
+{
+    align: center center;
+    flow-children: right;
+    margin-bottom: 20px;
+}
+
+.PlayerVote
+{
+    width: 64px;
+    height: 64px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    tooltip-position: bottom;
+    tooltip-body-position: 50% 100%;
+}
+
+.PlayerVoteFront
+{
+    background-image: url("s2r://panorama/images/status_icons/ready_up_accept_psd.vtex");
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.0;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.PlayerVoteFFA {
+    hue-rotation: 240deg;
+    opacity: 1.0;
+}
+
+.PlayerVoteDM {
+    hue-rotation: 280deg;
+    opacity: 1.0;
+}
+
+.PlayerVote2V2 {
+    hue-rotation: 20deg;
+    opacity: 1.0;
+}
+
+.PlayerVote3V3 {
+    hue-rotation: 255deg;
+    opacity: 1.0;
+}
+
+.PlayerVoteTeam0 {
+    hue-rotation: 30deg;
+    opacity: 1.0;
+}
+
+.PlayerVoteTeam1 {
+    hue-rotation: 300deg;
+    opacity: 1.0;
+}
+
+.PlayerVoteTeam2 {
+    hue-rotation: 165deg;
+    opacity: 1.0;
+}
+
+.PlayerRank
+{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    tooltip-position: left;
+    tooltip-body-position: 100% 50%;
+    background-color: rgba(0, 255, 255, 0.02);
+
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-name: RankAppear;
+}
+
+.PlayerRanks
+{
+    align: center center;
+    flow-children: right;
+    margin-bottom: 20px;
+}
+
+.RankLoadingLabel
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    vertical-align: center;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+#TeamSelectionButtons
+{
+    flow-children: down;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 550px;
+    horizontal-align: center;
+}
+
+.TeamSelectionPanel
+{
+    flow-children: right;
+    margin-bottom: 10px;
+}
+
+.TeamSelectionRankContainer
+{
+    width: 64px;
+    height: 64px;
+    vertical-align: center;
+}
+
+.TeamSelectionRankContainer Panel
+{
+    align: center center;
+}
+
+.TeamSelectionAvatar
+{
+    width: 64px;
+    height: 64px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    tooltip-position: left;
+    tooltip-body-position: 100% 50%;
+}
+
+.TeamSelectionName
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    width: fill-parent-flow(1.0);
+    vertical-align: center;
+    color: #DDDDDD;
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.TeamSelectionPanel ToggleButton
+{
+    vertical-align: center;
+}
+
+#BanButtons
+{
+    flow-children: right-wrap;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin: 20px;
+}
+
+.BanButton
+{
+    margin: 4px;
+    height: 48px;
+    width: 96px;
+    border-radius: 3px;
+    border: 2px solid #111111;
+}
+
+.BanButton:hover
+{
+    wash-color: rgb(200, 20, 20);
+}
+
+.BanButton:active
+{
+    wash-color: rgb(110, 20, 20);
+}
+
+.BanButton.Banned
+{
+    brightness: 0.3;
+}
+
+.BanButton Panel
+{
+    opacity-mask: url("s2r://panorama/images/hero_selection/banned_overlay_psd.vtex");
+    background-color: #ff0026;
+
+    width: 100%;
+    height: 100%;
+}
+
+.BanButton Panel.Second
+{
+    transform: scaleX(-1);
+}
+
+#FFAButton
+{
+    background-color: #e74c3c;
+    border: 0;
+    border-bottom: 4px solid #db4334;
+}
+
+#FFAButton:active
+{
+    border-bottom: 0;
+}
+
+#DMButton
+{
+    background-color: #EAC300;
+    border: 0;
+    border-bottom: 4px solid #C6A200;
+}
+
+#DMButton:active
+{
+    border-bottom: 0;
+}
+
+#2V2Button
+{
+    background-color: #27ae60;
+    border: 0;
+    border-bottom: 4px solid #219d55;
+}
+
+#2V2Button:active
+{
+    border-bottom: 0;
+}
+
+#3V3Button
+{
+    background-color: #FF6A00;
+    border: 0;
+    border-bottom: 4px solid #E25A00;
+}
+
+#3V3Button:active
+{
+    border-bottom: 0;
+}
+
+.ConfirmButton
+{
+    min-width: 300px;
+    height: 54px;
+    background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex");
+    background-size: 378px 60px;
+    padding: 4px 12px 4px 12px;
+    border: 1px solid #ffffff05;
+    border-right-color: #00000088;
+    border-bottom-color: #00000088;
+    align: center center;
+    margin: 18px;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#333e72), to(#4d88dd));
+}
+
+.ConfirmButton:enabled:hover
+{
+    border-top-color: #aaaaaa77;
+    border-left-color: #aaaaaa33;
+    border-bottom-color: #333333;
+    border-right-color: #404040;
+}
+
+.ConfirmButton:active
+{
+    brightness: 1.2;
+    sound: "ui_generic_button_click";
+    transform: translateY(1px);
+}
+
+.ConfirmButton Label
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2px;
+    width: 100%;
+}
+
+.VotingButton
+{
+    width: 100%;
+    height: 64px;
+    margin: 10px 40px 0 40px;
+
+    border-style: solid;
+    border-width: 1px;
+
+    border-color: #404040;
+
+    transition-property: background-color;
+    transition-duration: 0.05s;
+
+    box-shadow: #00000055 -4px -4px 8px 8px;
+    vertical-align: top;
+    horizontal-align: center;
+    wash-color: #74EAFE66;
+}
+
+.VotingButton:enabled:hover
+{
+    background-color: #6c7d88;
+
+    border-top-color: #aaaaaa77;
+    border-left-color: #aaaaaa33;
+    border-bottom-color: #333333;
+    border-right-color: #404040;
+}
+
+.VotingButton:active
+{
+    background-color: white;
+    sound: "ui_generic_button_click";
+    transform: translateY(1px);
+    border-bottom: 0;
+}
+
+.VotingButton Label
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    color: white;
+    font-size: 44px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2px;
+    width: 100%;
+}
+
+.VotingButton:disabled
+{
+    wash-color: #777777;
+    saturation: 0;
+}
+
+@keyframes 'RankAppear'
+{
+    0%
+    {
+        transform: scale3d(0.1, 0.1, 0.1);
+    }
+
+    65%
+    {
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+    
+    100%
+    {
+        transform: scale3d(1, 1, 1);
+    }
+}

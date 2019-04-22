@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CScriptParticleManager" nameCN="脚本粒子管理器"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="CreateParticle"
+		signature="int CreateParticle(string particleName, int particleAttach, handle owningEntity)">
+		
+		  <DescriptionEN>Creates a new particle effect</DescriptionEN>
+		  <DescriptionCN>创建一个新的粒子特效</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string particleName, int particleAttach, handle
+		    owningEntity</Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="CreateParticleForPlayer"
+		signature="int CreateParticleForPlayer(string particleName, int particleAttach, handle owningEntity, handle owningPlayer)">
+		
+		  <DescriptionEN>Creates a new particle effect that only plays for
+		  the specified player</DescriptionEN>
+		  <DescriptionCN>创建一个只对指定玩家播放的粒子特效</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string particleName, int particleAttach, handle
+		    owningEntity, handle owningPlayer</Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetParticleReplacement"
+		signature="string GetParticleReplacement(string a, handle b)">
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a, handle b</Parameter>
+		    <Return>string</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="ReleaseParticleIndex"
+		signature="void ReleaseParticleIndex(int particleId)">
+		  <DescriptionEN>Frees the specified particle index</DescriptionEN>
+		  <DescriptionCN>施放指定粒子特效索引号</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int particleId</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetParticleAlwaysSimulate"
+		signature="void SetParticleAlwaysSimulate(int a)">
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetParticleControl"
+		signature="void SetParticleControl(int particleId, int controlIndex, Vector controlData)">
+		
+		  <DescriptionEN>Set the control point data for a control on a
+		  particle effect</DescriptionEN>
+		  <DescriptionCN>设置控制粒子特效的控制点数据</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int particleId, int controlIndex, Vector
+		    controlData</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetParticleControlEnt"
+		signature="void SetParticleControlEnt(int a, int b, handle c, int d, string e, Vector f, bool g)">
+		
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a, int b, handle c, int d, string e, Vector f,
+		    bool g</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetLeashDistance(${1:float_1})${2:--[[
+     CRPG_Unit:SetLeashDistance  ( flDistance ) - set max distance unit will run from spawn point before retreating 
+    -- @return void
+    -- @param float_1 float
+    function CRPG_Unit:SetLeashDistance( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetLeashDistance</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

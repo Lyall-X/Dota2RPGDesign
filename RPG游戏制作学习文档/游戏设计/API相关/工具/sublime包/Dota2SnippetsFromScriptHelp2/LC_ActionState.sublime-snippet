@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ActionState()${1:--[[
+     CRPG_Unit:ActionState  () - return the ActionState object for this unit. 
+    -- @return handle
+    function CRPG_Unit:ActionState(  ) end
+    ]]}]]></content>
+    <tabTrigger>actionState</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

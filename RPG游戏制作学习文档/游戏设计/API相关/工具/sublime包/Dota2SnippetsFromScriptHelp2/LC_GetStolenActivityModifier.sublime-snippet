@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetStolenActivityModifier()${1:--[[
+     CDOTABaseAbility:GetStolenActivityModifier   
+    -- @return string
+    function CDOTABaseAbility:GetStolenActivityModifier(  ) end
+    ]]}]]></content>
+    <tabTrigger>getStolenActivityModifier</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

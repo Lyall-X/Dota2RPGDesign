@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBaseDamageMax()${1:--[[
+     CDOTA_BaseNPC_Hero:GetBaseDamageMax  Hero damage is also affected by attributes. 
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetBaseDamageMax(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetBaseDamageMax</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

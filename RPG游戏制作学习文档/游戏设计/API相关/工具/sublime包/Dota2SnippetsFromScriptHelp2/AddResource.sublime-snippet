@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[AddResource(${1:string_1})${2:--[[
+     CScriptPrecacheContext:AddResource  Precaches a specific resource 
+    -- @return void
+    -- @param string_1 string
+    function CScriptPrecacheContext:AddResource( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>AddResource</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

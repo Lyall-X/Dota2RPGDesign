@@ -1,0 +1,160 @@
+// Rewrite of the Queen of Pain Shadow Strike ability
+// Author: Pizzalol
+// Date: 28.09.2015.
+// NOTE: Particle dagger attaches to the feet
+"queenofpain_shadow_strike_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"queenofpain_shadow_strike"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
+		"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
+		"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
+		"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"450 475 500 525"
+	"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16.0 12.0 8.0 4.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"110"
+
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"strike_damage"			"50 75 100 125"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration_damage"		"30 40 50 60"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movement_slow"			"-20 -30 -40 -50"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"projectile_speed"		"900"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range_tooltip"		"450 475 500 525"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_interval"		"3"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"15.0"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+			"Target"           "TARGET"
+		    "EffectName"       "particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
+		    "Dodgeable"        "1"
+		    "ProvidesVision"   "0"
+		    "MoveSpeed"        "%projectile_speed"
+		    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+
+		"FireSound"
+		{
+			"EffectName"		"Hero_QueenOfPain.ShadowStrike"
+			"Target"			"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"Target"			"CASTER"
+			"EffectAttachType"	"follow_origin"
+			"EffectName"		"particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_queenofpain/shadow_strike.lua"
+			"Function"		"shadow_strike"
+			"modifier"		"modifier_shadow_strike_debuff_datadriven"
+		}
+
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%strike_damage"
+		}		
+	}
+
+	"Modifiers"
+	{
+		"modifier_shadow_strike_debuff_datadriven"
+		{
+			"IsDebuff"	"1"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff.vpcf"
+					"EffectAttachType"	"attach_hitloc"
+					"Target"            "TARGET"
+				}
+			}
+
+			"ThinkInterval"	"%damage_interval"
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%duration_damage"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-1"
+			}
+		}
+	}
+}
+

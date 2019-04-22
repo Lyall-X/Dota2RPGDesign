@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[QueryColor(${1:utlstringtoken_1},${2:Vector_2})${3:--[[
+     CInfoData:QueryColor  Query color data for this key 
+    -- @return Vector
+    -- @param utlstringtoken_1 utlstringtoken
+    -- @param Vector_2 Vector
+    function CInfoData:QueryColor( utlstringtoken_1, Vector_2 ) end
+    ]]}]]></content>
+    <tabTrigger>QueryColor</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSecondsPerAttack()${1:--[[
+     CDOTA_BaseNPC:GetSecondsPerAttack   
+    -- @return float
+    function CDOTA_BaseNPC:GetSecondsPerAttack(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetSecondsPerAttack</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,38 @@
+// Remwrite of the Antimage Spellshield ability
+// Author: Pizzalol
+// Date: October 13, 2015
+// Version: 6.85
+// Type: Datadriven
+"spell_shield_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"antimage_spell_shield"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"spell_shield_resistance"		"26 34 42 50"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_spell_shield_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%spell_shield_resistance"
+			}
+		}
+	}
+}

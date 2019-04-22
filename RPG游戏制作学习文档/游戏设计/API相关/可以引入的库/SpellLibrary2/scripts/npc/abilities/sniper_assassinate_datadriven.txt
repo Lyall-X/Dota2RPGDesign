@@ -1,0 +1,187 @@
+"sniper_assassinate_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"sniper_assassinate"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"2000 2500 3000"
+	"AbilityCastRangeBuffer"		"600"
+	"AbilityCastPoint"				"2.0 2.0 2.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0.0" // 20.0 15.0 10.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"355 505 655"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0" // 175 275 375"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"projectile_speed"			"2500 2500 2500"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"tooltip_range"				"2000 2500 3000"
+		}
+		// Extra variables
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"charge_time"				"2.0"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"debuff_duration"			"4.0"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+		"particle"					"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+		"particle"					"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"FireSound"
+		{
+			"Target"				"CASTER"
+			"EffectName"			"Ability.AssassinateLoad"
+		}
+		
+		"ApplyModifier"
+		{
+			"Target"				"CASTER"
+			"ModifierName"			"modifier_assassinate_caster_datadriven"
+		}
+	
+		"ApplyModifier"
+		{
+			"Target"				"TARGET"
+			"ModifierName"			"modifier_assassinate_target_datadriven"
+		}
+		
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_sniper/assassinate.lua"
+			"Function"				"assassinate_register_target"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"				"CASTER"
+			"EffectName"			"Ability.Assassinate"
+		}
+	
+		"TrackingProjectile"
+		{
+			"Target"				"TARGET"
+			"EffectName"			"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+			"Dodgeable"				"1"
+			"ProvidesVision"		"0"
+			"MoveSpeed"				"%projectile_speed"
+			"SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_HITLOCATION"
+		}
+		
+		"FireSound"
+		{
+			"Target"				"CASTER"
+			"EffectName"			"Hero_Sniper.AssassinateProjectile"
+		}
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"FireSound"
+		{
+			"Target"				"TARGET"
+			"EffectName"			"Hero_Sniper.AssassinateDamage"
+		}
+	
+		"Damage"
+		{
+			"Target"				"TARGET"
+			"Damage"				"%AbilityDamage"
+			"Type"					"DAMAGE_TYPE_MAGICAL"
+		}
+		
+		"RemoveModifier"
+		{
+			"Target"				"TARGET"
+			"ModifierName"			"modifier_assassinate_target_datadriven"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_assassinate_caster_datadriven"
+		{
+			"Duration"				"%charge_time"
+		
+			"OnOrder"
+			{
+				"RemoveModifier"
+				{
+					"Target"		"CASTER"
+					"ModifierName"	"modifier_assassinate_caster_datadriven"
+				}
+				
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_sniper/assassinate.lua"
+					"Function"				"assassinate_remove_target"
+				}
+			}
+		}
+	
+		"modifier_assassinate_target_datadriven"
+		{
+			"IsHidden"				"0"
+			"IsPurgeble"			"0"
+			"IsDebuff"				"1"
+			"Duration"				"%debuff_duration"
+			
+			"EffectName"			"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+			"EffectAttachType"		"follow_overhead"
+			
+			"States"
+			{
+				"MODIFIER_STATE_INVISIBLE" 			"MODIFIER_STATE_VALUE_DISABLED"
+				"MODIFIER_STATE_PROVIDES_VISION"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

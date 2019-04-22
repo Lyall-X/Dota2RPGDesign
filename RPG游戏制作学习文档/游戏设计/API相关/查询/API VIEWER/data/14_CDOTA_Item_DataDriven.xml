@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Hao翻译 -->
+
+<class nameEN="CDOTA_Item_DataDriven" nameCN="物品数据驱动"
+	descriptionEN=""
+	descriptionCN="" extends="CDOTA_Item">
+	<functions>
+		<function name="ApplyDataDrivenModifier" signature="void ApplyDataDrivenModifier(handle source, handle target, string modifier_name, handle modifierArgs)">
+			<DescriptionEN>
+			</DescriptionEN>
+			<DescriptionCN></DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+	</functions>
+</class>

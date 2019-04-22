@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[HasFlyingVision()${1:--[[
+     CDOTA_BaseNPC_Hero:HasFlyingVision   
+    -- @return bool
+    function CDOTA_BaseNPC_Hero:HasFlyingVision(  ) end
+    ]]}]]></content>
+    <tabTrigger>HasFlyingVision</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

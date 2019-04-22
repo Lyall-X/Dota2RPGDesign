@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDOTAVoteSystem" nameCN="DOTA投票系统"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="StartVote"
+		signature="void StartVote(handle a)">
+		  <DescriptionEN>Get the attachement id's angles as a p,y,r
+		  vector</DescriptionEN>
+		  <DescriptionCN>开始投票，详细由传入的table制定</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>handle a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

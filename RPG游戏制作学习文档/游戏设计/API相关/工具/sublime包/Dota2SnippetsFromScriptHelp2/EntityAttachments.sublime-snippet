@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[EntityAttachments(${1:ehandle_1},${2:float_2})${3:--[[
+     CDebugOverlayScriptHelper:EntityAttachments  Draws the attachments of the entity 
+    -- @return void
+    -- @param ehandle_1 ehandle
+    -- @param float_2 float
+    function CDebugOverlayScriptHelper:EntityAttachments( ehandle_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>EntityAttachments</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

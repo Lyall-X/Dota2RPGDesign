@@ -1,0 +1,151 @@
+"kunkka_x_marks_the_spot_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"kunkka_x_marks_the_spot"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500 650 800 950"
+	"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"14 13 12 11"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"80"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"3.0 2.0 3.0 4.0"
+		}	
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"allied_duration_tooltip"	"2.0 4.0 6.0 8.0"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"tooltip_range"				"500 650 800 950"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"fow_range"				"400"
+		}	  
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"fow_duration"				"5.94"
+		}	
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"						"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"particle"						"particles/units/heroes/hero_kunkka/kunkka_spell_x_spot.vpcf"
+	}
+	
+	"OnUpgrade"
+	{
+		"RunScript"
+		{
+			"ScriptFile"				"heroes/hero_kunkka/x_marks_the_spot.lua"
+			"Function"					"LevelUpAbility"
+			"ability_name"				"kunkka_return_datadriven"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target"
+			{
+				"Center"		"TARGET"
+				"Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			}
+			"ModifierName"		"modifier_x_marks_the_spot_debuff_datadriven"
+			"Duration"			"%allied_duration_tooltip"
+		}
+		
+		"ApplyModifier"
+		{
+			"Target"
+			{
+				"Center"		"TARGET"
+				"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			}
+			"ModifierName"		"modifier_x_marks_the_spot_debuff_datadriven"
+			"Duration"			"%duration"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_x_marks_the_spot_debuff_datadriven"
+		{
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+			"IsPurgable"		"0"
+		
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"Target"					"TARGET"
+					"EffectName"				"Ability.XMarksTheSpot.Target"
+				}
+			
+				"AttachEffect"
+				{
+					"Target"					"TARGET"
+					"EffectName"				"particles/units/heroes/hero_kunkka/kunkka_spell_x_spot.vpcf"
+					"EffectAttachType"			"start_at_customorigin"
+					"ControlPointEntities"
+					{
+						"TARGET"				"attach_origin"
+					}
+				}
+			
+				"RunScript"
+				{
+					"ScriptFile"				"heroes/hero_kunkka/x_marks_the_spot.lua"
+					"Function"					"x_marks_the_spot_init"
+				}
+			}
+			
+			"OnDestroy"
+			{
+				"FireSound"
+				{
+					"Target"					"TARGET"
+					"EffectName"				"Ability.XMarksTheSpot.Return"
+				}
+			
+				"RunScript"
+				{
+					"ScriptFile"				"heroes/hero_kunkka/x_marks_the_spot.lua"
+					"Function"					"x_marks_the_spot_return"
+				}
+			}
+		}
+	}
+}

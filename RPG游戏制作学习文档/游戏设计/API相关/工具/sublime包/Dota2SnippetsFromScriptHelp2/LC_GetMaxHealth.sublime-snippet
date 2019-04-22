@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMaxHealth()${1:--[[
+     CBaseEntity:GetMaxHealth  Get the maximum health of this entity. 
+    -- @return int
+    function CBaseEntity:GetMaxHealth(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMaxHealth</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

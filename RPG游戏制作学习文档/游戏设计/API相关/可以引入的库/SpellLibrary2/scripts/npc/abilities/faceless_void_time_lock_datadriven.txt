@@ -1,0 +1,127 @@
+// Rewrite of the Faceless Void Time Lock ability
+// Author: Pizzalol
+// Date: 06.01.2015.
+// Changed 14.01.2015 - Reason: Added Timelock-Chronos Particle (Noya)
+"faceless_void_time_lock_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"faceless_void_time_lock"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		"particle"			"particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+		"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+	}
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportBonus"		"25"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration_creep"		"2.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chance_pct"			"10 15 20 25"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"40 50 60 70"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_time_lock_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"OnAttackLanded"
+			{
+				"Random"
+				{
+					"Chance"	"%chance_pct"
+					"PseudoRandom"	"DOTA_PSEUDO_RANDOM_FACELESS_BASH"
+
+					"OnSuccess"
+					{
+						"FireSound"
+						{
+							"EffectName"	"Hero_FacelessVoid.TimeLockImpact"
+							"Target"		"TARGET"
+						}
+
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_time_lock_stun_datadriven"
+							"Duration"		"%duration"
+							"Target"
+							{
+								"Center"	"TARGET"
+								"Types"		"DOTA_UNIT_TARGET_HERO"
+							}
+						}
+
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_time_lock_stun_datadriven"
+							"Duration"		"%duration_creep"
+							"Target"
+							{
+								"Center"	"TARGET"
+								"Types"		"DOTA_UNIT_TARGET_BASIC"
+							}
+						}
+
+						"Damage"
+						{
+							"Target"	"TARGET"
+							"Type"		"DAMAGE_TYPE_MAGICAL"
+							"Damage"	"%bonus_damage"
+						}
+					}
+				}
+			}
+		}
+
+		"modifier_time_lock_stun_datadriven"
+		{
+			"IsDebuff"	"1"
+
+			"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"StatusEffectName"		"particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+			"StatusEffectPriority"	"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+

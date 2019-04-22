@@ -1,0 +1,49 @@
+// Rewrite of Belt of Strength
+// Author: Rook
+// Date: January 25, 2015
+
+"item_belt_of_strength_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1017"  //Valve's version of this item uses the ID "17".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_belt_of_strength"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"450"
+	"ItemShopTags"					"str"
+	"ItemQuality"					"component"
+	"ItemAliases"					"belt of strength"
+	"SideShop"						"1"
+		
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"6"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_belt_of_strength_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+			}
+		}
+	}
+}

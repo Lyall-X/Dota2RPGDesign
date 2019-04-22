@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMinimumGoldBounty()${1:--[[
+     CDOTA_BaseNPC:GetMinimumGoldBounty  Get the minimum gold bounty for this unit. 
+    -- @return int
+    function CDOTA_BaseNPC:GetMinimumGoldBounty(  ) end
+    ]]}]]></content>
+    <tabTrigger>getMinimumGoldBounty</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

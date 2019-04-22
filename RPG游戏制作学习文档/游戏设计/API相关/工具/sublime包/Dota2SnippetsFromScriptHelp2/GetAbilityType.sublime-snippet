@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAbilityType()${1:--[[
+     CDOTABaseAbility:GetAbilityType   
+    -- @return int
+    function CDOTABaseAbility:GetAbilityType(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAbilityType</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,122 @@
+// Rewrite of the Bounty Hunter Shurikan Toss
+// Author: chrislotix
+// Date: 01.01.2015.
+"bounty_hunter_shuriken_toss_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"bounty_hunter_shuriken_toss"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	 {
+	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+	  "particle"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf"
+	  "particle"    "particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_impact.vpcf"
+	 
+	 }
+	
+	
+	// Unit Targeting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"650"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	"AbilityCooldown"				"10"
+	"AbilityManaCost"				"90 115 135 155"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.1"	// just a mini stun
+		
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"100 200 250 325"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"1000 1000 1000 1000"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bounce_aoe"			"900"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mini_stun"				"0.1"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+		    "Target"           "TARGET"
+		    "EffectName"       "particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf"
+		    "Dodgeable"        "1"
+		    "ProvidesVision"   "0"
+		    //"VisionRadius"     "300"
+		    "MoveSpeed"        "%speed"
+		    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_BountyHunter.Shuriken"
+			"Target"	"CASTER"
+		}
+
+
+	}
+
+	"OnProjectileHitUnit"
+    {
+    	"FireEffect"
+    	{
+    		"EffectName"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_impact.vpcf"
+    		"Target"		"TARGET"
+    		"EffectAttachType"	"attach_hitloc"
+    	}
+
+
+        "Damage"
+        {
+        	"Type"		"DAMAGE_TYPE_MAGICAL"
+        	"Damage"	"%bonus_damage"
+        	"Target"	"TARGET"
+        }
+
+        "Stun"
+        {
+        	"Duration"	"%mini_stun"
+        	"Target"	"TARGET"        	
+        }
+
+        "FireSound"
+        {
+        	"EffectName"	"Hero_BountyHunter.Shuriken.Impact"
+        	"Target"		"TARGET"
+        }
+
+    }
+
+}
+

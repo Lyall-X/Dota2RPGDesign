@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[DecrementModifierRefCount()${1:--[[
+     CDOTABaseAbility:DecrementModifierRefCount   
+    -- @return void
+    function CDOTABaseAbility:DecrementModifierRefCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>DecrementModifierRefCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

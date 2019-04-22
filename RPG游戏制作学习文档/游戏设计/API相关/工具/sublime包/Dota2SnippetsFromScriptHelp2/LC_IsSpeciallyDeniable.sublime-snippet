@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsSpeciallyDeniable()${1:--[[
+     CDOTA_BaseNPC:IsSpeciallyDeniable   
+    -- @return bool
+    function CDOTA_BaseNPC:IsSpeciallyDeniable(  ) end
+    ]]}]]></content>
+    <tabTrigger>isSpeciallyDeniable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

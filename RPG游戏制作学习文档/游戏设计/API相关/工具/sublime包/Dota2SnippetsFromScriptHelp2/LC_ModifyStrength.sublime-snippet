@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[ModifyStrength(${1:float_1})${2:--[[
+     CDOTA_BaseNPC_Hero:ModifyStrength  Adds passed value to base attribute value, then calls CalculateStatBonus. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTA_BaseNPC_Hero:ModifyStrength( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>modifyStrength</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

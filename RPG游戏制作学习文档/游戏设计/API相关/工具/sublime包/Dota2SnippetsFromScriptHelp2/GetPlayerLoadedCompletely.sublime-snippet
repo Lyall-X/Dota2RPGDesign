@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetPlayerLoadedCompletely(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetPlayerLoadedCompletely   
+    -- @return bool
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetPlayerLoadedCompletely( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetPlayerLoadedCompletely</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

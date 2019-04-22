@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSensingCylinderVerticalRange()${1:--[[
+     CRPG_Unit:GetSensingCylinderVerticalRange  () - returns max height difference between unit and sensed units 
+    -- @return float
+    function CRPG_Unit:GetSensingCylinderVerticalRange(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetSensingCylinderVerticalRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

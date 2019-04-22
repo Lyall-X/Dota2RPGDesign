@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetMaxSpeed()${1:--[[
+     CRPG_Unit:GetMaxSpeed  () - returns unit's max speed 
+    -- @return float
+    function CRPG_Unit:GetMaxSpeed(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetMaxSpeed</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

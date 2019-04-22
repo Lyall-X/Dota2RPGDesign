@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsTailAlive()${1:--[[
+     CDOTA_Unit_Nian:IsTailAlive  Is the Nian's tail broken? 
+    -- @return bool
+    function CDOTA_Unit_Nian:IsTailAlive(  ) end
+    ]]}]]></content>
+    <tabTrigger>isTailAlive</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

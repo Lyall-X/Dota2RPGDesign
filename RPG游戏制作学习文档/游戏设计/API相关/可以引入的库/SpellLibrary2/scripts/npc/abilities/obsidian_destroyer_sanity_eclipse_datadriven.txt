@@ -1,0 +1,133 @@
+// Rewrite of the Obsidian Destroyer Sanity Eclipse
+// Author: chrislotix
+// Date: 08.01.2015.
+
+
+
+
+"obsidian_destroyer_sanity_eclipse_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityCastRange"				"600 650 700"
+	"AbilityCastPoint"				"0.25 0.25 0.25"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
+	"AOERadius"						"%radius"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"		
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf"
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area_aoe.vpcf"
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area_embers.vpcf"	
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area_glow.vpcf"
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_damage.vpcf"
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_mana_loss.vpcf"
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_smoke_main.vpcf"	
+		
+	}
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"160.0 160.0 160.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"175 250 325"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_multiplier"				"8 9 10"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"int_threshold"				"10 30 50"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"375 475 575"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cast_range"					"600 650 700"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_multiplier_scepter"		"9 10 11"
+		}			
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cast_range_scepter"				"700 750 800"
+		}			
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_ObsidianDestroyer.SanityEclipse.Cast"
+			"Target"	"CASTER"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_ObsidianDestroyer.SanityEclipse"
+			"Target"	"CASTER"
+		}
+
+		"FireEffect"
+		{ 
+			"EffectName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf"
+			"EffectAttachType"	"start_at_customorigin"
+			"TargetPoint"	"POINT"
+
+			"ControlPoints"
+			{
+				"00" "POINT"
+				"01" "%radius 0 0"
+				"02" "%radius 0 0"
+				"03" "%radius 0 0"				
+			}
+		}		
+
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"	"POINT"
+				"Radius"	"%radius"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Type"		"DOTA_UNIT_TARGET_HERO"
+			}
+
+			"Action"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/sanity_eclipse.lua"
+					"Function"		"SanityEclipseDamage"
+					"Target"		"POINT"
+				}			
+			}
+		}
+	}
+}
+

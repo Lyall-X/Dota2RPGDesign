@@ -1,0 +1,709 @@
+@define selectedTextBackgroundColor: #66666633;
+
+.MainPanel
+{
+    width: 100%;
+    height: 100%;
+    /*background-color: gradient( linear, 0% 0%, 0% 100%, from( #fbfbfbff ), color-stop( 0.3, #ebebebff ), to( #c0c0c0c0 ) );*/
+}
+
+#HeroSelectionBackground
+{
+    /*background-color: gradient(linear, 100% 0%, 0% 0%, from(black), color-stop(0.6, black), to(#c0c0c0c0));*/
+    visibility: collapse;
+    width: 100%;
+    height: 100%;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+}
+
+#HeroSelectionBackgroundScene
+{
+    width: 50%;
+    height: 51%;
+    pre-transform-scale2d: 2;
+    vertical-align: middle;
+    horizontal-align: center;
+    background-color: rgb(29, 39, 46);
+
+    transform: none;
+    transition-property: transform, blur, opacity, wash-color;
+    transition-duration: 0.45s;
+    transition-delay: 0.0s;
+    transition-timing-function: ease-in;
+}
+
+.HeroSelectionBackgroundSceneHeroSelected
+{
+    wash-color: #999999;
+}
+
+#GameGoal
+{
+    font-size: 80px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+#HeroSelectionTopGradient
+{
+    width: 100%;
+    height: 150px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000 ), to( #00000000 ) );
+}
+
+#HeroCosmetics
+{
+    flow-children: up;
+    align: left bottom;
+    margin-left: 450px;
+    margin-bottom: 100px;
+    opacity: 0.8;
+}
+
+.AspectRatio5x4 #HeroCosmetics, .AspectRatio4x3 #HeroCosmetics
+{
+    margin-left: 350px;
+}
+
+.AspectRatio5x4 .CosmeticsRow Label, .AspectRatio4x3 .CosmeticsRow Label
+{
+    visibility: collapse;
+}
+
+.CosmeticsRow
+{
+    flow-children: left;
+    horizontal-align: right;
+}
+
+.CosmeticsRow Image
+{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin: 4px;
+}
+
+#HeroAbilities
+{
+    flow-children: up;
+    align: left bottom;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    opacity: 0.8;
+}
+
+.AbilityRow
+{
+    flow-children: right;
+}
+
+.AbilityRow Image
+{
+    width: 56px;
+    height: 56px;
+    margin: 4px;
+    border-radius: 3px;
+    background-color: black;
+    tooltip-position: right;
+    tooltip-body-position: 100% 50%;
+
+    transition-property: transform, saturation;
+    transition-duration: 0.1s;
+}
+
+.AbilityRow > Label, .CosmeticsRow Label
+{
+    vertical-align: center;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    margin-left: 8px;
+    font-size: 14px;
+    color: white;
+    text-shadow: skyblue 0px 0px 4px 4px;
+}
+
+.AbilityRow > Image > Label
+{
+    align: left bottom;
+    margin: 4px 4px -4px;
+    color: white;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    font-size: 18px;
+    text-shadow: 0px 0px 4px 8.0 #000000;
+}
+
+.AbilityRow > Image > Panel
+{
+    width: 20px;
+    height: 20px;
+    align: center bottom;
+    margin: 2px;
+    background-color: none;
+    background-image: url('file://{images}/custom_game/lmb.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.CosmeticsRow Label {
+    margin-right: 8px;
+    text-shadow: gold 0px 0px 4px 4px;
+}
+
+.AbilityButtonEnabled {
+    box-shadow: none;
+}
+
+#AchievementRow Image
+{
+    background-image: url("file://{images}/custom_game/achieved.png");
+    background-size: 130% 130%;
+    box-shadow: gold 0px 0px 4px 0px;
+}
+
+#AchievementRow Label
+{
+    text-shadow: gold 0px 0px 5px 4px;
+}
+
+#AbilityRowA Image
+{
+    border-radius: 50%;
+}
+
+#AbilityRowA > Label
+{
+    text-shadow: red 0px 0px 5px 4px;
+}
+
+#LeftSideHeroes
+{
+    align: left center;
+    flow-children: down;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 30%;
+}
+
+#HeroSelectedRays
+{
+    align: left center;
+    //margin-top: 100px;
+    margin-left: 100px;
+    width: 30%;
+    height: 100%;
+}
+
+.AspectRatio5x4 #LeftSideHeroes
+{
+    margin-left: 0px;
+}
+
+.AspectRatio4x3 #LeftSideHeroes
+{
+    margin-left: 0px;
+}
+
+#RightSide
+{
+    align: right top;
+    flow-children: down;
+    width: 25%;
+    margin-top: 100px;
+}
+
+.AspectRatio5x4 #RightSide
+{
+    width: 30%;
+}
+
+.AspectRatio4x3 #RightSide
+{
+    width: 30%;
+}
+
+#PlayersContent
+{
+    margin-top: 30px;
+    width: 100%;
+    flow-children: down;
+}
+
+#PlayersLabel
+{
+    text-transform: uppercase;
+}
+
+.TeamPanel
+{
+    background-color: gradient(linear, 100% 0%, 0% 0%, from(black), to(#00000000));
+    width: 100%;
+    flow-children: right;
+    margin-bottom: 4px;
+}
+
+.TeamScoreContainer
+{
+    width: 120px;
+    height: 100%;
+    margin: 4px;
+}
+
+.TeamScore
+{
+    align: center center;
+    
+    font-weight: bold;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    color: white;
+}
+
+.TeamScoreNormal
+{   
+    font-size: 38px;
+    text-shadow: skyblue 0px 0px 4px 4px;
+}
+
+.TeamScoreSurvive
+{
+    text-shadow: red 0px 0px 4px 4px;
+    font-size: 22px;
+
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: PointsAnimation;
+}
+
+.TeamSurvive Label
+{
+    text-align: center;
+    align: center center;
+    color: white;
+
+    font-size: 18px;
+    text-align: center;
+    vertical-align: center;
+    text-shadow: 0px 0px 8px 2.0 black;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: PointsAnimation;
+}
+
+.TeamPanelPlayers
+{
+    flow-children: down;
+    width: 70%;
+    horizontal-align: right;
+
+    margin-right: 30px;
+}
+
+.TeamPlayer
+{
+    flow-children: right;
+    height: 60px;
+    horizontal-align: right;
+}
+
+.TeamPlayer Label
+{
+    vertical-align: center;
+    font-size: 24px;
+    height: 26px;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    text-align: right;
+    width: 200px;
+}
+
+#HeroList
+{
+    align: center top;
+    margin-top: 100px;
+    width: 65%;
+    flow-children: down;
+}
+
+#HeroList.NewPlayer
+{
+    align: center center;
+    margin: 0;
+}
+
+.NotAvailableHeroButton
+{
+    saturation: 0;
+    wash-color: #333333;
+}
+
+.NotAvailableHero
+{
+    blur: gaussian(2, 2, 2);
+    saturation: 0;
+    wash-color: #333333;
+}
+
+.HeroButtonQuest
+{
+    background-size: 100% 100%;
+    align: right bottom;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.HeroButtonQuestInProgress
+{
+    background-image: url("file://{images}/custom_game/points.png");
+    width: 22px;
+    height: 27px;
+}
+
+.HeroButtonQuestComplete
+{
+    background-image: url("file://{images}/custom_game/check.png");
+    width: 22px;
+    height: 18px;
+}
+
+#DifficultyList
+{
+    width: 100%;
+    flow-children: down;
+}
+
+.DifficultyRow
+{
+    flow-children: right;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.HeroButtons
+{
+    flow-children: down;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.HeroButtonRow
+{
+    flow-children: right;
+    horizontal-align: center;
+}
+
+#HeroTips
+{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    font-size: 16;
+    color: gray;
+}
+
+.HeroButtonContainer
+{
+    margin: 4px;
+    width: 75px;
+    height: 75px;
+    margin: 6px;
+    box-shadow: #000000ff -2px -2px 4px 4px;
+    border-radius: 50%;
+}
+
+.NewPlayer.HeroButtonContainer 
+{
+    width: 90px;
+    height: 90px;
+}
+
+#ShowAllHeroesButton
+{
+    min-width: 280px;
+    height: 54px;
+    background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex");
+    background-size: 378px 60px;   
+    padding: 4px 12px 4px 12px;
+    margin: 8px;
+    border-radius: 3px;
+    background-color: #0065AD66;
+    visibility: collapse;
+    align: center center;
+}
+
+#ShowAllHeroesButton Label
+{
+    align: center center;
+    text-transform: uppercase;
+    color: #DDD;
+    font-size: 26px;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+}
+
+#ShowAllHeroesButton:active
+{
+    sound: "UI.Click";
+}
+
+#ShowAllHeroesButton:active Label
+{
+    transform: translateY(1px);
+}
+
+#ShowAllHeroesButton:hover
+{
+    background-color: #345288;
+}
+
+#ShowAllHeroesButton.NewPlayer
+{
+    visibility: visible;
+}
+
+.HeroButtonDesaturated
+{
+    saturation: 0.5;
+}
+
+.HeroButton
+{
+    width: 100%;
+    height: 100%;
+}
+
+.HeroButtonElite
+{
+    box-shadow: gold -1px -1px 2px 2px;
+}
+
+.HeroButtonContainer:hover
+{
+    box-shadow: skyblue -2px -2px 0px 4px;
+}
+
+.HeroButtonContainer:hover .HeroButton
+{
+    saturation: 1.0;
+}
+
+.RecentTag
+{
+    background-color: red;
+    width: 40px;
+    height: 14px;
+    margin-bottom: 8px;
+    box-shadow: black -2px -2px 4px 8px;
+    align: center bottom;
+}
+
+.RecentTag .RecentText
+{
+    color: white;
+    align: center center;
+    text-align: center;
+    font-size: 14px;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+}
+
+.RandomButton
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    wash-color: skyblue;
+    saturation: 0.2;
+
+    background-image: url('file://{images}/custom_game/rolling_dices.png');
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.HeroButtonContainer:hover .RandomButton
+{
+    saturation: 1.0;
+}
+
+.ConnectionStatePanel
+{
+    width: 100%;
+    height: 100%;
+}
+
+.ConnectionStateDisconnected
+{
+    background-image: url('file://{images}/custom_game/icon_disconnect.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.ConnectionStateAbandoned
+{
+    background-image: url('file://{images}/custom_game/icon_disconnect.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.ConnectionStateAbandonedName
+{
+    text-decoration: line-through;
+    wash-color: gray;
+}
+
+.NameLabel
+{
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    font-size: 16;
+    vertical-align: middle;
+    horizontal-align: left;
+    text-shadow: -1px 1px 2px 2.0 black;
+    white-space: nowrap;
+    margin-left: 5px;
+}
+
+.BlueLabel
+{
+    margin-bottom: 40px;
+    font-size: 42px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px 1.0 skyblue;
+    letter-spacing: 6px;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    horizontal-align: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.YellowLabel
+{
+    font-size: 42px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 0px 2px 1.0 gold;
+    letter-spacing: 6px;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    horizontal-align: center;
+    text-align: center;
+}
+
+.HeroPreview
+{
+    width: 100%;
+    height: 900px;
+    opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
+    transform: translateX(-50px);
+    opacity: 0.0;
+    transition-property: opacity, transform;
+    transition-duration: 0.1s;
+}
+
+.HeroPreviewScene
+{
+    width: 100%;
+    height: 100%;
+    margin-top: -100px;
+    opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+}
+
+.HeroPreviewIn
+{
+    transform: translateX(0px);
+    opacity: 1.0;
+}
+
+.HeroPreviewLoading
+{
+    align: center center;
+    margin-bottom: 25%;
+}
+
+.HeroButtonLoading
+{
+    align: center center;
+}
+
+.SelectionImage
+{
+    vertical-align: center;
+    margin-right: 30px;
+    border-radius: 4px;
+    saturation: 0.0;
+    width: 72px;
+    height: 40px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    opacity: 0.0;
+    transition-property: transform, opacity, saturation;
+    transition-duration: 0.3s;
+}
+
+#TimerText
+{
+    margin-top: 30px;
+    font-size: 48px;
+    horizontal-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 0px 4px 1.0 red;
+    letter-spacing: 6px;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    text-align: center;
+}
+
+#HeroSelectionChat
+{
+    align: center bottom;
+    width: 25%;
+    height: 15%;
+}
+
+.AnimationSelectedHero
+{
+    saturation: 1.0;
+    opacity: 1.0;
+    sound: "UI.SelectHero";
+}
+
+@keyframes 'PointsAnimation'
+{
+    0%
+    {
+        transform: translateX(-2px) rotateZ(-3deg);
+    }
+
+    50%
+    {
+        transform: translateX(2px) rotateZ(3deg);
+    }
+    
+    100%
+    {
+        transform: translateX(-2px) rotateZ(-3deg);
+    }
+}
+
+.PauseBackground
+{
+    saturation: 0.3;
+}
+
+.AnimationImageHover
+{
+    opacity: 0.5;
+}
+
+.AnimationBackgroundVisible
+{
+    opacity: 1.0;
+}
+
+.AnimationBackgroundInvisible
+{
+    opacity: 0.0;
+}

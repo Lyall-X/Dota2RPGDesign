@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[AddExperience(${1:float_1},${2:bool_2})${3:--[[
+     CDOTA_BaseNPC_Hero:AddExperience  Params: Float XP, Bool applyBotDifficultyScaling 
+    -- @return bool
+    -- @param float_1 float
+    -- @param bool_2 bool
+    function CDOTA_BaseNPC_Hero:AddExperience( float_1, bool_2 ) end
+    ]]}]]></content>
+    <tabTrigger>AddExperience</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

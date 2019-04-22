@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAnimationIgnoresModelScale()${1:--[[
+     CDOTABaseAbility:GetAnimationIgnoresModelScale   
+    -- @return bool
+    function CDOTABaseAbility:GetAnimationIgnoresModelScale(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAnimationIgnoresModelScale</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

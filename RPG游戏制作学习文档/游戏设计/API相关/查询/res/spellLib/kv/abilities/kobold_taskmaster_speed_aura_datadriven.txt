@@ -1,0 +1,25 @@
+"kobold_taskmaster_speed_aura_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"MaxLevel"				"1"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_movement_speed"	"12"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"900"
+		}
+	}
+}
+

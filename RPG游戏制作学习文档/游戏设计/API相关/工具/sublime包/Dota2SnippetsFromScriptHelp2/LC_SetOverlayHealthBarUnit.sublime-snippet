@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetOverlayHealthBarUnit(${1:handle_1},${2:int_2})${3:--[[
+     CDOTAGamerules:SetOverlayHealthBarUnit  Show this unit's health on the overlay health bar 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param int_2 int
+    function CDOTAGamerules:SetOverlayHealthBarUnit( handle_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setOverlayHealthBarUnit</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

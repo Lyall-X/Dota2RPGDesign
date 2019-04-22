@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetGoldCostForUpgrade(${1:int_1})${2:--[[
+     CDOTABaseAbility:GetGoldCostForUpgrade   
+    -- @return int
+    -- @param int_1 int
+    function CDOTABaseAbility:GetGoldCostForUpgrade( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getGoldCostForUpgrade</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ClearFacingTarget()${1:--[[
+     CRPG_Unit:ClearFacingTarget  () - Clear any facing target entity/position. 
+    -- @return void
+    function CRPG_Unit:ClearFacingTarget(  ) end
+    ]]}]]></content>
+    <tabTrigger>clearFacingTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

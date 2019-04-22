@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetRespawnSeconds(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetRespawnSeconds   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetRespawnSeconds( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getRespawnSeconds</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

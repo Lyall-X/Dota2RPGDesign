@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetBaseMaxHealth(${1:float_1})${2:--[[
+     CDOTA_BaseNPC:SetBaseMaxHealth  Set a new base max health value. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTA_BaseNPC:SetBaseMaxHealth( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setBaseMaxHealth</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

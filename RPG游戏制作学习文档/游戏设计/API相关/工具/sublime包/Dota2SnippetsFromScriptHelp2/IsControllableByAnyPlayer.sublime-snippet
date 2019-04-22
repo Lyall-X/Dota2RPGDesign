@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsControllableByAnyPlayer()${1:--[[
+     CDOTA_BaseNPC:IsControllableByAnyPlayer  Is this unit controlled by any non-bot player? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsControllableByAnyPlayer(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsControllableByAnyPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

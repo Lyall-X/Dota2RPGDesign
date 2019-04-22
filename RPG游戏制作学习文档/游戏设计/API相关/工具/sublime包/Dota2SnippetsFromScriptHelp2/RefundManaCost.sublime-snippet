@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[RefundManaCost()${1:--[[
+     CDOTABaseAbility:RefundManaCost   
+    -- @return void
+    function CDOTABaseAbility:RefundManaCost(  ) end
+    ]]}]]></content>
+    <tabTrigger>RefundManaCost</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

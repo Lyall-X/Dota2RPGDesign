@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[InterruptChannel()${1:--[[
+     CDOTA_BaseNPC:InterruptChannel   
+    -- @return void
+    function CDOTA_BaseNPC:InterruptChannel(  ) end
+    ]]}]]></content>
+    <tabTrigger>InterruptChannel</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

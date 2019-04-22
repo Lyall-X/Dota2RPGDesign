@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[AddClaimedFarm(${1:int_1},${2:float_2})${3:--[[
+     CDOTA_PlayerResource:AddClaimedFarm   
+    -- @return void
+    -- @param int_1 int
+    -- @param float_2 float
+    function CDOTA_PlayerResource:AddClaimedFarm( int_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>addClaimedFarm</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

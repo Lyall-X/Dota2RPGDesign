@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SequenceDuration(${1:string_1})${2:--[[
+     CBodyComponent:SequenceDuration  Returns the duration in seconds of the specified sequence 
+    -- @return float
+    -- @param string_1 string
+    function CBodyComponent:SequenceDuration( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SequenceDuration</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

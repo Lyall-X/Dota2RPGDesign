@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetFriction(${1:float_1})${2:--[[
+     CBaseEntity:SetFriction  Set PLAYER friction, ignored for objects. 
+    -- @return void
+    -- @param float_1 float
+    function CBaseEntity:SetFriction( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetFriction</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[CastAbilityOnPosition(${1:Vector_1},${2:handle_2},${3:int_3})${4:--[[
+     CDOTA_BaseNPC:CastAbilityOnPosition  Cast an ability on a position. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param handle_2 handle
+    -- @param int_3 int
+    function CDOTA_BaseNPC:CastAbilityOnPosition( Vector_1, handle_2, int_3 ) end
+    ]]}]]></content>
+    <tabTrigger>CastAbilityOnPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

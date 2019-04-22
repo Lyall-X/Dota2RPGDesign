@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsPhantom()${1:--[[
+     CDOTA_BaseNPC:IsPhantom  Is this a phantom unit? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsPhantom(  ) end
+    ]]}]]></content>
+    <tabTrigger>isPhantom</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

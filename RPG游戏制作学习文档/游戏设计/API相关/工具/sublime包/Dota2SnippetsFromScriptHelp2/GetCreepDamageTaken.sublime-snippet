@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetCreepDamageTaken(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetCreepDamageTaken   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetCreepDamageTaken( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetCreepDamageTaken</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

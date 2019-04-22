@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CSceneEntity" nameCN="场景实体"
+	descriptionEN=""
+	descriptionCN="" extends="CBaseEntity">
+	<functions>
+		<function name="AddBroadcastTeamTarget"
+		signature="void AddBroadcastTeamTarget(int a)">
+		  <DescriptionEN>Adds a team (by index) to the broadcast
+		  list</DescriptionEN>
+		  <DescriptionCN>在记分板列表上增加一个组（使用索引号）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Cancel" signature="void Cancel()">
+		  <DescriptionEN>Cancel scene playback</DescriptionEN>
+		  <DescriptionCN>取消场景重播</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="EstimateLength" signature="float EstimateLength()">
+		  <DescriptionEN>Returns length of this scene in
+		  seconds.</DescriptionEN>
+		  <DescriptionCN>返回场景长度（秒）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="FindCamera" signature="handle FindCamera()">
+		  <DescriptionEN>Get the camera</DescriptionEN>
+		  <DescriptionCN>获取镜头</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="FindNamedEntity"
+		signature="handle FindNamedEntity(string a)">
+		  <DescriptionEN>given an entity reference, such as?!target, get
+		  actual entity from scene object</DescriptionEN>
+		  <DescriptionCN>通过一个实体参照，比如!target，获取场景物体中的实际实体</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a</Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="IsPaused" signature="bool IsPaused()">
+		  <DescriptionEN>If this scene is currently paused.</DescriptionEN>
+		  <DescriptionCN>场景是否被暂停</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="IsPlayingBack" signature="bool IsPlayingBack()">
+		  <DescriptionEN>If this scene is currently
+		  playing.</DescriptionEN>
+		  <DescriptionCN>场景是否正播放</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="LoadSceneFromString"
+		signature="bool LoadSceneFromString(string a, string b)">
+		  <DescriptionEN>given a dummy scene name and a vcd?string, load
+		  the scene</DescriptionEN>
+		  <DescriptionCN>输入虚拟场景名和VCD字符串，载入场景</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string a, string b</Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="RemoveBroadcastTeamTarget"
+		signature="void RemoveBroadcastTeamTarget(int a)">
+		  <DescriptionEN>Removes a team (by index) from the broadcast
+		  list</DescriptionEN>
+		  <DescriptionCN>从记分板列表上移除一个组（使用索引号）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Start" signature="void Start(handle a)">
+		  <DescriptionEN>Start scene playback, takes activatorEntity as
+		  param</DescriptionEN>
+		  <DescriptionCN>开始场景重播，参数为激活者实体（activatorEntity）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>handle a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

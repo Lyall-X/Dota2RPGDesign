@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetBroadcasterChannelSlot(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetBroadcasterChannelSlot   
+    -- @return unsigned
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetBroadcasterChannelSlot( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getBroadcasterChannelSlot</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

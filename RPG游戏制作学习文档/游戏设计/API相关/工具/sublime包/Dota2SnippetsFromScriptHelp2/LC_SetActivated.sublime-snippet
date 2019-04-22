@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetActivated(${1:bool_1})${2:--[[
+     CDOTABaseAbility:SetActivated   
+    -- @return void
+    -- @param bool_1 bool
+    function CDOTABaseAbility:SetActivated( bool_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setActivated</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

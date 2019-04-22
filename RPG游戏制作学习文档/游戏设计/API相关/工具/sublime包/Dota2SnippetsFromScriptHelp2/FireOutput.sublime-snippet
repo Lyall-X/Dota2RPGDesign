@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[FireOutput(${1:string_1},${2:handle_2},${3:handle_3},${4:table_4},${5:float_5})${6:--[[
+     CEntityInstance:FireOutput  Fire an entity output 
+    -- @return void
+    -- @param string_1 string
+    -- @param handle_2 handle
+    -- @param handle_3 handle
+    -- @param table_4 table
+    -- @param float_5 float
+    function CEntityInstance:FireOutput( string_1, handle_2, handle_3, table_4, float_5 ) end
+    ]]}]]></content>
+    <tabTrigger>FireOutput</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

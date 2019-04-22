@@ -1,0 +1,146 @@
+"nyx_assassin_impale_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"nyx_assassin_impale"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"13.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"95 115 135 155"
+	
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 140 200 260"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"width"				"125 125 125 125"
+		}
+		"02"
+		{	
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"1.27 1.77 2.27 2.77"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"length"			"700"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"speed"				"1600 1600 1600 1600"
+		}
+		// Extra variables
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"air_time"			"0.52"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+		"particle"				"particles/units/heroes/hero_nyx_assassin/nyx_assassin_impale.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"Target"			"CASTER"
+			"EffectName"		"Hero_NyxAssassin.Impale"
+		}
+	
+		"LinearProjectile"
+		{
+			"Target"			"POINT"
+			"EffectName"		"particles/units/heroes/hero_nyx_assassin/nyx_assassin_impale.vpcf"
+			"StartRadius"		"%width"
+			"EndRadius"			"%width"
+			"MoveSpeed"			"%speed"
+			"TargetTeams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"TargetTypes"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"FixedDistance"		"%length"
+			"ProvidesVision"	"0"
+			"HasFrontalCone"	"0"
+		}
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"			"0"
+	
+		"FireSound"
+		{
+			"Target"			"TARGET"
+			"EffectName"		"Hero_NyxAssassin.Impale.Target" 
+		}
+	
+		"RemoveModifier"
+		{
+			"Target"			"TARGET"
+			"ModifierName"		"modifier_knockback"
+		}
+		
+		"Knockback"
+		{
+			"Target"			"TARGET"
+			"Center"			"CASTER"
+			"Distance"			"0"
+			"Duration"			"%air_time"
+			"Height"			"200"
+			"IsFixedDistance"	"1"
+		}
+		
+		"Stun"
+		{
+			"Target"			"TARGET"
+			"Duration"			"%duration"
+		}
+		
+		"DelayedAction"
+		{
+			"Delay"				"%air_time"
+			"Action"
+			{
+				"FireSound"
+				{
+					"Target"			"TARGET"
+					"EffectName"		"Hero_NyxAssassin.Impale.TargetLand" 
+				}
+			
+				"Damage"
+				{
+					"Target"			"TARGET"
+					"Damage"			"%AbilityDamage"
+					"Type"				"DAMAGE_TYPE_MAGICAL"
+				}
+			}
+		}
+	}
+}

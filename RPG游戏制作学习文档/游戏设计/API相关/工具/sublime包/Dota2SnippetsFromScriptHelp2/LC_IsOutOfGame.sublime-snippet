@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsOutOfGame()${1:--[[
+     CDOTA_BaseNPC:IsOutOfGame   
+    -- @return bool
+    function CDOTA_BaseNPC:IsOutOfGame(  ) end
+    ]]}]]></content>
+    <tabTrigger>isOutOfGame</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

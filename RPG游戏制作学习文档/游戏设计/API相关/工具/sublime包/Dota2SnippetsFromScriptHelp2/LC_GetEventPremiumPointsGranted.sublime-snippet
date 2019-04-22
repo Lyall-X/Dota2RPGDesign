@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetEventPremiumPointsGranted(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetEventPremiumPointsGranted   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetEventPremiumPointsGranted( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getEventPremiumPointsGranted</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

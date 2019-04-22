@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[IsTouching(${1:handle_1})${2:--[[
+     CBaseTrigger:IsTouching  Checks whether the passed entity is touching the trigger. 
+    -- @return bool
+    -- @param handle_1 handle
+    function CBaseTrigger:IsTouching( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>isTouching</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

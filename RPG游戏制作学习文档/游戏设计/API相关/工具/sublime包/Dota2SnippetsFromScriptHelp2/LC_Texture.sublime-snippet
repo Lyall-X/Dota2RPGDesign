@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[Texture(${1:string_1},${2:Vector2D_2},${3:Vector2D_3},${4:int_4},${5:int_5},${6:int_6},${7:int_7},${8:Vector2D_8},${9:Vector2D_9},${10:float_10})${11:--[[
+     CDebugOverlayScriptHelper:Texture  Draws a screen-space texture. Coordinates are in pixels. 
+    -- @return void
+    -- @param string_1 string
+    -- @param Vector2D_2 Vector2D
+    -- @param Vector2D_3 Vector2D
+    -- @param int_4 int
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param int_7 int
+    -- @param Vector2D_8 Vector2D
+    -- @param Vector2D_9 Vector2D
+    -- @param float_10 float
+    function CDebugOverlayScriptHelper:Texture( string_1, Vector2D_2, Vector2D_3, int_4, int_5, int_6, int_7, Vector2D_8, Vector2D_9, float_10 ) end
+    ]]}]]></content>
+    <tabTrigger>texture</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

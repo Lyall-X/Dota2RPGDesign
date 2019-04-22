@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[HasModifier(${1:string_1})${2:--[[
+     CDOTA_BaseNPC:HasModifier  Sees if this unit has a given modifier. 
+    -- @return bool
+    -- @param string_1 string
+    function CDOTA_BaseNPC:HasModifier( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>hasModifier</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

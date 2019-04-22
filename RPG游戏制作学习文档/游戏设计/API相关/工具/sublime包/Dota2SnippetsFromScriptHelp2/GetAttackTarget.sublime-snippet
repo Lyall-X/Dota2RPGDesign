@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAttackTarget()${1:--[[
+     CDOTA_BaseNPC:GetAttackTarget   
+    -- @return handle
+    function CDOTA_BaseNPC:GetAttackTarget(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAttackTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

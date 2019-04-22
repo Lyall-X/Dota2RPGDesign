@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetNeverMoveToClearSpace()${1:--[[
+     CDOTA_BaseNPC:GetNeverMoveToClearSpace  If set to true, we will never attempt to move this unit to clear space, even when it unphases. 
+    -- @return bool
+    function CDOTA_BaseNPC:GetNeverMoveToClearSpace(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetNeverMoveToClearSpace</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

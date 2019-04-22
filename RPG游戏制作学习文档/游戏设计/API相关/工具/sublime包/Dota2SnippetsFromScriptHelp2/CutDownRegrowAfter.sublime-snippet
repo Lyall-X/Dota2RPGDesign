@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[CutDownRegrowAfter(${1:float_1},${2:int_2})${3:--[[
+     CDOTA_MapTree:CutDownRegrowAfter  Cuts down this tree. Parameters: float flRegrowAfter (-1 = never regrow), int nTeamNumberKnownTo (-1 = invalid team) 
+    -- @return void
+    -- @param float_1 float
+    -- @param int_2 int
+    function CDOTA_MapTree:CutDownRegrowAfter( float_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>CutDownRegrowAfter</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

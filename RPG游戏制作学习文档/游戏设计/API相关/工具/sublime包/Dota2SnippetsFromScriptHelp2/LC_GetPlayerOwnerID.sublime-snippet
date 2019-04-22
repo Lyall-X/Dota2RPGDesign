@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetPlayerOwnerID()${1:--[[
+     CDOTA_BaseNPC:GetPlayerOwnerID  Get the owner player ID for this unit. 
+    -- @return int
+    function CDOTA_BaseNPC:GetPlayerOwnerID(  ) end
+    ]]}]]></content>
+    <tabTrigger>getPlayerOwnerID</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

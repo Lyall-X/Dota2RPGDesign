@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetMovementTargetEntity(${1:handle_1},${2:float_2})${3:--[[
+     CRPG_Unit:SetMovementTargetEntity  ( hTargetEntity, flTargetRange ) - Try to move this unit to the given range from the target entity. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param float_2 float
+    function CRPG_Unit:SetMovementTargetEntity( handle_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setMovementTargetEntity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

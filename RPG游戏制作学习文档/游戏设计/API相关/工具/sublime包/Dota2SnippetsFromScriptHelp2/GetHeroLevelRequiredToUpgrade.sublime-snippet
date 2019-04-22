@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetHeroLevelRequiredToUpgrade()${1:--[[
+     CDOTABaseAbility:GetHeroLevelRequiredToUpgrade   
+    -- @return int
+    function CDOTABaseAbility:GetHeroLevelRequiredToUpgrade(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetHeroLevelRequiredToUpgrade</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

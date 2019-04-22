@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetHealthPercent()${1:--[[
+     CDOTA_BaseNPC:GetHealthPercent  Get the current health percent of the unit. 
+    -- @return int
+    function CDOTA_BaseNPC:GetHealthPercent(  ) end
+    ]]}]]></content>
+    <tabTrigger>getHealthPercent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

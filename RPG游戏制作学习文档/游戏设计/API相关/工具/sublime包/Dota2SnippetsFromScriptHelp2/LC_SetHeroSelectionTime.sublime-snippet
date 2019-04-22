@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetHeroSelectionTime(${1:float_1})${2:--[[
+     CDOTAGamerules:SetHeroSelectionTime  Sets the amount of time players have to pick their hero. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTAGamerules:SetHeroSelectionTime( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setHeroSelectionTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

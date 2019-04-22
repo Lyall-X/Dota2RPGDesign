@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[SpawnEntityGroupFromTable(${1:handle_1},${2:bool_2},${3:handle_3})${4:--[[
+     SpawnEntityGroupFromTable  Hierarchically spawn an entity group from a set of spawn tables. 
+    -- @return bool
+    -- @param handle_1 handle
+    -- @param bool_2 bool
+    -- @param handle_3 handle
+    function SpawnEntityGroupFromTable( handle_1, bool_2, handle_3 ) end
+    ]]}]]></content>
+    <tabTrigger>spawnEntityGroupFromTable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

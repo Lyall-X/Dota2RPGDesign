@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsFrozen()${1:--[[
+     CDOTA_BaseNPC:IsFrozen   
+    -- @return bool
+    function CDOTA_BaseNPC:IsFrozen(  ) end
+    ]]}]]></content>
+    <tabTrigger>isFrozen</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

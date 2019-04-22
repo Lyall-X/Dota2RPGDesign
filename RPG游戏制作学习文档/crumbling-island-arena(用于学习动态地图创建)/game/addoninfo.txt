@@ -1,0 +1,25 @@
+"AddonInfo"
+{
+	maps			"unranked ranked_2v2 ranked_3v3 ranked_1v1"
+	"IsPlayable"	"1"
+    
+    "unranked"
+    {
+                    "MaxPlayers"                    "6"
+    }
+
+    "ranked_2v2"
+    {
+                    "MaxPlayers"                    "4"
+    }
+
+    "ranked_3v3"
+    {
+                    "MaxPlayers"                    "6"
+    }
+
+    "ranked_1v1"
+    {
+                    "MaxPlayers"                    "2"
+    }
+}

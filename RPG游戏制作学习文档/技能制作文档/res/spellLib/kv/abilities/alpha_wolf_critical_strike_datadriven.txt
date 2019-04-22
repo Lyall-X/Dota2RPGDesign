@@ -1,0 +1,25 @@
+"alpha_wolf_critical_strike_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"MaxLevel"						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"crit_chance"				"20"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"crit_mult"					"200"
+		}
+	}
+}
+

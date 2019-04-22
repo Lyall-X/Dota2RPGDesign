@@ -1,0 +1,142 @@
+"naga_siren_ensnare_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"naga_siren_ensnare"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.65"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"14.0 14.0 14.0 14.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90 100 110 120"
+	
+	// Cast Range
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"650 650 650 650"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"2.0 3.0 4.0 5.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"net_speed"					"1500 1500 1500 1500"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"fake_ensnare_distance"		"900 900 900 900"	
+		}
+	}
+
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
+		"particle"					"particles/units/heroes/hero_siren/siren_net.vpcf"
+		"particle"					"particles/units/heroes/hero_siren/siren_net_projectile.vpcf"
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_naga_siren/ensnare.lua"
+			"Function"				"Ensnare_PlayFakeAnimation"
+			"Target"				"TARGET"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+			"Target"				"TARGET"
+			"EffectName"			"particles/units/heroes/hero_siren/siren_net_projectile.vpcf"
+			"Dodgeable"				"1"
+			"ProvidesVision"		"1"
+			"VisionRadius"			"0"
+			"MoveSpeed"				"%net_speed"
+			"SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+
+		"FireSound"
+		{
+			"EffectName"			"Hero_NagaSiren.Ensnare.Cast"
+			"Target"				"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_naga_siren/ensnare.lua"
+			"Function"				"Ensnare_CastFakeNets"
+			"Target"				"TARGET"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+
+		"FireSound"
+		{
+			"EffectName"			"Hero_NagaSiren.Ensnare.Target"
+			"Target"				"TARGET"
+		}
+
+		"ApplyModifier"
+		{
+			"Target"				"TARGET"
+			"ModifierName"			"modifier_ensnare_datadriven"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_ensnare_datadriven"
+		{
+			"IsHidden"		"0"
+			"IsDebuff"		"1"
+			"IsPurgable"	"0"
+
+			"Duration"		"%duration"
+
+			"States"
+			{
+				"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_INVISIBLE"	"MODIFIER_STATE_VALUE_DISABLED"
+			}
+
+			"EffectName"			"particles/units/heroes/hero_siren/siren_net.vpcf"
+			"EffectAttachType"		"follow_origin"
+		}
+
+		"modifier_ensnare_fake_datadriven"
+		{
+			"IsHidden"			"1"
+		//	"OverrideAnimation"	"ACT_DOTA_CAST_ABILITY_2"
+			"OverrideAnimation"	"ACT_DOTA_CAST_ABILITY_1"
+		}
+	}
+}	
+

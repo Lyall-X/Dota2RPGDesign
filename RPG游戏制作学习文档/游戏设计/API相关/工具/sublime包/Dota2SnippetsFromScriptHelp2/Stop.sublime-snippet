@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Stop()${1:--[[
+     CDOTA_BaseNPC:Stop  Stop the current order. 
+    -- @return void
+    function CDOTA_BaseNPC:Stop(  ) end
+    ]]}]]></content>
+    <tabTrigger>Stop</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

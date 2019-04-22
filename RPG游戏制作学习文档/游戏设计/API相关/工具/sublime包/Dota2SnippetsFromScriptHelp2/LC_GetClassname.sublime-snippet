@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetClassname()${1:--[[
+     CEntityInstance:GetClassname   
+    -- @return string
+    function CEntityInstance:GetClassname(  ) end
+    ]]}]]></content>
+    <tabTrigger>getClassname</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

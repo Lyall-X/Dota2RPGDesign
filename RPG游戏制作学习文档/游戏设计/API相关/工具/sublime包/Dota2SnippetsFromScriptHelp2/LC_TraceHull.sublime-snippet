@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[TraceHull(${1:handle_1})${2:--[[
+     TraceHull  Pass table - Inputs: start, end, min, max, mask, ignore  -- outputs: pos, fraction, hit, enthit, startsolid 
+    -- @return bool
+    -- @param handle_1 handle
+    function TraceHull( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>traceHull</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

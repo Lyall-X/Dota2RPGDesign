@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[CastAbilityImmediately(${1:handle_1},${2:int_2})${3:--[[
+     CDOTA_BaseNPC:CastAbilityImmediately  Cast an ability immediately. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param int_2 int
+    function CDOTA_BaseNPC:CastAbilityImmediately( handle_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>CastAbilityImmediately</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

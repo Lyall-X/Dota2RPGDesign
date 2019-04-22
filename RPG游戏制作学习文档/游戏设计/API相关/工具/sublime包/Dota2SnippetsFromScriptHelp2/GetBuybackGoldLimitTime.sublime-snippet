@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBuybackGoldLimitTime()${1:--[[
+     CDOTA_BaseNPC_Hero:GetBuybackGoldLimitTime  Returns the amount of time gold gain is limited after buying back. 
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetBuybackGoldLimitTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetBuybackGoldLimitTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[DoIncludeScript(${1:string_1},${2:handle_2})${3:--[[
+     DoIncludeScript  Execute a script (internal) 
+    -- @return bool
+    -- @param string_1 string
+    -- @param handle_2 handle
+    function DoIncludeScript( string_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>doIncludeScript</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

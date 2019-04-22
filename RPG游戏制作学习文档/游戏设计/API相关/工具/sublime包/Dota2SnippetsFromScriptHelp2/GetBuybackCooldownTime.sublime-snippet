@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBuybackCooldownTime()${1:--[[
+     CDOTA_BaseNPC_Hero:GetBuybackCooldownTime  Return float value for the amount of time left on cooldown for this hero's buyback. 
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetBuybackCooldownTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetBuybackCooldownTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

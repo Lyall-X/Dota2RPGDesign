@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ContinueCasting()${1:--[[
+     CDOTABaseAbility:ContinueCasting   
+    -- @return bool
+    function CDOTABaseAbility:ContinueCasting(  ) end
+    ]]}]]></content>
+    <tabTrigger>continueCasting</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

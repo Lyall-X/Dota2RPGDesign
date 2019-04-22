@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[rr_QueryBestResponse(${1:handle_1},${2:handle_2},${3:handle_3})${4:--[[
+     rr_QueryBestResponse  Params: (entity, query) : tests 'query' against entity's response system and returns the best response found (or null if none found). 
+    -- @return bool
+    -- @param handle_1 handle
+    -- @param handle_2 handle
+    -- @param handle_3 handle
+    function rr_QueryBestResponse( handle_1, handle_2, handle_3 ) end
+    ]]}]]></content>
+    <tabTrigger>rr_QueryBestResponse</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDOTABaseGameMode" nameCN="DOTA基础游戏模式"
+	descriptionEN=""
+	descriptionCN="" extends="CBaseEntity">
+	<functions>
+		<function name="ClientLoadGridNav"
+		signature="void ClientLoadGridNav()">
+		  <DescriptionEN>Tell clients that they need to load gridnav
+		  information. Used for things like allowing clients to identify
+		  valid locations to place buildings.</DescriptionEN>
+		  <DescriptionCN>通知客户端需要载入网格信息，可用于允许客户端确定允许建筑的区域等</DescriptionCN>
+		  <HowToCall>
+			<Parameter></Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetAlwaysShowPlayerInventory"
+		signature="void SetAlwaysShowPlayerInventory(bool a)">
+		  <DescriptionEN>Show the player hero's inventory in the HUD,
+		  regardless of what unit is selected.</DescriptionEN>
+		  <DescriptionCN>在HUD中显示玩家英雄的物品栏，不管选择了哪个单位</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetBotThinkingEnabled"
+		signature="void SetBotThinkingEnabled(bool a)">
+		  <DescriptionEN>Enables/Disables bot thinking. Requires a very
+		  Dota PvP-like map with 3 lanes, a shop, etc.</DescriptionEN>
+		  <DescriptionCN>允许/禁止机器人思考，需要与Dota
+		  PvP高度相似的三路线地图、商店等</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetBuybackEnabled"
+		signature="void SetBuybackEnabled(bool a)">
+		  <DescriptionEN>Enables or disables buyback
+		  completely</DescriptionEN>
+		  <DescriptionCN>完全允许/禁止买活</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetCameraDistanceOverride"
+		signature="void SetCameraDistanceOverride(float a)">
+		  <DescriptionEN>Set a different camera distance; dota default is
+		  1134.</DescriptionEN>
+		  <DescriptionCN>设置默认的镜头距离。Dota默认为1134</DescriptionCN>
+		  <HowToCall>
+			<Parameter>float a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetCustomBuybackCooldownEnabled"
+		signature="void SetCustomBuybackCooldownEnabled(bool a)">
+		  <DescriptionEN>Turns on capability to define custom buyback
+		  cooldowns.</DescriptionEN>
+		  <DescriptionCN>开启该选项来允许自定义买活冷却时间</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetCustomBuybackCostEnabled"
+		signature="void SetCustomBuybackCostEnabled(bool a)">
+		  <DescriptionEN>Turns on capability to define custom buyback
+		  costs.</DescriptionEN>
+		  <DescriptionCN>开启该选项来允许自定义买活花费</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetCustomHeroMaxLevel"
+		signature="void SetCustomHeroMaxLevel(int maxLevel)">
+		  <DescriptionEN>Allows definition of the max level heroes can
+		  achieve (default is 25).</DescriptionEN>
+		  <DescriptionCN>定义最大英雄等级（默认为25）</DescriptionCN>
+		  <HowToCall>
+			<Parameter>int maxLevel</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetCustomXPRequiredToReachNextLevel"
+		signature="void SetCustomXPRequiredToReachNextLevel(handle a)">
+		  <DescriptionEN>Allows definition of a?table?of hero XP
+		  values.</DescriptionEN>
+		  <DescriptionCN>定义英雄经验值表(table)</DescriptionCN>
+		  <HowToCall>
+			<Parameter>handle a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetFogOfWarDisabled"
+		signature="void SetFogOfWarDisabled(bool a)">
+		  <DescriptionEN>Turn the fog of war on or off.</DescriptionEN>
+		  <DescriptionCN>开关战争迷雾</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetGoldSoundDisabled"
+		signature="void SetGoldSoundDisabled(bool a)">
+		  <DescriptionEN>Turn the sound when gold is acquired off/on. Takes
+		  a?bool.</DescriptionEN>
+		  <DescriptionCN>是否禁止获取金钱时的声音提示</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetOverrideSelectionEntity"
+		signature="void SetOverrideSelectionEntity(handle unit)">
+		  <DescriptionEN>Set an override for the default selection entity,
+		  instead of each player's hero.</DescriptionEN>
+		  <DescriptionCN>覆盖默认选择实体，替代所有玩家的英雄</DescriptionCN>
+		  <HowToCall>
+			<Parameter>handle unit</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetRecommendedItemsDisabled"
+		signature="void SetRecommendedItemsDisabled(bool a)">
+		  <DescriptionEN>Turn the panel for showing recommended items at
+		  the shop off/on. Takes a?bool.</DescriptionEN>
+		  <DescriptionCN>是否禁止显示商店中的推荐购买物品</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetRemoveIllusionsOnDeath"
+		signature="void SetRemoveIllusionsOnDeath(bool a)">
+		  <DescriptionEN>Make it so illusions are immediately removed upon
+		  death, rather than sticking around for a few
+		  seconds.</DescriptionEN>
+		  <DescriptionCN>使幻象死亡时立即消失，而不是延迟数秒</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetTopBarTeamValue"
+		signature="void SetTopBarTeamValue(int a, int b)">
+		  <DescriptionEN>Set the team values on the top game
+		  bar.</DescriptionEN>
+		  <DescriptionCN>设置顶端的队伍数值</DescriptionCN>
+		  <HowToCall>
+			<Parameter>int a, int b</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetTopBarTeamValuesOverride"
+		signature="void SetTopBarTeamValuesOverride(bool a)">
+		  <DescriptionEN>Override the values of the team values on the top
+		  game bar.</DescriptionEN>
+		  <DescriptionCN>是否覆盖顶端的队伍数值</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetTopBarTeamValuesVisible"
+		signature="void SetTopBarTeamValuesVisible(bool a)">
+		  <DescriptionEN>Turning on/off the team values on the top game
+		  bar.</DescriptionEN>
+		  <DescriptionCN>开关顶端的队伍数值</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetTowerBackdoorProtectionEnabled"
+		signature="void SetTowerBackdoorProtectionEnabled(bool a)">
+		  <DescriptionEN>Enables/Disables tower backdoor
+		  protection</DescriptionEN>
+		  <DescriptionCN>开关偷塔保护</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetUseCustomHeroLevels"
+		signature="void SetUseCustomHeroLevels(bool a)">
+		  <DescriptionEN>Turn on custom-defined XP values for hero level
+		  ups. The?table?should be defined before switching this
+		  on.</DescriptionEN>
+		  <DescriptionCN>开关自定义英雄英雄经验表，该表必须提前被定义</DescriptionCN>
+		  <HowToCall>
+			<Parameter>bool a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

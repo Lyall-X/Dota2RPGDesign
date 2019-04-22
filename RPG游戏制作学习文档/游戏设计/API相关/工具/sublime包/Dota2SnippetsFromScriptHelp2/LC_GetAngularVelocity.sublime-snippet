@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAngularVelocity()${1:--[[
+     CBaseEntity:GetAngularVelocity  Get the local angular velocity - returns a vector of pitch,yaw,roll 
+    -- @return Vector
+    function CBaseEntity:GetAngularVelocity(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAngularVelocity</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

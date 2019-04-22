@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="Vector" nameCN="矢量"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="__add"
+		signature="Vector __add(Vector a, Vector b)">
+		  <DescriptionEN>Overloaded +. Adds vectors together</DescriptionEN>
+		  <DescriptionCN>重载+.矢量加运算</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="__div"
+		signature="Vector __div(Vector a, Vector b)">
+		  <DescriptionEN>Overloaded /. Divides vectors</DescriptionEN>
+		  <DescriptionCN>重载/.矢量除运算</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="__eq" signature="bool __eq(Vector a, Vector b)">
+		  <DescriptionEN>Overloaded ==. Tests for Equality</DescriptionEN>
+		  <DescriptionCN>重载==.矢量比较运算</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b</Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="__len" signature="float __len()">
+		  <DescriptionEN>Overloaded # returns the length of the
+		  vector</DescriptionEN>
+		  <DescriptionCN>重载#返回矢量长度</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="__mul"
+		signature="Vector __mul(Vector a, Vector b)">
+		  <DescriptionEN>Overloaded * returns the vectors multiplied together</DescriptionEN>
+		  <DescriptionCN>重载*返回矢量乘运算</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="__sub"
+		signature="Vector __sub(Vector a, Vector b)">
+		  <DescriptionEN>Overloaded -. Subtracts vectors</DescriptionEN>
+		  <DescriptionCN>重载-.矢量减运算</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="__tostring" signature="string __tostring()">
+		  <DescriptionEN>Overloaded .. Converts vectors to strings</DescriptionEN>
+		  <DescriptionCN>重载..转换矢量为字符串</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>string</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="_unm" signature="Vector _unm()">
+		  <DescriptionEN>Overloaded - operator</DescriptionEN>
+		  <DescriptionCN>重载- operator</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Cross"
+		signature="Vector Cross(Vector a, Vector b)">
+		  <DescriptionEN>Cross product of two vectors</DescriptionEN>
+		  <DescriptionCN>矢量叉积</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b</Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Dot" signature="float Dot(Vector a, Vector b)">
+		  <DescriptionEN>Dot product of two vectors</DescriptionEN>
+		  <DescriptionCN>矢量点积</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>Vector a, Vector b</Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Length" signature="float Length()">
+		  <DescriptionEN>Length of the Vector</DescriptionEN>
+		  <DescriptionCN>矢量长度（模）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Length2D" signature="float Length2D()">
+		  <DescriptionEN>Length of the Vector in the XY plane</DescriptionEN>
+		  <DescriptionCN>矢量XY平面上长度（模）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Normalized" signature="Vector Normalized()">
+		  <DescriptionEN>Returns the vector normalized</DescriptionEN>
+		  <DescriptionCN>返回单位矢量</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>Vector</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSightCone2DRange()${1:--[[
+     CRPG_Unit:GetSightCone2DRange  () - returns 2D range of unit's sight cone 
+    -- @return float
+    function CRPG_Unit:GetSightCone2DRange(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetSightCone2DRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

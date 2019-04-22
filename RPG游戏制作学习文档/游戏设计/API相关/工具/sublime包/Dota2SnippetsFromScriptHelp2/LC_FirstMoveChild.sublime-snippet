@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[FirstMoveChild()${1:--[[
+     CBaseEntity:FirstMoveChild   
+    -- @return handle
+    function CBaseEntity:FirstMoveChild(  ) end
+    ]]}]]></content>
+    <tabTrigger>firstMoveChild</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

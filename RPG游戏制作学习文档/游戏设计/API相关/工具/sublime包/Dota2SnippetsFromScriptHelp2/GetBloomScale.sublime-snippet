@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBloomScale()${1:--[[
+     CToneMapControllerComponent:GetBloomScale  Gets bloomscale for this tonemap controller 
+    -- @return float
+    function CToneMapControllerComponent:GetBloomScale(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetBloomScale</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

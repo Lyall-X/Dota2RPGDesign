@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCooldownTimeRemaining()${1:--[[
+     CDOTABaseAbility:GetCooldownTimeRemaining   
+    -- @return float
+    function CDOTABaseAbility:GetCooldownTimeRemaining(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCooldownTimeRemaining</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

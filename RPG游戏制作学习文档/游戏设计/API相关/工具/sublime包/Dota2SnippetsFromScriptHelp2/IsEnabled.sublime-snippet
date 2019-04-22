@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsEnabled()${1:--[[
+     CDOTA_SimpleObstruction:IsEnabled  Returns whether the obstruction is currently active 
+    -- @return bool
+    function CDOTA_SimpleObstruction:IsEnabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsEnabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

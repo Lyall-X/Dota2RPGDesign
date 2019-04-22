@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[QueryVector(${1:utlstringtoken_1},${2:Vector_2})${3:--[[
+     CInfoData:QueryVector  Query vector data for this key 
+    -- @return Vector
+    -- @param utlstringtoken_1 utlstringtoken
+    -- @param Vector_2 Vector
+    function CInfoData:QueryVector( utlstringtoken_1, Vector_2 ) end
+    ]]}]]></content>
+    <tabTrigger>queryVector</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

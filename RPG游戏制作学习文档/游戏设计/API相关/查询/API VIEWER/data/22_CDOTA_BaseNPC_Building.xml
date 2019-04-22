@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDOTA_BaseNPC_Building" nameCN="DOTA基础NPC 建筑"
+	descriptionEN=""
+	descriptionCN="" extends="CDOTA_BaseNPC">
+	<functions>
+		<function name="GetInvulnCount" signature="int GetInvulnCount()">
+			<DescriptionEN>Get the invulnerability count for a building.</DescriptionEN>
+			<DescriptionCN>返回建筑无敌计数</DescriptionCN>
+			<HowToCall>
+				<Parameter></Parameter>
+				<Return>int</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		<function name="SetInvulnCount" signature="void SetInvulnCount(int a)">
+			<DescriptionEN>Set the invulnerability counter of this building.</DescriptionEN>
+			<DescriptionCN>设置建筑无敌计数</DescriptionCN>
+			<HowToCall>
+				<Parameter>a：整数数值</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	</functions>
+</class>

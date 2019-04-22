@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSpawnedEntities()${1:--[[
+     CPointTemplate:GetSpawnedEntities  GetSpawnedEntities() : Get the list of the most recent spawned entities 
+    -- @return handle
+    function CPointTemplate:GetSpawnedEntities(  ) end
+    ]]}]]></content>
+    <tabTrigger>getSpawnedEntities</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

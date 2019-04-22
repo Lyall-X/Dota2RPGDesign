@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetSightConeVerticalRange(${1:float_1})${2:--[[
+     CRPG_Unit:SetSightConeVerticalRange  ( fRange ) - set vertical range of unit's sight cone 
+    -- @return void
+    -- @param float_1 float
+    function CRPG_Unit:SetSightConeVerticalRange( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetSightConeVerticalRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

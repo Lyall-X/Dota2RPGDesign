@@ -1,0 +1,306 @@
+"phoenix_supernova_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"phoenix_supernova"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0.01"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"110.0 110.0 110.0"
+	"AbilityDuration"				"6.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200 200 200"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aura_radius"		"1000 1000 1000"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_per_sec"	"60 80 100"
+		}
+		
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"stun_duration"		"1.5 2.0 2.5"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"max_hero_attacks"	"5 7 10"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"tooltip_duration"	"6"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"cast_range_tooltip_scepter"	"500"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+		"particle"					"particles/units/heroes/hero_phoenix/phoenix_supernova_death.vpcf"
+		"particle"					"particles/units/heroes/hero_phoenix/phoenix_supernova_egg.vpcf"
+		"particle"					"particles/units/heroes/hero_phoenix/phoenix_supernova_hit.vpcf"
+		"particle"					"particles/units/heroes/hero_phoenix/phoenix_supernova_radiance.vpcf"
+		"particle"					"particles/units/heroes/hero_phoenix/phoenix_supernova_radiance_creep.vpcf"
+		"particle"					"particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
+		"particle"					"particles/units/heroes/hero_phoenix/phoenix_supernova_start.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_Phoenix.SuperNova.Cast"
+			"Target"			"CASTER"
+		}
+		
+		"AttachEffect"
+		{
+			"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_supernova_start.vpcf"
+			"EffectAttachType"	"PATTACH_ABSORIGIN"
+			"Target"			"CASTER"
+		}
+		
+		"SpawnUnit"
+		{
+			"UnitName"		"npc_dota_phoenix_sun"
+			"UnitCount"		"1"
+			"SpawnRadius"	"0"
+			"Target"		"CASTER"
+
+		//	"Duration"		"%AbilityDuration"
+			
+			"OnSpawn"
+			{
+				"ApplyModifier"
+				{
+					"Target"		"TARGET"
+					"ModifierName"	"modifier_supernova_sun_form_egg_datadriven"
+				}
+				
+				"FireSound"
+				{
+					"EffectName"		"Hero_Phoenix.SuperNova.Begin"
+					"Target"			"TARGET"
+				}
+			}
+		}
+		
+		"ApplyModifier"
+		{
+			"Target"		"CASTER"
+			"ModifierName"	"modifier_supernova_sun_form_caster_datadriven"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_supernova_sun_form_caster_datadriven"
+		{
+			"IsBuff"	"1"
+			
+			"Duration"	"%AbilityDuration"
+			
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_phoenix/supernova.lua"
+					"Function"			"HideCaster"
+				}
+			}
+			
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_phoenix/supernova.lua"
+					"Function"			"ShowCaster"
+				}
+			}
+			
+			"States"
+			{
+				"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_STUNNED"				"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_OUT_OF_GAME"			"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		
+		"modifier_supernova_sun_form_egg_datadriven"
+		{
+			"IsBuff"	"1"
+			
+			"Duration"	"%AbilityDuration"
+			
+			"States"
+			{
+				"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_ROOTED"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_MAGIC_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_DISABLE_HEALING"				"1"
+				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL"	"1"
+				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL"	"1"
+				"MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE"		"1"
+				"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"0"
+			}
+			
+			"OverrideAnimation"		"ACT_DOTA_IDLE"	// egg_cast_supernova
+			
+			"Aura"			"modifier_supernova_burn_datadriven"
+			"Aura_Radius"	"%aura_radius"
+			"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_supernova_egg.vpcf"
+					"EffectAttachType"	"PATTACH_ABSORIGIN_FOLLOW"
+					"Target"			"TARGET"
+					
+					"ControlPointEntities"
+					{
+						"TARGET"	"attach_origin"
+						"TARGET"	"attach_hitloc"
+					}
+				}
+			}
+			
+			"OnAttacked"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_supernova_hit.vpcf"
+					"EffectAttachType"	"attach_hitloc"
+					"Target"			"TARGET"
+					"ControlPointEntities"
+					{
+						"TARGET"	"attach_hitloc"
+						"TARGET"	"attach_hitloc"
+					}
+				}
+			
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_phoenix/supernova.lua"
+					"Function"			"OnAttackedEgg"
+					"Target"			"TARGET"
+					"max_hero_attacks"	"%max_hero_attacks"
+				}
+			}
+			
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_phoenix/supernova.lua"
+					"Function"			"OnDestroyEgg"
+					"Target"			"TARGET"
+				}
+			}
+		}
+		
+		"modifier_supernova_egg_explode_datadriven"
+		{
+			"IsHidden"	"1"
+			
+			"OnCreated"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"	"TARGET"
+						"Radius"	"%aura_radius"
+						"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+					}
+					
+					"Action"
+					{
+						"Stun"
+						{
+							"Duration"	"%stun_duration"
+							"Target"	"TARGET"
+						}
+					}
+				}
+			}
+		}
+		
+		"modifier_supernova_burn_datadriven"
+		{
+			"IsDebuff"	"1"
+			
+			"ThinkInterval"		"1.0"
+			
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_supernova_radiance.vpcf"
+					"EffectAttachType"	"attach_hitloc"
+					"Target"			"TARGET"
+					"ControlPointEntities"
+					{
+						"TARGET"	"attach_hitloc"
+						"CASTER"	"follow_origin"
+					}
+				}
+			}
+
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%damage_per_sec"
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[Text(${1:Vector_1},${2:int_2},${3:string_3},${4:float_4},${5:int_5},${6:int_6},${7:int_7},${8:int_8},${9:float_9})${10:--[[
+     CDebugOverlayScriptHelper:Text  Draws 2D text. Specify origin in world space. 
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param int_2 int
+    -- @param string_3 string
+    -- @param float_4 float
+    -- @param int_5 int
+    -- @param int_6 int
+    -- @param int_7 int
+    -- @param int_8 int
+    -- @param float_9 float
+    function CDebugOverlayScriptHelper:Text( Vector_1, int_2, string_3, float_4, int_5, int_6, int_7, int_8, float_9 ) end
+    ]]}]]></content>
+    <tabTrigger>Text</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

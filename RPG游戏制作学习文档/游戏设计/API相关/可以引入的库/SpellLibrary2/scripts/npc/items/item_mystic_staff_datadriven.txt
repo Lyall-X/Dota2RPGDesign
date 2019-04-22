@@ -1,0 +1,49 @@
+// Rewrite of Mystic Staff
+// Author: Rook
+// Date: January 25, 2015
+
+"item_mystic_staff_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1058"  //Valve's version of this item uses the ID "58".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_mystic_staff"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"2700"
+	"ItemShopTags"					"int"
+	"ItemQuality"					"secret_shop"
+	"ItemAliases"					"mystic staff"
+	"SecretShop"					"1"
+		
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intelligence"	"25"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_mystic_staff_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intelligence"
+			}
+		}
+	}
+}

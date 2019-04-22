@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetUnitLabel()${1:--[[
+     CDOTA_BaseNPC:GetUnitLabel   
+    -- @return string
+    function CDOTA_BaseNPC:GetUnitLabel(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetUnitLabel</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsAttachedToParent()${1:--[[
+     CBodyComponent:IsAttachedToParent  Is attached to parent 
+    -- @return bool
+    function CBodyComponent:IsAttachedToParent(  ) end
+    ]]}]]></content>
+    <tabTrigger>isAttachedToParent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

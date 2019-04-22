@@ -1,0 +1,55 @@
+// Rewrite of Point Booster
+// Author: Rook
+// Date: January 25, 2015
+
+"item_point_booster_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1060"  //Valve's version of this item uses the ID "60".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_point_booster"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"1200"
+	"ItemShopTags"					"mana_pool;health_pool"
+	"ItemQuality"					"secret_shop"
+	"ItemAliases"					"point booster"
+	"SecretShop"					"1"
+		
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"150"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"200"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_point_booster_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS"		"%bonus_health"
+				"MODIFIER_PROPERTY_MANA_BONUS"			"%bonus_mana"
+			}
+		}
+	}
+}

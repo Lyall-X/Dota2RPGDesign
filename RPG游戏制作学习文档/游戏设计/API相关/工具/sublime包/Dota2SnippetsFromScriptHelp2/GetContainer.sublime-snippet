@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetContainer()${1:--[[
+     CDOTA_Item:GetContainer  Get the container for this item. 
+    -- @return handle
+    function CDOTA_Item:GetContainer(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetContainer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

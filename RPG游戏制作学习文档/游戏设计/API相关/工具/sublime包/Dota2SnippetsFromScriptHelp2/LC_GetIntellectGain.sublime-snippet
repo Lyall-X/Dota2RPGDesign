@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetIntellectGain()${1:--[[
+     CDOTA_BaseNPC_Hero:GetIntellectGain   
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetIntellectGain(  ) end
+    ]]}]]></content>
+    <tabTrigger>getIntellectGain</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

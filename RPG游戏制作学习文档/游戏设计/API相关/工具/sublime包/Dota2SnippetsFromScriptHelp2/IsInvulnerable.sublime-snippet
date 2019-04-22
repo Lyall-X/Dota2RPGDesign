@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsInvulnerable()${1:--[[
+     CDOTA_BaseNPC:IsInvulnerable   
+    -- @return bool
+    function CDOTA_BaseNPC:IsInvulnerable(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsInvulnerable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

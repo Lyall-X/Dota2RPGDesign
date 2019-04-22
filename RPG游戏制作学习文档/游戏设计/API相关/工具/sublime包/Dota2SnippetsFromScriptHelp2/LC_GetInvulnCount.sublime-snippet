@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetInvulnCount()${1:--[[
+     CDOTA_BaseNPC_Building:GetInvulnCount  Get the invulnerability count for a building. 
+    -- @return int
+    function CDOTA_BaseNPC_Building:GetInvulnCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>getInvulnCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

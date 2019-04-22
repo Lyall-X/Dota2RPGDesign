@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetFrameCount()${1:--[[
+     GetFrameCount  Returns the engines current frame count 
+    -- @return int
+    function GetFrameCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetFrameCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetNearbyCreepDeaths(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetNearbyCreepDeaths   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetNearbyCreepDeaths( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getNearbyCreepDeaths</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

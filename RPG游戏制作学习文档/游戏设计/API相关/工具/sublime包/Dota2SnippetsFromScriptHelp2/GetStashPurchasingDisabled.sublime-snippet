@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetStashPurchasingDisabled()${1:--[[
+     CDOTABaseGameMode:GetStashPurchasingDisabled  Turn purchasing items to the stash off/on. If purchasing to the stash is off the player must be at a shop to purchase items. 
+    -- @return bool
+    function CDOTABaseGameMode:GetStashPurchasingDisabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetStashPurchasingDisabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CBaseFlex" nameCN="基础扭曲"
+	descriptionEN="Animated characters who have vertex flex capability (Hi hex6)"
+	descriptionCN="动态化拥有顶点扭曲能力(Hi hex6)的角色" extends="CBaseAnimating">
+	<functions>
+		<function name="GetCurrentScene"
+		signature="handle GetCurrentScene()">
+		
+		  <DescriptionEN>Returns the instance of the oldest active scene entity (if any).</DescriptionEN>
+		  <DescriptionCN>返回最早激活的场景实体的实例（如果存在的话）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetSceneByIndex"
+		signature="handle GetSceneByIndex(int a)">
+		
+		  <DescriptionEN>Returns the instance of the scene entity at the specified index.</DescriptionEN>
+		  <DescriptionCN>返回指定索引号的场景实体的实例</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

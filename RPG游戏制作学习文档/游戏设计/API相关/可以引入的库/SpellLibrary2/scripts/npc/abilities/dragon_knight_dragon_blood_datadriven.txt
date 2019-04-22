@@ -1,0 +1,42 @@
+// Rewrite of the Dragon Knight Dragon Blood
+// Author: chrislotix
+// Date: 02.01.2015.
+"dragon_knight_dragon_blood_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"	"dragon_knight_dragon_blood"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_health_regen"		"2 3 4 5"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_armor"				"3 6 9 12"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_dragon_blood_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
+			}
+		}
+	}
+}
+

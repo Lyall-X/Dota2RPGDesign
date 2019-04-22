@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[StartSoundEventFromPosition(${1:string_1},${2:Vector_2})${3:--[[
+     StartSoundEventFromPosition  Start a sound event from position 
+    -- @return void
+    -- @param string_1 string
+    -- @param Vector_2 Vector
+    function StartSoundEventFromPosition( string_1, Vector_2 ) end
+    ]]}]]></content>
+    <tabTrigger>StartSoundEventFromPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

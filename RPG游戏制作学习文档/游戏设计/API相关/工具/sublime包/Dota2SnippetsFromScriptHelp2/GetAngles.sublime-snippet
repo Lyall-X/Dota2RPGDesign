@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAngles()${1:--[[
+     CBaseEntity:GetAngles   
+    -- @return QAngle
+    function CBaseEntity:GetAngles(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetAngles</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

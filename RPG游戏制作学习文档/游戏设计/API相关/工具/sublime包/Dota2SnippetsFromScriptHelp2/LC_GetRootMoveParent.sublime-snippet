@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetRootMoveParent()${1:--[[
+     CBaseEntity:GetRootMoveParent  If in hierarchy, walks up the hierarchy to find the root parent. 
+    -- @return handle
+    function CBaseEntity:GetRootMoveParent(  ) end
+    ]]}]]></content>
+    <tabTrigger>getRootMoveParent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

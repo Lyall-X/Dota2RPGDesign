@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[CreateVisibilityNode(${1:Vector_1},${2:float_2},${3:float_3})${4:--[[
+     CDOTABaseAbility:CreateVisibilityNode   
+    -- @return void
+    -- @param Vector_1 Vector
+    -- @param float_2 float
+    -- @param float_3 float
+    function CDOTABaseAbility:CreateVisibilityNode( Vector_1, float_2, float_3 ) end
+    ]]}]]></content>
+    <tabTrigger>createVisibilityNode</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

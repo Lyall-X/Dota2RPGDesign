@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCastCount()${1:--[[
+     CDOTA_Ability_Nian_Roar:GetCastCount  Number of times Nian has used the roar 
+    -- @return int
+    function CDOTA_Ability_Nian_Roar:GetCastCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCastCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

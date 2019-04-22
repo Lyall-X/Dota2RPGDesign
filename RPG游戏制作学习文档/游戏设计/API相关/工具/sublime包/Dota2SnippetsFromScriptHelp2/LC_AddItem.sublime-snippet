@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[AddItem(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:AddItem  Add an item to this unit's inventory. 
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:AddItem( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>addItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Think()${1:--[[
+     CDOTA_Item:Think  Think this item 
+    -- @return void
+    function CDOTA_Item:Think(  ) end
+    ]]}]]></content>
+    <tabTrigger>think</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

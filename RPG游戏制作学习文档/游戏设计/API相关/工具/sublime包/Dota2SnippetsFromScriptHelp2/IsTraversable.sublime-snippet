@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[IsTraversable(${1:Vector_1})${2:--[[
+     GridNav:IsTraversable  Checks whether the given position is traversable 
+    -- @return bool
+    -- @param Vector_1 Vector
+    function GridNav:IsTraversable( Vector_1 ) end
+    ]]}]]></content>
+    <tabTrigger>IsTraversable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,156 @@
+// Rewrite of the Troll Warlord Whirling Axes Ranged ability
+// Author: Pizzalol
+// Date: 14.03.2015.
+// NOTE: Currently missing the residual vision at at the end
+// NOTE2: ----------------------- REQUIRES troll_warlord_whirling_axes_melee_datadriven TO FUNCTION PROPERLY ------------------------
+"troll_warlord_whirling_axes_ranged_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"troll_warlord_whirling_axes_ranged"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
+		"particle"			"particles/units/heroes/hero_troll_warlord/troll_warlord_whirling_axe_ranged.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20 19 18 17"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 50 50 50"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"axe_width"					"100"
+		}
+		
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"axe_speed"					"1500.0"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"axe_range"					"945.0"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"axe_damage"				"75"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"axe_slow_duration"			"3.0 3.75 4.5 5.25"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"movement_speed"			"-30"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"axe_spread"				"25"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"axe_count"					"5"
+		}
+		// Extra
+		"09"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"vision_radius"				"900"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"vision_duration"			"3.0"
+		}
+	}
+
+	"OnUpgrade"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_troll_warlord/whirling_axes_ranged.lua"
+			"Function"		"LevelUpAbility"
+			"ability_name"	"troll_warlord_whirling_axes_melee_datadriven"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_TrollWarlord.WhirlingAxes.Ranged"
+			"Target" 		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_troll_warlord/whirling_axes_ranged.lua"
+			"Function"		"WhirlingAxesRanged"
+			"Target"		"POINT"
+			"axe_projectile"	"particles/units/heroes/hero_troll_warlord/troll_warlord_whirling_axe_ranged.vpcf"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"0"
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_whirling_axes_ranged_datadriven"
+			"Target" 		"TARGET"
+			"Duration"		"%axe_slow_duration"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_troll_warlord/whirling_axes_ranged.lua"
+			"Function"		"WhirlingAxesRangedHit"
+			"sound"			"Hero_TrollWarlord.WhirlingAxes.Target"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_whirling_axes_ranged_datadriven"
+		{
+			"IsDebuff"			"1"
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_speed" 
+			}
+		}
+	}
+}
+

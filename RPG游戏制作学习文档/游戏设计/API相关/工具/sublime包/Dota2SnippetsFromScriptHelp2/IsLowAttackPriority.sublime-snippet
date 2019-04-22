@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsLowAttackPriority()${1:--[[
+     CDOTA_BaseNPC:IsLowAttackPriority   
+    -- @return bool
+    function CDOTA_BaseNPC:IsLowAttackPriority(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsLowAttackPriority</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

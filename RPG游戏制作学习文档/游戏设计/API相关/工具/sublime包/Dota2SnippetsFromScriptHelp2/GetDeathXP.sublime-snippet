@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetDeathXP()${1:--[[
+     CDOTA_BaseNPC:GetDeathXP  Get the XP bounty on this unit. 
+    -- @return int
+    function CDOTA_BaseNPC:GetDeathXP(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetDeathXP</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

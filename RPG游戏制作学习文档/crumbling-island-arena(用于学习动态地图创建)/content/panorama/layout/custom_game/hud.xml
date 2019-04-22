@@ -1,0 +1,206 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/game_hud.css" />
+        <include src="file://{resources}/styles/custom_game/ability_bar.css" />
+        <include src="file://{resources}/styles/custom_game/timer.css" />
+        <include src="file://{resources}/styles/custom_game/scoreboard.css" />
+        <include src="file://{resources}/styles/custom_game/kill_message.css" />
+        <include src="file://{resources}/styles/custom_game/deathmatch.css" />
+        <include src="file://{resources}/styles/custom_game/hero_bars.css" />
+        <include src="file://{resources}/styles/custom_game/util.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/odiff.js" />
+        <include src="file://{resources}/scripts/custom_game/structure.js" />
+        <include src="file://{resources}/scripts/custom_game/underscore-min.js" />
+        <include src="file://{resources}/scripts/custom_game/vector.js" />
+        <include src="file://{resources}/scripts/custom_game/util.js" />
+        <include src="file://{resources}/scripts/custom_game/hero_bars_data.js" />
+        <include src="file://{resources}/scripts/custom_game/hero_bars.js" />
+        <include src="file://{resources}/scripts/custom_game/target_indicator.js" />
+        <include src="file://{resources}/scripts/custom_game/buff_bar.js" />
+        <include src="file://{resources}/scripts/custom_game/ability_bar.js" />
+        <include src="file://{resources}/scripts/custom_game/health_bar.js" />
+        <include src="file://{resources}/scripts/custom_game/kappa.js" />
+        <include src="file://{resources}/scripts/custom_game/game_hud.js" />
+        <include src="file://{resources}/scripts/custom_game/scoreboard.js" />
+        <include src="file://{resources}/scripts/custom_game/message_queue.js" />
+        <include src="file://{resources}/scripts/custom_game/vector_target.js" />
+    </scripts>
+    <snippets>
+        <snippet name="HealthBar">
+            <Panel class="HeroBar" hittest="false" hittestchildren="false">
+                <Panel id="TopBarContainer">
+                    <Panel id="PlayerNameContainer">
+                        <Label id="PlayerName"/>
+                    </Panel>
+                    <Panel id="HealthNumber">
+                        <Label id="HealthValue"/>
+                    </Panel>
+                    <Panel id="StatusEffectContainer">
+                        <Image id="StatusEffectRecast">
+                            <Label id="RecastHotkey"/>
+                        </Image>
+                        <Label id="StatusEffectName"/>
+                        <Panel id="StatusEffectProgress"/>
+                    </Panel>
+                </Panel>
+                <Panel id="BarTopContainer">
+                    <Panel id="BarContainer">
+                        <Panel id="HealthBar">
+                            <Panel id="ShieldDelim"/>
+                            <Panel id="MissingHealth"/>
+                        </Panel>
+                        <Panel id="SpecialBar" class="Hidden" hittest="false" hittestchildren="false"/>
+                    </Panel>
+                    <Panel id="AttackTimer"/>
+                </Panel>
+            </Panel>
+        </snippet>
+
+        <snippet name="HealthBarLight">
+            <Panel class="HeroBarLight" hittest="false" hittestchildren="false">
+                <Label id="HealthValue"/>
+                <ProgressBar id="HealthBar"/>
+            </Panel>
+        </snippet>
+
+        <snippet name="UrsaBar">
+            <Panel class="HeroBar">
+                <ProgressBar id="UrsaRage" value="0" max="100"/>
+            </Panel>
+        </snippet>
+
+        <snippet name="JuggBar">
+            <Panel class="HeroBar" hittest="false" hittestchildren="false">
+                <Panel id="PlayerNameContainer">
+                    <Label id="PlayerName"/>
+                </Panel>
+                <Panel id="HealthNumber">
+                    <Label id="HealthValue"/>
+                </Panel>
+                <Panel id="HealthBar">
+                    <Panel id="ShieldDelim"/>
+                    <Panel id="MissingHealth"/>
+                </Panel>
+                <Panel id="JuggSwordBar" class="SpecialBar">
+                    <ProgressBar id="JuggSword0" value="100" max="100"/>
+                    <ProgressBar id="JuggSword1" value="100" max="100"/>
+                    <ProgressBar id="JuggSword2" value="100" max="100"/>
+                    <ProgressBar id="JuggSword3" value="100" max="100"/>
+                </Panel>
+            </Panel>
+        </snippet>
+
+        <snippet name="UndyingBar">
+            <Panel class="HeroBar">
+                <ProgressBar id="UndyingShield" value="0" max="100"/>
+            </Panel>
+        </snippet>
+    </snippets>
+    <Panel class="MainPanel" hittest="false">
+        <Image src="file://{images}/custom_game/pl_r.png" style="opacity:0.0;"/>
+        <Panel id="HeroBarsContainer" hittest="false" class="MainPanel"/>
+        <Panel id="MainPanel" class="MainPanel" hittest="false">
+            <Panel id="DebugPanel" hittest="false"/>
+            <Panel id="ScoreboardContainer" hittest="false" hittestchildren="false">
+                <Panel id="VictoryPanel">
+                    <Label id="VictoryText" text="#GameGoal"/>
+                    <Label id="VictoryGoal" text="30"/>
+                </Panel>
+                <Panel id="Scoreboard"/>
+            </Panel>
+            <Panel id="HeroDetails" hittest="false">
+                <Panel id="HeroPortraitContainer" hittest="false">
+                    <DOTAHeroMovie id="HeroPortrait" hittest="false"/>
+                </Panel>
+                <Panel id="HeroNameContainer" hittest="false">
+                    <Label id="HeroNameLabel" class="UILabel" hittest="false"/>
+                    <Panel id="HeroCosmeticAbilities"/>
+                </Panel>
+            </Panel>
+            <Panel id="HeroPanel" hittest="false">
+                <Panel class="BuffPanel" id="BuffPanel">
+                </Panel>
+
+                <Panel class="HealthPanel" id="HealthPanel" hittest="false" hittestchildren="false">
+                </Panel>
+
+                <Panel class="AbilityPanel" hittest="false" id="AbilityPanel">
+                </Panel>
+            </Panel>
+            <Panel id="KillLog" class="KillLogTransform" hittest="false" hittestchildren="false"/>
+            <Label id="RoundMessageTop" class="RoundMessage" text="#Round" hittest="false"/>
+            <Label id="RoundMessageBottom" class="RoundMessage" hittest="false"/>
+
+            <Panel id="KillMessageContainer" hittest="false" hittestchildren="false">
+                <Label id="KillMessageTop" class="KillMessageLabel" text="ENEMY"/>
+                <Label id="KillMessageBottom" class="KillMessageLabel" text="SLAIN"/>
+                <Panel class="KillMessageContainer" id="KillMessageIconContainerTop">
+                    <DOTAHeroImage id="KillMessageIconTop" heroimagestyle="icon" hittest="false"/>
+                </Panel>
+                <Panel class="KillMessageCutter" id="KillMessageCutterTop"/>
+                <Panel class="KillMessageCutter" id="KillMessageCutterBottom"/>
+                <Panel class="KillMessageContainer" id="KillMessageIconContainerBottom">
+                    <DOTAHeroImage id="KillMessageIconBottom" heroimagestyle="icon" hittest="false"/>
+                </Panel>
+            </Panel>
+
+            <Panel id="AttackTipContainer" hittest="false" hittestchildren="false">
+                <Label text="#AttackTipLeft"/>
+                <Panel/>
+                <Label text="#AttackTipRight"/>
+            </Panel>
+
+            <Panel id="DeathMatchContainer" class="Hidden">
+                <Panel id="DeathMatchControls">
+                    <Button class="DeathMatchButton" id="DeathMatchRespawnButton" onactivate="DeathMatch.InstantRespawn()">
+                        <Panel id="DeathMatchRespawnButtonContainer">
+                            <Label id="DeathMatchRespawnButtonText" text="#RespawnAs"/>
+                            <DOTAHeroImage id="DeathMatchRespawnButtonIcon" heroimagestyle="icon"/>
+                        </Panel>
+                    </Button>
+                    <Button id="RandomHeroButton" onactivate="DeathMatch.Random()">
+                        <Panel id="RandomHeroButtonImage"/>
+                    </Button>
+                    <Button class="DeathMatchButton" id="DeathMatchChangeHeroButton" onactivate="ToggleStyle(DeathMatchHeroes, DeathMatchPanelHidden); SetInputFocus(DeathMatchHeroes)">
+                        <Label text="#ChangeHero"/>
+                    </Button>
+                </Panel>
+                <Panel id="DeathMatchHeroes" class="DeathMatchPanelHidden DeathMatchHeroesAnimated" acceptsinput="true">
+                    <Panel id="DeathMatchHeroesHero">
+                        <Label id="DeathMatchHeroName"/>
+                        <Panel id="DeathMatchHeroMovieContainer">
+                                <DOTAHeroMovie id="DeathMatchHeroMovie"/>
+                        </Panel>
+                        <Panel id="DeathmatchHeroAbilities">
+                            <Panel id="AbilityRowR" class="AbilityRow"><Image/><Label/></Panel>
+                            <Panel id="AbilityRowE" class="AbilityRow"><Image/><Label/></Panel>
+                            <Panel id="AbilityRowW" class="AbilityRow"><Image/><Label/></Panel>
+                            <Panel id="AbilityRowQ" class="AbilityRow"><Image/><Label/></Panel>
+                        </Panel>
+                    </Panel>
+                    <Panel id="DeathMatchHeroesContent">
+                        <Panel id="DeathMatchHeroesContentEasy" class="DeathMatchHeroList"/>
+                        <Panel id="DeathMatchHeroesContentHard" class="DeathMatchHeroList"/>
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel id="GameChat" hittest="false">
+                <Panel id="GameChatContent" hittest="false"/>
+                <TextEntry
+                        id="GameChatEntry"
+                        class="Hidden"
+                        multiline="false"
+                        textmode="normal"
+                        oninputsubmit="SubmitGameChat()"
+                        maxchars="256"
+                        oncancel="HideGameChat()"
+                        onblur="HideGameChat()"
+                >
+                    <Label id="GameChatTarget" text="[TEAM]"/>
+                </TextEntry>
+            </Panel>
+        </Panel>
+    </Panel>
+</root>

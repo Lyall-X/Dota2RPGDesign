@@ -1,0 +1,458 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"MyAbility_unit"
+	{
+		// 基础的定义，如果技能是单位目标还是无目标，单位目标的类型是什么
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
+		"BaseClass"				 		"ability_datadriven"
+		"AbilityTextureName"			"juggernaut_blade_dance"
+
+		// 施法前摇，如果技能行为(AbilityBehavior)是DOTA_ABILITY_BEHAVIOR_IMMEDIATE就无效了
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"1000"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK_EVENT"
+
+		// 技能CD	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.0 2.0 3.0 4.0"
+
+		// 技能施法所需魔法值
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"	//这样写的话就是默认此技能所有等级的魔法值都是1，以上同理
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/MyAbility.lua"
+				"Function"			"MyAbility_unit"
+				"Target"			"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"duration"		"2"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"radius"		"300 400 500 600"		//四个技能等级的眩晕和伤害作用范围
+			}
+			"03"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"damage"		"100"					//四个技能等级都是伤害
+			}
+		}
+	}
+
+
+	"MyAbility_null"
+	{
+		// 基础的定义，如果技能是单位目标还是无目标，单位目标的类型是什么
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"BaseClass"				 		"ability_datadriven"
+		"AbilityTextureName"			"juggernaut_blade_fury"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0 2.0 3.0 4.0"
+		"AbilityManaCost"				"5"
+
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/MyAbility.lua"
+				"Function"			"MyAbility_null_1"
+				"Target"
+				{
+					"Types"		"DOTA_UNIT_TARGET_BASIC|DOTA_UNIT_TARGET_HERO"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+					"Center"	"CASTER"
+					"Radius"	"%radius"
+				}
+			}
+
+			//"RunScript"
+			//{
+			//	"ScriptFile"		"scripts/vscripts/MyAbility.lua"
+			//	"Function"			"MyAbility_null_2"
+			//	"Target"			"CASTER"
+			//}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_MyAbility_null_time"
+				"Target"
+				{
+					"Types"		"DOTA_UNIT_TARGET_BASIC|DOTA_UNIT_TARGET_HERO"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+					"Center"	"CASTER"
+					"Radius"	"%radius"
+				}
+			}
+
+			"Stun"
+			{
+				"Target"
+				{
+					"Types"		"DOTA_UNIT_TARGET_BASIC|DOTA_UNIT_TARGET_HERO"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+					"Center"	"CASTER"
+					"Radius"	"%radius"
+				}
+				"Duration"		"2"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_MyAbility_null_buff"
+				"Target"
+				{
+					"Types"		"DOTA_UNIT_TARGET_BASIC|DOTA_UNIT_TARGET_HERO"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+					"Center"	"CASTER"
+					"Radius"	"%radius"
+				}
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"		"particles\units\heroes\hero_queenofpain\queen_scream_of_pain_owner.vpcf"
+				"EffectAttachType"	"follow_chest"
+				"Target"			"CASTER"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_WitchDoctor.Maledict_Tick"
+				"Target"		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_MyAbility_null_buff"
+			{
+				"Duration"		"10"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"-50"
+				}
+			}
+
+			"modifier_MyAbility_null_time"
+			{
+				"IsHidden"			"1"
+				"Duration"			"10"
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Type"		"DAMAGE_TYPE_PURE"
+						"Damage"	"10"
+						"Target"	"TARGET"
+					}
+				}
+			}
+		}
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		"100 200 300 400"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"400"
+			}
+		}
+	}
+	
+	"MyAbility_point"
+	{
+		// 基础的定义，如果技能是单位目标还是无目标，单位目标的类型是什么
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"BaseClass"				 		"ability_datadriven"
+		"AbilityTextureName"			"juggernaut_omni_slash"
+
+		// 施法前摇，如果技能行为(AbilityBehavior)是DOTA_ABILITY_BEHAVIOR_IMMEDIATE就无效了
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// 技能CD	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.3"
+
+		// 技能施法所需魔法值
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		"OnSpellStart"
+		{
+			//"RunScript"
+			//{
+			//	"ScriptFile"	"scripts/vscripts/MyAbility.lua"
+			//	"Function"		"MyAbility_point"
+			//	"Target"		"POINT"
+			//}
+
+			"LinearProjectile"
+			{
+				"EffectName"	"particles\econ\items\mirana\mirana_crescent_arrow\mirana_spell_crescent_arrow.vpcf"
+				"MoveSpeed"			"1000"
+				"StartRadius"		"0"
+				"EndRadius"			"50"
+				"FixedDistance"		"1000"
+				"StartPosition"		"CASTER"
+				"HasFrontalCone"	"0"
+				"ProvidesVision"	"1"
+				"VisionRadius"		"500"
+				"TargetTeams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"		"DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_MyAbility_point_act"
+				"Target"			"CASTER"
+			}
+
+			//"ApplyModifier"
+			//{
+			//	"ModifierName"		"modifier_phased"
+			//	"Target"			"CASTER"
+			//}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"Damage"	
+			{
+				"Type"		"DAMAGE_TYPE_PURE"
+				"Damage"	"110"
+				"Target"	"TARGET"
+			}
+
+			"Stun"
+			{
+				"Duration"		"5"
+				"Target"		"TARGET"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_MyAbility_point_act"
+			{
+				"IsHidden"		"1"
+				"Duration"		"0.2"
+				"OverrideAnimation"		"ACT_DOTA_ATTACK_EVENT"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"300"
+			}
+		}
+	}
+
+	"MyAbility_passive"
+	{
+		// 基础的定义，如果技能是单位目标还是无目标，单位目标的类型是什么
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"				 		"ability_datadriven"
+		"AbilityTextureName"			"juggernaut_omni_slash"
+		"AbilityCastRange"				"500"
+
+		"Modifiers"
+		{
+			//光环
+			"modifier_MyAbility_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"Aura"			"modifier_MyAbility_passive_buff"
+				"Aura_Radius"	"500"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+			}
+
+			"modifier_MyAbility_passive_buff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"20"	//攻击百分比加成
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"15"	//护甲加成
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"15"	//魔抗加成
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"100"	//移动速度
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"10"	//生命恢复速度
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"10"	//魔法恢复速度
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"25"	//力量加成
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"25"	//敏捷加成
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"25"	//智力加成
+				}
+			}
+
+			//攻击触发事件
+			"modifier_MyAbility_passive_attack"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"OnAttack"
+				{
+					"Random"
+					{
+						"Chance"		"100"
+						"PseudoRandom"	"DOTA_PSEUDO_RANDOM_JUGG_CRIT"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_MyAbility_passive_attack_caster"
+								"Target"		"CASTER"	//用ATTACKER也行
+							}
+
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_MyAbility_passive_attack_target"
+								"Target"		"TARGET"	//被攻击的目标
+							}
+						}
+					}
+					
+				}
+			}
+
+			"modifier_MyAbility_passive_attack_caster"
+			{
+				"IsHidden"		"1"
+				"Duration"		"10"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"1"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"5"
+				}
+			}
+
+			"modifier_MyAbility_passive_attack_target"
+			{
+				"IsHidden"		"1"
+				"Duration"		"10"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"-1"
+				}
+			}
+
+			//小小的皮
+			"modifier_MyAbility_passive_xx"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+
+				"Aura"			"modifier_MyAbility_passive_xx_attack"
+				"Aura_Radius"	"1000"
+				"Aura_Types"	"DOTA_UNIT_TARGET_HERO"
+				"Aura_Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_NONE"
+			}
+
+			"modifier_MyAbility_passive_xx_attack"
+			{
+				"IsHidden"		"1"
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"	"50"
+						"OnSuccess"
+						{
+							//"Stun"
+							//{
+							//	"Duration"	"2"
+							//	"Target"	"ATTACKER"
+							//}
+						}
+					}
+				}
+			}
+
+			//毒龙的皮
+			"modifier_MyAbility_passive_dulong"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"OnTakeDamage"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_MyAbility_passive_dulong_damage"
+						"Target"		"ATTACKER"
+					}
+				}
+			}
+
+			"modifier_MyAbility_passive_dulong_damage"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"			"5"
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"Damage"	
+					{
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"15"
+						"Target"	"TARGET"
+					}
+				}
+			}
+		}
+	}
+}

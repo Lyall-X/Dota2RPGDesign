@@ -1,0 +1,33 @@
+// Rewrite of the Keeper of the Illuminate end ability
+// Author: Pizzalol
+// Date: February 24, 2016
+// Version: 6.86
+// Type: Datadriven
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_keeper_of_the_light/illuminate.lua
+//
+// KV files:
+// scripts/npc/abilities/keeper_of_the_light/illuminate_datadriven.txt
+"illuminate_end_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityTextureName"			"keeper_of_the_light_illuminate_end"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_keeper_of_the_light/illuminate.lua"
+			"Function"		"IlluminateStop"
+		}
+	}	
+}

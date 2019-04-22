@@ -1,0 +1,152 @@
+// Rewrite of the Faceless Void Time Walk ability
+// Author: Pizzalol, YOLOSPAGHETTI
+// Date: February 7, 2016
+// Version: 6.86
+// Type: Datadriven
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_faceless_void/time_walk.lua
+"time_walk_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"faceless_void_time_walk"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+		"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_time_walk_preimage.vpcf"
+		"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_time_walk_slow.vpcf"
+		"particle"  		"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"625"
+	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"24.0 18.0 12.0 6.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"40"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.25"	// mostly about the blink
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed"					"3000"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"backtrack_time"			"2.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tooltip_range"		"625"
+		}
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_FacelessVoid.TimeWalk"
+			"Target"		"CASTER"
+		}
+		
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_faceless_void/faceless_void_time_walk_preimage.vpcf"
+			"EffectAttachType"  "start_at_customorigin"
+
+			"ControlPointEntities"
+			{
+				"CASTER"	"attach_origin"
+			}
+
+			"ControlPoints"
+			{
+				"01"	"POINT"
+			}
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
+			"Function"		"TimeWalk"
+			"Target"		"POINT"
+			"modifier"		"modifier_time_walk_datadriven"
+		}
+
+		"ApplyMotionController"
+		// For this: gfycat.com/BraveHideousGiantschnauzer -> check: bit.ly/1KWulqA
+		{
+		    "Target"
+		    {
+		    	"Center"	"CASTER"
+		    	"Flags"     "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		    }
+		    "ScriptFile"    "heroes/hero_faceless_void/time_walk.lua"
+		    "HorizontalControlFunction" "TimeWalkMotion"  
+		}
+		
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
+			"Function"		"RemoveDamage"
+			"BacktrackTime"	"%backtrack_time"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_damage_checker_datadriven"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			
+			"OnTakeDamage"
+			{	
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_faceless_void/time_walk.lua"
+					"Function"		"CalculateDamage"
+					"DamageTaken"	"%attack_damage"
+					"BacktrackTime"	"%backtrack_time"
+				}
+			}
+		}
+	
+		"modifier_time_walk_datadriven"
+		{
+			"IsHidden"	"1"
+
+			// Use this if you want to achieve a "time walk" effect for heroes other than faceless
+			"EffectName"		"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+			"EffectAttachType"	"follow_origin"
+			
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[UpdateTeamSlot(${1:int_1},${2:int_2},${3:bool_3})${4:--[[
+     CDOTA_PlayerResource:UpdateTeamSlot   
+    -- @return void
+    -- @param int_1 int
+    -- @param int_2 int
+    -- @param bool_3 bool
+    function CDOTA_PlayerResource:UpdateTeamSlot( int_1, int_2, bool_3 ) end
+    ]]}]]></content>
+    <tabTrigger>UpdateTeamSlot</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

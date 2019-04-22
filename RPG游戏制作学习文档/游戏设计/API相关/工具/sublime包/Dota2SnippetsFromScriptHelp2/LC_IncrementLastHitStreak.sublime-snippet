@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[IncrementLastHitStreak(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:IncrementLastHitStreak   
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_PlayerResource:IncrementLastHitStreak( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>incrementLastHitStreak</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

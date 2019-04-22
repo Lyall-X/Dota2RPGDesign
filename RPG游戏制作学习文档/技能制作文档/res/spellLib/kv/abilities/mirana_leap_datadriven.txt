@@ -1,0 +1,131 @@
+// Rewrite of the Mirana Leap ability
+// Author: Pizzalol
+// Date: 26.09.2015.
+"mirana_leap_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityTextureName"	"mirana_leap"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30.0 26.0 22.0 18.0"
+	"AbilityDuration"				"10.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"40 35 30 20"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"leap_distance"			"600 700 800 900"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"leap_speed"			"1600.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"leap_acceleration"		"7000.0"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"leap_radius"		"775"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"leap_speedbonus"	"4 8 12 16"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"leap_speedbonus_as"	"8 16 24 32"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"leap_duration"			"10.0"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Ability.Leap"
+			"Target"		"CASTER"
+		}
+		
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_mirana/leap.lua"
+			"Function"		"Leap"
+		}
+
+		"ApplyMotionController"
+		// For this: gfycat.com/BraveHideousGiantschnauzer -> check: bit.ly/1KWulqA
+		{
+		    "Target" 		"CASTER"
+		    "ScriptFile"    "heroes/hero_mirana/leap.lua"
+		    "HorizontalControlFunction" "LeapHorizonal"
+		    "VerticalControlFunction" 	"LeapVertical"         
+		}
+
+		"ActOnTargets"
+		{
+			"Target"
+            {
+                "Center" "CASTER"
+                "Radius" "%leap_radius"
+                "Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY" 
+                "Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            }
+
+            "Action"
+            {
+            	"ApplyModifier"
+            	{
+            		"ModifierName"	"modifier_leap_datadriven"
+            		"Target"		"TARGET"
+            		"Duration"		"%leap_duration"
+            	}
+            }
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_leap_datadriven"
+		{
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%leap_speedbonus_as"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%leap_speedbonus"
+			}
+		}
+	}
+}
+

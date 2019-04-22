@@ -1,0 +1,30 @@
+"backdoor_protection_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel"						"1"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"900"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"activation_time"		"15.0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"regen_rate"			"90"
+		}
+	}
+}
+

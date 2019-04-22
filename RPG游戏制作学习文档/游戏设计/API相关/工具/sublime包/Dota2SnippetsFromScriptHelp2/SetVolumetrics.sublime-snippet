@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[SetVolumetrics(${1:bool_1},${2:float_2},${3:float_3},${4:int_4},${5:float_5})${6:--[[
+     CEnvProjectedTexture:SetVolumetrics  Turn on/off light volumetrics: bool bOn, float flIntensity, float flNoise, int nPlanes, float flPlaneOffset 
+    -- @return void
+    -- @param bool_1 bool
+    -- @param float_2 float
+    -- @param float_3 float
+    -- @param int_4 int
+    -- @param float_5 float
+    function CEnvProjectedTexture:SetVolumetrics( bool_1, float_2, float_3, int_4, float_5 ) end
+    ]]}]]></content>
+    <tabTrigger>SetVolumetrics</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

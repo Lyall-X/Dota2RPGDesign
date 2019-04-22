@@ -1,0 +1,166 @@
+// Rewrite of the Lina Light Strike Array ability
+// Author: Pizzalol
+// Date: 29.12.2014.
+"lina_light_strike_array_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"lina_light_strike_array"
+	
+	"AbilityCastRange"				"625"
+	"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+	"AOERadius"						"%light_strike_array_aoe"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		"particle"			"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+		"particle"			"particles/units/heroes/hero_lina/lina_spell_light_strike_array_ray_team.vpcf"
+		"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+	}
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"7.0 7.0 7.0 7.0"
+	"AbilityDuration"				"1.6 1.8 2.0 2.2"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"90 150 210 280"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90 100 110 125"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"light_strike_array_aoe"	"225"
+		}
+		
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"light_strike_array_delay_time"	"0.5"
+		}
+					
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"light_strike_array_stun_duration"	"1.6 1.8 2.0 2.2"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Ability.PreLightStrikeArray"
+			"Target"		"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array_ray_team.vpcf"
+			"EffectAttachType"	"start_at_customorigin"
+			"TargetPoint"		"POINT"
+
+			"ControlPoints"
+            {
+            	"01"	"%light_strike_array_aoe 0 0"
+            	"03"	"0 0 0"
+            }
+		}
+
+		"DelayedAction"
+		{
+			"Delay"		"%light_strike_array_delay_time"
+
+			"Action"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Ability.LightStrikeArray"
+					"Target"		"CASTER"
+				}
+
+				"FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"TargetPoint"		"POINT"
+
+					"ControlPoints"
+		            {
+		            	"00"	"POINT"
+		            	"01"	"%light_strike_array_aoe 0 0"
+		            	"03"	"0 0 0"
+		            }
+				}
+				
+				"DestroyTrees"
+		        {
+		        	"Target"	"POINT"
+		        	"Radius"	"%light_strike_array_aoe"
+		        }
+
+				"ActOnTargets"
+				{
+					"Target"
+		            {
+		                "Center" "POINT"
+		                "Radius" "%light_strike_array_aoe"
+		                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+		                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		            }
+
+		            "Action"
+		            {
+		            	"Damage"
+		            	{
+		            		"Target"	"TARGET"
+		            		"Type"		"DAMAGE_TYPE_MAGICAL"
+		            		"Damage"	"%AbilityDamage"
+		            	}
+
+		            	"ApplyModifier"
+		            	{
+		            		"ModifierName"	"modifier_light_strike_array_datadriven"
+		            		"Target"		"TARGET"
+		            		"Duration"		"%light_strike_array_stun_duration"
+		            	}		            	
+		            }
+				}				
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_light_strike_array_datadriven"
+		{
+			"IsDebuff"	"1"
+			"OverrideAnimation"	"ACT_DOTA_DISABLED"
+
+			"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
+

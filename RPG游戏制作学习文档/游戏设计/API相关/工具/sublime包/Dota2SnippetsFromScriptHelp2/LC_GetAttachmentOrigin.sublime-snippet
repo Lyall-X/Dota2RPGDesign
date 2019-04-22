@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetAttachmentOrigin(${1:int_1})${2:--[[
+     CBaseAnimating:GetAttachmentOrigin  Get the attachement id's origin vector. 
+    -- @return Vector
+    -- @param int_1 int
+    function CBaseAnimating:GetAttachmentOrigin( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getAttachmentOrigin</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

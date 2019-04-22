@@ -1,0 +1,104 @@
+// Rewrite of the Leshrac Lightning Storm ability
+// Author: jacklarnes
+// Date: 05.04.2015
+"leshrac_lightning_storm_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"leshrac_lightning_storm"
+
+	"precache"
+	{
+		"soundfile"         "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+		"particle"			"particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf"
+		"particle"			"particles/units/heroes/hero_leshrac/leshrac_lightning_slow.vpcf"
+		"particle"			"particles/units/heroes/hero_leshrac/leshrac_lightning_impact.vpcf"
+		"particle"			"particles/units/heroes/hero_leshrac/leshrac_lightning_sparks.vpcf"
+	}
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.7"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"4"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"90 100 110 120"
+	
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"80 140 200 260"
+		
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"jump_count"			"4 5 6 7"
+		}
+		
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"650 650 650 650"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"jump_delay"			"0.25 0.25 0.25 0.25"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_duration"			"0.5"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow_movement_speed"	"-75"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"scripts/vscripts/heroes/hero_leshrac/lightning_storm.lua"
+			"Function"		"lightning_storm_start"
+		}
+	}
+
+	"Modifiers"
+	{
+		"lightning_storm_slow"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+	
+			"Duration"			"%slow_duration"
+
+			"EffectName"        "particles/units/heroes/hero_leshrac/leshrac_lightning_slow.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "TARGET"
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_movement_speed" 
+			}
+		}
+	}
+}
+

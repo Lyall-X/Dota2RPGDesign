@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[IsHeroSharedWithPlayerID(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:IsHeroSharedWithPlayerID   
+    -- @return bool
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:IsHeroSharedWithPlayerID( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>IsHeroSharedWithPlayerID</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

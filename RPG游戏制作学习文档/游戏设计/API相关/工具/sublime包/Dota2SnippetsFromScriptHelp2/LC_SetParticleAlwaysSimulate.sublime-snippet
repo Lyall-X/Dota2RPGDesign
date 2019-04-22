@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetParticleAlwaysSimulate(${1:int_1})${2:--[[
+     CScriptParticleManager:SetParticleAlwaysSimulate   
+    -- @return void
+    -- @param int_1 int
+    function CScriptParticleManager:SetParticleAlwaysSimulate( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setParticleAlwaysSimulate</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

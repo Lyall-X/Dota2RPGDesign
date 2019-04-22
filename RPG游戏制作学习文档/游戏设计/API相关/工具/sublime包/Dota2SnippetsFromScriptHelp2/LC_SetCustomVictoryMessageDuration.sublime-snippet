@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetCustomVictoryMessageDuration(${1:float_1})${2:--[[
+     CDOTAGamerules:SetCustomVictoryMessageDuration  Sets the victory message duration. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTAGamerules:SetCustomVictoryMessageDuration( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setCustomVictoryMessageDuration</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

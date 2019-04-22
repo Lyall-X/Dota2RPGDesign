@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CDOTAGamerules" nameCN="DOTA游戏规则"
+	descriptionEN="Global accessor variable: GameRules"
+	descriptionCN="全局存储器变量：GameRules" extends="">
+	<functions>
+		<function name="Defeated" signature="void Defeated()">
+		  <DescriptionEN>Kills the ancient, etc.</DescriptionEN>
+		  <DescriptionCN>摧毁遗迹等</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="DidMatchSignoutTimeOut"
+		signature="bool DidMatchSignoutTimeOut()">
+		  <DescriptionEN>true when we have waited some time after end of
+		  the game and not received signout</DescriptionEN>
+		  <DescriptionCN>当游戏结束，等待弹窗时为真</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetCustomGameDifficulty"
+		signature="int GetCustomGameDifficulty()">
+		  <DescriptionEN>Returns the difficulty level of the custom game
+		  mode</DescriptionEN>
+		  <DescriptionCN>返回自定义游戏模式难度</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetDifficulty" signature="int GetDifficulty()">
+		  <DescriptionEN>Returns difficulty level of the custom game
+		  mode</DescriptionEN>
+		  <DescriptionCN>返回自定义游戏模式难度</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetDroppedItem"
+		signature="handle GetDroppedItem(int dropIndex)">
+		  <DescriptionEN>Gets the Xth dropped item</DescriptionEN>
+		  <DescriptionCN>获得第X个掉落物品</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int dropIndex</Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetGameModeEntity"
+		signature="handle GetGameModeEntity()">
+		  <DescriptionEN>Get the game mode entity</DescriptionEN>
+		  <DescriptionCN>设置游戏模式实体</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>handle</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetGameTime" signature="float GetGameTime()">
+		  <DescriptionEN>Returns the number of seconds elapsed since map
+		  start. This time doesn't count up when the game is
+		  paused</DescriptionEN>
+		  <DescriptionCN>返回游戏开始后经过的秒数，暂停时间不计算在内</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetMatchSignoutComplete"
+		signature="bool GetMatchSignoutComplete()">
+		  <DescriptionEN>Have we received the post match signout message
+		  that includes reward information</DescriptionEN>
+		  <DescriptionCN>是否已经接受包含回报信息的弹窗</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetNianFightStartTime"
+		signature="float GetNianFightStartTime()">
+		  <DescriptionEN>Gets the start time for the Nian
+		  fight</DescriptionEN>
+		  <DescriptionCN>获得年兽大战开始时间</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetNianTotalDamageTaken"
+		signature="int GetNianTotalDamageTaken()">
+		  <DescriptionEN>For New Bloom, get total damage taken by the Nian
+		  / Year Beast</DescriptionEN>
+		  <DescriptionCN>芳晓活动，获得年兽受到的总伤害</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="GetTimeOfDay" signature="float GetTimeOfDay()">
+		  <DescriptionEN>Get the time of day</DescriptionEN>
+		  <DescriptionCN>获取一天中的时间（游戏时间）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>float</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="IsDaytime" signature="bool IsDaytime()">
+		  <DescriptionEN>Is it day time.</DescriptionEN>
+		  <DescriptionCN>是否是白天</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>bool</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="MakeTeamLose"
+		signature="void MakeTeamLose(int team)">
+		  <DescriptionEN>Makes ths specified team lose</DescriptionEN>
+		  <DescriptionCN>使指定队伍失败</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int team</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="NumDroppedItems" signature="int NumDroppedItems()">
+		  <DescriptionEN>Returns the number of items currently dropped on
+		  the ground</DescriptionEN>
+		  <DescriptionCN>返回当前掉落在地面的物品数量</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="Playtesting_UpdateAddOnKeyValues"
+		signature="void Playtesting_UpdateAddOnKeyValues()">
+		  <DescriptionEN>Updates custom hero, unit and ability KeyValues in
+		  memory with the latest values from disk</DescriptionEN>
+		  <DescriptionCN>从磁盘数据中更新自定义英雄、单位、技能的键值</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="ResetDefeated" signature="void ResetDefeated()">
+		  <DescriptionEN>Restart after killing the ancient,
+		  etc.</DescriptionEN>
+		  <DescriptionCN>遗迹摧毁后重新开始</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="ResetToHeroSelection"
+		signature="void ResetToHeroSelection()">
+		  <DescriptionEN>Restart the game at hero selection</DescriptionEN>
+		  <DescriptionCN>重新开始时选择英雄</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SendCustomMessage"
+		signature="void SendCustomMessage(string message, int teamID, int unknown(1?))">
+		  <DescriptionEN>Displays a line of text in the left textbox (where
+		  usually deaths/denies/buysbacks are announced). This function
+		  takes restricted HTML as input!
+		  (&lt;br&gt;,&lt;u&gt;,&lt;font&gt;)</DescriptionEN>
+		  <DescriptionCN>
+		  在左侧文本框显示一行文本，通常用来提示死亡、反补队友、买活等信息。使用严格HTML格式(&lt;br&gt;,&lt;u&gt;,&lt;font&gt;)</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>string message, int teamID, int
+		    unknown(1?</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetCreepMinimapIconScale"
+		signature="void SetCreepMinimapIconScale(float scale)">
+		  <DescriptionEN>Scale the creep icons on the
+		  minimap.</DescriptionEN>
+		  <DescriptionCN>在小地图上缩放中立生物图标</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float scale</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetCustomGameDifficulty"
+		signature="void SetCustomGameDifficulty(int a)">
+		  <DescriptionEN>Set the difficulty level of the custom game
+		  mode</DescriptionEN>
+		  <DescriptionCN>设置自定义游戏模式难度等级</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetFirstBloodActive"
+		signature="void SetFirstBloodActive(bool a)">
+		  <DescriptionEN>Sets whether First Blood has been
+		  triggered.</DescriptionEN>
+		  <DescriptionCN>设置第一滴血是否已经产生</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>bool a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetGameWinner"
+		signature="void SetGameWinner(int team)">
+		  <DescriptionEN>Makes ths specified team win</DescriptionEN>
+		  <DescriptionCN>使指定队伍胜利</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int team</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetGoldPerTick"
+		signature="void SetGoldPerTick(int a)">
+		  <DescriptionEN>Set the auto gold increase per timed
+		  interval.</DescriptionEN>
+		  <DescriptionCN>设置每个时间间隔获得的金币</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetGoldTickTime"
+		signature="void SetGoldTickTime(float a)">
+		  <DescriptionEN>Set the time?interval between auto gold
+		  increases.</DescriptionEN>
+		  <DescriptionCN>设置获得金币的时间周期</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetHeroMinimapIconSize"
+		signature="void SetHeroMinimapIconSize(int iconSize)">
+		  <DescriptionEN>(nMinimapHeroIconSize) - Set the hero minimap icon
+		  size.</DescriptionEN>
+		  <DescriptionCN>设置小地图英雄图标尺寸</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int iconSize</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetHeroRespawnEnabled"
+		signature="void SetHeroRespawnEnabled(bool canRespawn)">
+		  <DescriptionEN>Control if the normal DOTA hero respawn rules
+		  apply.</DescriptionEN>
+		  <DescriptionCN>设置是否使用默认英雄复活规则</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>bool canRespawn</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetHeroSelectionTime"
+		signature="void SetHeroSelectionTime(float time)">
+		  <DescriptionEN>Sets the amount of time players have to pick their
+		  hero.</DescriptionEN>
+		  <DescriptionCN>设置选择英雄的时间</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float time</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetNianFightStartTime"
+		signature="void SetNianFightStartTime(float a)">
+		  <DescriptionEN>Sets the start time for the Nian
+		  fight</DescriptionEN>
+		  <DescriptionCN>设置年兽大战开始时间</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetOverlayHealthBarUnit"
+		signature="void SetOverlayHealthBarUnit(handle unit, int style)">
+		  <DescriptionEN>Show this unit's health on the overlay health
+		  bar</DescriptionEN>
+		  <DescriptionCN>在前端蒙版生命条上显示单位生命值</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>handle unit, int style</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetPostGameTime"
+		signature="void SetPostGameTime(float time)">
+		  <DescriptionEN>Sets the amount of time players have between the
+		  game ending and the server disconnecting them.</DescriptionEN>
+		  <DescriptionCN>设置在结束游戏后服务器与玩家断线前的时间</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float time</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetPreGameTime"
+		signature="void SetPreGameTime(float time)">
+		  <DescriptionEN>Sets the amount of time players have between
+		  picking their hero and game start.</DescriptionEN>
+		  <DescriptionCN>设置选择英雄与开始游戏之间的时间</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float time</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetRuneMinimapIconScale"
+		signature="void SetRuneMinimapIconScale(float scale)">
+		  <DescriptionEN>Scale the rune icons on the
+		  minimap.</DescriptionEN>
+		  <DescriptionCN>缩放小地图神符图标</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float scale</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetRuneSpawnTime"
+		signature="void SetRuneSpawnTime(float time)">
+		  <DescriptionEN>Sets the amount of time between rune
+		  spawns.</DescriptionEN>
+		  <DescriptionCN>设置神符刷新时间</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float time</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetSafeToLeave"
+		signature="void SetSafeToLeave(bool safeToLeave)">
+		  <DescriptionEN>Mark this game as safe to leave.</DescriptionEN>
+		  <DescriptionCN>标记游戏可安全离开</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>bool safeToLeave</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetSameHeroSelectionEnabled"
+		signature="void SetSameHeroSelectionEnabled(bool enabled)">
+		  <DescriptionEN>When true, players can repeatedly pick the same
+		  hero.</DescriptionEN>
+		  <DescriptionCN>允许选择重复英雄</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>bool enabled</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetTimeOfDay"
+		signature="void SetTimeOfDay(float time)">
+		  <DescriptionEN>Set the time of day.</DescriptionEN>
+		  <DescriptionCN>设置一天中的时间（游戏时间）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float time</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetTreeRegrowTime"
+		signature="void SetTreeRegrowTime(float time)">
+		  <DescriptionEN>Sets the tree regrow time in
+		  seconds.</DescriptionEN>
+		  <DescriptionCN>设置树重新生长的时间（秒）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>float time</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetUseBaseGoldBountyOnHeroes"
+		signature="void SetUseBaseGoldBountyOnHeroes(bool a)">
+		  <DescriptionEN>Heroes will use the basic NPC functionality for
+		  determining their bounty, rather than DOTA specific
+		  formulas.</DescriptionEN>
+		  <DescriptionCN>英雄将使用基础NPC规则来决定赏金，而不是DOTA指定规则</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>bool a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetUseCustomHeroXPValues"
+		signature="void SetUseCustomHeroXPValues(bool a)">
+		  <DescriptionEN>Allows heroes in the map to give a specific amount
+		  of XP (this value must be set).</DescriptionEN>
+		  <DescriptionCN>允许英雄提供指定数目的经验值（必须先设置）</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>bool a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="SetUseUniversalShopMode"
+		signature="void SetUseUniversalShopMode(bool enabled)">
+		  <DescriptionEN>When true, all items are available at as long as
+		  any shop is in range, including Secret Shop items</DescriptionEN>
+		  <DescriptionCN>为真时，所有物品当处于任意商店范围内时都能购买到，包括秘密商店物品</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>bool enabled</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="State_Get" signature="&lt;&gt;State_Get()">
+		  <DescriptionEN>Get the current Gamerules state</DescriptionEN>
+		  <DescriptionCN>获取当前游戏规则状态</DescriptionCN>
+		  <HowToCall>
+		    <Parameter></Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

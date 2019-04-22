@@ -1,0 +1,232 @@
+#ScoreboardContainer
+{
+    flow-children: right;
+    align: center top;
+    transition: transform 1.0s linear 0.0ms;
+}
+
+#Scoreboard
+{
+    horizontal-align: center;
+    flow-children: right;
+}
+
+.ScoreboardTeamContainer
+{
+    flow-children: down;
+}
+
+.ScoreboardTeam
+{
+    flow-children: right;
+    horizontal-align: center;
+    vertical-align: top;
+    border-radius: 3px;
+    transition-property: opacity;
+    transition-duration: 0.1s;
+    margin: 4px;
+    min-width: 150px;
+}
+
+.ScoreboardPlayers
+{
+    flow-children: right;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.ScoreboardPlayer
+{
+    vertical-align: center;
+    margin: 3px;
+}
+
+.ScoreboardPlayerHero
+{
+    align: left center;
+    width: 32px;
+    height: 32px;
+}
+
+.ScoreboardPlayerNameContainer
+{
+    z-index: -1;
+    width: 150px;
+    height: 100%;
+}
+
+.ScoreboardPlayerName
+{
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    font-size: 16;
+    align: center center;
+    text-shadow: 0px 0px 3px 3.0 black;
+    color: #CCB966;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.ScoreboardTeamScoreContainer
+{
+    width: 60px;
+    horizontal-align: right;
+}
+
+.ScoreboardTeamScore
+{
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    font-size: 32;
+    align: center center;
+    text-shadow: 0px 0px 1px 3.0 black;
+    color: gold;
+    white-space: nowrap;
+    margin-right: 6px;
+}
+
+.ScoreboardScoreClose
+{
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    vertical-align: center;
+    text-shadow: 0px 0px 8px 2.0 black;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    color: white;
+    animation-duration: 0.35s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: ScoreClose;
+}
+
+.ScoreboardScoreSurvive
+{
+    text-shadow: red 0px 0px 4px 4px;
+    font-size: 28px;
+}
+
+#ScoreBoardGoal
+{
+    horizontal-align: center;
+    font-family: Radiance, FZLanTingHei-R-GBK, TH Sarabun New, Gulim,MingLiU;
+    font-size: 28;
+    color: gold;
+    border-radius: 3px;
+    padding: 2px 40px 2px 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+    /*width: 100%;*/
+    text-align: center;
+}
+
+#VictoryPanel
+{
+    flow-children: down;
+    width: 127px;
+    height: 100px;
+
+    background-image: url("file://{images}/custom_game/banner.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+
+    margin-right: 8px;
+    margin-top: 2px;
+}
+
+#VictoryText
+{
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 0px 0px 2px 2.0 black;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    text-overflow: clip;
+}
+
+#VictoryGoal
+{
+    horizontal-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    text-shadow: 0px 0px 2px 2.0 black;
+    color: gradient( linear, 0% 0%, 0% 100%, from( #c88423 ), color-stop( 0.25, #c88423 ), color-stop( 0.5, #fffb84 ), color-stop( 0.75, #c88423 ), to( #9a6717 ) );
+    text-overflow: clip;
+}
+
+.AnimationScoreBoardScoreIncrease
+{
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-name: ScoreIncrease;
+}
+
+.ConnectionStatePanel
+{
+    width: 32px;
+    height: 32px;
+}
+
+.ConnectionStateDisconnected
+{
+    background-image: url('file://{images}/custom_game/icon_disconnect.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.ConnectionStateAbandoned
+{
+    background-image: url('file://{images}/custom_game/icon_disconnect.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000AA;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.ConnectionStateAbandonedName .ScoreboardPlayerName
+{
+    text-decoration: line-through;
+    color: black;
+    text-shadow: none;
+}
+
+@keyframes 'ScoreIncrease'
+{
+    0%
+    {
+        transform: scale3d(1, 1, 1);
+    }
+
+    65%
+    {
+        transform: scale3d(1.8, 1.8, 1.8);
+    }
+    
+    100%
+    {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes 'ScoreClose'
+{
+    0%
+    {
+        transform: translateX(-2px) rotateZ(-3deg);
+    }
+
+    50%
+    {
+        transform: translateX(2px) rotateZ(3deg);
+    }
+    
+    100%
+    {
+        transform: translateX(-2px) rotateZ(-3deg);
+    }
+}

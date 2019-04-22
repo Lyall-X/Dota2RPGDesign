@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsPermanent()${1:--[[
+     CDOTA_Item:IsPermanent  Is this a permanent item? 
+    -- @return bool
+    function CDOTA_Item:IsPermanent(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsPermanent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

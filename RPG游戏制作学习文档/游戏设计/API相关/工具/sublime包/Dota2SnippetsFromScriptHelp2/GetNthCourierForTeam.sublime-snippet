@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GetNthCourierForTeam(${1:int_1},${2:int_2})${3:--[[
+     CDOTA_PlayerResource:GetNthCourierForTeam   
+    -- @return handle
+    -- @param int_1 int
+    -- @param int_2 int
+    function CDOTA_PlayerResource:GetNthCourierForTeam( int_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>GetNthCourierForTeam</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[HeroLevelUp(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:HeroLevelUp   
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_PlayerResource:HeroLevelUp( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>heroLevelUp</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

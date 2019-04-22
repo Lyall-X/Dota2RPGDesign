@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsDedicatedServer()${1:--[[
+     IsDedicatedServer  Returns true if this server is a dedicated server. 
+    -- @return bool
+    function IsDedicatedServer(  ) end
+    ]]}]]></content>
+    <tabTrigger>isDedicatedServer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

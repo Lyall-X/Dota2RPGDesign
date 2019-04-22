@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ShouldDoFlyHeightVisual()${1:--[[
+     CDOTA_BaseNPC_Hero:ShouldDoFlyHeightVisual   
+    -- @return bool
+    function CDOTA_BaseNPC_Hero:ShouldDoFlyHeightVisual(  ) end
+    ]]}]]></content>
+    <tabTrigger>ShouldDoFlyHeightVisual</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

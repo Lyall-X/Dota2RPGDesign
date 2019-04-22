@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCustomHeroMaxLevel()${1:--[[
+     CDOTABaseGameMode:GetCustomHeroMaxLevel  Allows definition of the max level heroes can achieve (default is 25). 
+    -- @return int
+    function CDOTABaseGameMode:GetCustomHeroMaxLevel(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetCustomHeroMaxLevel</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

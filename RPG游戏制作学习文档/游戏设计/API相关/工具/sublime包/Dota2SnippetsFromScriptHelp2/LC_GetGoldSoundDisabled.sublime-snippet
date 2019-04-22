@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetGoldSoundDisabled()${1:--[[
+     CDOTABaseGameMode:GetGoldSoundDisabled  Turn the sound when gold is acquired off/on. 
+    -- @return bool
+    function CDOTABaseGameMode:GetGoldSoundDisabled(  ) end
+    ]]}]]></content>
+    <tabTrigger>getGoldSoundDisabled</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

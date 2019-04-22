@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetShareability()${1:--[[
+     CDOTA_Item:GetShareability   
+    -- @return int
+    function CDOTA_Item:GetShareability(  ) end
+    ]]}]]></content>
+    <tabTrigger>getShareability</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

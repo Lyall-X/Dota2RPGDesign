@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsIllusion()${1:--[[
+     CDOTA_BaseNPC:IsIllusion   
+    -- @return bool
+    function CDOTA_BaseNPC:IsIllusion(  ) end
+    ]]}]]></content>
+    <tabTrigger>isIllusion</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

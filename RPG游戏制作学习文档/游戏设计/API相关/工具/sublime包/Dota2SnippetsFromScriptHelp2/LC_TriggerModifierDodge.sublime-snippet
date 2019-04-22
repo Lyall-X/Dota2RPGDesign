@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[TriggerModifierDodge()${1:--[[
+     CDOTA_BaseNPC:TriggerModifierDodge   
+    -- @return bool
+    function CDOTA_BaseNPC:TriggerModifierDodge(  ) end
+    ]]}]]></content>
+    <tabTrigger>triggerModifierDodge</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

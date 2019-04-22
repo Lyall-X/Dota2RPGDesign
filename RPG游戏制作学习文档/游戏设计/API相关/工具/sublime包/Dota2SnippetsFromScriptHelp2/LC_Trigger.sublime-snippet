@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Trigger()${1:--[[
+     CBaseEntity:Trigger  Fires off this entity's OnTrigger responses. 
+    -- @return void
+    function CBaseEntity:Trigger(  ) end
+    ]]}]]></content>
+    <tabTrigger>trigger</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

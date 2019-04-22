@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[BoundingRadius2D()${1:--[[
+     CDOTA_BaseNPC:BoundingRadius2D   
+    -- @return float
+    function CDOTA_BaseNPC:BoundingRadius2D(  ) end
+    ]]}]]></content>
+    <tabTrigger>BoundingRadius2D</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

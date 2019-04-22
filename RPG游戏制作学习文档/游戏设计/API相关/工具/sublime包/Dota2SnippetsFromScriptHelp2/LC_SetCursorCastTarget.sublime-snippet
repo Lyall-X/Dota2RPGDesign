@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetCursorCastTarget(${1:handle_1})${2:--[[
+     CDOTA_BaseNPC:SetCursorCastTarget   
+    -- @return void
+    -- @param handle_1 handle
+    function CDOTA_BaseNPC:SetCursorCastTarget( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setCursorCastTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

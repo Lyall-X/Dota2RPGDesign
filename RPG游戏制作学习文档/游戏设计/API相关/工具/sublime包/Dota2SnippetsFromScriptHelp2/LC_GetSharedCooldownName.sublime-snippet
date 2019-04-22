@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetSharedCooldownName()${1:--[[
+     CDOTABaseAbility:GetSharedCooldownName   
+    -- @return string
+    function CDOTABaseAbility:GetSharedCooldownName(  ) end
+    ]]}]]></content>
+    <tabTrigger>getSharedCooldownName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

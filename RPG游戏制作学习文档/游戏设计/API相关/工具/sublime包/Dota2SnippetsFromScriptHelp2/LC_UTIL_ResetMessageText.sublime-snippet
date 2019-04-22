@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[UTIL_ResetMessageText(${1:int_1})${2:--[[
+     UTIL_ResetMessageText  Clear all message text on one client. 
+    -- @return void
+    -- @param int_1 int
+    function UTIL_ResetMessageText( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>uTIL_ResetMessageText</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

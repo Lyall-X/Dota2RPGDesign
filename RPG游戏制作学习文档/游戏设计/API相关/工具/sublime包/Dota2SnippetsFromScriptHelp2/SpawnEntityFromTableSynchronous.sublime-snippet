@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SpawnEntityFromTableSynchronous(${1:string_1},${2:handle_2})${3:--[[
+     SpawnEntityFromTableSynchronous  Synchronously spawns a single entity from a table 
+    -- @return handle
+    -- @param string_1 string
+    -- @param handle_2 handle
+    function SpawnEntityFromTableSynchronous( string_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>SpawnEntityFromTableSynchronous</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

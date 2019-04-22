@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsTrained()${1:--[[
+     CDOTABaseAbility:IsTrained   
+    -- @return bool
+    function CDOTABaseAbility:IsTrained(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsTrained</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

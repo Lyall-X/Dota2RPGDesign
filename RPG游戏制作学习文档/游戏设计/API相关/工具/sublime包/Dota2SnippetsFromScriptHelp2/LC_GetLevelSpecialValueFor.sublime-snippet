@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GetLevelSpecialValueFor(${1:string_1},${2:int_2})${3:--[[
+     CDOTABaseAbility:GetLevelSpecialValueFor   
+    -- @return table
+    -- @param string_1 string
+    -- @param int_2 int
+    function CDOTABaseAbility:GetLevelSpecialValueFor( string_1, int_2 ) end
+    ]]}]]></content>
+    <tabTrigger>getLevelSpecialValueFor</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

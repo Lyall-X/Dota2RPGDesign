@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Destroy()${1:--[[
+     CEntityInstance:Destroy   
+    -- @return void
+    function CEntityInstance:Destroy(  ) end
+    ]]}]]></content>
+    <tabTrigger>Destroy</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

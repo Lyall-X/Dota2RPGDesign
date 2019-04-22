@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[InterruptMotionControllers(${1:bool_1})${2:--[[
+     CDOTA_BaseNPC:InterruptMotionControllers   
+    -- @return void
+    -- @param bool_1 bool
+    function CDOTA_BaseNPC:InterruptMotionControllers( bool_1 ) end
+    ]]}]]></content>
+    <tabTrigger>interruptMotionControllers</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

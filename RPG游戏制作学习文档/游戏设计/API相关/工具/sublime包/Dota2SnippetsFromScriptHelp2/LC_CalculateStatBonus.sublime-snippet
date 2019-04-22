@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[CalculateStatBonus()${1:--[[
+     CDOTA_BaseNPC_Hero:CalculateStatBonus  Recalculate all stats after the hero gains stats. 
+    -- @return void
+    function CDOTA_BaseNPC_Hero:CalculateStatBonus(  ) end
+    ]]}]]></content>
+    <tabTrigger>calculateStatBonus</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

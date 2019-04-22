@@ -1,0 +1,1328 @@
+<font color='#70EA72'>TEST!</font>
+
+DOTA_Tooltip_ability_                       //  名字
+DOTA_Tooltip_ability_ _Description          //  解释
+DOTA_Tooltip_ability_ _Lore                 //  PS
+DOTA_Tooltip_            //光环
+DOTA_Tooltip_ _Description  //光环说明
+
+"MaxLevel"                      "7"         //技能等级
+"LevelsBetweenUpgrades"         "0"         //学习技能的等级要求
+"FightRecapLevel"               "0"
+"AbilityCastRange"              "0"
+"AbilityCastRangeBuffer"        "250"
+"AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+"AbilityChannelTime"            "0.0 0.0 0.0 0.0"
+"AbilityCooldown"               "0.0 0.0 0.0 0.0"
+"AbilityDuration"               "0.0 0.0 0.0 0.0"
+"AbilitySharedCooldown"         ""
+"AbilityDamage"                 "0 0 0 0"
+"AbilityManaCost"               "0 0 0 0"
+"AbilityModifierSupportValue"   "1.0"
+"AbilityModifierSupportBonus"   "0"
+
+AbilityDamageType                  伤害类型
+    - DAMAGE_TYPE_COMPOSITE            混合
+    - DAMAGE_TYPE_HP_REMOVAL           生命移除
+    - DAMAGE_TYPE_MAGICAL              魔法
+    - DAMAGE_TYPE_PHYSICAL             物理
+    - DAMAGE_TYPE_PURE                 纯粹
+
+AbilityBehavior
+    - DOTA_ABILITY_BEHAVIOR_AOE                             范围
+    - DOTA_ABILITY_BEHAVIOR_ATTACK                          攻击
+    - DOTA_ABILITY_BEHAVIOR_AURA                            光环
+    - DOTA_ABILITY_BEHAVIOR_AUTOCAST                        自动施法
+    - DOTA_ABILITY_BEHAVIOR_CHANNELLED                      持续施法
+    - DOTA_ABILITY_BEHAVIOR_DIRECTIONAL                     指定？
+    - DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET               不提示目标
+    - DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT            不打断移动
+    - DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK              不恢复攻击
+    - DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT            不继续移动
+    - DOTA_ABILITY_BEHAVIOR_HIDDEN                          隐藏
+    - DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING                忽略后摇
+    - DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL                  忽略弹道
+    - DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE             忽略伪队列？
+    - DOTA_ABILITY_BEHAVIOR_IGNORE_TURN                     忽略转身
+    - DOTA_ABILITY_BEHAVIOR_IMMEDIATE                       立即
+    - DOTA_ABILITY_BEHAVIOR_ITEM                            物品
+    - DOTA_ABILITY_BEHAVIOR_NO_TARGET                       无目标
+    - DOTA_ABILITY_BEHAVIOR_NOASSIST                        无辅助？
+    - DOTA_ABILITY_BEHAVIOR_NONE                            无
+    - DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN              盗取？
+    - DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE                   不可学习
+    - DOTA_ABILITY_BEHAVIOR_PASSIVE                         被动
+    - DOTA_ABILITY_BEHAVIOR_POINT                           点目标
+    - DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES                   禁用？
+    - DOTA_ABILITY_BEHAVIOR_RUNE_TARGET                     符文目标
+    - DOTA_ABILITY_BEHAVIOR_TOGGLE                          切换
+    - DOTA_ABILITY_BEHAVIOR_UNIT_TARGET                     单位目标
+    - DOTA_ABILITY_BEHAVIOR_UNRESTRICTED                    地面
+
+
+AbilityType
+    - DOTA_ABILITY_TYPE_ATTRIBUTES         属性
+    - DOTA_ABILITY_TYPE_BASIC              正常                     
+    - DOTA_ABILITY_TYPE_HIDDEN             隐藏
+    - DOTA_ABILITY_TYPE_ULTIMATE           大招
+
+
+AbilityUnitTargetType                   技能目标类型
+    - DOTA_UNIT_TARGET_ALL              所有
+    - DOTA_UNIT_TARGET_BASIC            单位 
+    - DOTA_UNIT_TARGET_BUILDING         建筑
+    - DOTA_UNIT_TARGET_COURIER          信使
+    - DOTA_UNIT_TARGET_CREEP            地面
+    - DOTA_UNIT_TARGET_CUSTOM           自定义
+    - DOTA_UNIT_TARGET_HERO             英雄
+    - DOTA_UNIT_TARGET_MECHANICAL       机械
+    - DOTA_UNIT_TARGET_NONE             无
+    - DOTA_UNIT_TARGET_OTHER            其他
+    - DOTA_UNIT_TARGET_TREE             树
+
+
+AbilityUnitTargetTeam                    技能目标敌友
+    - DOTA_UNIT_TARGET_TEAM_BOTH         敌人和友军
+    - DOTA_UNIT_TARGET_TEAM_CUSTOM       自定义
+    - DOTA_UNIT_TARGET_TEAM_ENEMY        敌人
+    - DOTA_UNIT_TARGET_TEAM_FRIENDLY     友军
+    - DOTA_UNIT_TARGET_TEAM_NONE         无
+
+
+Attributes				 属性
+    - DOTA_ATTRIBUTE_AGILITY		 敏捷
+    - DOTA_ATTRIBUTE_INTELLECT		 智力
+    - DOTA_ATTRIBUTE_STRENGTH		 力量
+
+AbilityUnitTargetFlags
+    - DOTA_UNIT_TARGET_FLAG_CHECK_DISABLE_HELP              "禁用选择帮助"
+    - DOTA_UNIT_TARGET_FLAG_DEAD                            "死亡"
+    - DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE                     "可见"
+    - DOTA_UNIT_TARGET_FLAG_INVULNERABLE                    "无敌"
+    - DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES            "魔法免疫"
+    - DOTA_UNIT_TARGET_FLAG_MANA_ONLY                       "只有魔法"
+    - DOTA_UNIT_TARGET_FLAG_MELEE_ONLY                      "只有近战"
+    - DOTA_UNIT_TARGET_FLAG_NO_INVIS                        "不可见的"
+    - DOTA_UNIT_TARGET_FLAG_NONE                            "无"
+    - DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS                    "不是远古"
+    - DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE               "不是攻击免疫"
+    - DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO                  "不是地面英雄"
+    - DOTA_UNIT_TARGET_FLAG_NOT_DOMINATED                   "不是支配控制"
+    - DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS                   "不是幻象"
+    - DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES         "不是魔法免疫"
+    - DOTA_UNIT_TARGET_FLAG_NOT_NIGHTMARED                  "不是夜魇"
+    - DOTA_UNIT_TARGET_FLAG_NOT_SUMMONED                    "不是召唤物"
+    - DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD                    "出界"
+    - DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED               "玩家控制"
+    - DOTA_UNIT_TARGET_FLAG_RANGED_ONLY                     "只有远程"
+
+Unit Order Types //命令
+    - DOTA_UNIT_ORDER_ATTACK_MOVE                           "攻击移动"
+    - DOTA_UNIT_ORDER_ATTACK_TARGET                         "攻击目标"
+    - DOTA_UNIT_ORDER_BUYBACK                               "回购"
+    - DOTA_UNIT_ORDER_CAST_NO_TARGET                        "施法无目标"
+    - DOTA_UNIT_ORDER_CAST_POSITION                         "施法位置"
+    - DOTA_UNIT_ORDER_CAST_RUNE                             "施法符文"
+    - DOTA_UNIT_ORDER_CAST_TARGET                           "施法目标"
+    - DOTA_UNIT_ORDER_CAST_TARGET_TREE                      "施法目标树"
+    - DOTA_UNIT_ORDER_CAST_TOGGLE                           "施法切换"
+    - DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO                      "施法自动切换"
+    - DOTA_UNIT_ORDER_DISASSEMBLE_ITEM                      "拆解物品"
+    - DOTA_UNIT_ORDER_DROP_ITEM                             "丢弃物品"
+    - DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH                 "从储物柜拿出物品"
+    - DOTA_UNIT_ORDER_GIVE_ITEM                             "给予物品"
+    - DOTA_UNIT_ORDER_GLYPH                                 ""
+    - DOTA_UNIT_ORDER_HOLD_POSITION                         "保持原地"
+    - DOTA_UNIT_ORDER_MOVE_ITEM                             "移动物品"
+    - DOTA_UNIT_ORDER_MOVE_TO_POSITION                      "移动到某位置"
+    - DOTA_UNIT_ORDER_MOVE_TO_TARGET                        "移动到某目标"
+    - DOTA_UNIT_ORDER_NONE                                  "无"
+    - DOTA_UNIT_ORDER_PICKUP_ITEM                           "拾起物品"
+    - DOTA_UNIT_ORDER_PICKUP_RUNE                           "使用符文"
+    - DOTA_UNIT_ORDER_PURCHASE_ITEM                         "购买物品"
+    - DOTA_UNIT_ORDER_SELL_ITEM                             "出售物品"
+    - DOTA_UNIT_ORDER_STOP                                  "停止"
+    - DOTA_UNIT_ORDER_TAUNT                                 "嘲讽"
+    - DOTA_UNIT_ORDER_TRAIN_ABILITY                         "学习技能"
+
+    "Aura"          "modifier"
+        "Aura_Radius"   "%radius"
+        "Aura_Teams"    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "Aura_Types"    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "Aura_Flags"    "DOTA_UNIT_TARGET_FLAG_NONE"
+
+
+        "Target"
+        {
+            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Flags"     "DOTA_UNIT_TARGET_FLAG_NONE"
+            "Center"    "POINT"
+            "Radius"    "200"
+        }
+
+    local teams = DOTA_UNIT_TARGET_TEAM_ENEMY
+    local types = DOTA_UNIT_TARGET_BASIC+DOTA_UNIT_TARGET_HERO
+    local flags = DOTA_UNIT_TARGET_FLAG_NONE
+
+            "TrackingProjectile"
+            {
+                "Target"
+                "EffectName"        ""
+                "Dodgeable"         "0"
+                "ProvidesVision"    "1"
+                "VisionRadius"      "300"
+                "MoveSpeed"         "1000"
+                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+            }
+
+            "LinearProjectile"
+            {
+                "EffectName"        ""
+                "MoveSpeed"         "1000"
+                "StartRadius"       "0"
+                "EndRadius"         "300"
+                "FixedDistance"     "1000"
+                "TargetTeams"       "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "TargetTypes"       "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                "TargetFlags"       "DOTA_UNIT_TARGET_FLAG_NONE"
+                "HasFrontalCone"    "0"
+                "ProvidesVision"    "1"
+                "VisionRadius"      "300"
+            }
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"               "0"
+        }
+
+        "Rotate"
+        {
+            "Target"            "TARGET"
+            "PitchYawRoll"      "0 15 0"
+        }
+
+        "precache" //缓存特效
+        {
+            "particle"              "particles/"
+            "particle_folder"       "particles/"
+        }
+
+        "Knockback"
+            {
+                "Target"        "TARGET"
+                "Center"        "CASTER"
+                "Duration"      "0.5"
+                "Distance"      "100"
+                "Height"        "0" 
+                "IsFixedDistance"   "0"
+                "ShouldStun"    "1"
+            }
+
+    local info = 
+    {
+        Ability = keys.ability,
+        EffectName = keys.EffectName,
+        vSpawnOrigin = caster:GetAbsOrigin(),
+        fDistance = 2000,
+        fStartRadius = 64,
+        fEndRadius = 64,
+        Source = caster,
+        bHasFrontalCone = false,
+        bReplaceExisting = false,
+        iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+        iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
+        iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+        fExpireTime = GameRules:GetGameTime() + 10.0,
+        bDeleteOnHit = true,
+        vVelocity = caster:GetForwardVector() * 1800,
+        bProvidesVision = true,
+        iVisionRadius = 1000,
+        iVisionTeamNumber = caster:GetTeamNumber()
+    }
+    projectile = ProjectileManager:CreateLinearProjectile(info)
+
+    local info = 
+    {
+        Target = target,
+        Source = caster,
+        Ability = keys.ability,  
+        EffectName = "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf",
+        bDodgeable = false,
+        iMoveSpeed = 1100,
+        bProvidesVision = true,
+        iVisionRadius = 300,
+        iVisionTeamNumber = caster:GetTeamNumber(),
+        iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1
+    }
+    projectile = ProjectileManager:CreateTrackingProjectile(info)
+
+    local newOrder = {
+        UnitIndex       = yourNPC:entindex(), 
+        TargetIndex     = entToAttack:entindex(),
+        OrderType       = DOTA_UNIT_ORDER_ATTACK_MOVE,
+        AbilityIndex    = 0,
+        Position        = nil, 
+        Queue           = 0
+    }
+    ExecuteOrderFromTable(newOrder)
+
+            "Orb"
+            {
+                "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+                "ProjectileName"    "particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+                "CastAttack"        "1"
+            }
+            "OnOrbFire"
+            {
+                "SpendMana"
+                {
+                    "Mana"    "%AbilityManaCost"
+                }
+            }
+            "OnOrbImpact"
+            {
+            }
+
+            local quest = SpawnEntityFromTableSynchronous( "quest", {
+                    name = "44",
+                    title =  ""
+                })
+    quest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_ROUND,1)
+    local bar = SpawnEntityFromTableSynchronous( "subquest_base", {
+                    show_progress_bar = true,
+                    progress_bar_hue_shift = -119
+                } )
+    quest:AddSubquest( bar )
+    bar:SetTextReplaceValue( SUBQUEST_TEXT_REPLACE_VALUE_TARGET_VALUE, 10)
+    bar:SetTextReplaceValue( QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, 10)
+States
+
+MODIFIER_STATE_ATTACK_IMMUNE                攻击免疫
+MODIFIER_STATE_BLIND                        无视野
+MODIFIER_STATE_BLOCK_DISABLED               没有抗性
+MODIFIER_STATE_CANNOT_MISS                  没有Miss
+MODIFIER_STATE_COMMAND_RESTRICTED           禁止命令
+MODIFIER_STATE_DISARMED                     无法攻击
+MODIFIER_STATE_DOMINATED                    支配
+MODIFIER_STATE_EVADE_DISABLED               无法闪避
+MODIFIER_STATE_FLYING                       飞翔
+MODIFIER_STATE_FROZEN                       冰冻
+MODIFIER_STATE_HEXED                        妖术
+MODIFIER_STATE_INVISIBLE                    隐形
+MODIFIER_STATE_INVULNERABLE                 无敌
+MODIFIER_STATE_LOW_ATTACK_PRIORITY          攻击低优先级
+MODIFIER_STATE_MAGIC_IMMUNE                 魔法免疫
+MODIFIER_STATE_MUTED                        静音
+MODIFIER_STATE_NIGHTMARED                   噩梦
+MODIFIER_STATE_NO_HEALTH_BAR                无血条
+MODIFIER_STATE_NO_TEAM_MOVE_TO              不能队友移动
+MODIFIER_STATE_NO_TEAM_SELECT               不能队友选择
+MODIFIER_STATE_NO_UNIT_COLLISION            无单位碰撞
+MODIFIER_STATE_NOT_ON_MINIMAP               不在小地图显示
+MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES   不在敌人小地图显示
+MODIFIER_STATE_OUT_OF_GAME                  滚出游戏
+MODIFIER_STATE_PASSIVES_DISABLED            禁止被动
+MODIFIER_STATE_PROVIDES_VISION              给予视野
+MODIFIER_STATE_ROOTED                       禁止移动
+MODIFIER_STATE_SILENCED                     沉默
+MODIFIER_STATE_SOFT_DISARMED                
+MODIFIER_STATE_SPECIALLY_DENIABLE           特别的
+MODIFIER_STATE_STUNNED                      击晕
+MODIFIER_STATE_UNSELECTABLE                 不可选择
+MODIFIER_STATE_VALUE_DISABLED               禁用
+MODIFIER_STATE_VALUE_ENABLED                启用
+MODIFIER_STATE_VALUE_NO_ACTION              不产生效果
+
+"OnChannelFinish"               "施法成功"
+"OnChannelInterrupted"          "施法中断"
+"OnChannelSucceeded"            "施法成功"
+"OnOwnerDied"                   "单位死亡"
+"OnOwnerSpawned"                "单位复活"
+"OnProjectileFinish"            "投射物投射成功"
+"OnProjectileHitUnit"           "投射物命中单位"
+"OnSpellStart"                  "开始施放法术"
+"OnToggleOff"                   "切换关闭"
+"OnToggleOn"                    "切换打开"
+"OnUpgrade"                     "升级"
+
+
+Find Types
+    - FIND_ANY_ORDER            "任何顺序"
+    - FIND_CLOSEST              "按最近"
+    - FIND_FARTHEST             "按最远"
+    - FIND_UNITS_EVERYWHERE     "随机"
+
+
+Properties	
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL                不会受到魔法伤害
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL               不会受到物理伤害
+    MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE                   不会受到纯粹伤害
+    MODIFIER_PROPERTY_ABSORB_SPELL                              吸收技能？
+    MODIFIER_PROPERTY_ATTACK_RANGE_BONUS                        攻击范围加成
+    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT                攻击速度，常量加成
+    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_POWER_TREADS   攻击速度，常量加成，动力鞋
+    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY      攻击速度，常量加成，附加
+    MODIFIER_PROPERTY_AVOID_CONSTANT                            闪避，常量
+    MODIFIER_PROPERTY_AVOID_SPELL                               闪避技能
+    MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT                 基础攻击间隔
+    MODIFIER_PROPERTY_BASE_MANA_REGEN                           基础魔法恢复速度
+    MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE                    基础攻击加成
+    MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE             基础攻击百分比加成
+    MODIFIER_PROPERTY_BONUS_DAY_VISION                          白天视野加成
+    MODIFIER_PROPERTY_BONUS_NIGHT_VISION                        夜晚视野加成
+    MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE                   视野百分比加成
+    MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT               技能CD减少，常量
+    MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE                 攻击力百分比加成
+    MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION        攻击力百分比加成，幻象
+    MODIFIER_PROPERTY_DEATHGOLDCOST                             死亡金钱消耗
+    MODIFIER_PROPERTY_DISABLE_AUTOATTACK                        禁止自动攻击
+    MODIFIER_PROPERTY_DISABLE_HEALING                           禁止恢复
+    MODIFIER_PROPERTY_EVASION_CONSTANT                          闪避，常量
+    MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS                        附加生命值
+    MODIFIER_PROPERTY_EXTRA_MANA_BONUS                          附加魔法值
+    MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS                      附加力量
+    MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP                        强行显示小地图
+    MODIFIER_PROPERTY_HEALTH_BONUS                              生命值加成
+    MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT                     生命恢复速度，常量加成
+    MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE                   生命恢复速度百分比
+    MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE                吸收的伤害
+    MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE       吸收物理伤害
+    MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT            吸收技能伤害
+    MODIFIER_PROPERTY_INVISIBILITY_LEVEL                        隐形等级
+    MODIFIER_PROPERTY_IS_ILLUSION                               是否是幻象
+    MODIFIER_PROPERTY_IS_SCEPTER                                是否是权杖？
+    MODIFIER_PROPERTY_LIFETIME_FRACTION                         分数？
+    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS                  魔抗
+    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE       魔抗，衰老独立
+    MODIFIER_PROPERTY_MAGICAL_RESISTANCE_ITEM_UNIQUE            魔抗，物品独立
+    MODIFIER_PROPERTY_MANA_BONUS                                魔法值加成
+    MODIFIER_PROPERTY_MANA_REGEN_CONSTANT                       魔法恢复速度，常量加成
+    MODIFIER_PROPERTY_MANA_REGEN_CONSTANT_UNIQUE                魔法恢复速度，独立
+    MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE                     魔法恢复速度，百分比
+    MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE               总魔法恢复速度，百分比
+    MODIFIER_PROPERTY_MIN_HEALTH                                最小生命值
+    MODIFIER_PROPERTY_MISS_PERCENTAGE                           Miss百分比
+    MODIFIER_PROPERTY_MODEL_CHANGE                              模型修改
+    MODIFIER_PROPERTY_MODEL_SCALE                               模型大小
+    MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE                        移动速度，独立的
+    MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE                   基础移动速度
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT                  移动速度，常量加成
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE                移动速度，百分比加成
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE         移动速度，百分比加成，独立的
+    MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE                    移动速度，常量加成，独立的
+    MODIFIER_PROPERTY_MOVESPEED_LIMIT                           极限移动速度
+    MODIFIER_PROPERTY_MOVESPEED_MAX                             最大移动速度
+    MODIFIER_PROPERTY_OVERRIDE_ANIMATION                        修改动作
+    MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE                   修改动作速度
+    MODIFIER_PROPERTY_OVERRIDE_ANIMATION_WEIGHT                 修改动作力度
+    MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY                   持续隐形
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS                      护甲加成
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_ILLUSIONS            护甲加成，幻象
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE               护甲加成，独立
+    MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE        护甲加成，主动
+    MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK                   物理格挡
+    MODIFIER_PROPERTY_POST_ATTACK                               快速攻击？
+    MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE                    附加攻击力，常量加成
+    MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT
+    MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE                  致命一击
+    MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_COMPOSITE
+    MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL
+    MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL
+    MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE
+    MODIFIER_PROPERTY_PROCATTACK_FEEDBACK
+    MODIFIER_PROPERTY_PROVIDES_FOW_POSITION                     提供跟随的位置？
+    MODIFIER_PROPERTY_REINCARNATION                             重生
+    MODIFIER_PROPERTY_RESPAWNTIME                               重生时间
+    MODIFIER_PROPERTY_STATS_AGILITY_BONUS                       敏捷加成
+    MODIFIER_PROPERTY_STATS_INTELLECT_BONUS                     智力加成
+    MODIFIER_PROPERTY_STATS_STRENGTH_BONUS                      力量加成
+    MODIFIER_PROPERTY_TOOLTIP                                   ？？？
+    MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK
+    MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR
+    MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
+    MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
+    MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE                      转身速率百分比
+
+
+Attributes
+    MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+    MODIFIER_ATTRIBUTE_MULTIPLE
+    MODIFIER_ATTRIBUTE_NONE
+    MODIFIER_ATTRIBUTE_PERMANENT
+
+ItemCost            金钱
+ItemDroppable       是否可丢弃
+ItemSellable        是否可出售
+ItemPurchasable     是否可购买
+ItemKillable        是否能够攻击
+ItemDisassembleRule 是否可拆分
+ItemAlertable       是否可提醒
+ItemPermanent       是否永久的
+ItemInitialCharges  是否初始物品数量
+ItemRequiresCharges 是否有数量才可用
+SideShop            是否在旁边的商店出售
+SecretShop          是否在神秘商店出售
+ItemCastOnPickup    是否施法可拾起
+ItemStackable       是否可叠加
+ItemQuality         品质
+ItemShopTags        店铺标签
+ItemAliases         别名
+ItemShareability    是否可共享
+"MaxUpgradeLevel"   物品最大等级
+"ItemBaseLevel"     物品当前等级
+
+ItemQuality
+    component   这个翻译不出来，零件？部件？  
+    rare        稀有[蓝]
+    epic        史诗[紫]
+    common      常见[绿]
+    consumable  消耗品[白]
+    secret_shop 神秘商店[青蓝]
+    artifact    神器[橙]
+"ItemShopTags"  "move_speed;boost_mana;mana_pool"
+"ItemAliases"   "mana;mb"
+
+ItemRecipe          //是否是物品合成菜单
+ItemResult          //合成的物品
+ItemRequirements    //合成所需物品
+{
+    "01"    "item_energy_booster;item_arcane_boots"
+}
+
+ItemDeclarations   购买提示方式
+    DECLARE_PURCHASES_IN_SPEECH         语音
+    DECLARE_PURCHASES_TO_SPECTATORS     观众
+    DECLARE_PURCHASES_TO_TEAMMATES      队友
+
+ItemDisassembleRule
+    DOTA_ITEM_DISASSEMBLE_ALWAYS        总是可以
+    DOTA_ITEM_DISASSEMBLE_NEVER         不可拆分
+
+ItemShareability
+    ITEM_FULLY_SHAREABLE                都可以共享
+    ITEM_FULLY_SHAREABLE_STACKING       库存共享
+    ITEM_NOT_SHAREABLE                  不可共享
+    ITEM_PARTIALLY_SHAREABLE            部分共享
+
+item_recipe_
+
+"BaseClass"                     "item_recipe_arcane_boots"
+
+PlayerEvents
+    player_team: 玩家改变他所在的队伍
+            userid ( short ): 玩家在服务器上的用户ID
+            team ( byte ): 队伍ID
+            oldteam( byte ): 之前队伍的ID
+            disconnect( bool ): 队伍变化是否因玩家掉线
+            autoteam( bool ): 如果为true就是玩家自动分配到队伍
+            silent( bool ): 如果为true就不会播放玩家加入队伍的消息
+
+    player_class: 玩家改变他的class
+            userid ( short ): 玩家在服务器上的用户ID
+            class ( string ): new player class / model
+
+    player_score: 玩家分数改变
+        userid ( short ): 玩家在服务器上的用户ID
+        kills ( short ): # of kills
+        deaths ( short ): # of deaths
+        score ( short ): total game score
+
+    player_spawn: 玩家重生
+        userid ( short ): 玩家在服务器上的用户ID
+
+    player_shoot: player shoot his weapon
+        userid ( short ): user ID on server
+        weapon ( byte ): weapon ID
+        mode ( byte ): weapon mode
+
+    player_use
+        userid ( short ): user ID on server
+        entity ( short ): entity used by player
+
+    player_changename
+        userid ( short ): user ID on server
+        oldname ( string ): players old (current) name
+        newname ( string ): players new name
+
+    player_hintmessage 提示信息
+        hintmessage ( string ): localizable string of a hint
+
+    player_reconnected : 玩家重新连入游戏
+        event(local):the data include the realitive infomation
+
+Game events
+    game_init: 当一个游戏开始会触发
+
+    game_newmap: 当新地图载入时会发送
+            mapname ( string ): map name
+
+    game_start: 新游戏开始
+            roundslimit ( long ): max round
+            timelimit ( long ): time limit
+            fraglimit ( long ): frag limit
+            objective ( string ): round objective
+
+    game_end: 游戏结束
+            winner ( byte ): 赢的玩家的队伍或者用户的ID
+
+    round_start：回合开始
+            timelimit ( long ): 回合时间限制
+            fraglimit ( long ): 最高人头数
+            objective ( string ): 回合目标
+
+    round_end：回合结束
+            winner ( byte ): 赢的玩家的队伍或者用户的ID
+            reason ( byte ): 队伍胜利原因
+            message ( string ): 回合结束的消息
+
+    round_start_pre_entity
+
+    teamplay_round_start: 团队配合的回合开始
+            full_reset ( bool ): 游戏完全复位
+            hostname_changed  主机名改变
+            hostname ( string ) 主机名
+
+    difficulty_changed  难度改变
+            newDifficulty ( short )  新难度
+            oldDifficulty ( short )  就难度
+            strDifficulty( string ): 新的难度的字符串
+
+    finale_start  决赛开始
+            rushes ( short )
+
+    game_message: 发送游戏消息给任何人
+            target ( byte ): 0 = 控制台, 1 = HUD
+            text ( string ): 消息
+
+    break_breakable
+            entindex ( long )
+            userid ( short )
+            material ( byte ): BREAK_GLASS, BREAK_WOOD, etc
+
+    break_prop
+            entindex ( long )
+            userid ( short )
+
+    npc_spawned  单位重生
+            entindex ( long )
+
+    npc_replaced  单位替换
+            old_entindex ( long )
+            new_entindex ( long )
+
+    entity_killed  实体被击杀
+            entindex_killed( long )
+            entindex_attacker ( long )
+            entindex_inflictor ( long ) 受害者
+            damagebits ( long )
+
+    entity_hurt  实体受到伤害
+            entindex_killed( long )
+            entindex_attacker ( long )
+            entindex_inflictor ( long )
+            damagebits ( long )
+
+    bonus_updated  奖励更新
+            numadvanced ( short )  优秀
+            numbronze ( short )  青铜
+            numsilver ( short )  银
+            numgold ( short )  金
+
+    player_stats_updated  玩家统计更新
+            forceupload ( bool )  强制上传
+
+    achievement_event  战绩事件
+            achievement_name ( string ): non-localized name of achievement
+            cur_val ( short ): # of steps toward achievement
+            max_val ( short ): total # of steps in achievement
+
+    achievement_earned  取得战绩
+            player ( byte ): entindex of the player
+            achievement ( short ): achievement ID
+
+    ): Used for a notification message when an achievement fails to write
+    achievement_write_failed
+
+    physgun_pickup
+            entindex ( long ): entity picked up
+
+    flare_ignite_npc
+            entindex ( long ): entity ignited
+
+    helicopter_grenade_punt_miss
+
+    user_data_downloaded: fired when achievements/stats are downloaded from Steam or XBox Live
+    
+    ragdoll_dissolved
+            entindex ( long )
+
+    gameinstructor_draw
+
+    gameinstructor_nodraw
+
+    map_transition
+
+    instructor_server_hint_create :create a hint using data supplied entirely by the server/map.
+            hint_name ( string ): what to name the hint. For referencing it again later (e.g. a kill command for the hint instead of a timeout)
+            hint_replace_key ( string ): type name so that messages of the same type will replace each other
+            hint_target ( long ): entity id that the hint should display at
+            hint_activator_userid ( short ): userid id of the activator
+            hint_timeout ( short     ): how long in seconds until the hint automatically times out, 0 = never
+            hint_icon_onscreen ( string ): the hint icon to use when the hint is onscreen. (e.g. icon_alert_red)
+            hint_icon_offscreen ( string ): the hint icon to use when the hint is offscreen. (e.g. icon_alert)
+            hint_caption ( string ): the hint caption. (e.g. #ThisIsDangerous)
+            hint_activator_caption ( string ): the hint caption that only the activator sees (e.g. #YouPushedItGood)
+            hint_color ( string ): the hint color in (r,g,b( format where each component is 0-255))
+            hint_icon_offset ( float ): how far on the z axis to offset the hint from entity origin
+            hint_range ( float ): range before the hint is culled
+            hint_flags ( long ): hint flags
+            hint_binding ( string ): bindings to use when use_binding is the onscreen icon
+            hint_allow_nodraw_target ( bool ): if false, the hint will disappear if the target entity is invisible
+            hint_nooffscreen ( bool ): if true, the hint will not show when outside the player view
+            hint_forcecaption ( bool ): if true, the hint caption will show even if the hint is occluded
+            hint_local_player_only ( bool ): if true, only the local player will see the hint
+
+    instructor_server_hint_stop :destroys a server/map created hint
+            hint_name ( string ): The hint to stop. Will stop ALL hints with this name
+
+    chat_new_message: 新的聊天信息
+            channel ( byte )
+
+    chat_members_changed: 新的聊天成员加入
+            channel ( byte )
+            
+    game_rules_state_change: the state of game changes
+
+    ModEvents
+
+modifier_event
+eventname ( string )
+caster ( short )
+ability ( short )
+dota_player_kill
+victim_userid ( short )
+killer1_userid ( short )
+killer2_userid ( short )
+killer3_userid ( short )
+killer4_userid ( short )
+killer5_userid ( short )
+bounty ( short )
+neutral ( short )
+greevil ( short )
+dota_player_deny
+killer_userid ( short )
+victim_userid ( short )
+dota_barracks_kill
+barracks_id ( short )
+dota_tower_kill
+killer_userid ( short )
+teamnumber ( short )
+gold ( short )
+dota_roshan_kill
+teamnumber ( short )
+gold ( short )
+dota_courier_lost
+teamnumber ( short )
+dota_courier_respawned
+teamnumber ( short )
+dota_glyph_used
+teamnumber ( short )
+dota_super_creeps
+teamnumber ( short )
+dota_item_purchased( edit: not dota_item_purchase )
+userid ( short )
+itemid ( short )
+dota_item_gifted
+userid ( short )
+itemid ( short )
+sourceid ( short )
+dota_rune_pickup
+userid ( short )
+type ( short )
+rune ( short )
+dota_rune_spotted
+userid ( short )
+rune ( short )
+dota_item_spotted
+userid ( short )
+itemid ( short )
+dota_no_battle_points
+userid ( short )
+reason ( short )
+dota_chat_informational
+userid ( short )
+type ( short )
+dota_action_item
+reason ( short )
+itemdef ( short )
+message ( short )
+dota_chat_ban_notification
+userid( short )
+dota_chat_event
+userid ( short )
+gold ( short )
+message ( short )
+dota_chat_timed_reward
+userid ( short )
+itmedef ( short )
+message ( short )
+dota_pause_event
+userid ( short )
+value ( short )
+message ( short )
+dota_chat_kill_streak
+gold ( short )
+killer_id ( short )
+killer_streak ( short )
+killer_multikill ( short )
+victim_id ( short )
+victim_streak ( short )
+dota_chat_first_blood
+gold ( short )
+killer_id ( short )
+victim_id ( short )
+dota_player_update_hero_selection
+tabcycle ( bool )
+dota_player_update_selected_unit
+dota_player_update_query_unit
+dota_player_update_killcam_unit
+dota_player_take_tower_damage
+PlayerID ( short )
+damage ( short )
+dota_hud_error_message
+reason ( byte )
+message ( string )
+dota_action_success
+dota_starting_position_changed
+dota_money_changed
+dota_enemy_money_changed
+dota_portrait_unit_stats_changed
+dota_portrait_unit_modifiers_changed
+dota_force_portrait_update
+dota_inventory_changed
+dota_item_picked_up
+itemname ( string )
+PlayerID ( short )
+ItemEntityIndex( short )
+HeroEntityIndex( short )
+dota_inventory_item_changed
+entityIndex ( short )
+dota_ability_changed
+dota_portrait_ability_layout_changed
+dota_inventory_item_added
+itemname ( string )
+dota_inventory_changed_query_unit
+dota_link_clicked
+link ( string )
+nav ( bool ): internal to item panel - preserve the nav stack
+nav_back ( bool ): internal to item panel - preserve the nav stack
+recipe ( short )
+shop ( short ): show the item in a particular shop
+dota_set_quick_buy
+item ( string )
+recipe ( byte )
+toggle ( bool )
+dota_quick_buy_changed
+item ( string )
+recipe ( byte )
+dota_player_shop_changed
+prevshopmask ( byte )
+shopmask ( byte )
+dota_player_show_killcam
+nodes ( byte )
+player ( short )
+dota_player_show_minikillcam
+nodes ( byte )
+player ( short )
+gc_user_session_created
+team_data_updated
+guild_data_updated
+guild_open_parties_updated
+fantasy_updated
+fantasy_league_changed
+fantasy_score_info_changed
+player_info_updated
+game_rules_state_change
+match_history_updated
+SteamID ( uint64 )
+match_details_updated
+matchID ( uint64 )
+result ( byte )
+live_games_updated
+recent_matches_updated
+Page ( short )
+news_updated
+persona_updated
+SteamID ( uint64 )
+tournament_state_updated
+party_updated
+lobby_updated
+dashboard_caches_cleared
+last_hit
+PlayerID ( short )
+EntKilled ( short )
+FirstBlood ( bool )
+HeroKill ( bool )
+TowerKill ( bool )
+player_completed_game
+PlayerID ( short )
+Winner ( byte )
+player_reconnected
+PlayerID ( short )
+nommed_tree
+PlayerID ( short )
+dota_rune_activated_server
+PlayerID ( short )
+rune ( short )
+dota_player_gained_level
+player ( short )
+level ( short )
+dota_player_pick_hero
+player ( short )
+heroindex ( short )
+hero ( string )
+dota_player_learned_ability
+player ( short )
+abilityname ( string )
+dota_player_used_ability
+PlayerID ( short )
+abilityname ( string )
+dota_non_player_used_ability
+abilityname ( string )
+dota_ability_channel_finished
+abilityname ( string )
+interrupted ( bool )
+dota_holdout_revive_complete
+caster( short )
+target( short )
+dota_player_killed
+PlayerID ( short )
+HeroKill ( bool )
+TowerKill ( bool )
+bindpanel_open
+bindpanel_close
+keybind_changed
+dota_item_drag_begin
+dota_item_drag_end
+dota_shop_item_drag_begin
+dota_shop_item_drag_end
+dota_item_purchased
+PlayerID ( short )
+itemname ( string )
+itemcost ( short )
+dota_item_used
+PlayerID ( short )
+itemname ( string )
+dota_item_auto_purchase
+item_id ( short )
+dota_unit_event
+victim ( short )
+attacker ( short )
+basepriority ( short )
+priority ( short )
+eventtype ( short ): EDOTAHeroChaseEventType
+dota_quest_started
+questIndex ( long ): entity index
+dota_quest_completed
+questIndex ( long ): entity index
+gameui_activated
+gameui_hidden
+player_fullyjoined
+userid ( short ): user ID on server
+name ( string ): player name
+dota_spectate_hero
+entindex ( byte )
+dota_match_done
+winningteam ( byte ): The ID of the winning team
+dota_match_done_client
+set_instructor_group_enabled
+group ( string )
+enabled ( short )
+joined_chat_channel
+channelName ( string )
+left_chat_channel
+channelName ( string )
+gc_chat_channel_list_updated
+today_messages_updated
+num_messages ( short )
+file_downloaded
+success ( bool )
+local_filename ( string )
+remote_url ( string )
+player_report_counts_updated
+positive_remaining ( byte )
+negative_remaining ( byte )
+positive_total ( short )
+negative_total ( short )
+scaleform_file_download_complete
+success ( bool )
+local_filename ( string )
+remote_url ( string )
+item_purchased
+itemid ( short )
+gc_mismatched_version
+demo_skip
+local (1)
+playback_tick ( long ): current playback tick
+skipto_tick ( long ): tick we're going to
+user_message_list ( local ): CSVCMsgList_UserMessages
+dota_hero_chase_list ( local ): CSVCMsgList_GameEvents
+demo_start
+local (1)
+dota_combatlog_list ( local ): CSVCMsgList_GameEvents that are combat log events
+dota_hero_chase_list ( local ): CSVCMsgList_GameEvents
+dota_pick_hero_list ( local ): CSVCMsgList_GameEvents
+demo_stop
+
+    map_shutdown
+    dota_workshop_fileselected
+                filename ( string )
+    dota_workshop_filecanceled
+    rich_presence_updated
+    dota_hero_random
+                userid ( short )
+                heroid ( short )
+    dota_rd_chat_turn
+                userid ( short )
+    dota_favorite_heroes_updated
+    profile_closed
+    item_preview_closed
+    dashboard_switched_section
+                section ( short )
+    dota_tournament_item_event
+                winner_count ( short )
+                event_type ( short )
+    dota_hero_swap
+                playerid1 ( byte )
+                playerid2 ( byte )
+    dota_reset_suggested_items : reset the purchased / checked off state of suggested items in the store
+    halloween_high_score_received
+                round ( short )
+    halloween_phase_end
+                phase ( byte )
+                team ( byte )
+    halloween_high_score_request_failed
+                round ( short )
+    dota_hud_skin_changed
+                skin ( string )
+                style ( byte )
+    dota_inventory_player_got_item
+                itemname ( string )
+    player_is_experienced
+    player_is_notexperienced
+    dota_tutorial_lesson_start
+    map_location_updated
+    richpresence_custom_updated
+    game_end_visible
+    antiaddiction_update
+    highlight_hud_element
+                elementname ( string )
+                duration ( float )
+    hide_highlight_hud_element
+    intro_video_finished
+    matchmaking_status_visibility_changed
+    practice_lobby_visibility_changed
+    dota_courier_transfer_item
+    full_ui_unlocked
+    client_connectionless_packet
+                local (1
+                buffer( (local
+                buffersize( long )
+                address( string )
+    hero_selector_preview_set
+                setindex( short )
+    antiaddiction_toast
+                message ( string )
+                duration ( float )
+    hero_picker_shown
+    hero_picker_hidden
+    dota_local_quickbuy_changed
+    show_center_message
+                message ( string )
+                duration ( float )
+                clear_message_queue ( bool )
+    hud_flip_changed
+                flipped ( bool )
+    frosty_points_updated
+    defeated
+                entindex ( short )
+    reset_defeated
+    booster_state_updated
+    event_points_updated
+                event_id ( short )
+                points ( short )
+                premium_points ( short )
+    local_player_event_points
+                points ( short )
+                conversion_rate ( short )
+    custom_game_difficulty
+                difficulty ( byte )
+    tree_cut
+                tree_x ( float )
+                tree_y ( float )
+    ugc_details_arrived
+                published_file_id ( uint64 )
+    ugc_subscribed
+                published_file_id ( uint64 )
+    ugc_unsubscribed
+                published_file_id ( uint64 )
+    prizepool_received
+                success ( bool )
+                prizepool ( uint64 )
+                leagueid ( uint64 )
+    microtransaction_success
+                txnid ( uint64 )
+    dota_rubick_ability_steal
+                abilityIndex ( short )
+                abilityLevel ( byte )
+    compendium_event_actions_loaded
+                account_id ( uint64 )
+                league_id ( uint64 )
+                local_test( bool )
+                original_points ( uint64 )
+    compendium_selections_loaded
+                account_id ( uint64 )
+                league_id ( uint64 )
+                local_test( bool )
+    compendium_set_selection_failed
+                account_id ( uint64 )
+                league_id ( uint64 )
+                local_test( bool )
+    community_cached_names_updated
+
+    "item_blink"                    "REMOVE"
+    "item_blades_of_attack"         "REMOVE"
+    "item_broadsword"               "REMOVE"
+    "item_chainmail"                "REMOVE"
+    "item_claymore"                 "REMOVE"
+    "item_helm_of_iron_will"        "REMOVE"
+    "item_javelin"                  "REMOVE"
+    "item_mithril_hammer"           "REMOVE"
+    "item_platemail"                "REMOVE"
+    "item_quarterstaff"             "REMOVE"
+    "item_quelling_blade"           "REMOVE"
+    "item_ring_of_protection"       "REMOVE"
+    "item_stout_shield"             "REMOVE"
+    "item_gauntlets"                "REMOVE"
+    "item_slippers"                 "REMOVE"
+    "item_mantle"                   "REMOVE"
+    "item_branches"                 "REMOVE"
+    "item_belt_of_strength"         "REMOVE"
+    "item_boots_of_elves"           "REMOVE"
+    "item_robe"                     "REMOVE"
+    "item_circlet"                  "REMOVE"
+    "item_ogre_axe"                 "REMOVE"
+    "item_blade_of_alacrity"        "REMOVE"
+    "item_staff_of_wizardry"        "REMOVE"
+    "item_ultimate_orb"             "REMOVE"
+    "item_gloves"                   "REMOVE"
+    "item_lifesteal"                "REMOVE"
+    "item_ring_of_regen"            "REMOVE"
+    "item_sobi_mask"                "REMOVE"
+    "item_boots"                    "REMOVE"
+    "item_gem"                      "REMOVE"
+    "item_cloak"                    "REMOVE"
+    "item_talisman_of_evasion"      "REMOVE"
+    "item_cheese"                   "REMOVE"
+    "item_magic_stick"              "REMOVE"
+    "item_recipe_magic_wand"        "REMOVE"
+    "item_magic_wand"               "REMOVE"
+    "item_ghost"                    "REMOVE"
+    "item_clarity"                  "REMOVE"
+    "item_flask"                    "REMOVE"
+    "item_dust"                     "REMOVE"
+    "item_bottle"                   "REMOVE"
+    "item_ward_observer"            "REMOVE"
+    "item_ward_sentry"              "REMOVE"
+    "item_tango"                    "REMOVE"
+    "item_tango_single"             "REMOVE"
+    "item_courier"                  "REMOVE"
+    "item_tpscroll"                 "REMOVE"
+    "item_recipe_travel_boots"      "REMOVE"
+    "item_travel_boots"             "REMOVE"
+    "item_recipe_phase_boots"       "REMOVE"
+    "item_phase_boots"              "REMOVE"
+    "item_demon_edge"               "REMOVE"
+    "item_eagle"                    "REMOVE"
+    "item_reaver"                   "REMOVE"
+    "item_relic"                    "REMOVE"
+    "item_hyperstone"               "REMOVE"
+    "item_ring_of_health"           "REMOVE"
+    "item_void_stone"               "REMOVE"
+    "item_mystic_staff"             "REMOVE"
+    "item_energy_booster"           "REMOVE"
+    "item_point_booster"            "REMOVE"
+    "item_vitality_booster"         "REMOVE"
+    "item_recipe_power_treads"      "REMOVE"
+    "item_power_treads"             "REMOVE"
+    "item_recipe_hand_of_midas"     "REMOVE"
+    "item_hand_of_midas"            "REMOVE"
+    "item_recipe_oblivion_staff"    "REMOVE"
+    "item_oblivion_staff"           "REMOVE"
+    "item_recipe_pers"              "REMOVE"
+    "item_pers"                     "REMOVE"
+    "item_recipe_poor_mans_shield"  "REMOVE"
+    "item_poor_mans_shield"         "REMOVE"
+    "item_recipe_bracer"            "REMOVE"
+    "item_bracer"                   "REMOVE"
+    "item_recipe_wraith_band"       "REMOVE"
+    "item_wraith_band"              "REMOVE"
+    "item_recipe_null_talisman"     "REMOVE"
+    "item_null_talisman"            "REMOVE"
+    "item_recipe_mekansm"           "REMOVE"
+    "item_mekansm"                  "REMOVE"
+    "item_recipe_vladmir"           "REMOVE"
+    "item_vladmir"                  "REMOVE"
+    "item_flying_courier"           "REMOVE"
+    "item_recipe_buckler"           "REMOVE"
+    "item_buckler"                  "REMOVE"
+    "item_recipe_ring_of_basilius"  "REMOVE"
+    "item_ring_of_basilius"         "REMOVE"
+    "item_recipe_pipe"              "REMOVE"
+    "item_pipe"                     "REMOVE"
+    "item_recipe_urn_of_shadows"    "REMOVE"
+    "item_urn_of_shadows"           "REMOVE"
+    "item_recipe_headdress"         "REMOVE"
+    "item_headdress"                "REMOVE"
+    "item_recipe_sheepstick"        "REMOVE"
+    "item_sheepstick"               "REMOVE"
+    "item_recipe_orchid"            "REMOVE"
+    "item_orchid"                   "REMOVE"
+    "item_recipe_cyclone"           "REMOVE"
+    "item_cyclone"                  "REMOVE"
+    "item_recipe_force_staff"       "REMOVE"
+    "item_force_staff"              "REMOVE"
+    "item_recipe_dagon"             "REMOVE"
+    "item_recipe_dagon_2"           "REMOVE"
+    "item_recipe_dagon_3"           "REMOVE"
+    "item_recipe_dagon_4"           "REMOVE"
+    "item_recipe_dagon_5"           "REMOVE"
+    "item_dagon"                    "REMOVE"
+    "item_dagon_2"                  "REMOVE"
+    "item_dagon_3"                  "REMOVE"
+    "item_dagon_4"                  "REMOVE"
+    "item_dagon_5"                  "REMOVE"
+    "item_recipe_necronomicon"      "REMOVE"
+    "item_recipe_necronomicon_2"    "REMOVE"
+    "item_recipe_necronomicon_3"    "REMOVE"
+    "item_necronomicon"             "REMOVE"
+    "item_necronomicon_2"           "REMOVE"
+    "item_necronomicon_3"           "REMOVE"
+    "item_recipe_ultimate_scepter"  "REMOVE"
+    "item_ultimate_scepter"         "REMOVE"
+    "item_recipe_refresher"         "REMOVE"
+    "item_refresher"                "REMOVE"
+    "item_recipe_assault"           "REMOVE"
+    "item_assault"                  "REMOVE"
+    "item_recipe_heart"             "REMOVE"
+    "item_heart"                    "REMOVE"
+    "item_recipe_black_king_bar"    "REMOVE"
+    "item_black_king_bar"           "REMOVE"
+    "item_aegis"                    "REMOVE"
+    "item_recipe_shivas_guard"      "REMOVE"
+    "item_shivas_guard"             "REMOVE"
+    "item_recipe_bloodstone"        "REMOVE"
+    "item_bloodstone"               "REMOVE"
+    "item_recipe_sphere"            "REMOVE"
+    "item_sphere"                   "REMOVE"
+    "item_recipe_reflex_energy_regen_booster"   "REMOVE"
+    "item_vanguard"                 "REMOVE"
+    "item_recipe_blade_mail"        "REMOVE"
+    "item_blade_mail"               "REMOVE"
+    "item_recipe_soul_booster"      "REMOVE"
+    "item_soul_booster"             "REMOVE"
+    "item_recipe_hood_of_defiance"  "REMOVE"
+    "item_hood_of_defiance"         "REMOVE"
+    "item_recipe_rapier"            "REMOVE"
+    "item_rapier"                   "REMOVE"
+    "item_recipe_monkey_king_bar"   "REMOVE"
+    "item_monkey_king_bar"          "REMOVE"
+    "item_recipe_radiance"          "REMOVE"
+    "item_radiance"                 "REMOVE"
+    "item_recipe_butterfly"         "REMOVE"
+    "item_butterfly"                "REMOVE"
+    "item_recipe_greater_crit"      "REMOVE"
+    "item_greater_crit"             "REMOVE"
+    "item_recipe_basher"            "REMOVE"
+    "item_basher"                   "REMOVE"
+    "item_recipe_bfury"             "REMOVE"
+    "item_bfury"                    "REMOVE"
+    "item_recipe_manta"             "REMOVE"
+    "item_manta"                    "REMOVE"
+    "item_recipe_lesser_crit"       "REMOVE"
+    "item_lesser_crit"              "REMOVE"
+    "item_recipe_armlet"            "REMOVE"
+    "item_armlet"                   "REMOVE"
+    "item_recipe_invis_sword"       "REMOVE"
+    "item_invis_sword"              "REMOVE"
+    "item_recipe_sange_and_yasha"   "REMOVE"
+    "item_sange_and_yasha"          "REMOVE"
+    "item_recipe_satanic"           "REMOVE"
+    "item_satanic"                  "REMOVE"
+    "item_recipe_mjollnir"          "REMOVE"
+    "item_mjollnir"                 "REMOVE"
+    "item_recipe_skadi"             "REMOVE"
+    "item_skadi"                    "REMOVE"
+    "item_recipe_sange"             "REMOVE"
+    "item_sange"                    "REMOVE"
+    "item_recipe_helm_of_the_dominator"  "REMOVE"
+    "item_helm_of_the_dominator"    "REMOVE"
+    "item_recipe_maelstrom"         "REMOVE"
+    "item_maelstrom"                "REMOVE"
+    "item_recipe_desolator"         "REMOVE"
+    "item_desolator"                "REMOVE"
+    "item_recipe_yasha"             "REMOVE"
+    "item_yasha"                    "REMOVE"
+    "item_recipe_mask_of_madness"   "REMOVE"
+    "item_mask_of_madness"          "REMOVE"
+    "item_recipe_diffusal_blade"    "REMOVE"
+    "item_recipe_diffusal_blade_2"  "REMOVE"
+    "item_diffusal_blade"           "REMOVE"
+    "item_diffusal_blade_2"         "REMOVE"
+    "item_recipe_ethereal_blade"    "REMOVE"
+    "item_ethereal_blade"           "REMOVE"
+    "item_recipe_soul_ring"         "REMOVE"
+    "item_soul_ring"                "REMOVE"
+    "item_recipe_arcane_boots"      "REMOVE"
+    "item_arcane_boots"             "REMOVE"
+    "item_orb_of_venom"             "REMOVE"
+    "item_recipe_ancient_janggo"    "REMOVE"
+    "item_ancient_janggo"           "REMOVE"
+    "item_recipe_medallion_of_courage" "REMOVE"
+    "item_medallion_of_courage"     "REMOVE"
+    "item_smoke_of_deceit"          "REMOVE"
+    "item_recipe_veil_of_discord"   "REMOVE"
+    "item_veil_of_discord"          "REMOVE"
+    "item_recipe_rod_of_atos"       "REMOVE"
+    "item_rod_of_atos"              "REMOVE"
+    "item_recipe_abyssal_blade"     "REMOVE"
+    "item_abyssal_blade"            "REMOVE"
+    "item_recipe_heavens_halberd"   "REMOVE"
+    "item_heavens_halberd"          "REMOVE"
+    "item_recipe_ring_of_aquila"    "REMOVE"
+    "item_ring_of_aquila"           "REMOVE"
+    "item_recipe_tranquil_boots"    "REMOVE"
+    "item_tranquil_boots"           "REMOVE"
+    "item_shadow_amulet"            "REMOVE"
+    "item_halloween_candy_corn"     "REMOVE"
+    "item_mystery_hook"             "REMOVE"
+    "item_mystery_arrow"            "REMOVE"
+    "item_mystery_missile"          "REMOVE"
+    "item_mystery_toss"             "REMOVE"
+    "item_mystery_vacuum"           "REMOVE"
+    "item_halloween_rapier"         "REMOVE"
+    "item_greevil_whistle"          "REMOVE"
+    "item_greevil_whistle_toggle"   "REMOVE"
+    "item_present"                  "REMOVE"
+    "item_winter_stocking"          "REMOVE"
+    "item_winter_skates"            "REMOVE"
+    "item_winter_cake"              "REMOVE"
+    "item_winter_cookie"            "REMOVE"
+    "item_winter_coco"              "REMOVE"
+    "item_winter_ham"               "REMOVE"
+    "item_winter_kringle"           "REMOVE"
+    "item_winter_mushroom"          "REMOVE"
+    "item_winter_greevil_treat"     "REMOVE"
+    "item_winter_greevil_garbage"   "REMOVE"
+    "item_winter_greevil_chewy"     "REMOVE"

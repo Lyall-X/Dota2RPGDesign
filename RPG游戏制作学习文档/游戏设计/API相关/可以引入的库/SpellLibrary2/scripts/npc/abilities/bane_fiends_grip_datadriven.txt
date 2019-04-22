@@ -1,0 +1,278 @@
+// Rewrite of the Bane Fiends Grip
+// Author: chrislotix, Pizzalol
+// Date: 11.01.2015.
+// Changed: 11.03.2015.
+// Changed by: Pizzalol
+// Reason: Fixed a few issues, optimized code
+"bane_fiends_grip_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"bane_fiends_grip"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"		
+		"particle"		"particles/units/heroes/hero_bane/bane_fiends_grip.vpcf"		
+	}	
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"625"
+	"AbilityCastPoint"				"0.5 0.5 0.5"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityChannelTime"			"5.0 5.0 5.0"
+	"AbilityCooldown"				"100.0 100.0 100.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200 300 400"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"fiend_grip_tick_interval"		"1.0"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"fiend_grip_mana_drain"			"5"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"fiend_grip_duration"			"5.0 5.0 5.0"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"fiend_grip_damage"				"100 155 215"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"fiend_grip_mana_drain_scepter"	"10"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"fiend_grip_duration_scepter"	"7"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"fiend_grip_damage_scepter"		"155 215 270"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"Damage"
+		{
+			"Target"	"TARGET"
+			"Type"		"DAMAGE_TYPE_MAGICAL"
+			"Damage"	"%fiend_grip_damage"
+		}
+		
+		"FireSound"
+		{
+			"EffectName"	"Hero_Bane.FiendsGrip.Cast"
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}	
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_fiends_grip_datadriven"
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_fiends_grip_caster_datadriven"
+			"Target" 		"CASTER"
+		}			
+	}
+
+	"OnChannelInterrupted"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_fiends_grip_datadriven"
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+		}
+
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_fiends_grip_invis_datadriven"
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+		}
+
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_fiends_grip_caster_datadriven"
+			"Target" 		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+			"Function"		"FiendsGripStopSound"
+			"sound"			"Hero_Bane.FiendsGrip"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+			"Function"		"FiendsGripStopSound"
+			"sound"			"Hero_Bane.FiendsGrip.Cast"
+		}
+	}
+
+	"OnChannelFinish"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_fiends_grip_datadriven"
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+		}
+
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_fiends_grip_invis_datadriven"
+			"Target"
+			{
+				"Center"	"TARGET"
+				"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+		}
+
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_fiends_grip_caster_datadriven"
+			"Target" 		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+			"Function"		"FiendsGripStopSound"
+			"sound"			"Hero_Bane.FiendsGrip"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+			"Function"		"FiendsGripStopSound"
+			"sound"			"Hero_Bane.FiendsGrip.Cast"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_fiends_grip_datadriven"
+		{
+			"IsDebuff"	"1"
+			
+			"EffectName"	"particles/units/heroes/hero_bane/bane_fiends_grip.vpcf"
+			"EffectAttachType"	"attach_origin"
+
+			"OverrideAnimation" "ACT_DOTA_FLAIL"
+
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Bane.FiendsGrip"
+					"Target"		"TARGET"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+					"Function"		"FiendsGripInvisCheck"
+					"modifier_reveal"	"modifier_fiend_grip_invis_datadriven"
+				}
+			}
+
+			"ThinkInterval"	"%fiend_grip_tick_interval"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_bane/fiends_grip.lua"
+					"Function"		"ManaDrain"
+					"Target"		"TARGET"
+				}
+
+				"Damage"
+				{
+					"Target"	"TARGET"
+					"Type"		"DAMAGE_TYPE_MAGICAL"
+					"Damage"	"%fiend_grip_damage"
+				}								
+			}			
+			
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED" 	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_fiends_grip_caster_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_LOW_ATTACK_PRIORITY"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_fiend_grip_invis_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_INVISIBILITY"	"MODIFIER_STATE_VALUE_DISABLED"
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCost()${1:--[[
+     CDOTA_Item:GetCost   
+    -- @return int
+    function CDOTA_Item:GetCost(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCost</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

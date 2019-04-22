@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetRemoveIllusionsOnDeath(${1:bool_1})${2:--[[
+     CDOTABaseGameMode:SetRemoveIllusionsOnDeath  Make it so illusions are immediately removed upon death, rather than sticking around for a few seconds. 
+    -- @return void
+    -- @param bool_1 bool
+    function CDOTABaseGameMode:SetRemoveIllusionsOnDeath( bool_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetRemoveIllusionsOnDeath</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

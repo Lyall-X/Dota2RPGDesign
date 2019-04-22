@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[HasAnyAvailableInventorySpace()${1:--[[
+     CDOTA_BaseNPC_Hero:HasAnyAvailableInventorySpace   
+    -- @return bool
+    function CDOTA_BaseNPC_Hero:HasAnyAvailableInventorySpace(  ) end
+    ]]}]]></content>
+    <tabTrigger>hasAnyAvailableInventorySpace</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

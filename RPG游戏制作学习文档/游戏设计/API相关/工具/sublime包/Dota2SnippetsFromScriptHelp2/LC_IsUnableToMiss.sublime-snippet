@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsUnableToMiss()${1:--[[
+     CDOTA_BaseNPC:IsUnableToMiss   
+    -- @return bool
+    function CDOTA_BaseNPC:IsUnableToMiss(  ) end
+    ]]}]]></content>
+    <tabTrigger>isUnableToMiss</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

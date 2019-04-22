@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="ProjectileManager" nameCN="投射物管理器"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="CreateLinearProjectile"
+		signature="int CreateLinearProjectile(table infoTable)">
+		  <DescriptionEN>Creates a linear projectile and returns the
+		  projectile ID</DescriptionEN>
+		  <DescriptionCN>创建一个线性投射物并返回其ID</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>table infoTable</Parameter>
+		    <Return>int</Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="CreateTrackingProjectile"
+		signature="void CreateTrackingProjectile(handle a)">
+		  <DescriptionEN>Creates a tracking projectile</DescriptionEN>
+		  <DescriptionCN>创建一个追踪投射物</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>handle a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="DestroyLinearProjectile"
+		signature="void DestroyLinearProjectile(int a)">
+		  <DescriptionEN>Destroys the linear projectile matching the
+		  argument ID</DescriptionEN>
+		  <DescriptionCN>摧毁指定ID的线性投射物</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>int a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+		
+		<function name="ProjectileDodge"
+		signature="void ProjectileDodge(handle a)">
+		  <DescriptionEN>Makes the specified unit dodge
+		  projectiles</DescriptionEN>
+		  <DescriptionCN>使得特定单位躲避投射物</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>handle a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+
+	</functions>
+</class>

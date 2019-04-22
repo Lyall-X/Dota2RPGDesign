@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ProvidesVision()${1:--[[
+     CDOTA_BaseNPC:ProvidesVision   
+    -- @return bool
+    function CDOTA_BaseNPC:ProvidesVision(  ) end
+    ]]}]]></content>
+    <tabTrigger>ProvidesVision</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,112 @@
+// Rewrite of the Doom Devour ability
+// Author: Pizzalol
+// Date: 04.03.2015.
+// NOTE: ---------------------------- THIS ABILITY REQUIRES doom_bringer_empty1_datadriven and
+// doom_bringer_empty2_datadriven TO WORK CORRECTLY ----------------------------------------------
+// NOTE2: You have to add the specific units in the Lua table to be able to steal their abilities
+"doom_bringer_devour_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+	"AbilityTextureName"			"doom_bringer_devour"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"300 300 300 300"
+	"AbilityCooldown"				"70.0 60.0 50.0 40.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"60"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_gold"			"25 50 75 100"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_per_second"		"20 20 20 20"
+		}
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_doom_bringer/devour.lua"
+			"Function"		"DevourCheck"
+			"modifier"		"modifier_devour_datadriven"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_DoomBringer.DevourCast"
+			"Target" 		"TARGET"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf"
+			"EffectAttachType"  "follow_origin"
+			
+			"ControlPointEntities"
+			{
+				"TARGET"	"attach_origin"
+				"CASTER"	"attach_origin"
+			}
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_doom_bringer/devour.lua"
+			"Function"		"Devour"
+			"modifier"		"modifier_devour_datadriven"
+			"doom_empty1"	"doom_bringer_empty1_datadriven"
+			"doom_empty2"	"doom_bringer_empty2_datadriven"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_devour_datadriven"
+		{
+			"IsDebuff"			"1"
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_doom_bringer/devour.lua"
+					"Function"		"DevourGold"
+				}				
+			}
+		}
+	}
+}
+

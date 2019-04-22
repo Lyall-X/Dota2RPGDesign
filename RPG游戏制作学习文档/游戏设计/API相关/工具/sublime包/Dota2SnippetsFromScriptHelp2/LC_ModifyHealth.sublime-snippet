@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[ModifyHealth(${1:int_1},${2:handle_2},${3:bool_3},${4:int_4})${5:--[[
+     CDOTA_BaseNPC:ModifyHealth  Sets the health to a specific value, with optional flags or inflictors. 
+    -- @return void
+    -- @param int_1 int
+    -- @param handle_2 handle
+    -- @param bool_3 bool
+    -- @param int_4 int
+    function CDOTA_BaseNPC:ModifyHealth( int_1, handle_2, bool_3, int_4 ) end
+    ]]}]]></content>
+    <tabTrigger>modifyHealth</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

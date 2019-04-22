@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ResetToggleOnRespawn()${1:--[[
+     CDOTABaseAbility:ResetToggleOnRespawn   
+    -- @return bool
+    function CDOTABaseAbility:ResetToggleOnRespawn(  ) end
+    ]]}]]></content>
+    <tabTrigger>resetToggleOnRespawn</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

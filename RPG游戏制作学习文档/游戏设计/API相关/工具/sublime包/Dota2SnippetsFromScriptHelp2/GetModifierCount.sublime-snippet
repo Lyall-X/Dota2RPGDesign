@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetModifierCount()${1:--[[
+     CDOTA_BaseNPC:GetModifierCount  How many modifiers does this unit have? 
+    -- @return int
+    function CDOTA_BaseNPC:GetModifierCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetModifierCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

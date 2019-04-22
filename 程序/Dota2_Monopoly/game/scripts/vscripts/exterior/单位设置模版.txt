@@ -1,0 +1,297 @@
+"DOTAUnits"
+{    
+    // 这个单位包括了npc_units_custom中所有的键值
+    // 一般来说的是用不到全部的键值，对于不同的单位可注释掉不用的部分
+    "npc_dota_base_units"
+    {
+        // 基础设置
+        //----------------------------------------------------------------
+        "BaseClass"                 "npc_dota_base"     // 单位继承的类，常用的有：生物npc_dota_creature、建筑npc_dota_building、计时器npc_dota_thinker
+        "Level"                     "1"                 // 单位等级
+        "Model"                     "models/development/invisiblebox.mdl"   // 模型文件
+        "ModelSize"                 "0.8"               // 模型大小，我记得以前是用“ModelScale”
+        "MinimapIcon"               "minimap_candybucket"      // 小地图图标
+        "MinimapIconSize"           "1000"                     // 小地图图标尺寸
+        "UnitLabel"                 "healing_ward"      // 单位标签，可以是任何名字字符，用于Lua代码GetUnitLabel()
+        "ConsideredHero"            "1"                 // 作为英雄，提供英雄风格的生命值条。"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO" 的数据驱动标记
+        "IsAncient"                 "0"                 // 是否为远古生物，0代表不是。"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"的数据驱动标记
+        "IsNeutralUnitType"         "0"                 // 是否是中立单位，相关Lua函数: IsNeutralUnitType()
+        "CanBeDominated"            "1"                 // 可否被支配
+        "AutoAttacksByDefault"      "1"                 // 是否自动攻击，0为不自动攻击
+        "ShouldDoFlyHeightVisual"   "0"                 // 飞行高度，传说中没用
+        "WakesNeutrals"             "1"                 // 唤醒中立生物
+        "SelectionGroup"                "string"        // 选择组，使得该类型的所有单位可以使用tab成组切换
+        "SelectOnSpawn"                 "1"             // 出生选择，强制单位加入英雄的选择中，即使选项中的"自动选择召唤单位"是关闭的。被用在死灵飞龙的小龙上
+        "IgnoreAddSummonedToSelection"  "1"             // 忽略自动选择召唤单位，设置为1时，使得"自动选择召唤单位" 忽略这个单位，用于元素分离
+        
+        // 声音 SoundSet 加上正确的 GameSoundsFile 可以提供攻击和脚步声等音效
+        // SoundSet 字符串是每个英雄声音的第一部分，可以在Dota2声音编辑器中查找到
+        // IdleSoundLoop 将会在单位产生后持续被播放，某些英雄并没有定义这个循环声音，但是如果你在这里增加一个不可循环声音，则可以作为诞生音效使用
+        "SoundSet"                  "Hero_DragonKnight"
+        "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+        "IdleSoundLoop"             "Hero_DragonKnight.Tutorial_Intro"
+
+        "HasInventory"              "1"                 // 是否有物品栏
+                                                        // 相关Lua函数: HasInventory() 和 SetHasInventory(bool)
+                                                        // SetHasInventory(true) 对之前没有定义为"HasInventory" "1" 的单位没有任何效果
+
+
+        // 技能设置
+        //----------------------------------------------------------------
+        "AbilityLayout"             ""          // 技能槽数量，最低4个，最高为6个，单位可以同时拥有最多16个技能
+        "Ability1"                  ""          // 技能 1.
+        "Ability2"                  ""          // 技能 2.
+        "Ability3"                  ""          // 技能 3.
+        "Ability4"                  ""          // 技能 4.
+        "Ability5"                  ""          // 技能 5.
+        "Ability6"                  ""          // 技能 6.
+        "Ability7"                  ""          // 技能 7 -最高就显示6个技能，后面添加的技能将不显示
+        "Ability8"                  ""          // 技能 8 -最高就显示6个技能，后面添加的技能将不显示
+
+
+        // 护甲和魔抗设置
+        //----------------------------------------------------------------
+        "ArmorPhysical"             "0"         // 基础护甲
+        "MagicalResistance"         "0"         // 基础魔抗
+ 
+
+        // 攻击设置
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"   // 攻击类型：DOTA_UNIT_CAP_NO_ATTACK         不能攻击
+                                                                //           DOTA_UNIT_CAP_MELEE_ATTACK      近战
+                                                                //           DOTA_UNIT_CAP_RANGED_ATTACK     远程                                                       
+        "AttackDamageMin"           "100"                       // 最小伤害
+        "AttackDamageMax"           "100"                       // 最大伤害
+        "AttackRate"                "1.7"                       // 攻击间隔
+        "AttackAnimationPoint"      "0.75"                      // 攻击前摇
+        "AttackAcquisitionRange"    "800"                       // 警戒范围
+        "AttackRange"               "600"                       // 攻击范围
+        "AttackRangeBuffer"         "250"                       // 攻击缓冲范围（不会取消攻击的额外射程范围）
+        "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+        "ProjectileSpeed"           "900"                       // 投射速率
+        "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical" // 
+
+
+        // 属性设置
+        //----------------------------------------------------------------
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"   //主属性类型
+        "AttributeBaseStrength"     "0"                         // 基础力量
+        "AttributeStrengthGain"     "0"                         // 力量成长
+        "AttributeBaseIntelligence" "0"                         // 基础智力
+        "AttributeIntelligenceGain" "0"                         // 智力成长
+        "AttributeBaseAgility"      "0"                         // 基础敏捷
+        "AttributeAgilityGain"      "0"                         // 敏捷成长
+ 
+ 
+        // 击杀奖励设置
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"                     // 经验奖励
+        "BountyGoldMin"             "0"                     // 最小金钱奖励
+        "BountyGoldMax"             "0"                     // 最大金钱奖励
+ 
+
+        // 边界设置
+        //----------------------------------------------------------------
+        "BoundsHullName"            "DOTA_HULL_SIZE_HERO"   // 碰撞边界类型，以下为单位尺寸参数:
+                                                            // 值                             Hammer中的单位半径
+                                                            // DOTA_HULL_SIZE_SMALL            8
+                                                            // DOTA_HULL_SIZE_REGULAR          16
+                                                            // DOTA_HULL_SIZE_SIEGE            16
+                                                            // DOTA_HULL_SIZE_HERO             24
+                                                            // DOTA_HULL_SIZE_HUGE             80
+                                                            // DOTA_HULL_SIZE_BUILDING         81
+                                                            // DOTA_HULL_SIZE_FILLER           96
+                                                            // DOTA_HULL_SIZE_BARRACKS         144
+                                                            // DOTA_HULL_SIZE_TOWER            144
+        "RingRadius"                "50"                    // 选择圈半径
+        "HealthBarOffset"           "-1"                    // 血条高度，缺省值为 "-1"，意味着使用默认的模型高度
+ 
+
+        // 移动设置
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"   // 移动类型
+                                                                //DOTA_UNIT_CAP_MOVE_NONE       不能移动
+                                                                //DOTA_UNIT_CAP_MOVE_GROUND     地面
+                                                                //DOTA_UNIT_CAP_MOVE_FLY        飞行
+        "MovementSpeed"             "300"                       // 移动速度
+        "MovementTurnRate"          "0.5"                       // 转身速度
+        "HasAggressiveStance"       "0"                         // 单位会在接近敌人时切换空闲/跑步的移动动画，比如亚巴顿的模型
+        "FollowRange"               "100"                       // 最低跟随范围
+ 
+
+        // 状态设置
+        //----------------------------------------------------------------
+        "StatusHealth"              "150"       // 基础生命值
+        "StatusHealthRegen"         "0"         // 生命恢复速度，负值无效
+        "StatusMana"                "0"         // 基础魔法值，设置为0会导致没有魔法条
+        "StatusManaRegen"           "0"         // 魔法恢复速度，负值无效
+        "StatusStartingMana"        "-1"        // 单位诞生时的魔法值，-1意味着默认满魔法值
+ 
+
+        // 攻防类型设置
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                // 所属队伍，关系不大
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"     // 攻击的伤害类型，攻击类型表如下：
+                                                                        //名称  等价
+                                                                        //普通  DOTA_COMBAT_CLASS_ATTACK_BASIC
+                                                                        //穿刺  DOTA_COMBAT_CLASS_ATTACK_PIERCE
+                                                                        //攻城  DOTA_COMBAT_CLASS_ATTACK_SIEGE
+                                                                        //混乱  DOTA_COMBAT_CLASS_ATTACK_LIGHT
+                                                                        //英雄  DOTA_COMBAT_CLASS_ATTACK_HERO
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"     // 护甲类型,护甲类型表如下：
+                                                                        //名称  等价
+                                                                        //无甲  DOTA_COMBAT_CLASS_DEFEND_SOFT
+                                                                        //轻甲  DOTA_COMBAT_CLASS_DEFEND_WEAK
+                                                                        //中甲  DOTA_COMBAT_CLASS_DEFEND_BASIC
+                                                                        //重甲  DOTA_COMBAT_CLASS_DEFEND_STRONG
+                                                                        //建筑  DOTA_COMBAT_CLASS_DEFEND_STRUCTURE
+                                                                        //英雄  DOTA_COMBAT_CLASS_DEFEND_HERO
+
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   //单位关系类,目前看来没有作用
+                                                                                //列表如下
+                                                                                //DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BARRACKS
+                                                                                //DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING
+                                                                                //DOTA_NPC_UNIT_RELATIONSHIP_TYPE_COURIER
+                                                                                //DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT
+                                                                                //DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO
+                                                                                //DOTA_NPC_UNIT_RELATIONSHIP_TYPE_SIEGE
+                                                                                //DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD
+
+
+        // 视野设置
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1200"          // 白天视野范围
+        "VisionNighttimeRange"      "800"           // 夜晚视野范围
+     
+
+        // 脚本设置
+        //----------------------------------------------------------------     
+        "vscript"                   "scripts/vscripts/AI.lua"   // 这会在单位诞生后立即装载一个脚本文件
+                                                                // 使用诞生函数 ( entityKeyValues ) 可以启动一个计时器来进行任何操作
+
+        // Creature Block
+        //----------------------------------------------------------------
+        "Creature"                                              // 这段KV针对基础类npc_dota_creature
+        {
+            // 单位使用饰品
+            "AttachWearables"                                   
+            {
+                "Wearable1" { "ItemDef" "63" }                  // 每个"IdemDef" 的整数值可以在items_game.txt中找到
+                "Wearable2" { "ItemDef" "64" }                  // 注意:最近的饰品模型在Source 2中尚不可用，试图使用这些代码会失败
+                "Wearable3" { "ItemDef" "65" }                  // 如果你想确保模型存在，可以使用模型浏览器（model browser）查找其英雄名称
+                "Wearable4" { "ItemDef" "66" }
+                "Wearable5" { "ItemDef" "67" }
+                "Wearable6" { "ItemDef" "68" }
+            }
+
+            "DisableClumpingBehavior"       "1"                 // 这个理论上会改变单位与其他单位的碰撞行为
+            "CanRespawn"                    "1"                 // 能够重生，传说中没用
+            "DisableResistance"            "75.0"               // 控制抗性，按照百分比减少大部分眩晕的时间
+
+            // 升级参数，每次升级会获取的奖励
+            "HPGain"                    "500"                   // 升级增加生命值上限
+            "DamageGain"                "25"                    // 升级增加攻击力
+            "ArmorGain"                 "10"                    // 升级增加护甲
+            "MagicResistGain"           "10"                    // 升级增加魔抗
+            "MoveSpeedGain"             "10"                    // 升级增加移动速度
+            "BountyGain"                "30"                    // 升级增加赏金奖励
+            "XPGain"                    "100"                   // 升级增加经验值上限
+
+            // 数据驱动生物AI
+            "DefaultState"              "Invade"
+            "States"
+            {
+                "Invade"
+                {
+                    "Name"              "Invade"
+                    "Aggression"        "70.0"                  // 在该生命值百分比，倾向于攻击并释放进攻性技能
+                    "Avoidance"         "30.0"                  // 在该生命值百分制比单位逃跑，设置为0时，该生物会跟你死磕到底
+                    "Support"           "0.0"                   // 开始释放防御性技能的生命值百分比
+                    "RoamDistance"      "1000.0"                // 逃跑时单位会跑出的距离，与Avoidance参数一同使用
+                }
+            }
+
+            // 进攻性技能AI
+            "OffensiveAbilities"            
+            {
+                "Ability1"                  // 该技能还没有冷却时，尝试在任何地方使用其它技能 
+                {
+                    "Name"                  "creature_force_of_nature"
+                    "UseOnTrees"            "1"
+                    "AOE"                   "1"
+                    "Radius"                "100"
+                }
+                "Ability2"                  // 需要在275范围内有至少两个单位
+                {
+                    "Name"                  "ursa_earth_shock"
+                    "AOE"                   "1"
+                    "Radius"                "275"
+                    "MinimumTargets"        "2"
+                }
+                "Ability3"                  // 不会对已经拥有状态的敌人重复使用Debuff              
+                {
+                    "Name"                  "lesser_nightcrawler_pounce"
+                    "Damage"                "1"
+                    "Debuff"                "1"
+                }
+                "Ability4"                  // 不会对眩晕的敌人重复使用眩晕
+                {
+                    "Name"                  "holdout_gyrocopter_homing_missile"
+                    "Damage"                "1"
+                    "Stun"                  "1"
+                }
+            }
+
+            // 防御性技能AI
+            "DefensiveAbilities"            
+            {
+                "Ability1"                  // 不会重复使用Buff
+                {
+                    "Name"                  "treant_living_armor"
+                    "Buff"                  "1"
+                }
+                "Ability2"                  // "UseSelfishly" 意味着优先对自己使用，"UseAtHealthPercent" 意味在该生命值百分比强制使用  
+                {
+                    "Name"                  "creature_zombie_berserk"
+                    "UseSelfishly"          "1"
+                    "Buff"                  "1"
+                    "UseAtHealthPercent"    "50"
+                }
+                "Ability3"                  // 当在650范围内有至少3个可被治疗的单位时使用
+                {
+                    "Name"                  "creature_summon_undead"
+                    "Heal"                  "1"
+                    "AOE"                   "1"
+                    "Radius"                "650"
+                    "MinimumTargets"        "3"
+                }
+            }
+
+            // 逃跑技能AI
+            "EscapeAbilities"               
+            {
+                "Ability1"                  // 生命值低于一定百分比时触发
+                {
+                    "Name"                  "lesser_nightcrawler_pounce"
+                }
+            }
+            
+            // 单位装备物品，单位必须设置  "HasInventory"  "1"  才能使用
+            "EquippedItems"
+            {
+                "ForceStaff"    {    "Item"    "item_force_staff"    }
+                "PhaseBoots"    {    "Item"    "item_phase_boots"    }
+                "Drums"            
+                {    
+                    "Item"        "item_ancient_janggo"
+                    "Charges"    "10"
+                }
+                "Urn"
+                {
+                    "Item"        "item_urn_of_shadows"
+                    "Charges"    "10"
+                }
+            }
+        }
+    }
+}

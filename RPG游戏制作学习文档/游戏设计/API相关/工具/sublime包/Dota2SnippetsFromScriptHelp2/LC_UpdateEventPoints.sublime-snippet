@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[UpdateEventPoints(${1:handle_1})${2:--[[
+     UpdateEventPoints   
+    -- @return void
+    -- @param handle_1 handle
+    function UpdateEventPoints( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>updateEventPoints</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

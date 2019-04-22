@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[Say(${1:handle_1},${2:string_2},${3:bool_3})${4:--[[
+     Say  Have Entity say string, and teamOnly or not 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param string_2 string
+    -- @param bool_3 bool
+    function Say( handle_1, string_2, bool_3 ) end
+    ]]}]]></content>
+    <tabTrigger>say</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

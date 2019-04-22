@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetPoseParameter(${1:string_1},${2:float_2})${3:--[[
+     CBaseAnimating:SetPoseParameter  Set the specified pose parameter to the specified value. 
+    -- @return float
+    -- @param string_1 string
+    -- @param float_2 float
+    function CBaseAnimating:SetPoseParameter( string_1, float_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setPoseParameter</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,100 @@
+// Rewrite of the Broodmother Insatiable Hunger ability
+// Author: Pizzalol
+// Date: 12.01.2015.
+"broodmother_insatiable_hunger_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"broodmother_insatiable_hunger"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.2 0.2 0.2"
+	"AbilityCooldown"				"45.0 45.0 45.0"
+	"AbilityManaCost"				"100 100 100"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
+		"particle"			"particles/units/heroes/hero_broodmother/broodmother_hunger_buff.vpcf"
+	}
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"60 80 100"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"lifesteal_pct"			"60 80 100"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"14.0 14.0 14.0"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Broodmother.InsatiableHunger"
+			"Target"		"CASTER"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_insatiable_hunger_datadriven"
+			"Target"		"CASTER"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_insatiable_hunger_datadriven"
+		{
+			"Duration"	"%duration"
+			"IsBuff"	"1"
+
+			"EffectName"	"particles/units/heroes/hero_broodmother/broodmother_hunger_buff.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"OnAttackLanded"
+			{
+				"Lifesteal"
+				{
+					"Target"	"CASTER"
+					"LifestealPercent"	"%lifesteal_pct"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_broodmother/insatiable_hunger.lua"
+					"Function"		"InsatiableHungerStopSound"
+					"sound"			"Hero_Broodmother.InsatiableHunger"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+			}
+		}
+	}
+}
+

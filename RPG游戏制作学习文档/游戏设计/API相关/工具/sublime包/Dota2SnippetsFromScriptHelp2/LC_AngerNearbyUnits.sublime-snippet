@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[AngerNearbyUnits()${1:--[[
+     CDOTA_BaseNPC:AngerNearbyUnits   
+    -- @return void
+    function CDOTA_BaseNPC:AngerNearbyUnits(  ) end
+    ]]}]]></content>
+    <tabTrigger>angerNearbyUnits</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

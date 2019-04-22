@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetEntityHandle()${1:--[[
+     CEntityInstance:GetEntityHandle  Get the entity as an EHANDLE 
+    -- @return ehandle
+    function CEntityInstance:GetEntityHandle(  ) end
+    ]]}]]></content>
+    <tabTrigger>getEntityHandle</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

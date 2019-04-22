@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsOwnersManaEnough()${1:--[[
+     CDOTABaseAbility:IsOwnersManaEnough   
+    -- @return bool
+    function CDOTABaseAbility:IsOwnersManaEnough(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsOwnersManaEnough</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetBonusDamageFromPrimaryStat()${1:--[[
+     CDOTA_BaseNPC_Hero:GetBonusDamageFromPrimaryStat   
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetBonusDamageFromPrimaryStat(  ) end
+    ]]}]]></content>
+    <tabTrigger>getBonusDamageFromPrimaryStat</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

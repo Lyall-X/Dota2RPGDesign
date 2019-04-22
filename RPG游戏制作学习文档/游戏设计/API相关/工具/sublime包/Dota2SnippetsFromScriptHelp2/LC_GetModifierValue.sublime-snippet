@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetModifierValue()${1:--[[
+     CDOTABaseAbility:GetModifierValue   
+    -- @return float
+    function CDOTABaseAbility:GetModifierValue(  ) end
+    ]]}]]></content>
+    <tabTrigger>getModifierValue</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

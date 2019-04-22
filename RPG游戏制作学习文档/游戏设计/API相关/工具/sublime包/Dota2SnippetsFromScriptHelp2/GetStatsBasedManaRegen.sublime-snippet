@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetStatsBasedManaRegen()${1:--[[
+     CDOTA_BaseNPC_Hero:GetStatsBasedManaRegen  Returns only the regen based on Intelligence. 
+    -- @return float
+    function CDOTA_BaseNPC_Hero:GetStatsBasedManaRegen(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetStatsBasedManaRegen</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

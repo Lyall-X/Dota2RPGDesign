@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[State_Get()${1:--[[
+     CDOTAGamerules:State_Get  Get the current Gamerules state 
+    -- @return <unknown>
+    function CDOTAGamerules:State_Get(  ) end
+    ]]}]]></content>
+    <tabTrigger>State_Get</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

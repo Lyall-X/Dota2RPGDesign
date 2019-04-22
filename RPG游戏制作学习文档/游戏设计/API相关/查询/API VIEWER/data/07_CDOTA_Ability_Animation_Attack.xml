@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Daiyfoo翻译 -->
+
+<class nameEN="CDOTA_Ability_Animation_Attack" nameCN="DOTA技能的攻击动画"
+	descriptionEN="No Description Set"
+	descriptionCN="目前未有描述" extends="CDOTABaseAbility">
+	<functions>
+		<function name="SetPlaybackRate" signature="void SetPlaybackRate(float a)">
+			<DescriptionEN>Override playbackrate
+			</DescriptionEN>
+			<DescriptionCN>重写播放速率</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:重写的播放速率
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	
+	</functions>
+
+</class>

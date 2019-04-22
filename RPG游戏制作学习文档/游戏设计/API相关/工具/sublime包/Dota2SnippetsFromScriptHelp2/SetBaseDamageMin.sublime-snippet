@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetBaseDamageMin(${1:int_1})${2:--[[
+     CDOTA_BaseNPC:SetBaseDamageMin  Sets the minimum base damage. 
+    -- @return void
+    -- @param int_1 int
+    function CDOTA_BaseNPC:SetBaseDamageMin( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetBaseDamageMin</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

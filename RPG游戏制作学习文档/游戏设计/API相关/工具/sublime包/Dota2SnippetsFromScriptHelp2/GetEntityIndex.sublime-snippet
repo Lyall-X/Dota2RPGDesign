@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetEntityIndex()${1:--[[
+     CEntityInstance:GetEntityIndex   
+    -- @return int
+    function CEntityInstance:GetEntityIndex(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetEntityIndex</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

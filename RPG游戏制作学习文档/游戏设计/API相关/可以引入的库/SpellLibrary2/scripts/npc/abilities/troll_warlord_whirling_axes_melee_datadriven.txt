@@ -1,0 +1,181 @@
+// Rewrite of the Troll Warlord Whirling Axes Melee ability
+// Author: Pizzalol
+// Date: 18.03.2015.
+"troll_warlord_whirling_axes_melee_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"troll_warlord_whirling_axes_melee"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
+		"particle"			"particles/units/heroes/hero_troll_warlord/troll_warlord_whirling_axe_melee.vpcf"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"12.0 12.0 12.0 12.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 50 50 50"
+
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"75 125 175 225"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"hit_radius"				"100"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"max_range"					"450.0"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"axe_movement_speed"		"1250"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"blind_duration"			"4.0 5.0 6.0 7.0"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"blind_pct"					"60 60 60 60"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"whirl_duration"			"3.0"
+		}
+		// Extra
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"axe_turn_rate"				"360"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"start_radius"				"1"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"think_interval"			"0.06"
+		}
+	}
+
+	"OnUpgrade"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_troll_warlord/whirling_axes_melee.lua"
+			"Function"		"LevelUpAbility"
+			"ability_name"	"troll_warlord_whirling_axes_ranged_datadriven"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_TrollWarlord.WhirlingAxes.Melee"
+			"Target" 		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_troll_warlord/whirling_axes_melee.lua"
+			"Function"		"WhirlingAxesMelee"
+			"axe_projectile"	"particles/units/heroes/hero_troll_warlord/troll_warlord_whirling_axe_melee.vpcf"
+			"axe_modifier"		"modifier_whirling_axes_melee_think_datadriven"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_whirling_axes_melee_think_datadriven"
+		{
+			"IsHidden"		"1"
+			"IsPurgable"	"0"
+
+			"Aura"          	"modifier_whirling_axes_melee_aura_datadriven"
+			"Aura_Radius"   	"%hit_radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			"Aura_ApplyToCaster" "0"
+
+			"ThinkInterval"  "%think_interval"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_troll_warlord/whirling_axes_melee.lua"
+					"Function"		"WhirlingAxesMeleeThink"
+				}
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NOT_ON_MINIMAP"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+		"modifier_whirling_axes_melee_aura_datadriven"
+		{
+			"IsHidden"	"1"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_troll_warlord/whirling_axes_melee.lua"
+					"Function"		"WhirlingAxesMeleeHit"
+					"modifier"		"modifier_whirling_axes_melee_blind_datadriven"
+					"sound"			"Hero_TrollWarlord.WhirlingAxes.Target"
+				}
+			}
+		}
+
+		"modifier_whirling_axes_melee_blind_datadriven"
+		{
+			"IsDebuff"		"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%blind_pct"
+			}
+		}
+	}
+}
+

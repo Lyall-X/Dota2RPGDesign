@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetWorldMinX()${1:--[[
+     GetWorldMinX  Gets the world's minimum X position. 
+    -- @return float
+    function GetWorldMinX(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetWorldMinX</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

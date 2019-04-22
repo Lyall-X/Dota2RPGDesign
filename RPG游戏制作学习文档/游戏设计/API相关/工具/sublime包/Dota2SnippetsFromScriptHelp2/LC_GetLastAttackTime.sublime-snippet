@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetLastAttackTime()${1:--[[
+     CDOTA_BaseNPC:GetLastAttackTime   
+    -- @return float
+    function CDOTA_BaseNPC:GetLastAttackTime(  ) end
+    ]]}]]></content>
+    <tabTrigger>getLastAttackTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

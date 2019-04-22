@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[SetModifierStackCount(${1:string_1},${2:handle_2},${3:int_3})${4:--[[
+     CDOTA_BaseNPC:SetModifierStackCount  Sets the stack count of a given modifier. 
+    -- @return void
+    -- @param string_1 string
+    -- @param handle_2 handle
+    -- @param int_3 int
+    function CDOTA_BaseNPC:SetModifierStackCount( string_1, handle_2, int_3 ) end
+    ]]}]]></content>
+    <tabTrigger>setModifierStackCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

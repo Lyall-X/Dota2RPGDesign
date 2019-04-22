@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[SetHUDVisible(${1:int_1},${2:bool_2})${3:--[[
+     CDOTABaseGameMode:SetHUDVisible  Set the HUD element visibility. 
+    -- @return void
+    -- @param int_1 int
+    -- @param bool_2 bool
+    function CDOTABaseGameMode:SetHUDVisible( int_1, bool_2 ) end
+    ]]}]]></content>
+    <tabTrigger>setHUDVisible</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

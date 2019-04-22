@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[SendFrostivusTimeElapsedToGC()${1:--[[
+     SendFrostivusTimeElapsedToGC   
+    -- @return void
+    function SendFrostivusTimeElapsedToGC(  ) end
+    ]]}]]></content>
+    <tabTrigger>SendFrostivusTimeElapsedToGC</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

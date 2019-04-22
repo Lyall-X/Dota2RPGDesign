@@ -1,0 +1,124 @@
+// Rewrite of the Slardar Bash
+// Author: chrislotix
+// Date: 01.01.2015.
+// Changed: 15.01.2015.
+// Changed by: Pizzalol
+// Reason: Improved spell code
+"slardar_bash_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"slardar_bash"
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	 {
+	  "soundfile"   "soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"
+	  "particle"	"particles/generic_gameplay/generic_stunned.vpcf"  
+	 }
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportBonus"		"25"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chance"				"10 15 20 25"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"60 80 100 120"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"1.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration_creep"		"2.0"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_bash_stun_datadriven"
+		{
+			"IsDebuff" 		"1"
+			"OverrideAnimation"		"ACT_DOTA_DISABLED"
+
+			"EffectName" "particles/generic_gameplay/generic_stunned.vpcf"
+        	"EffectAttachType" "follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+
+
+		"modifier_bash_datadriven"		
+		{
+			"IsHidden"	"1"
+			"Passive"	"1"
+
+			"OnAttackLanded"
+			{
+				"Random"
+				{
+					"Chance"	"%chance"
+					"PseudoRandom"		"DOTA_PSEUDO_RANDOM_SLARDAR_BASH"
+
+					"OnSuccess"
+					{
+						"FireSound"
+						{
+							"EffectName"	"Hero_Slardar.Bash"
+							"Target"		"TARGET"
+						}
+
+						"ApplyModifier"
+						{
+							"Target"
+							{
+								"Center"	"TARGET"
+								"Types"		"DOTA_UNIT_TARGET_HERO"
+							}
+							"ModifierName"	"modifier_bash_stun_datadriven"
+							"Duration"		"%duration"
+						}
+
+						"ApplyModifier"
+						{
+							"Target"
+							{
+								"Center"	"TARGET"
+								"Types"		"DOTA_UNIT_TARGET_BASIC"
+							}
+							"ModifierName"	"modifier_bash_stun_datadriven"
+							"Duration"		"%duration_creep"
+						}
+
+						"Damage"
+						{
+							"Target"	"TARGET"
+							"Type"		"DAMAGE_TYPE_PHYSICAL"
+							"Damage"	"%bonus_damage"
+						}						
+					}
+				}
+			} 
+		}
+	}
+}
+

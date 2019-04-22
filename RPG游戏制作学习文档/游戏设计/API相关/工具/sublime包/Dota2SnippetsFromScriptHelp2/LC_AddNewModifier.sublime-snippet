@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[AddNewModifier(${1:handle_1},${2:handle_2},${3:string_3},${4:handle_4})${5:--[[
+     CDOTA_BaseNPC:AddNewModifier  Add a modifier to this unit. 
+    -- @return void
+    -- @param handle_1 handle
+    -- @param handle_2 handle
+    -- @param string_3 string
+    -- @param handle_4 handle
+    function CDOTA_BaseNPC:AddNewModifier( handle_1, handle_2, string_3, handle_4 ) end
+    ]]}]]></content>
+    <tabTrigger>addNewModifier</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

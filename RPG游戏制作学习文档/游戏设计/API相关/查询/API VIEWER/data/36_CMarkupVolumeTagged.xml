@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CMarkupVolumeTagged" nameCN="标记卷标签"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+		<function name="HasTag"
+		signature="bool HasTag(string a)">
+		  <DescriptionEN>Does this volume have the given tag.</DescriptionEN>
+		  <DescriptionCN>查询该卷是否带有指定标签</DescriptionCN>
+		  <HowToCall>
+		    <Parameter>handle a</Parameter>
+		    <Return></Return>
+		    <PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

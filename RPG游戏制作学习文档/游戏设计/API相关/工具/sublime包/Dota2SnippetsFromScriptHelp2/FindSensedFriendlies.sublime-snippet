@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[FindSensedFriendlies()${1:--[[
+     CRPG_Unit:FindSensedFriendlies  () - returns list of all enemy units within this unit's sight cone or sensing sphere 
+    -- @return table
+    function CRPG_Unit:FindSensedFriendlies(  ) end
+    ]]}]]></content>
+    <tabTrigger>FindSensedFriendlies</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

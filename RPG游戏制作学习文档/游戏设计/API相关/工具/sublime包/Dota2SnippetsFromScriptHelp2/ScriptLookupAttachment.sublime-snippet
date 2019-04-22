@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[ScriptLookupAttachment(${1:string_1})${2:--[[
+     CBaseAnimating:ScriptLookupAttachment  Get the named attachement id. 
+    -- @return int
+    -- @param string_1 string
+    function CBaseAnimating:ScriptLookupAttachment( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>ScriptLookupAttachment</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

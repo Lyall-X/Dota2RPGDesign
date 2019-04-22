@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[SetAngles(${1:float_1},${2:float_2},${3:float_3})${4:--[[
+     CBaseEntity:SetAngles  Set entity pitch, yaw, roll. 
+    -- @return void
+    -- @param float_1 float
+    -- @param float_2 float
+    -- @param float_3 float
+    function CBaseEntity:SetAngles( float_1, float_2, float_3 ) end
+    ]]}]]></content>
+    <tabTrigger>setAngles</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

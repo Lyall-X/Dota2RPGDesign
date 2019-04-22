@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[RemoveModifierByNameAndCaster(${1:string_1},${2:handle_2})${3:--[[
+     CDOTA_BaseNPC:RemoveModifierByNameAndCaster  Removes a modifier that was cast by the given caster. 
+    -- @return void
+    -- @param string_1 string
+    -- @param handle_2 handle
+    function CDOTA_BaseNPC:RemoveModifierByNameAndCaster( string_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>removeModifierByNameAndCaster</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

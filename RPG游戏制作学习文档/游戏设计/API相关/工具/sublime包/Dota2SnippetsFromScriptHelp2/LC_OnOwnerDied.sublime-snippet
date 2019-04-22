@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[OnOwnerDied()${1:--[[
+     CDOTABaseAbility:OnOwnerDied   
+    -- @return void
+    function CDOTABaseAbility:OnOwnerDied(  ) end
+    ]]}]]></content>
+    <tabTrigger>onOwnerDied</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

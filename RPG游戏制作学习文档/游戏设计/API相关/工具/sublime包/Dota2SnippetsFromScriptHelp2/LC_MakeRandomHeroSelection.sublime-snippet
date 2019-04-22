@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[MakeRandomHeroSelection()${1:--[[
+     CDOTAPlayer:MakeRandomHeroSelection  Randoms this player's hero. 
+    -- @return void
+    function CDOTAPlayer:MakeRandomHeroSelection(  ) end
+    ]]}]]></content>
+    <tabTrigger>makeRandomHeroSelection</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

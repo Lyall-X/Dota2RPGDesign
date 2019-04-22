@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Daiyfoo翻译 -->
+
+<class nameEN="CDOTA_Ability_Nian_Roar" nameCN="DOTA技能之年兽咆哮"
+	descriptionEN="No Description Set"
+	descriptionCN="目前未有描述" extends="CDOTABaseAbility">
+	<functions>
+		<function name="GetCastCount" signature="int GetCastCount()">
+			<DescriptionEN>Number of times Nian has used the roar
+			</DescriptionEN>
+			<DescriptionCN>年兽使用了咆哮的次数</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:年兽使用了咆哮的次数</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	
+	</functions>
+
+</class>

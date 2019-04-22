@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[RemoveSubquest(${1:handle_1})${2:--[[
+     CDotaQuest:RemoveSubquest  Remove a subquest from this quest 
+    -- @return void
+    -- @param handle_1 handle
+    function CDotaQuest:RemoveSubquest( handle_1 ) end
+    ]]}]]></content>
+    <tabTrigger>removeSubquest</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAssignedHero()${1:--[[
+     CDOTAPlayer:GetAssignedHero  Get the player's hero. 
+    -- @return handle
+    function CDOTAPlayer:GetAssignedHero(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAssignedHero</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

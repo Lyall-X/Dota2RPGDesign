@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[DisconnectOutput(${1:string_1},${2:string_2})${3:--[[
+     CEntityInstance:DisconnectOutput  Removes a connected script function from an I/O event on this entity. 
+    -- @return void
+    -- @param string_1 string
+    -- @param string_2 string
+    function CEntityInstance:DisconnectOutput( string_1, string_2 ) end
+    ]]}]]></content>
+    <tabTrigger>DisconnectOutput</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

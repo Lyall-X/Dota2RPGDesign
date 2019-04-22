@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[RegisterSpawnGroupFilterProxy(${1:string_1})${2:--[[
+     RegisterSpawnGroupFilterProxy  Create a C proxy for a script-based spawn group filter 
+    -- @return void
+    -- @param string_1 string
+    function RegisterSpawnGroupFilterProxy( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>registerSpawnGroupFilterProxy</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

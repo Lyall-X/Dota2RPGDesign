@@ -1,0 +1,27 @@
+function CEventGameMode:InitGameMode()
+        print( "CEventGameMode:InitGameMode is loaded." )
+ 
+        --监听游戏进度
+        ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(CEventGameMode,"OnGameRulesStateChange"), self)
+ 
+        --监听单位被击杀的事件
+        ListenToGameEvent("entity_killed", Dynamic_Wrap(CEventGameMode, "OnEntityKilled"), self)
+ 
+        --同一事件名可以有不同的函数，但是基本没这个必要
+        ListenToGameEvent("entity_killed", Dynamic_Wrap(CEventGameMode, "OnEntityKilledHero"), self)
+ 
+        --监听单位受到伤害事件
+        ListenToGameEvent("entity_hurt", Dynamic_Wrap(CEventGameMode, "OnEntityHurt"), self)
+ 
+        --监听单位重生或者创建事件
+        ListenToGameEvent("npc_spawned", Dynamic_Wrap(CEventGameMode, "OnNPCSpawned"), self)
+ 
+        --监听玩家断开连接的事件
+        ListenToGameEvent("player_disconnect", Dynamic_Wrap(CEventGameMode, "OnPlayerDisconnect"), self)
+ 
+        --监听物品被购买的事件
+        ListenToGameEvent("dota_item_purchased", Dynamic_Wrap(CEventGameMode, "OnDotaItemPurchased"), self)
+ 
+        --监听玩家聊天事件
+        ListenToGameEvent("player_chat", Dynamic_Wrap(CEventGameMode, "PlayerChat"), self)
+end

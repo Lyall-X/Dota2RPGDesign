@@ -1,0 +1,1342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Daiyfoo翻译 -->
+
+<class nameEN="CDOTABaseAbility" nameCN="DOTA基础技能"
+	descriptionEN="No Description Set"
+	descriptionCN="目前未有描述" extends="CBaseEntity">
+	<functions>
+		<function name="CastAbility" signature="void CastAbility()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>释放技能</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="ContinueCasting" signature="bool ContinueCasting()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:是否持续施法</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="CreateVisibilityNode" signature="void CreateVisibilityNode(Vector a, float b, float c)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:矢量单位 b:矢量的x坐标 c:矢量的y坐标
+				</Parameter>
+				<Return></Return>
+				<PS>创建一个可见节点</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="DecrementModifierRefCount" signature="void DecrementModifierRefCount()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>减少一个修改器叠加数</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="EndChannel" signature="void EndChannel(bool a)">
+			<DescriptionEN>Param: bool bInterrupted
+			</DescriptionEN>
+			<DescriptionCN>参数: bool bInterrupted</DescriptionCN>
+			<HowToCall>
+				<Parameter>bInterrupted:是否可打断
+				</Parameter>
+				<Return></Return>
+				<PS>结束(打断)技能的持续施法</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="EndCooldown" signature="void EndCooldown()">
+			<DescriptionEN>Clear the cooldown remaining on this ability.
+			</DescriptionEN>
+			<DescriptionCN>刷新这个技能</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbilityDamage" signature="int GetAbilityDamage()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能的伤害数值</Return>
+				<PS>获得技能的伤害数值</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbilityDamageType" signature="int GetAbilityDamageType()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能的伤害类型</Return>
+				<PS>获得技能的伤害类型</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbilityIndex" signature="int GetAbilityIndex()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能的索引(第几个技能?)</Return>
+				<PS>获得技能的索引</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbilityName" signature="string GetAbilityName()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:技能的名字</Return>
+				<PS>获得技能的名字</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbilityTargetFlags" signature="int GetAbilityTargetFlags()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能的判定索引?</Return>
+				<PS>获得技能的判定</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbilityTargetTeam" signature="int GetAbilityTargetTeam()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能目标的队伍索引?</Return>
+				<PS>获得技能目标的队伍索引</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbilityTargetType" signature="int GetAbilityTargetType()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能目标的类型</Return>
+				<PS>获得技能目标的类型</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAbilityType" signature="int GetAbilityType()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能的类型</Return>
+				<PS>获得技能的类型</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAnimationIgnoresModelScale" signature="bool GetAnimationIgnoresModelScale()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:动画是否无视模型大小</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAssociatedPrimaryAbilities" signature="string GetAssociatedPrimaryAbilities()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:关联的主要技能名</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAssociatedSecondaryAbilities" signature="string GetAssociatedSecondaryAbilities()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:关联的次要技能名</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetAutoCastState" signature="bool GetAutoCastState()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否自动施法</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetBackswingTime" signature="float GetBackswingTime()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:技能的施法前摇时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetBehavior" signature="int GetBehavior()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能的属性数目?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCaster" signature="handle GetCaster()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:技能的施法者</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCastPoint" signature="float GetCastPoint()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:技能的施法处?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCastRange" signature="int GetCastRange()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能的施法范围</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetChannelledManaCostPerSecond" signature="int GetChannelledManaCostPerSecond(int a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:技能的等级?
+				</Parameter>
+				<Return>int:技能持续施法每秒消耗的魔法值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetChannelStartTime" signature="float GetChannelStartTime()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:技能的开始施法的时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetChannelTime" signature="float GetChannelTime()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:技能的持续施法的时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCloneSource" signature="handle GetCloneSource()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:技能的克隆来源</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetConceptRecipientType" signature="int GetConceptRecipientType()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能接受者的类型</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCooldown" signature="float GetCooldown(int a)">
+			<DescriptionEN>Get the cooldown duration for this ability at a given level, not the amount of cooldown actually left.
+			</DescriptionEN>
+			<DescriptionCN>获得技能在给出的等级设定上的冷却时间,而不是目前的剩余的冷却时间</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:技能的等级
+				</Parameter>
+				<Return>float:技能的冷却时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCooldownTime" signature="float GetCooldownTime()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:目前等级技能的冷却时间?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCooldownTimeRemaining" signature="float GetCooldownTimeRemaining()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:目前剩余的冷却时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCursorPosition" signature="Vector GetCursorPosition()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>Vector:鼠标的矢量位置</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCursorTarget" signature="handle GetCursorTarget()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:鼠标所在位置的目标</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCursorTargetingNothing" signature="bool GetCursorTargetingNothing()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:鼠标所在位置的是否存在目标</Return>
+				<PS>true为没目标实体,false为存在目标实体</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetDuration" signature="float GetDuration()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:技能的持续时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetGoldCost" signature="int GetGoldCost(int a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:技能的等级
+				</Parameter>
+				<Return>int:使用技能的在某个等级所消耗的金钱数值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetGoldCostForUpgrade" signature="int GetGoldCostForUpgrade(int a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:技能的(将要达到?)等级
+				</Parameter>
+				<Return>int:升级技能的所消耗的金钱数值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetHeroLevelRequiredToUpgrade" signature="int GetHeroLevelRequiredToUpgrade()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:升级技能的所需要的英雄等级</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetIntrinsicModifierName" signature="string GetIntrinsicModifierName()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:技能内置的修改器名字</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetLevel" signature="int GetLevel()">
+			<DescriptionEN>Get the current level of the ability
+			</DescriptionEN>
+			<DescriptionCN>获得技能目前的等级</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能目前的等级</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetLevelSpecialValueFor" signature="table GetLevelSpecialValueFor(string a, int b)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:目标名字? b:技能等级
+				</Parameter>
+				<Return>table:技能特殊值的表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetManaCost" signature="int GetManaCost(int a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:技能的等级
+				</Parameter>
+				<Return>int:技能在某个等级的魔法消耗</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetMaxLevel" signature="int GetMaxLevel()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能的可升的最高等级</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetModifierValue" signature="float GetModifierValue()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:获得技能的修改器的值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetModifierValueBonus" signature="float GetModifierValueBonus()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:获得技能的修改器额外增加的值</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetPlaybackRateOverride" signature="float GetPlaybackRateOverride()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:重写的技能动画播放速率</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetSharedCooldownName" signature="string GetSharedCooldownName()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:共用冷却时间的技能名字</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetSpecialValueFor" signature="table GetSpecialValueFor(string a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:目标的名字?
+				</Parameter>
+				<Return>table:技能特殊值的表</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetStolenActivityModifier" signature="string GetStolenActivityModifier()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>string:偷取的修改器名字?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetToggleState" signature="bool GetToggleState()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能目前的开关状态</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="HeroXPChange" signature="bool HeroXPChange(float a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:时间点?
+				</Parameter>
+				<Return>bool:英雄的经验是否改变</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IncrementModifierRefCount" signature="void IncrementModifierRefCount()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>增加技能修改器的叠加数</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsActivated" signature="bool IsActivated()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否激活状态</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsAttributeBonus" signature="bool IsAttributeBonus()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否增加属性</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsChanneling" signature="bool IsChanneling()">
+			<DescriptionEN>Returns whether the ability is currently channeling.
+			</DescriptionEN>
+			<DescriptionCN>返回目前技能是否在施法状态</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:目前技能是否在施法状态</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsCooldownReady" signature="bool IsCooldownReady()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否就绪</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsCosmetic" signature="bool IsCosmetic()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:是否被饰品改变特效?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsFullyCastable" signature="bool IsFullyCastable()">
+			<DescriptionEN>Returns whether the ability can be cast.
+			</DescriptionEN>
+			<DescriptionCN>返回技能能否被释放</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能能否被释放</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsHidden" signature="bool IsHidden()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能(图标)是否隐藏</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsHiddenWhenStolen" signature="bool IsHiddenWhenStolen()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能被偷取的时候是否隐藏</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsInAbilityPhase" signature="bool IsInAbilityPhase()">
+			<DescriptionEN>Returns whether the ability is currently casting.
+			</DescriptionEN>
+			<DescriptionCN>返回技能目前是否在被释放</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能目前是否在被释放</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsItem" signature="bool IsItem()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否来自物品?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsOwnersGoldEnough" signature="bool IsOwnersGoldEnough(int a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:技能的等级?
+				</Parameter>
+				<Return>bool:技能的所有者的金钱是否足够用于技能的消费金钱</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsOwnersGoldEnoughForUpgrade" signature="bool IsOwnersGoldEnoughForUpgrade()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能所有者金钱是否足够用于技能升级</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsOwnersManaEnough" signature="bool IsOwnersManaEnough()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能所有者魔法值是否足够施法技能</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsPassive" signature="bool IsPassive()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否为被动技能</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsSharedWithTeammates" signature="bool IsSharedWithTeammates()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否与队友共享</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsStealable" signature="bool IsStealable()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否可被偷取</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsStolen" signature="bool IsStolen()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否已经被偷取</Return>
+				<PS>与技能可否被偷取无关,只判断技能目前有没有被偷取</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsToggle" signature="bool IsToggle()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否可开关</Return>
+				<PS>如美杜莎的魔法盾,返回就是true</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="IsTrained" signature="bool IsTrained()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否熟练?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="MarkAbilityButtonDirty" signature="void MarkAbilityButtonDirty()">
+			<DescriptionEN>Mark the ability button for this ability as needing a refresh
+			</DescriptionEN>
+			<DescriptionCN>标记这个技能图标表示需要刷新</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="NumModifiersUsingAbility" signature="int NumModifiersUsingAbility()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>int:技能所用到修改器的数量</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnAbilityPhaseInterrupted" signature="void OnAbilityPhaseInterrupted()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnAbilityPhaseStart" signature="bool OnAbilityPhaseStart()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否开始释放</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnAbilityPinged" signature="void OnAbilityPinged()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnChannelFinish" signature="void OnChannelFinish(bool a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>bool:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnChannelThink" signature="void OnChannelThink(float a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>float:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnHeroCalculateStatBonus" signature="void OnHeroCalculateStatBonus()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnHeroLevelUp" signature="void OnHeroLevelUp()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当英雄升级的时候</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnInventoryContentsChanged" signature="void OnInventoryContentsChanged()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当库存改变时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnOwnerDied" signature="void OnOwnerDied()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当技能所有者死亡时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnOwnerSpawned" signature="void OnOwnerSpawned()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当技能所有者出生时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnSpellStart" signature="void OnSpellStart()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当技能开始释放时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnToggle" signature="void OnToggle()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当技能切换开关状态时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="OnUpgrade" signature="void OnUpgrade()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当技能升级时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="PayGoldCost" signature="void PayGoldCost()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当支付技能消耗的金钱时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="PayGoldCostForUpgrade" signature="void PayGoldCostForUpgrade()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当支付升级技能消耗的金钱时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="PayManaCost" signature="void PayManaCost()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>当支付技能所需魔法时</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="PlaysDefaultAnimWhenStolen" signature="bool PlaysDefaultAnimWhenStolen()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能被偷取是否播放默认动画</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="ProcsMagicStick" signature="bool ProcsMagicStick()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否能为对方魔棒充能</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="RefCountsModifiers" signature="bool RefCountsModifiers()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:技能是否能叠加修改器</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="RefundManaCost" signature="void RefundManaCost()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS>返还技能消耗的魔法值</PS>
+			</HowToCall>
+		</function>
+		
+		<function name="ResetToggleOnRespawn" signature="bool ResetToggleOnRespawn()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:英雄重生时是否重置技能开关</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetAbilityIndex" signature="void SetAbilityIndex(int a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:想要设置的技能索引
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetActivated" signature="void SetActivated(bool a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置技能是否激活?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetChanneling" signature="void SetChanneling(bool a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置技能是否持续施法
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetHidden" signature="void SetHidden(bool a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置技能是否隐藏(图标)
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetInAbilityPhase" signature="void SetInAbilityPhase(bool a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetLevel" signature="void SetLevel(int a)">
+			<DescriptionEN>Sets the level of this ability.
+			</DescriptionEN>
+			<DescriptionCN>设置这个技能的等级</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置技能的等级
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetOverrideCastPoint" signature="void SetOverrideCastPoint(float a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>float:设置技能重写的释放点?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetRefCountsModifiers" signature="void SetRefCountsModifiers(bool a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>bool:设置技能是否可以叠加修改器
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetStolen" signature="void SetStolen(bool a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>bool:设置技能是否可以被偷取?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="ShouldUseResources" signature="bool ShouldUseResources()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:是否要使用资源</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SpeakAbilityConcept" signature="void SpeakAbilityConcept(int a)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:技能的等级?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SpeakTrigger" signature="bool SpeakTrigger()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>bool:是否存在说话的触发器?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="StartCooldown" signature="void StartCooldown(float a)">
+			<DescriptionEN>param: flCooldown
+			</DescriptionEN>
+			<DescriptionCN>参数:fl冷却时间?</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:fl冷却时间?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="ToggleAbility" signature="void ToggleAbility()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="ToggleAutoCast" signature="void ToggleAutoCast()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="UpgradeAbility" signature="void UpgradeAbility()">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="UseResources" signature="void UseResources(bool a, bool b, bool c)">
+			<DescriptionEN>No Description Set
+			</DescriptionEN>
+			<DescriptionCN>目前未有描述</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:? b:? c:?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+	</functions>
+</class>

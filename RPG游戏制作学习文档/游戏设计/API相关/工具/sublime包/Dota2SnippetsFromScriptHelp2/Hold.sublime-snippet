@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Hold()${1:--[[
+     CDOTA_BaseNPC:Hold  Hold position. 
+    -- @return void
+    function CDOTA_BaseNPC:Hold(  ) end
+    ]]}]]></content>
+    <tabTrigger>Hold</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

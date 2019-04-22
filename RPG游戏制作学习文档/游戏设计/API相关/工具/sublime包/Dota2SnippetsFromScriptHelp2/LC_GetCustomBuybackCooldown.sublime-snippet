@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetCustomBuybackCooldown(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetCustomBuybackCooldown   
+    -- @return float
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetCustomBuybackCooldown( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>getCustomBuybackCooldown</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

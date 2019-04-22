@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[DestroyAllSpeechBubbles()${1:--[[
+     CDOTA_BaseNPC:DestroyAllSpeechBubbles   
+    -- @return void
+    function CDOTA_BaseNPC:DestroyAllSpeechBubbles(  ) end
+    ]]}]]></content>
+    <tabTrigger>destroyAllSpeechBubbles</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

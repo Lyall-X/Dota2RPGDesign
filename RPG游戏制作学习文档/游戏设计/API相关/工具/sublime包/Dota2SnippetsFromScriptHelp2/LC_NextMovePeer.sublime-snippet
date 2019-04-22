@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[NextMovePeer()${1:--[[
+     CBaseEntity:NextMovePeer   
+    -- @return handle
+    function CBaseEntity:NextMovePeer(  ) end
+    ]]}]]></content>
+    <tabTrigger>nextMovePeer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

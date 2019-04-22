@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsControlledByPlayer()${1:--[[
+     CRPG_Unit:IsControlledByPlayer  () - is this unit controlled by a human player? 
+    -- @return bool
+    function CRPG_Unit:IsControlledByPlayer(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsControlledByPlayer</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

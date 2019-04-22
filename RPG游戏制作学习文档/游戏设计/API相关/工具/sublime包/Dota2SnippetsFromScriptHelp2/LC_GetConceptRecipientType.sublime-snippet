@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetConceptRecipientType()${1:--[[
+     CDOTABaseAbility:GetConceptRecipientType   
+    -- @return int
+    function CDOTABaseAbility:GetConceptRecipientType(  ) end
+    ]]}]]></content>
+    <tabTrigger>getConceptRecipientType</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,57 @@
+// Rewrite of Ring of Health
+// Author: Rook
+// Date: January 25, 2015
+
+"item_ring_of_health_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1056"  //Valve's version of this item uses the ID "56".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_ring_of_health"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"875"
+	"ItemShopTags"					"regen_health"
+	"ItemQuality"					"secret_shop"
+	"ItemAliases"					"roh;ring of health"
+	"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+	"SecretShop"					"1"		
+	"SideShop"						"1"
+	
+	// Sound
+	//-------------------------------------------------------------------------------------------------------------			
+	"UIPickupSound"					"Item.PickUpRingShop"
+	"UIDropSound"					"Item.DropRingShop"
+	"WorldDropSound"				"Item.DropRingWorld"
+
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health_regen"	"5"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_ring_of_health_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+			}
+		}
+	}
+}

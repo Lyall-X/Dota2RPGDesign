@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[CreateUnitByName(${1:string_1},${2:Vector_2},${3:bool_3},${4:handle_4},${5:handle_5},${6:int_6})${7:--[[
+     CreateUnitByName  Creates a DOTA unit by its dota_npc_units.txt name 
+    -- @return handle
+    -- @param string_1 string
+    -- @param Vector_2 Vector
+    -- @param bool_3 bool
+    -- @param handle_4 handle
+    -- @param handle_5 handle
+    -- @param int_6 int
+    function CreateUnitByName( string_1, Vector_2, bool_3, handle_4, handle_5, int_6 ) end
+    ]]}]]></content>
+    <tabTrigger>CreateUnitByName</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

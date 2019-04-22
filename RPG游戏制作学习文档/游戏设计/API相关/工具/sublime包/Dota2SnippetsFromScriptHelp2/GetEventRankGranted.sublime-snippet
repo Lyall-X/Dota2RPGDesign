@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[GetEventRankGranted(${1:int_1})${2:--[[
+     CDOTA_PlayerResource:GetEventRankGranted   
+    -- @return int
+    -- @param int_1 int
+    function CDOTA_PlayerResource:GetEventRankGranted( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>GetEventRankGranted</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

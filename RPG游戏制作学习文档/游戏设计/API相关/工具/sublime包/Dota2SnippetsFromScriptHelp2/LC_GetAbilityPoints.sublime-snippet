@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetAbilityPoints()${1:--[[
+     CDOTA_BaseNPC_Hero:GetAbilityPoints  Gets the current unspent ability points. 
+    -- @return int
+    function CDOTA_BaseNPC_Hero:GetAbilityPoints(  ) end
+    ]]}]]></content>
+    <tabTrigger>getAbilityPoints</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

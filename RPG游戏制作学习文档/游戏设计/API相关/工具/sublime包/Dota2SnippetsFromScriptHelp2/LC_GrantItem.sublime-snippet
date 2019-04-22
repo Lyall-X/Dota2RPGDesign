@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[GrantItem(${1:string_1},${2:bool_2})${3:--[[
+     CRPG_Unit:GrantItem  ( sItemName, bEquip ) - grant an item to the unit by name. 
+    -- @return void
+    -- @param string_1 string
+    -- @param bool_2 bool
+    function CRPG_Unit:GrantItem( string_1, bool_2 ) end
+    ]]}]]></content>
+    <tabTrigger>grantItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCursorTarget()${1:--[[
+     CDOTABaseAbility:GetCursorTarget   
+    -- @return handle
+    function CDOTABaseAbility:GetCursorTarget(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCursorTarget</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

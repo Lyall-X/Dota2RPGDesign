@@ -1,0 +1,8 @@
+arena
+{
+	material materials/overviews/arena.vmat
+	pos_x -3840
+	pos_y 2048
+	scale 6.500
+}
+

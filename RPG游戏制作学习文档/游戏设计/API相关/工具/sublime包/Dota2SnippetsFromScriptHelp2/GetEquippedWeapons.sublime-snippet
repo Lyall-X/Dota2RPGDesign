@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetEquippedWeapons()${1:--[[
+     CBaseCombatCharacter:GetEquippedWeapons  GetEquippedWeapons() : Returns an array of all the equipped weapons 
+    -- @return table
+    function CBaseCombatCharacter:GetEquippedWeapons(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetEquippedWeapons</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

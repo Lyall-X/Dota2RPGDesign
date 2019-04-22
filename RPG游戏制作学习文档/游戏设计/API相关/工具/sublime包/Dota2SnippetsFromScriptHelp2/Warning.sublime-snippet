@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[Warning(${1:string_1})${2:--[[
+     Warning  Print a warning 
+    -- @return void
+    -- @param string_1 string
+    function Warning( string_1 ) end
+    ]]}]]></content>
+    <tabTrigger>Warning</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

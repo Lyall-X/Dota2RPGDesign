@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[Init(${1:int_1})${2:--[[
+     CNativeOutputs:Init  Initialize with number of outputs 
+    -- @return void
+    -- @param int_1 int
+    function CNativeOutputs:Init( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>init</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

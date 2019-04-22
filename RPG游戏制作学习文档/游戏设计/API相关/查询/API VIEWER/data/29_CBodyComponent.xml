@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由cftx翻译 -->
+
+<class nameEN="CBodyComponent" nameCN="身体组件"
+	descriptionEN=""
+	descriptionCN="" extends="">
+	<functions>
+        <function name="AddImpulseAtPosition"
+		signature="void AddImpulseAtPosition(Vector a, Vector b)">
+		  <DescriptionEN>Apply an impulse at a worldspace position to the
+		  physics</DescriptionEN>
+		  <DescriptionCN>在指定的世界位置施加一个物理推动</DescriptionCN>
+		  <HowToCall>
+			<Parameter>Vector a, Vector b</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="AddVelocity"
+		signature="void AddVelocity(Vector a, Vector b)">
+		  <DescriptionEN>Add linear and angular velocity to the physics
+		  object</DescriptionEN>
+		  <DescriptionCN>为物理物件增加一个线速度或角速度</DescriptionCN>
+		  <HowToCall>
+			<Parameter>Vector a, Vector b</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="DetachFromParent"
+		signature="void DetachFromParent()">
+		  <DescriptionEN>Detach from its parent</DescriptionEN>
+		  <DescriptionCN>从其父项（parent）中分离</DescriptionCN>
+		  <HowToCall>
+			<Parameter></Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="GetSequence" signature="&lt;&gt;GetSequence()">
+		  <DescriptionEN>Returns the active sequence</DescriptionEN>
+		  <DescriptionCN>返回激活的序列（sequence）</DescriptionCN>
+		  <HowToCall>
+			<Parameter></Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="IsAttachedToParent"
+		signature="bool IsAttachedToParent()">
+		  <DescriptionEN>Is attached to parent</DescriptionEN>
+		  <DescriptionCN>是否依附父项（parent）</DescriptionCN>
+		  <HowToCall>
+			<Parameter></Parameter>
+			<Return>bool</Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="LookupSequence"
+		signature="&lt;&gt;LookupSequence(string a)">
+		  <DescriptionEN>Returns a sequence id given a name</DescriptionEN>
+		  <DescriptionCN>输入名字返回序列（sequence）ID</DescriptionCN>
+		  <HowToCall>
+			<Parameter>string a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SequenceDuration"
+		signature="float SequenceDuration(string a)">
+		  <DescriptionEN>Returns the duration in seconds of the specified
+		  sequence</DescriptionEN>
+		  <DescriptionCN>按秒数返回指定序列（sequence）的持续时间</DescriptionCN>
+		  <HowToCall>
+			<Parameter>string a</Parameter>
+			<Return>float</Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetAngularVelocity"
+		signature="void SetAngularVelocity(Vector a)">
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+			<Parameter>Vector a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetAnimation"
+		signature="void SetAnimation(string a)">
+		  <DescriptionEN>Pass string for the animation to play on this
+		  model</DescriptionEN>
+		  <DescriptionCN>输入动画名称播放动作，需要模型拥有该动画</DescriptionCN>
+		  <HowToCall>
+			<Parameter>string a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetBodyGroup"
+		signature="void SetBodyGroup(string a)">
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+			<Parameter>string a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetMaterialGroup"
+		signature="void SetMaterialGroup(utlstringtoken a)">
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+			<Parameter>utlstringtoken a</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+		<function name="SetVelocity"
+		signature="void SetVelocity(Vector velocity)">
+		  <DescriptionEN>No Description Set</DescriptionEN>
+		  <DescriptionCN>暂无描述</DescriptionCN>
+		  <HowToCall>
+			<Parameter>Vector velocity</Parameter>
+			<Return></Return>
+			<PS></PS>
+		  </HowToCall>
+		</function>
+	</functions>
+</class>

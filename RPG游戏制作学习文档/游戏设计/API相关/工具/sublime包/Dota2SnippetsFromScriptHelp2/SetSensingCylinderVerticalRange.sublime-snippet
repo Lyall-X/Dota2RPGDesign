@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetSensingCylinderVerticalRange(${1:float_1})${2:--[[
+     CRPG_Unit:SetSensingCylinderVerticalRange  ( flRange ) - set max height difference between unit and sensed units 
+    -- @return void
+    -- @param float_1 float
+    function CRPG_Unit:SetSensingCylinderVerticalRange( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetSensingCylinderVerticalRange</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

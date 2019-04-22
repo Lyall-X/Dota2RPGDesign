@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetWeaponCount()${1:--[[
+     CBaseCombatCharacter:GetWeaponCount  GetWeaponCount() : Gets the number of weapons currently equipped 
+    -- @return int
+    function CBaseCombatCharacter:GetWeaponCount(  ) end
+    ]]}]]></content>
+    <tabTrigger>getWeaponCount</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

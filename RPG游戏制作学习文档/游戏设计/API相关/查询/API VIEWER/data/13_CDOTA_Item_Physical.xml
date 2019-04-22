@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--CopyRight 2014 [AMHC]阿哈利姆魔法隐修议会 -->
+<!--以下部分由Daiyfoo翻译 -->
+
+<class nameEN="CDOTA_Item_Physical" nameCN="DOTA物品的物理作用"
+	descriptionEN="No Description Set"
+	descriptionCN="目前未有描述" extends="CBaseAnimating">
+	<functions>
+		<function name="GetContainedItem" signature="handle GetContainedItem()">
+			<DescriptionEN>Returned the contained item.
+			</DescriptionEN>
+			<DescriptionCN>返回禁用的物品?</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>handle:禁用的物品?</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="GetCreationTime" signature="float GetCreationTime()">
+			<DescriptionEN>Returns the game time when this item was created in the world
+			</DescriptionEN>
+			<DescriptionCN>返回物品第一次出现在地图上的时间</DescriptionCN>
+			<HowToCall>
+				<Parameter>
+				</Parameter>
+				<Return>float:物品第一次出现在地图上的时间</Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+		
+		<function name="SetContainedItem" signature="void SetContainedItem(handle a)">
+			<DescriptionEN>Set the contained item.
+			</DescriptionEN>
+			<DescriptionCN>设置禁用的物品?</DescriptionCN>
+			<HowToCall>
+				<Parameter>a:设置的禁用物品?
+				</Parameter>
+				<Return></Return>
+				<PS></PS>
+			</HowToCall>
+		</function>
+	
+	</functions>
+
+</class>

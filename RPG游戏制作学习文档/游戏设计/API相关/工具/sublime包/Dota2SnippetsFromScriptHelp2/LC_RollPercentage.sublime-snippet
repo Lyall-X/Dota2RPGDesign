@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[RollPercentage(${1:int_1})${2:--[[
+     RollPercentage  Rolls a number from 1 to 100 and returns true if the roll is less than or equal to the number specified 
+    -- @return bool
+    -- @param int_1 int
+    function RollPercentage( int_1 ) end
+    ]]}]]></content>
+    <tabTrigger>rollPercentage</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

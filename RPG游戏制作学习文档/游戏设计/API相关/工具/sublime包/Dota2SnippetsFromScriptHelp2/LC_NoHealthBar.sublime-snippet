@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[NoHealthBar()${1:--[[
+     CDOTA_BaseNPC:NoHealthBar   
+    -- @return bool
+    function CDOTA_BaseNPC:NoHealthBar(  ) end
+    ]]}]]></content>
+    <tabTrigger>noHealthBar</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

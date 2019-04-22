@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[AlertNearbyUnits(${1:handle_1},${2:handle_2})${3:--[[
+     CDOTA_BaseNPC:AlertNearbyUnits   
+    -- @return void
+    -- @param handle_1 handle
+    -- @param handle_2 handle
+    function CDOTA_BaseNPC:AlertNearbyUnits( handle_1, handle_2 ) end
+    ]]}]]></content>
+    <tabTrigger>alertNearbyUnits</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

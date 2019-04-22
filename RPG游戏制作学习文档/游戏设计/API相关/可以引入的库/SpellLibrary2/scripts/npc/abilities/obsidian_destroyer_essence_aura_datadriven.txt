@@ -1,0 +1,104 @@
+// Rewrite of the Obsidian Destroyer Essence Aura
+// Author: chrislotix
+// Date: 07.01.2015.
+"obsidian_destroyer_essence_aura_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName"			"obsidian_destroyer_essence_aura"
+
+		// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"		
+	}
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"1000 1000 1000 1000"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_mana"	    "75 150 225 300"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"restore_amount"	"10 15 20 25"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"restore_chance"		"40"
+		}
+	}
+
+	"Modifiers"
+	{
+		//Static bonus mana which applies to od only
+
+		"modifier_essence_aura_mana_bonus_datadriven"
+		{
+			"Passive"	"1"
+			"IsPurgable"	"0"
+			"IsHidden"	"1"
+			"Aura" "modifier_essence_aura_effect_datadriven" // this should be the actual mana restore on proc
+			"Aura_Radius" "%radius"
+			"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" "DOTA_UNIT_TARGET_HERO"
+			"Aura_ApplyToCaster" "1"
+
+
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MANA_BONUS"	"%bonus_mana"
+			}
+		}	
+
+		"modifier_essence_aura_effect_datadriven"
+		{
+					
+			"OnAbilityExecuted"
+			{
+				"Random"
+				{
+					"Chance"	"%restore_chance"
+
+					"OnSuccess"
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/essence_aura.lua"
+							"Function"		"RestoreMana"
+							"Target"	"UNIT"
+						}
+						"FireEffect"
+						{
+							"EffectName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+							"EffectAttachType"	"follow_origin"
+							"Target"	"UNIT"
+						}
+
+						"FireSound"
+						{
+							"EffectName"	"Hero_ObsidianDestroyer.EssenceAura"
+							"Target"		"UNIT"
+						}
+					}
+				}
+			}
+		}
+	}
+}

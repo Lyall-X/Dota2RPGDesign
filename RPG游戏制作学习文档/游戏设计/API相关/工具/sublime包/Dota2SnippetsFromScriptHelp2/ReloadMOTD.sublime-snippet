@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ReloadMOTD()${1:--[[
+     ReloadMOTD  Reloads the MotD file 
+    -- @return void
+    function ReloadMOTD(  ) end
+    ]]}]]></content>
+    <tabTrigger>ReloadMOTD</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

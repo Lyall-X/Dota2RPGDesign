@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetUpVector()${1:--[[
+     CBaseEntity:GetUpVector  Get the up vector of the entity. 
+    -- @return Vector
+    function CBaseEntity:GetUpVector(  ) end
+    ]]}]]></content>
+    <tabTrigger>getUpVector</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

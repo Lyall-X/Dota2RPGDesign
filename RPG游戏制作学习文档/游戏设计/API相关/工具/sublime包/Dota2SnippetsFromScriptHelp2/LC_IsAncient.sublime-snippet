@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsAncient()${1:--[[
+     CDOTA_BaseNPC:IsAncient  Is this creature an Ancient? 
+    -- @return bool
+    function CDOTA_BaseNPC:IsAncient(  ) end
+    ]]}]]></content>
+    <tabTrigger>isAncient</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

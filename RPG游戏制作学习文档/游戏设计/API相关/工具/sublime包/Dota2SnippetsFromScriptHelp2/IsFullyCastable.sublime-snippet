@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsFullyCastable()${1:--[[
+     CDOTABaseAbility:IsFullyCastable  Returns whether the ability can be cast. 
+    -- @return bool
+    function CDOTABaseAbility:IsFullyCastable(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsFullyCastable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,182 @@
+// Rewrite of the Venomancer Poison Nova ability
+// Author: Pizzalol
+// Date: 30.09.2015.
+// NOTE: Doesnt travel as an expanding circle around the hero but instead acts as an instant AOE ability
+"venomancer_poison_nova_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"venomancer_poison_nova"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+		"particle"			"particles/units/heroes/hero_venomancer/venomancer_poison_nova.vpcf"
+		"particle"			"particles/units/heroes/hero_venomancer/venomancer_poison_debuff_nova.vpcf"
+		"particle"			"particles/units/heroes/hero_venomancer/venomancer_poison_nova_cast.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0 0.0 0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"140.0 120.0 100.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200 300 400"		
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.0"	// just does damage
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"830 830 830"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"start_radius"				"255 255 255"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"12.0 14.0 15.0"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"36 58 81"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cooldown_scepter"			"140.0 120.0 60.0"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration_scepter"			"14.0 15.0 16.0"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_scepter"			"58 81 108"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"speed"						"500 500 500"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Venomancer.PoisonNova"
+			"Target"		"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_venomancer/venomancer_poison_nova_cast.vpcf"
+			"EffectAttachType"	"attach_origin"
+			"Target"		"CASTER"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"	"particles/units/heroes/hero_venomancer/venomancer_poison_nova.vpcf"
+			"EffectAttachType"	"start_at_customorigin"
+			
+			"ControlPointEntities"
+			{
+				"CASTER"	"attach_origin"
+			}
+
+			"ControlPoints"
+			{
+				"01"	"1 1 1"
+				"02"	"0 0 0"
+			}
+		}
+
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"	"CASTER"
+				"Radius"	"%radius"
+				"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types"		"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			}
+
+			"Action"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"		"modifier_poison_nova_debuff_datadriven"
+					"Target"			"TARGET"
+					"Duration"			"%duration"
+				}
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_poison_nova_debuff_datadriven"
+		{
+			"IsDebuff"	"1"
+			"IsPurgable"	"0"			
+
+			"EffectName"	"particles/units/heroes/hero_venomancer/venomancer_poison_debuff_nova.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"ThinkInterval"	"1.0"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_venomancer/poison_nova.lua"
+					"Function"		"PoisonNova"
+					"Target"		"TARGET"
+				}
+			}
+
+			"OnCreated"
+			{
+				"FireSound"
+				{
+					"EffectName"	"Hero_Venomancer.PoisonNovaImpact"
+					"Target"		"TARGET"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"scripts/vscripts/heroes/hero_venomancer/poison_nova.lua"
+					"Function"		"PoisonNova"
+					"Target"		"TARGET"
+				}
+			}
+		}
+	}
+}
+

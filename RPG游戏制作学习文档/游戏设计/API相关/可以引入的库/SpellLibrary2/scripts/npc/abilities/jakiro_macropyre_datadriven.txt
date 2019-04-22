@@ -1,0 +1,162 @@
+"jakiro_macropyre_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"jakiro_macropyre"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"				"0.65 0.65 0.65 0.65"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"60 60 60"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"220 330 440"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"tooltip_duration"			"7 7 7"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"100 140 180"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cast_range"				"900"					
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration"			"7"
+		}			
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"path_radius"				"225"
+		}			
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"burn_interval"				"0.5 0.5 0.5"
+		}			
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"duration_scepter"			"14"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_scepter"			"125 175 225"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cast_range_scepter"		"1800"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts"
+		"particle"					"particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf"
+	}
+	
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"		"Hero_Jakiro.Macropyre.Cast"
+			"Target"			"CASTER"
+		}
+		
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_jakiro/macropyre.lua"
+			"Function"			"FireMacropyre"
+			
+			"cast_range"		"%cast_range"
+			"path_radius"		"%path_radius"
+			"duration"			"%duration"
+		}
+	}
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"		"0"
+		
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_jakiro/macropyre.lua"
+			"Function"			"ApplyDummyModifier"
+			"Target"			"TARGET"
+			
+			"modifier_name"		"modifier_macropyre_check_range_datadriven"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_macropyre_check_range_datadriven"
+		{
+			"IsHidden"		"1"
+			"IsPurgable"	"0"
+			
+			"ThinkInterval"	"%burn_interval"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_jakiro/macropyre.lua"
+					"Function"			"CheckMacropyre"
+					"Target"			"TARGET"
+					
+					"path_radius"		"%path_radius"
+					"damage"			"%damage / 2"
+				}
+			}
+		}
+		
+		"modifier_macropyre_destroy_tree_datadriven"
+		{
+			"OnCreated"
+			{
+				"DestroyTrees"
+				{
+					"Target"		"TARGET"
+					"Radius"		"%path_radius"
+				}
+				
+				"ApplyModifier"
+				{
+					"Target"		"TARGET"
+					"ModifierName"	"modifier_kill"
+					"Duration"		"0.1"
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetCursorPosition()${1:--[[
+     CDOTA_BaseNPC:GetCursorPosition   
+    -- @return Vector
+    function CDOTA_BaseNPC:GetCursorPosition(  ) end
+    ]]}]]></content>
+    <tabTrigger>getCursorPosition</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

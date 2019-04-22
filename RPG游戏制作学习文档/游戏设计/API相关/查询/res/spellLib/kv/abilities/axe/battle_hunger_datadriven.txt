@@ -1,0 +1,174 @@
+// Rewrite of the Axe Battle Hunger ability
+// Author: Pizzalol
+// Date: October 14, 2015
+// Version: 6.85
+// Type: Datadriven
+//
+// ----- FILE REQUIREMENTS -----
+// Script files:
+// scripts/vscripts/heroes/hero_axe/battle_hunger.lua
+"battle_hunger_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"FightRecapLevel"				"1"
+	"AbilityTextureName"			"axe_battle_hunger"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+		"particle"			"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+		"particle"			"particles/status_fx/status_effect_battle_hunger.vpcf"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"20.0 15.0 10.0 5.0"
+
+	// Damage.
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityDamage"					"16 24 32 40"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"75"		
+	
+	// Cast Range
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"750"
+
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"10.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"slow"						"-12"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"speed_bonus"						"12"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"FireSound"
+		{
+			"EffectName"	"Hero_Axe.Battle_Hunger"
+			"Target" 		"TARGET"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_battle_hunger_enemy_datadriven"
+			"Target" 		"TARGET"
+			"Duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_battle_hunger_caster_datadriven"
+		{
+			"IsBuff"		"1"
+			"IsPurgable"	"0"
+		}
+
+		"modifier_battle_hunger_caster_speed_datadriven"
+		{
+			"IsHidden"		"1"
+			"IsPurgable"	"0"
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%speed_bonus" 
+			}
+		}
+
+		"modifier_battle_hunger_enemy_datadriven"
+		{
+			"IsDebuff"		"1"
+
+			"StatusEffectName" 		"particles/status_fx/status_effect_battle_hunger.vpcf" 	   
+			"StatusEffectPriority"  "9"
+
+			"ThinkInterval"  "1.0"
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%AbilityDamage"
+				}
+			}
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_axe/battle_hunger.lua"
+					"Function"		"BattleHungerStart"
+					"caster_modifier"	"modifier_battle_hunger_caster_datadriven"
+					"speed_modifier"	"modifier_battle_hunger_caster_speed_datadriven"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_axe/battle_hunger.lua"
+					"Function"		"BattleHungerEnd"
+					"caster_modifier"	"modifier_battle_hunger_caster_datadriven"
+					"speed_modifier"	"modifier_battle_hunger_caster_speed_datadriven"
+				}
+			}
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_axe/battle_hunger.lua"
+					"Function"		"BattleHungerKill"
+					"modifier"		"modifier_battle_hunger_enemy_datadriven"
+				}
+			}
+		}
+	}	
+}
+

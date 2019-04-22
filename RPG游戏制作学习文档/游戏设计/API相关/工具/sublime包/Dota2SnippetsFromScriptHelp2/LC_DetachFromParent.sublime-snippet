@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[DetachFromParent()${1:--[[
+     CBodyComponent:DetachFromParent  Detach from its parent 
+    -- @return void
+    function CBodyComponent:DetachFromParent(  ) end
+    ]]}]]></content>
+    <tabTrigger>detachFromParent</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

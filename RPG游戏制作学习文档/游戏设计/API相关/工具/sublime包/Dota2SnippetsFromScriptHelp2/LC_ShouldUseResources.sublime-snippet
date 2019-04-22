@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[ShouldUseResources()${1:--[[
+     CDOTABaseAbility:ShouldUseResources   
+    -- @return bool
+    function CDOTABaseAbility:ShouldUseResources(  ) end
+    ]]}]]></content>
+    <tabTrigger>shouldUseResources</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

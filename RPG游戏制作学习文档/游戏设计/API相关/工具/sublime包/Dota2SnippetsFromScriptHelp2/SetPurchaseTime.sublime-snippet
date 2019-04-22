@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetPurchaseTime(${1:float_1})${2:--[[
+     CDOTA_Item:SetPurchaseTime  Set the purchase time of this item 
+    -- @return void
+    -- @param float_1 float
+    function CDOTA_Item:SetPurchaseTime( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>SetPurchaseTime</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

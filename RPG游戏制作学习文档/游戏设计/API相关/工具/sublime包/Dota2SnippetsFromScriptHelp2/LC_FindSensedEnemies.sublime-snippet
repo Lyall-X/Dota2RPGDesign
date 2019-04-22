@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[FindSensedEnemies()${1:--[[
+     CRPG_Unit:FindSensedEnemies  () - returns list of all enemy units within this unit's sight cone or sensing sphere 
+    -- @return table
+    function CRPG_Unit:FindSensedEnemies(  ) end
+    ]]}]]></content>
+    <tabTrigger>findSensedEnemies</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

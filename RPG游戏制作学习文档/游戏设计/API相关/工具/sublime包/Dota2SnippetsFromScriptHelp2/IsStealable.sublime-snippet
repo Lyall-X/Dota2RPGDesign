@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[IsStealable()${1:--[[
+     CDOTABaseAbility:IsStealable   
+    -- @return bool
+    function CDOTABaseAbility:IsStealable(  ) end
+    ]]}]]></content>
+    <tabTrigger>IsStealable</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[GetHasteFactor()${1:--[[
+     CDOTA_BaseNPC:GetHasteFactor   
+    -- @return float
+    function CDOTA_BaseNPC:GetHasteFactor(  ) end
+    ]]}]]></content>
+    <tabTrigger>GetHasteFactor</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

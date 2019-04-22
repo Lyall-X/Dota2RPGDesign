@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[HasRoomForItem(${1:string_1},${2:bool_2},${3:bool_3})${4:--[[
+     CDOTA_BaseNPC_Hero:HasRoomForItem  Args: const char* pItemName, bool bIncludeStashCombines, bool bAllowSelling 
+    -- @return int
+    -- @param string_1 string
+    -- @param bool_2 bool
+    -- @param bool_3 bool
+    function CDOTA_BaseNPC_Hero:HasRoomForItem( string_1, bool_2, bool_3 ) end
+    ]]}]]></content>
+    <tabTrigger>HasRoomForItem</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

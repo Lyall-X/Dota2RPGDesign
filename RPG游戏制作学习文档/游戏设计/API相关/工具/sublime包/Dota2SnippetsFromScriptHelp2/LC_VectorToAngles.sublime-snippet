@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[VectorToAngles(${1:Vector_1})${2:--[[
+     VectorToAngles  Get Qangles (with no roll) for a Vector. 
+    -- @return QAngle
+    -- @param Vector_1 Vector
+    function VectorToAngles( Vector_1 ) end
+    ]]}]]></content>
+    <tabTrigger>vectorToAngles</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>

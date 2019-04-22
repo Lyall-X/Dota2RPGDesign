@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[SetCustomGameEndDelay(${1:float_1})${2:--[[
+     CDOTAGamerules:SetCustomGameEndDelay  Sets the game end delay. 
+    -- @return void
+    -- @param float_1 float
+    function CDOTAGamerules:SetCustomGameEndDelay( float_1 ) end
+    ]]}]]></content>
+    <tabTrigger>setCustomGameEndDelay</tabTrigger>
+    <scope>source.lua</scope>
+</snippet>
